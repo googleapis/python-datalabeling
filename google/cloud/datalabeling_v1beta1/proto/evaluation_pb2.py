@@ -973,8 +973,8 @@ Evaluation = _reflection.GeneratedProtocolMessageType(
     dict(
         DESCRIPTOR=_EVALUATION,
         __module__="google.cloud.datalabeling_v1beta1.proto.evaluation_pb2",
-        __doc__="""Describes an evaluation between a machine learning model's
-  predictions and ground truth labels. Created when an
+        __doc__="""Describes an evaluation between a machine learning model's predictions
+  and ground truth labels. Created when an
   [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob] runs
   successfully.
   
