@@ -216,10 +216,10 @@ AnnotationSpecSet = _reflection.GeneratedProtocolMessageType(
     dict(
         DESCRIPTOR=_ANNOTATIONSPECSET,
         __module__="google.cloud.datalabeling_v1beta1.proto.annotation_spec_set_pb2",
-        __doc__="""An AnnotationSpecSet is a collection of label definitions.
-  For example, in image classification tasks, you define a set of possible
-  labels for images as an AnnotationSpecSet. An AnnotationSpecSet is
-  immutable upon creation.
+        __doc__="""An AnnotationSpecSet is a collection of label definitions. For example,
+  in image classification tasks, you define a set of possible labels for
+  images as an AnnotationSpecSet. An AnnotationSpecSet is immutable upon
+  creation.
   
   
   Attributes:
