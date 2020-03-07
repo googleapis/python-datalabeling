@@ -1785,8 +1785,8 @@ Dataset = _reflection.GeneratedProtocolMessageType(
     dict(
         DESCRIPTOR=_DATASET,
         __module__="google.cloud.datalabeling_v1beta1.proto.dataset_pb2",
-        __doc__="""Dataset is the resource to hold your data. You can request
-  multiple labeling tasks for a dataset while each one will generate an
+        __doc__="""Dataset is the resource to hold your data. You can request multiple
+  labeling tasks for a dataset while each one will generate an
   AnnotatedDataset.
   
   
