@@ -442,8 +442,7 @@ class DataLabelingServiceGrpcTransport(object):
     def get_evaluation(self):
         """Return the gRPC stub for :meth:`DataLabelingServiceClient.get_evaluation`.
 
-        Gets an evaluation by resource name (to search, use
-        ``projects.evaluations.search``).
+        javanano_as_lite
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -456,7 +455,7 @@ class DataLabelingServiceGrpcTransport(object):
     def search_evaluations(self):
         """Return the gRPC stub for :meth:`DataLabelingServiceClient.search_evaluations`.
 
-        Searches ``evaluations`` within a project.
+        Ouptut only. The name of dataset. "projects/*/datasets/*"
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -497,12 +496,22 @@ class DataLabelingServiceGrpcTransport(object):
     def update_evaluation_job(self):
         """Return the gRPC stub for :meth:`DataLabelingServiceClient.update_evaluation_job`.
 
-        Updates an evaluation job. You can only update certain fields of the
-        job's ``EvaluationJobConfig``: ``humanAnnotationConfig.instruction``,
-        ``exampleCount``, and ``exampleSamplePercentage``.
+        Identifies which part of the FileDescriptorProto was defined at this
+        location.
 
-        If you want to change any other aspect of the evaluation job, you must
-        delete the job and create a new one.
+        Each element is a field number or an index. They form a path from the
+        root FileDescriptorProto to the place where the definition. For example,
+        this path: [ 4, 3, 2, 7, 1 ] refers to: file.message_type(3) // 4, 3
+        .field(7) // 2, 7 .name() // 1 This is because
+        FileDescriptorProto.message_type has field number 4: repeated
+        DescriptorProto message_type = 4; and DescriptorProto.field has field
+        number 2: repeated FieldDescriptorProto field = 2; and
+        FieldDescriptorProto.name has field number 1: optional string name = 1;
+
+        Thus, the above path gives the location of a field name. If we removed
+        the last element: [ 4, 3, 2, 7 ] this path refers to the whole field
+        declaration (from the beginning of the label to the terminating
+        semicolon).
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -528,8 +537,7 @@ class DataLabelingServiceGrpcTransport(object):
     def pause_evaluation_job(self):
         """Return the gRPC stub for :meth:`DataLabelingServiceClient.pause_evaluation_job`.
 
-        Pauses an evaluation job. Pausing an evaluation job that is already in a
-        ``PAUSED`` state is a no-op.
+        The request message for ``Operations.GetOperation``.
 
         Returns:
             Callable: A callable which accepts the appropriate

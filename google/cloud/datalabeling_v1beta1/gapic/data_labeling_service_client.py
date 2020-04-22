@@ -307,7 +307,12 @@ class DataLabelingServiceClient(object):
             >>> response = client.create_dataset(parent, dataset)
 
         Args:
-            parent (str): Required. Dataset resource parent, format: projects/{project\_id}
+            parent (str): Additional information regarding long-running operations. In
+                particular, this specifies the types that are returned from long-running
+                operations.
+
+                Required for methods that return ``google.longrunning.Operation``;
+                invalid otherwise.
             dataset (Union[dict, ~google.cloud.datalabeling_v1beta1.types.Dataset]): Required. The dataset to be created.
 
                 If a dict is provided, it must be of the same form as the protobuf
@@ -382,8 +387,7 @@ class DataLabelingServiceClient(object):
             >>> response = client.get_dataset(name)
 
         Args:
-            name (str): Required. Dataset resource name, format:
-                projects/{project\_id}/datasets/{dataset\_id}
+            name (str): Required. Instruction resource parent, format: projects/{project_id}
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -466,7 +470,10 @@ class DataLabelingServiceClient(object):
             ...         pass
 
         Args:
-            parent (str): Required. Dataset resource parent, format: projects/{project\_id}
+            parent (str): Optional. A token identifying a page of results for the server to
+                return. Typically obtained by ``ListDatasetsResponse.next_page_token``
+                of the previous [DataLabelingService.ListDatasets] call. Returns the
+                first page if empty.
             filter_ (str): Optional. Filter on dataset is not supported at this moment.
             page_size (int): The maximum number of resources contained in the
                 underlying API response. If page streaming is performed per-
@@ -557,8 +564,9 @@ class DataLabelingServiceClient(object):
             >>> client.delete_dataset(name)
 
         Args:
-            name (str): Required. Dataset resource name, format:
-                projects/{project\_id}/datasets/{dataset\_id}
+            name (str): Output only. Unique name of this annotation, format is:
+
+                projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset}/examples/{example_id}/annotations/{annotation_id}
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -642,8 +650,7 @@ class DataLabelingServiceClient(object):
             >>> metadata = response.metadata()
 
         Args:
-            name (str): Required. Dataset resource name, format:
-                projects/{project\_id}/datasets/{dataset\_id}
+            name (str): Label of the segment specified by time_segment.
             input_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.InputConfig]): Required. Specify the input source of the data.
 
                 If a dict is provided, it must be of the same form as the protobuf
@@ -743,13 +750,18 @@ class DataLabelingServiceClient(object):
             >>> metadata = response.metadata()
 
         Args:
-            name (str): Required. Dataset resource name, format:
-                projects/{project\_id}/datasets/{dataset\_id}
-            annotated_dataset (str): Required. Annotated dataset resource name. DataItem in Dataset and their
-                annotations in specified annotated dataset will be exported. It's in
-                format of
-                projects/{project\_id}/datasets/{dataset\_id}/annotatedDatasets/
-                {annotated\_dataset\_id}
+            name (str): Output only. Dataset resource name, format is:
+                projects/{project_id}/datasets/{dataset_id}
+            annotated_dataset (str): Lists operations that match the specified filter in the request. If
+                the server doesn't support this method, it returns ``UNIMPLEMENTED``.
+
+                NOTE: the ``name`` binding allows API services to override the binding
+                to use different resource name schemes, such as ``users/*/operations``.
+                To override the binding, API services can add a binding such as
+                ``"/v1/{name=users/*}/operations"`` to their service configuration. For
+                backwards compatibility, the default name includes the operations
+                collection id, however overriding users must ensure the name binding is
+                the parent resource, without the operations collection id.
             output_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.OutputConfig]): Required. Specify the output destination.
 
                 If a dict is provided, it must be of the same form as the protobuf
@@ -838,8 +850,10 @@ class DataLabelingServiceClient(object):
             >>> response = client.get_data_item(name)
 
         Args:
-            name (str): Required. The name of the data item to get, format:
-                projects/{project\_id}/datasets/{dataset\_id}/dataItems/{data\_item\_id}
+            name (str): Optional. A token identifying a page of results for the server to
+                return. Typically obtained by
+                ``ListInstructionsResponse.next_page_token`` of the previous
+                [DataLabelingService.ListInstructions] call. Return first page if empty.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -923,8 +937,9 @@ class DataLabelingServiceClient(object):
             ...         pass
 
         Args:
-            parent (str): Required. Name of the dataset to list data items, format:
-                projects/{project\_id}/datasets/{dataset\_id}
+            parent (str): Configuration for video classification task. One of
+                video_classification_config, object_detection_config,
+                object_tracking_config and event_config is required.
             filter_ (str): Optional. Filter is not supported at this moment.
             page_size (int): The maximum number of resources contained in the
                 underlying API response. If page streaming is performed per-
@@ -1015,9 +1030,45 @@ class DataLabelingServiceClient(object):
             >>> response = client.get_annotated_dataset(name)
 
         Args:
-            name (str): Required. Name of the annotated dataset to get, format:
-                projects/{project\_id}/datasets/{dataset\_id}/annotatedDatasets/
-                {annotated\_dataset\_id}
+            name (str): If this SourceCodeInfo represents a complete declaration, these are
+                any comments appearing before and after the declaration which appear to
+                be attached to the declaration.
+
+                A series of line comments appearing on consecutive lines, with no other
+                tokens appearing on those lines, will be treated as a single comment.
+
+                leading_detached_comments will keep paragraphs of comments that appear
+                before (but not connected to) the current element. Each paragraph,
+                separated by empty lines, will be one comment element in the repeated
+                field.
+
+                Only the comment content is provided; comment markers (e.g. //) are
+                stripped out. For block comments, leading whitespace and an asterisk
+                will be stripped from the beginning of each line other than the first.
+                Newlines are included in the output.
+
+                Examples:
+
+                optional int32 foo = 1; // Comment attached to foo. // Comment attached
+                to bar. optional int32 bar = 2;
+
+                optional string baz = 3; // Comment attached to baz. // Another line
+                attached to baz.
+
+                // Comment attached to qux. // // Another line attached to qux. optional
+                double qux = 4;
+
+                // Detached comment for corge. This is not leading or trailing comments
+                // to qux or corge because there are blank lines separating it from //
+                both.
+
+                // Detached comment for corge paragraph 2.
+
+                optional string corge = 5; /\* Block comment attached \* to corge.
+                Leading asterisks \* will be removed. */ /* Block comment attached to \*
+                grault. \*/ optional int32 grault = 6;
+
+                // ignored detached comments.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -1100,8 +1151,9 @@ class DataLabelingServiceClient(object):
             ...         pass
 
         Args:
-            parent (str): Required. Name of the dataset to list annotated datasets, format:
-                projects/{project\_id}/datasets/{dataset\_id}
+            parent (str): Configuration for video object detection task. One of
+                video_classification_config, object_detection_config,
+                object_tracking_config and event_config is required.
             filter_ (str): Optional. Filter is not supported at this moment.
             page_size (int): The maximum number of resources contained in the
                 underlying API response. If page streaming is performed per-
@@ -1192,9 +1244,7 @@ class DataLabelingServiceClient(object):
             >>> client.delete_annotated_dataset(name)
 
         Args:
-            name (str): Required. Name of the annotated dataset to delete, format:
-                projects/{project\_id}/datasets/{dataset\_id}/annotatedDatasets/
-                {annotated\_dataset\_id}
+            name (str): Output only. The name of imported dataset. "projects/*/datasets/*"
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -1283,34 +1333,36 @@ class DataLabelingServiceClient(object):
             >>> metadata = response.metadata()
 
         Args:
-            parent (str): Required. Name of the dataset to request labeling task, format:
-                projects/{project\_id}/datasets/{dataset\_id}
+            parent (str): Deletes a long-running operation. This method indicates that the
+                client is no longer interested in the operation result. It does not
+                cancel the operation. If the server doesn't support this method, it
+                returns ``google.rpc.Code.UNIMPLEMENTED``.
             basic_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.HumanAnnotationConfig]): Required. Basic human annotation config.
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.datalabeling_v1beta1.types.HumanAnnotationConfig`
             feature (~google.cloud.datalabeling_v1beta1.types.Feature): Required. The type of image labeling task.
-            image_classification_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.ImageClassificationConfig]): Configuration for image classification task. One of
-                image\_classification\_config, bounding\_poly\_config, polyline\_config
-                and segmentation\_config are required.
+            image_classification_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.ImageClassificationConfig]): Configuration for video object tracking task. One of
+                video_classification_config, object_detection_config,
+                object_tracking_config and event_config is required.
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.datalabeling_v1beta1.types.ImageClassificationConfig`
-            bounding_poly_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.BoundingPolyConfig]): Configuration for bounding box and bounding poly task. One of
-                image\_classification\_config, bounding\_poly\_config, polyline\_config
-                and segmentation\_config are required.
+            bounding_poly_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.BoundingPolyConfig]): Required. AnnotationSpecSet resource name, format:
+                projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.datalabeling_v1beta1.types.BoundingPolyConfig`
-            polyline_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.PolylineConfig]): Configuration for polyline task. One of image\_classification\_config,
-                bounding\_poly\_config, polyline\_config and segmentation\_config are
-                required.
+            polyline_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.PolylineConfig]): Required. Dataset resource name, format:
+                projects/{project_id}/datasets/{dataset_id}
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.datalabeling_v1beta1.types.PolylineConfig`
-            segmentation_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.SegmentationConfig]): Configuration for segmentation task. One of
-                image\_classification\_config, bounding\_poly\_config, polyline\_config
-                and segmentation\_config are required.
+            segmentation_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.SegmentationConfig]): The job is scheduled to run at the ``configured interval``. You can
+                ``pause`` or ``delete`` the job.
+
+                When the job is in this state, it samples prediction input and output
+                from your model version into your BigQuery table as predictions occur.
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.datalabeling_v1beta1.types.SegmentationConfig`
@@ -1428,34 +1480,54 @@ class DataLabelingServiceClient(object):
             >>> metadata = response.metadata()
 
         Args:
-            parent (str): Required. Name of the dataset to request labeling task, format:
-                projects/{project\_id}/datasets/{dataset\_id}
+            parent (str): Required. Dataset resource name, format:
+                projects/{project_id}/datasets/{dataset_id}
             basic_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.HumanAnnotationConfig]): Required. Basic human annotation config.
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.datalabeling_v1beta1.types.HumanAnnotationConfig`
             feature (~google.cloud.datalabeling_v1beta1.types.Feature): Required. The type of video labeling task.
-            video_classification_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.VideoClassificationConfig]): Configuration for video classification task. One of
-                video\_classification\_config, object\_detection\_config,
-                object\_tracking\_config and event\_config is required.
+            video_classification_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.VideoClassificationConfig]): Required. Name of the dataset to request labeling task, format:
+                projects/{project_id}/datasets/{dataset_id}
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.datalabeling_v1beta1.types.VideoClassificationConfig`
-            object_detection_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.ObjectDetectionConfig]): Configuration for video object detection task. One of
-                video\_classification\_config, object\_detection\_config,
-                object\_tracking\_config and event\_config is required.
+            object_detection_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.ObjectDetectionConfig]): The job is currently running. When the job runs, Data Labeling
+                Service does several things:
+
+                1. If you have configured your job to use Data Labeling Service for
+                   ground truth labeling, the service creates a ``Dataset`` and a
+                   labeling task for all data sampled since the last time the job ran.
+                   Human labelers provide ground truth labels for your data. Human
+                   labeling may take hours, or even days, depending on how much data has
+                   been sampled. The job remains in the ``RUNNING`` state during this
+                   time, and it can even be running multiple times in parallel if it
+                   gets triggered again (for example 24 hours later) before the earlier
+                   run has completed. When human labelers have finished labeling the
+                   data, the next step occurs. If you have configured your job to
+                   provide your own ground truth labels, Data Labeling Service still
+                   creates a ``Dataset`` for newly sampled data, but it expects that you
+                   have already added ground truth labels to the BigQuery table by this
+                   time. The next step occurs immediately.
+
+                2. Data Labeling Service creates an ``Evaluation`` by comparing your
+                   model version's predictions with the ground truth labels.
+
+                If the job remains in this state for a long time, it continues to sample
+                prediction data into your BigQuery table and will run again at the next
+                interval, even if it causes the job to run multiple times in parallel.
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.datalabeling_v1beta1.types.ObjectDetectionConfig`
-            object_tracking_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.ObjectTrackingConfig]): Configuration for video object tracking task. One of
-                video\_classification\_config, object\_detection\_config,
-                object\_tracking\_config and event\_config is required.
+            object_tracking_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.ObjectTrackingConfig]): Required. Name of the evaluation. Format:
+
+                "projects/{project_id}/datasets/{dataset_id}/evaluations/{evaluation_id}'
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.datalabeling_v1beta1.types.ObjectTrackingConfig`
-            event_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.EventConfig]): Configuration for video event task. One of
-                video\_classification\_config, object\_detection\_config,
-                object\_tracking\_config and event\_config is required.
+            event_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.EventConfig]): The job is not sampling prediction input and output into your
+                BigQuery table and it will not run according to its schedule. You can
+                ``resume`` the job.
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.datalabeling_v1beta1.types.EventConfig`
@@ -1571,22 +1643,37 @@ class DataLabelingServiceClient(object):
             >>> metadata = response.metadata()
 
         Args:
-            parent (str): Required. Name of the data set to request labeling task, format:
-                projects/{project\_id}/datasets/{dataset\_id}
+            parent (str): Describes an evaluation between a machine learning model's
+                predictions and ground truth labels. Created when an ``EvaluationJob``
+                runs successfully.
             basic_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.HumanAnnotationConfig]): Required. Basic human annotation config.
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.datalabeling_v1beta1.types.HumanAnnotationConfig`
             feature (~google.cloud.datalabeling_v1beta1.types.Feature): Required. The type of text labeling task.
-            text_classification_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.TextClassificationConfig]): Configuration for text classification task. One of
-                text\_classification\_config and text\_entity\_extraction\_config is
-                required.
+            text_classification_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.TextClassificationConfig]): The jstype option determines the JavaScript type used for values of
+                the field. The option is permitted only for 64 bit integral and fixed
+                types (int64, uint64, sint64, fixed64, sfixed64). A field with jstype
+                JS_STRING is represented as JavaScript string, which avoids loss of
+                precision that can happen when a large value is converted to a floating
+                point JavaScript. Specifying JS_NUMBER for the jstype causes the
+                generated JavaScript code to use the JavaScript "number" type. The
+                behavior of the default option JS_NORMAL is implementation dependent.
+
+                This option is an enum to permit additional types to be added, e.g.
+                goog.math.Integer.
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.datalabeling_v1beta1.types.TextClassificationConfig`
-            text_entity_extraction_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.TextEntityExtractionConfig]): Configuration for entity extraction task. One of
-                text\_classification\_config and text\_entity\_extraction\_config is
-                required.
+            text_entity_extraction_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.TextEntityExtractionConfig]): Starts asynchronous cancellation on a long-running operation. The
+                server makes a best effort to cancel the operation, but success is not
+                guaranteed. If the server doesn't support this method, it returns
+                ``google.rpc.Code.UNIMPLEMENTED``. Clients can use
+                ``Operations.GetOperation`` or other methods to check whether the
+                cancellation succeeded or whether the operation completed despite
+                cancellation. On successful cancellation, the operation is not deleted;
+                instead, it becomes an operation with an ``Operation.error`` value with
+                a ``google.rpc.Status.code`` of 1, corresponding to ``Code.CANCELLED``.
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.datalabeling_v1beta1.types.TextEntityExtractionConfig`
@@ -1678,12 +1765,13 @@ class DataLabelingServiceClient(object):
             >>> response = client.get_example(name)
 
         Args:
-            name (str): Required. Name of example, format:
-                projects/{project\_id}/datasets/{dataset\_id}/annotatedDatasets/
-                {annotated\_dataset\_id}/examples/{example\_id}
-            filter_ (str): Optional. An expression for filtering Examples. Filter by
-                annotation\_spec.display\_name is supported. Format
-                "annotation\_spec.display\_name = {display\_name}"
+            name (str): Output only. After you create a job, Data Labeling Service assigns a
+                name to the job with the following format:
+
+                "projects/{project_id}/evaluationJobs/{evaluation_job_id}"
+            filter_ (str): Optional. A human-readable label used to logically group labeling
+                tasks. This string must match the regular expression
+                ``[a-zA-Z\\d_-]{0,128}``.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -1767,9 +1855,10 @@ class DataLabelingServiceClient(object):
 
         Args:
             parent (str): Required. Example resource parent.
-            filter_ (str): Optional. An expression for filtering Examples. For annotated datasets
-                that have annotation spec set, filter by annotation\_spec.display\_name
-                is supported. Format "annotation\_spec.display\_name = {display\_name}"
+            filter_ (str): Output only. Resource name of an evaluation. The name has the
+                following format:
+
+                "projects/{project_id}/datasets/{dataset_id}/evaluations/{evaluation_id}'
             page_size (int): The maximum number of resources contained in the
                 underlying API response. If page streaming is performed per-
                 resource, this parameter does not affect the return value. If page
@@ -1863,11 +1952,46 @@ class DataLabelingServiceClient(object):
             >>> response = client.create_annotation_spec_set(parent, annotation_spec_set)
 
         Args:
-            parent (str): Required. AnnotationSpecSet resource parent, format:
-                projects/{project\_id}
-            annotation_spec_set (Union[dict, ~google.cloud.datalabeling_v1beta1.types.AnnotationSpecSet]): Required. Annotation spec set to create. Annotation specs must be
-                included. Only one annotation spec will be accepted for annotation specs
-                with same display\_name.
+            parent (str): Input and output type names. These are resolved in the same way as
+                FieldDescriptorProto.type_name, but must refer to a message type.
+            annotation_spec_set (Union[dict, ~google.cloud.datalabeling_v1beta1.types.AnnotationSpecSet]): A Location identifies a piece of source code in a .proto file which
+                corresponds to a particular definition. This information is intended to
+                be useful to IDEs, code indexers, documentation generators, and similar
+                tools.
+
+                For example, say we have a file like: message Foo { optional string foo
+                = 1; } Let's look at just the field definition: optional string foo = 1;
+                ^ ^^ ^^ ^ ^^^ a bc de f ghi We have the following locations: span path
+                represents [a,i) [ 4, 0, 2, 0 ] The whole field definition. [a,b) [ 4,
+                0, 2, 0, 4 ] The label (optional). [c,d) [ 4, 0, 2, 0, 5 ] The type
+                (string). [e,f) [ 4, 0, 2, 0, 1 ] The name (foo). [g,h) [ 4, 0, 2, 0, 3
+                ] The number (1).
+
+                Notes:
+
+                -  A location may refer to a repeated field itself (i.e. not to any
+                   particular index within it). This is used whenever a set of elements
+                   are logically enclosed in a single code segment. For example, an
+                   entire extend block (possibly containing multiple extension
+                   definitions) will have an outer location whose path refers to the
+                   "extensions" repeated field without an index.
+                -  Multiple locations may have the same path. This happens when a single
+                   logical declaration is spread out across multiple places. The most
+                   obvious example is the "extend" block again -- there may be multiple
+                   extend blocks in the same scope, each of which will have the same
+                   path.
+                -  A location's span is not always a subset of its parent's span. For
+                   example, the "extendee" of an extension declaration appears at the
+                   beginning of the "extend" block and is shared by all extensions
+                   within the block.
+                -  Just because a location's span is a subset of some other location's
+                   span does not mean that it is a descendant. For example, a "group"
+                   defines both a type and a field in a single declaration. Thus, the
+                   locations corresponding to the type and field and their components
+                   will overlap.
+                -  Code which tries to interpret locations should probably be designed
+                   to ignore those that it doesn't understand, as more types of
+                   locations could be recorded in the future.
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.datalabeling_v1beta1.types.AnnotationSpecSet`
@@ -1941,8 +2065,10 @@ class DataLabelingServiceClient(object):
             >>> response = client.get_annotation_spec_set(name)
 
         Args:
-            name (str): Required. AnnotationSpecSet resource name, format:
-                projects/{project\_id}/annotationSpecSets/{annotation\_spec\_set\_id}
+            name (str): Optional. The Language of this question, as a
+                `BCP-47 <https://www.rfc-editor.org/rfc/bcp/bcp47.txt>`__. Default value
+                is en-US. Only need to set this when task is language related. For
+                example, French text classification.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -2025,8 +2151,29 @@ class DataLabelingServiceClient(object):
             ...         pass
 
         Args:
-            parent (str): Required. Parent of AnnotationSpecSet resource, format:
-                projects/{project\_id}
+            parent (str): Optional. To search evaluations, you can filter by the following:
+
+                -  evaluation\_job.evaluation_job_id (the last part of
+                   ``EvaluationJob.name``)
+                -  evaluation\_job.model_id (the {model_name} portion of
+                   ``EvaluationJob.modelVersion``)
+                -  evaluation\_job.evaluation_job_run_time_start (Minimum threshold for
+                   the ``evaluationJobRunTime`` that created the evaluation)
+                -  evaluation\_job.evaluation_job_run_time_end (Maximum threshold for
+                   the ``evaluationJobRunTime`` that created the evaluation)
+                -  evaluation\_job.job_state (``EvaluationJob.state``)
+                -  annotation\_spec.display_name (the Evaluation contains a metric for
+                   the annotation spec with this ``displayName``)
+
+                To filter by multiple critiera, use the ``AND`` operator or the ``OR``
+                operator. The following examples shows a string that filters by several
+                critiera:
+
+                "evaluation\ *job.evaluation_job_id = {evaluation_job_id} AND
+                evaluation*\ job.model_id = {model_name} AND
+                evaluation\ *job.evaluation_job_run_time_start = {timestamp_1} AND
+                evaluation*\ job.evaluation_job_run_time_end = {timestamp_2} AND
+                annotation\_spec.display_name = {display_name}"
             filter_ (str): Optional. Filter is not supported at this moment.
             page_size (int): The maximum number of resources contained in the
                 underlying API response. If page streaming is performed per-
@@ -2117,8 +2264,18 @@ class DataLabelingServiceClient(object):
             >>> client.delete_annotation_spec_set(name)
 
         Args:
-            name (str): Required. AnnotationSpec resource name, format:
-                ``projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}``.
+            name (str): Required. Describes the interval at which the job runs. This
+                interval must be at least 1 day, and it is rounded to the nearest day.
+                For example, if you specify a 50-hour interval, the job runs every 2
+                days.
+
+                You can provide the schedule in `crontab
+                format <https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules>`__
+                or in an `English-like
+                format <https://cloud.google.com/appengine/docs/standard/python/config/cronref#schedule_format>`__.
+
+                Regardless of what you specify, the job will run at 10:00 AM UTC. Only
+                the interval from this schedule is used, not the specific time of day.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -2197,7 +2354,13 @@ class DataLabelingServiceClient(object):
             >>> metadata = response.metadata()
 
         Args:
-            parent (str): Required. Instruction resource parent, format: projects/{project\_id}
+            parent (str): The name of the request field whose value is mapped to the HTTP
+                request body, or ``*`` for mapping all request fields not captured by
+                the path pattern to the HTTP body, or omitted for not having any HTTP
+                request body.
+
+                NOTE: the referred field must be present at the top-level of the request
+                message type.
             instruction (Union[dict, ~google.cloud.datalabeling_v1beta1.types.Instruction]): Required. Instruction of how to perform the labeling task.
 
                 If a dict is provided, it must be of the same form as the protobuf
@@ -2278,8 +2441,8 @@ class DataLabelingServiceClient(object):
             >>> response = client.get_instruction(name)
 
         Args:
-            name (str): Required. Instruction resource name, format:
-                projects/{project\_id}/instructions/{instruction\_id}
+            name (str): Required. Dataset resource name, format:
+                projects/{project_id}/datasets/{dataset_id}
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -2362,7 +2525,9 @@ class DataLabelingServiceClient(object):
             ...         pass
 
         Args:
-            parent (str): Required. Instruction resource parent, format: projects/{project\_id}
+            parent (str): If the value is ``false``, it means the operation is still in
+                progress. If ``true``, the operation is completed, and either ``error``
+                or ``response`` is available.
             filter_ (str): Optional. Filter is not supported at this moment.
             page_size (int): The maximum number of resources contained in the
                 underlying API response. If page streaming is performed per-
@@ -2453,8 +2618,15 @@ class DataLabelingServiceClient(object):
             >>> client.delete_instruction(name)
 
         Args:
-            name (str): Required. Instruction resource name, format:
-                projects/{project\_id}/instructions/{instruction\_id}
+            name (str): Required. The `AI Platform Prediction model
+                version <https://cloud.google.com/ml-engine/docs/prediction-overview>`__
+                to be evaluated. Prediction input and output is sampled from this model
+                version. When creating an evaluation job, specify the model version in
+                the following format:
+
+                "projects/{project_id}/models/{model_name}/versions/{version_name}"
+
+                There can only be one evaluation job per model version.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -2508,8 +2680,7 @@ class DataLabelingServiceClient(object):
         metadata=None,
     ):
         """
-        Gets an evaluation by resource name (to search, use
-        ``projects.evaluations.search``).
+        javanano_as_lite
 
         Example:
             >>> from google.cloud import datalabeling_v1beta1
@@ -2521,9 +2692,11 @@ class DataLabelingServiceClient(object):
             >>> response = client.get_evaluation(name)
 
         Args:
-            name (str): Required. Name of the evaluation. Format:
-
-                "projects/{project\_id}/datasets/{dataset\_id}/evaluations/{evaluation\_id}'
+            name (str): Required. Annotated dataset resource name. DataItem in Dataset and
+                their annotations in specified annotated dataset will be exported. It's
+                in format of
+                projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/
+                {annotated_dataset_id}
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -2582,7 +2755,7 @@ class DataLabelingServiceClient(object):
         metadata=None,
     ):
         """
-        Searches ``evaluations`` within a project.
+        Ouptut only. The name of dataset. "projects/*/datasets/*"
 
         Example:
             >>> from google.cloud import datalabeling_v1beta1
@@ -2606,31 +2779,13 @@ class DataLabelingServiceClient(object):
             ...         pass
 
         Args:
-            parent (str): Required. Evaluation search parent (project ID). Format:
-                "projects/{project\_id}"
-            filter_ (str): Optional. To search evaluations, you can filter by the following:
-
-                -  evaluation\_job.evaluation\_job\_id (the last part of
-                   ``EvaluationJob.name``)
-                -  evaluation\_job.model\_id (the {model\_name} portion of
-                   ``EvaluationJob.modelVersion``)
-                -  evaluation\_job.evaluation\_job\_run\_time\_start (Minimum threshold
-                   for the ``evaluationJobRunTime`` that created the evaluation)
-                -  evaluation\_job.evaluation\_job\_run\_time\_end (Maximum threshold
-                   for the ``evaluationJobRunTime`` that created the evaluation)
-                -  evaluation\_job.job\_state (``EvaluationJob.state``)
-                -  annotation\_spec.display\_name (the Evaluation contains a metric for
-                   the annotation spec with this ``displayName``)
-
-                To filter by multiple critiera, use the ``AND`` operator or the ``OR``
-                operator. The following examples shows a string that filters by several
-                critiera:
-
-                "evaluation\ *job.evaluation\_job\_id = {evaluation\_job\_id} AND
-                evaluation*\ job.model\_id = {model\_name} AND
-                evaluation\ *job.evaluation\_job\_run\_time\_start = {timestamp\_1} AND
-                evaluation*\ job.evaluation\_job\_run\_time\_end = {timestamp\_2} AND
-                annotation\_spec.display\_name = {display\_name}"
+            parent (str): The operation result, which can be either an ``error`` or a valid
+                ``response``. If ``done`` == ``false``, neither ``error`` nor
+                ``response`` is set. If ``done`` == ``true``, exactly one of ``error``
+                or ``response`` is set.
+            filter_ (str): Optional. The type of annotation to be performed on this data. You
+                must specify this field if you are using this InputConfig in an
+                ``EvaluationJob``.
             page_size (int): The maximum number of resources contained in the
                 underlying API response. If page streaming is performed per-
                 resource, this parameter does not affect the return value. If page
@@ -2735,10 +2890,11 @@ class DataLabelingServiceClient(object):
             ...         pass
 
         Args:
-            parent (str): Required. Name of the ``Evaluation`` resource to search for example
-                comparisons from. Format:
-
-                "projects/{project\_id}/datasets/{dataset\_id}/evaluations/{evaluation\_id}"
+            parent (str): Required. Whether you want Data Labeling Service to provide ground
+                truth labels for prediction input. If you want the service to assign
+                human labelers to annotate your data, set this to ``true``. If you want
+                to provide your own ground truth labels in the evaluation job's BigQuery
+                table, set this to ``false``.
             page_size (int): The maximum number of resources contained in the
                 underlying API response. If page streaming is performed per-
                 resource, this parameter does not affect the return value. If page
@@ -2834,8 +2990,8 @@ class DataLabelingServiceClient(object):
             >>> response = client.create_evaluation_job(parent, job)
 
         Args:
-            parent (str): Required. Evaluation job resource parent. Format:
-                "projects/{project\_id}"
+            parent (str): Configuration details used for calculating evaluation metrics and
+                creating an ``Evaluation``.
             job (Union[dict, ~google.cloud.datalabeling_v1beta1.types.EvaluationJob]): Required. The evaluation job to create.
 
                 If a dict is provided, it must be of the same form as the protobuf
@@ -2899,12 +3055,22 @@ class DataLabelingServiceClient(object):
         metadata=None,
     ):
         """
-        Updates an evaluation job. You can only update certain fields of the
-        job's ``EvaluationJobConfig``: ``humanAnnotationConfig.instruction``,
-        ``exampleCount``, and ``exampleSamplePercentage``.
+        Identifies which part of the FileDescriptorProto was defined at this
+        location.
 
-        If you want to change any other aspect of the evaluation job, you must
-        delete the job and create a new one.
+        Each element is a field number or an index. They form a path from the
+        root FileDescriptorProto to the place where the definition. For example,
+        this path: [ 4, 3, 2, 7, 1 ] refers to: file.message_type(3) // 4, 3
+        .field(7) // 2, 7 .name() // 1 This is because
+        FileDescriptorProto.message_type has field number 4: repeated
+        DescriptorProto message_type = 4; and DescriptorProto.field has field
+        number 2: repeated FieldDescriptorProto field = 2; and
+        FieldDescriptorProto.name has field number 1: optional string name = 1;
+
+        Thus, the above path gives the location of a field name. If we removed
+        the last element: [ 4, 3, 2, 7 ] this path refers to the whole field
+        declaration (from the beginning of the label to the terminating
+        semicolon).
 
         Example:
             >>> from google.cloud import datalabeling_v1beta1
@@ -2921,15 +3087,8 @@ class DataLabelingServiceClient(object):
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.datalabeling_v1beta1.types.EvaluationJob`
-            update_mask (Union[dict, ~google.cloud.datalabeling_v1beta1.types.FieldMask]): Optional. Mask for which fields to update. You can only provide the
-                following fields:
-
-                -  ``evaluationJobConfig.humanAnnotationConfig.instruction``
-                -  ``evaluationJobConfig.exampleCount``
-                -  ``evaluationJobConfig.exampleSamplePercentage``
-
-                You can provide more than one of these fields by separating them with
-                commas.
+            update_mask (Union[dict, ~google.cloud.datalabeling_v1beta1.types.FieldMask]): Required. Name of the data set to request labeling task, format:
+                projects/{project_id}/datasets/{dataset_id}
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.datalabeling_v1beta1.types.FieldMask`
@@ -3003,9 +3162,8 @@ class DataLabelingServiceClient(object):
             >>> response = client.get_evaluation_job(name)
 
         Args:
-            name (str): Required. Name of the evaluation job. Format:
-
-                "projects/{project\_id}/evaluationJobs/{evaluation\_job\_id}"
+            name (str): Required. Evaluation search parent (project ID). Format:
+                "projects/{project_id}"
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -3062,8 +3220,7 @@ class DataLabelingServiceClient(object):
         metadata=None,
     ):
         """
-        Pauses an evaluation job. Pausing an evaluation job that is already in a
-        ``PAUSED`` state is a no-op.
+        The request message for ``Operations.GetOperation``.
 
         Example:
             >>> from google.cloud import datalabeling_v1beta1
@@ -3075,9 +3232,9 @@ class DataLabelingServiceClient(object):
             >>> client.pause_evaluation_job(name)
 
         Args:
-            name (str): Required. Name of the evaluation job that is going to be paused. Format:
-
-                "projects/{project\_id}/evaluationJobs/{evaluation\_job\_id}"
+            name (str): The language of this text, as a
+                `BCP-47 <https://www.rfc-editor.org/rfc/bcp/bcp47.txt>`__. Default value
+                is en-US.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -3144,10 +3301,9 @@ class DataLabelingServiceClient(object):
             >>> client.resume_evaluation_job(name)
 
         Args:
-            name (str): Required. Name of the evaluation job that is going to be resumed.
-                Format:
-
-                "projects/{project\_id}/evaluationJobs/{evaluation\_job\_id}"
+            name (str): Only specify this field if the related model performs image object
+                detection (``IMAGE_BOUNDING_BOX_ANNOTATION``). Describes how to evaluate
+                bounding boxes.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -3213,10 +3369,37 @@ class DataLabelingServiceClient(object):
             >>> client.delete_evaluation_job(name)
 
         Args:
-            name (str): Required. Name of the evaluation job that is going to be deleted.
-                Format:
+            name (str): Each of the definitions above may have "options" attached. These are
+                just annotations which may cause code to be generated slightly
+                differently or may contain hints for code that manipulates protocol
+                messages.
 
-                "projects/{project\_id}/evaluationJobs/{evaluation\_job\_id}"
+                Clients may define custom options as extensions of the \*Options
+                messages. These extensions may not yet be known at parsing time, so the
+                parser cannot store the values in them. Instead it stores them in a
+                field in the \*Options message called uninterpreted_option. This field
+                must have the same name across all \*Options messages. We then use this
+                field to populate the extensions when we build a descriptor, at which
+                point all protos have been parsed and so all extensions are known.
+
+                Extension numbers for custom options may be chosen as follows:
+
+                -  For options which will only be used within a single application or
+                   organization, or for experimental options, use field numbers 50000
+                   through 99999. It is up to you to ensure that you do not use the same
+                   number for multiple options.
+                -  For options which will be published and used publicly by multiple
+                   independent entities, e-mail
+                   protobuf-global-extension-registry@google.com to reserve extension
+                   numbers. Simply provide your project name (e.g. Objective-C plugin)
+                   and your project website (if available) -- there's no need to explain
+                   how you intend to use them. Usually you only need one extension
+                   number. You can declare multiple options with only one extension
+                   number by putting them in a sub-message. See the Custom Options
+                   section of the docs for examples:
+                   https://developers.google.com/protocol-buffers/docs/proto#options If
+                   this turns out to be popular, a web service will be set up to
+                   automatically assign option numbers.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -3297,15 +3480,8 @@ class DataLabelingServiceClient(object):
             ...         pass
 
         Args:
-            parent (str): Required. Evaluation job resource parent. Format:
-                "projects/{project\_id}"
-            filter_ (str): Optional. You can filter the jobs to list by model\_id (also known as
-                model\_name, as described in ``EvaluationJob.modelVersion``) or by
-                evaluation job state (as described in ``EvaluationJob.state``). To
-                filter by both criteria, use the ``AND`` operator or the ``OR``
-                operator. For example, you can use the following string for your filter:
-                "evaluation\ *job.model\_id = {model\_name} AND evaluation*\ job.state =
-                {evaluation\_job\_state}"
+            parent (str): See ``HttpRule``.
+            filter_ (str): The request message for ``Operations.ListOperations``.
             page_size (int): The maximum number of resources contained in the
                 underlying API response. If page streaming is performed per-
                 resource, this parameter does not affect the return value. If page
