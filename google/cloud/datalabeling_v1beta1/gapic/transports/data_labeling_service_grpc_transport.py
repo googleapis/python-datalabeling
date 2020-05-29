@@ -528,8 +528,8 @@ class DataLabelingServiceGrpcTransport(object):
     def pause_evaluation_job(self):
         """Return the gRPC stub for :meth:`DataLabelingServiceClient.pause_evaluation_job`.
 
-        Pauses an evaluation job. Pausing an evaluation job that is already in a
-        ``PAUSED`` state is a no-op.
+        Pauses an evaluation job. Pausing an evaluation job that is already
+        in a ``PAUSED`` state is a no-op.
 
         Returns:
             Callable: A callable which accepts the appropriate
