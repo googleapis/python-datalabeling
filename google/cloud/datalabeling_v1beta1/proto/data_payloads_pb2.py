@@ -22,6 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     package="google.cloud.datalabeling.v1beta1",
     syntax="proto3",
     serialized_options=b"\n%com.google.cloud.datalabeling.v1beta1P\001ZMgoogle.golang.org/genproto/googleapis/cloud/datalabeling/v1beta1;datalabeling",
+    create_key=_descriptor._internal_create_key,
     serialized_pb=b'\n;google/cloud/datalabeling_v1beta1/proto/data_payloads.proto\x12!google.cloud.datalabeling.v1beta1\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto"a\n\x0cImagePayload\x12\x11\n\tmime_type\x18\x01 \x01(\t\x12\x17\n\x0fimage_thumbnail\x18\x02 \x01(\x0c\x12\x11\n\timage_uri\x18\x03 \x01(\t\x12\x12\n\nsigned_uri\x18\x04 \x01(\t"#\n\x0bTextPayload\x12\x14\n\x0ctext_content\x18\x01 \x01(\t"S\n\x0eVideoThumbnail\x12\x11\n\tthumbnail\x18\x01 \x01(\x0c\x12.\n\x0btime_offset\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration"\xa9\x01\n\x0cVideoPayload\x12\x11\n\tmime_type\x18\x01 \x01(\t\x12\x11\n\tvideo_uri\x18\x02 \x01(\t\x12K\n\x10video_thumbnails\x18\x03 \x03(\x0b\x32\x31.google.cloud.datalabeling.v1beta1.VideoThumbnail\x12\x12\n\nframe_rate\x18\x04 \x01(\x02\x12\x12\n\nsigned_uri\x18\x05 \x01(\tBx\n%com.google.cloud.datalabeling.v1beta1P\x01ZMgoogle.golang.org/genproto/googleapis/cloud/datalabeling/v1beta1;datalabelingb\x06proto3',
     dependencies=[
         google_dot_api_dot_annotations__pb2.DESCRIPTOR,
@@ -37,6 +38,7 @@ _IMAGEPAYLOAD = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="mime_type",
@@ -55,6 +57,7 @@ _IMAGEPAYLOAD = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="image_thumbnail",
@@ -73,6 +76,7 @@ _IMAGEPAYLOAD = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="image_uri",
@@ -91,6 +95,7 @@ _IMAGEPAYLOAD = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="signed_uri",
@@ -109,6 +114,7 @@ _IMAGEPAYLOAD = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -130,6 +136,7 @@ _TEXTPAYLOAD = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="text_content",
@@ -148,6 +155,7 @@ _TEXTPAYLOAD = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -169,6 +177,7 @@ _VIDEOTHUMBNAIL = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="thumbnail",
@@ -187,6 +196,7 @@ _VIDEOTHUMBNAIL = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="time_offset",
@@ -205,6 +215,7 @@ _VIDEOTHUMBNAIL = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -226,6 +237,7 @@ _VIDEOPAYLOAD = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="mime_type",
@@ -244,6 +256,7 @@ _VIDEOPAYLOAD = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="video_uri",
@@ -262,6 +275,7 @@ _VIDEOPAYLOAD = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="video_thumbnails",
@@ -280,6 +294,7 @@ _VIDEOPAYLOAD = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="frame_rate",
@@ -298,6 +313,7 @@ _VIDEOPAYLOAD = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="signed_uri",
@@ -316,6 +332,7 @@ _VIDEOPAYLOAD = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],

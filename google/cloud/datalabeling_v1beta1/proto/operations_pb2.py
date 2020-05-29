@@ -29,6 +29,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     package="google.cloud.datalabeling.v1beta1",
     syntax="proto3",
     serialized_options=b"\n%com.google.cloud.datalabeling.v1beta1P\001ZMgoogle.golang.org/genproto/googleapis/cloud/datalabeling/v1beta1;datalabeling",
+    create_key=_descriptor._internal_create_key,
     serialized_pb=b'\n8google/cloud/datalabeling_v1beta1/proto/operations.proto\x12!google.cloud.datalabeling.v1beta1\x1a\x1cgoogle/api/annotations.proto\x1a\x19google/api/resource.proto\x1a\x35google/cloud/datalabeling_v1beta1/proto/dataset.proto\x1a\x45google/cloud/datalabeling_v1beta1/proto/human_annotation_config.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17google/rpc/status.proto"Y\n\x1bImportDataOperationResponse\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\x13\n\x0btotal_count\x18\x02 \x01(\x05\x12\x14\n\x0cimport_count\x18\x03 \x01(\x05"\xe5\x01\n\x1b\x45xportDataOperationResponse\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\x13\n\x0btotal_count\x18\x02 \x01(\x05\x12\x14\n\x0c\x65xport_count\x18\x03 \x01(\x05\x12\x42\n\x0blabel_stats\x18\x04 \x01(\x0b\x32-.google.cloud.datalabeling.v1beta1.LabelStats\x12\x46\n\routput_config\x18\x05 \x01(\x0b\x32/.google.cloud.datalabeling.v1beta1.OutputConfig"\x8d\x01\n\x1bImportDataOperationMetadata\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12,\n\x10partial_failures\x18\x02 \x03(\x0b\x32\x12.google.rpc.Status\x12/\n\x0b\x63reate_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp"\x8d\x01\n\x1b\x45xportDataOperationMetadata\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12,\n\x10partial_failures\x18\x02 \x03(\x0b\x32\x12.google.rpc.Status\x12/\n\x0b\x63reate_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp"\x8c\x0c\n\x16LabelOperationMetadata\x12t\n\x1cimage_classification_details\x18\x03 \x01(\x0b\x32L.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadataH\x00\x12o\n\x1aimage_bounding_box_details\x18\x04 \x01(\x0b\x32I.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadataH\x00\x12q\n\x1bimage_bounding_poly_details\x18\x0b \x01(\x0b\x32J.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadataH\x00\x12\x80\x01\n#image_oriented_bounding_box_details\x18\x0e \x01(\x0b\x32Q.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadataH\x00\x12h\n\x16image_polyline_details\x18\x0c \x01(\x0b\x32\x46.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadataH\x00\x12p\n\x1aimage_segmentation_details\x18\x0f \x01(\x0b\x32J.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadataH\x00\x12t\n\x1cvideo_classification_details\x18\x05 \x01(\x0b\x32L.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadataH\x00\x12w\n\x1evideo_object_detection_details\x18\x06 \x01(\x0b\x32M.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadataH\x00\x12u\n\x1dvideo_object_tracking_details\x18\x07 \x01(\x0b\x32L.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadataH\x00\x12\x62\n\x13video_event_details\x18\x08 \x01(\x0b\x32\x43.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadataH\x00\x12r\n\x1btext_classification_details\x18\t \x01(\x0b\x32K.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadataH\x00\x12w\n\x1etext_entity_extraction_details\x18\r \x01(\x0b\x32M.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadataH\x00\x12\x18\n\x10progress_percent\x18\x01 \x01(\x05\x12,\n\x10partial_failures\x18\x02 \x03(\x0b\x32\x12.google.rpc.Status\x12/\n\x0b\x63reate_time\x18\x10 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\t\n\x07\x64\x65tails"{\n)LabelImageClassificationOperationMetadata\x12N\n\x0c\x62\x61sic_config\x18\x01 \x01(\x0b\x32\x38.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig"x\n&LabelImageBoundingBoxOperationMetadata\x12N\n\x0c\x62\x61sic_config\x18\x01 \x01(\x0b\x32\x38.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig"\x80\x01\n.LabelImageOrientedBoundingBoxOperationMetadata\x12N\n\x0c\x62\x61sic_config\x18\x01 \x01(\x0b\x32\x38.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig"y\n\'LabelImageBoundingPolyOperationMetadata\x12N\n\x0c\x62\x61sic_config\x18\x01 \x01(\x0b\x32\x38.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig"u\n#LabelImagePolylineOperationMetadata\x12N\n\x0c\x62\x61sic_config\x18\x01 \x01(\x0b\x32\x38.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig"y\n\'LabelImageSegmentationOperationMetadata\x12N\n\x0c\x62\x61sic_config\x18\x01 \x01(\x0b\x32\x38.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig"{\n)LabelVideoClassificationOperationMetadata\x12N\n\x0c\x62\x61sic_config\x18\x01 \x01(\x0b\x32\x38.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig"|\n*LabelVideoObjectDetectionOperationMetadata\x12N\n\x0c\x62\x61sic_config\x18\x01 \x01(\x0b\x32\x38.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig"{\n)LabelVideoObjectTrackingOperationMetadata\x12N\n\x0c\x62\x61sic_config\x18\x01 \x01(\x0b\x32\x38.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig"r\n LabelVideoEventOperationMetadata\x12N\n\x0c\x62\x61sic_config\x18\x01 \x01(\x0b\x32\x38.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig"z\n(LabelTextClassificationOperationMetadata\x12N\n\x0c\x62\x61sic_config\x18\x01 \x01(\x0b\x32\x38.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig"|\n*LabelTextEntityExtractionOperationMetadata\x12N\n\x0c\x62\x61sic_config\x18\x01 \x01(\x0b\x32\x38.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig"\x8f\x01\n\x19\x43reateInstructionMetadata\x12\x13\n\x0binstruction\x18\x01 \x01(\t\x12,\n\x10partial_failures\x18\x02 \x03(\x0b\x32\x12.google.rpc.Status\x12/\n\x0b\x63reate_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampBx\n%com.google.cloud.datalabeling.v1beta1P\x01ZMgoogle.golang.org/genproto/googleapis/cloud/datalabeling/v1beta1;datalabelingb\x06proto3',
     dependencies=[
         google_dot_api_dot_annotations__pb2.DESCRIPTOR,
@@ -47,6 +48,7 @@ _IMPORTDATAOPERATIONRESPONSE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="dataset",
@@ -65,6 +67,7 @@ _IMPORTDATAOPERATIONRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="total_count",
@@ -83,6 +86,7 @@ _IMPORTDATAOPERATIONRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="import_count",
@@ -101,6 +105,7 @@ _IMPORTDATAOPERATIONRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -122,6 +127,7 @@ _EXPORTDATAOPERATIONRESPONSE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="dataset",
@@ -140,6 +146,7 @@ _EXPORTDATAOPERATIONRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="total_count",
@@ -158,6 +165,7 @@ _EXPORTDATAOPERATIONRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="export_count",
@@ -176,6 +184,7 @@ _EXPORTDATAOPERATIONRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="label_stats",
@@ -194,6 +203,7 @@ _EXPORTDATAOPERATIONRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="output_config",
@@ -212,6 +222,7 @@ _EXPORTDATAOPERATIONRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -233,6 +244,7 @@ _IMPORTDATAOPERATIONMETADATA = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="dataset",
@@ -251,6 +263,7 @@ _IMPORTDATAOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="partial_failures",
@@ -269,6 +282,7 @@ _IMPORTDATAOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="create_time",
@@ -287,6 +301,7 @@ _IMPORTDATAOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -308,6 +323,7 @@ _EXPORTDATAOPERATIONMETADATA = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="dataset",
@@ -326,6 +342,7 @@ _EXPORTDATAOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="partial_failures",
@@ -344,6 +361,7 @@ _EXPORTDATAOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="create_time",
@@ -362,6 +380,7 @@ _EXPORTDATAOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -383,6 +402,7 @@ _LABELOPERATIONMETADATA = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="image_classification_details",
@@ -401,6 +421,7 @@ _LABELOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="image_bounding_box_details",
@@ -419,6 +440,7 @@ _LABELOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="image_bounding_poly_details",
@@ -437,6 +459,7 @@ _LABELOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="image_oriented_bounding_box_details",
@@ -455,6 +478,7 @@ _LABELOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="image_polyline_details",
@@ -473,6 +497,7 @@ _LABELOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="image_segmentation_details",
@@ -491,6 +516,7 @@ _LABELOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="video_classification_details",
@@ -509,6 +535,7 @@ _LABELOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="video_object_detection_details",
@@ -527,6 +554,7 @@ _LABELOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="video_object_tracking_details",
@@ -545,6 +573,7 @@ _LABELOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="video_event_details",
@@ -563,6 +592,7 @@ _LABELOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="text_classification_details",
@@ -581,6 +611,7 @@ _LABELOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="text_entity_extraction_details",
@@ -599,6 +630,7 @@ _LABELOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="progress_percent",
@@ -617,6 +649,7 @@ _LABELOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="partial_failures",
@@ -635,6 +668,7 @@ _LABELOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="create_time",
@@ -653,6 +687,7 @@ _LABELOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -668,6 +703,7 @@ _LABELOPERATIONMETADATA = _descriptor.Descriptor(
             full_name="google.cloud.datalabeling.v1beta1.LabelOperationMetadata.details",
             index=0,
             containing_type=None,
+            create_key=_descriptor._internal_create_key,
             fields=[],
         )
     ],
@@ -682,6 +718,7 @@ _LABELIMAGECLASSIFICATIONOPERATIONMETADATA = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="basic_config",
@@ -700,6 +737,7 @@ _LABELIMAGECLASSIFICATIONOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -721,6 +759,7 @@ _LABELIMAGEBOUNDINGBOXOPERATIONMETADATA = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="basic_config",
@@ -739,6 +778,7 @@ _LABELIMAGEBOUNDINGBOXOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -760,6 +800,7 @@ _LABELIMAGEORIENTEDBOUNDINGBOXOPERATIONMETADATA = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="basic_config",
@@ -778,6 +819,7 @@ _LABELIMAGEORIENTEDBOUNDINGBOXOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -799,6 +841,7 @@ _LABELIMAGEBOUNDINGPOLYOPERATIONMETADATA = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="basic_config",
@@ -817,6 +860,7 @@ _LABELIMAGEBOUNDINGPOLYOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -838,6 +882,7 @@ _LABELIMAGEPOLYLINEOPERATIONMETADATA = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="basic_config",
@@ -856,6 +901,7 @@ _LABELIMAGEPOLYLINEOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -877,6 +923,7 @@ _LABELIMAGESEGMENTATIONOPERATIONMETADATA = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="basic_config",
@@ -895,6 +942,7 @@ _LABELIMAGESEGMENTATIONOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -916,6 +964,7 @@ _LABELVIDEOCLASSIFICATIONOPERATIONMETADATA = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="basic_config",
@@ -934,6 +983,7 @@ _LABELVIDEOCLASSIFICATIONOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -955,6 +1005,7 @@ _LABELVIDEOOBJECTDETECTIONOPERATIONMETADATA = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="basic_config",
@@ -973,6 +1024,7 @@ _LABELVIDEOOBJECTDETECTIONOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -994,6 +1046,7 @@ _LABELVIDEOOBJECTTRACKINGOPERATIONMETADATA = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="basic_config",
@@ -1012,6 +1065,7 @@ _LABELVIDEOOBJECTTRACKINGOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -1033,6 +1087,7 @@ _LABELVIDEOEVENTOPERATIONMETADATA = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="basic_config",
@@ -1051,6 +1106,7 @@ _LABELVIDEOEVENTOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -1072,6 +1128,7 @@ _LABELTEXTCLASSIFICATIONOPERATIONMETADATA = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="basic_config",
@@ -1090,6 +1147,7 @@ _LABELTEXTCLASSIFICATIONOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -1111,6 +1169,7 @@ _LABELTEXTENTITYEXTRACTIONOPERATIONMETADATA = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="basic_config",
@@ -1129,6 +1188,7 @@ _LABELTEXTENTITYEXTRACTIONOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -1150,6 +1210,7 @@ _CREATEINSTRUCTIONMETADATA = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="instruction",
@@ -1168,6 +1229,7 @@ _CREATEINSTRUCTIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="partial_failures",
@@ -1186,6 +1248,7 @@ _CREATEINSTRUCTIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="create_time",
@@ -1204,6 +1267,7 @@ _CREATEINSTRUCTIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],

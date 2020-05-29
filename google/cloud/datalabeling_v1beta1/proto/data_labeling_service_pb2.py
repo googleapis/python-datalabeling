@@ -46,6 +46,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     package="google.cloud.datalabeling.v1beta1",
     syntax="proto3",
     serialized_options=b"\n%com.google.cloud.datalabeling.v1beta1P\001ZMgoogle.golang.org/genproto/googleapis/cloud/datalabeling/v1beta1;datalabeling",
+    create_key=_descriptor._internal_create_key,
     serialized_pb=b'\nCgoogle/cloud/datalabeling_v1beta1/proto/data_labeling_service.proto\x12!google.cloud.datalabeling.v1beta1\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\x1a\x41google/cloud/datalabeling_v1beta1/proto/annotation_spec_set.proto\x1a\x35google/cloud/datalabeling_v1beta1/proto/dataset.proto\x1a\x38google/cloud/datalabeling_v1beta1/proto/evaluation.proto\x1a<google/cloud/datalabeling_v1beta1/proto/evaluation_job.proto\x1a\x45google/cloud/datalabeling_v1beta1/proto/human_annotation_config.proto\x1a\x39google/cloud/datalabeling_v1beta1/proto/instruction.proto\x1a#google/longrunning/operations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/field_mask.proto"\x9d\x01\n\x14\x43reateDatasetRequest\x12\x43\n\x06parent\x18\x01 \x01(\tB3\xe0\x41\x02\xfa\x41-\n+cloudresourcemanager.googleapis.com/Project\x12@\n\x07\x64\x61taset\x18\x02 \x01(\x0b\x32*.google.cloud.datalabeling.v1beta1.DatasetB\x03\xe0\x41\x02"N\n\x11GetDatasetRequest\x12\x39\n\x04name\x18\x01 \x01(\tB+\xe0\x41\x02\xfa\x41%\n#datalabeling.googleapis.com/Dataset"\xa0\x01\n\x13ListDatasetsRequest\x12\x43\n\x06parent\x18\x01 \x01(\tB3\xe0\x41\x02\xfa\x41-\n+cloudresourcemanager.googleapis.com/Project\x12\x13\n\x06\x66ilter\x18\x02 \x01(\tB\x03\xe0\x41\x01\x12\x16\n\tpage_size\x18\x03 \x01(\x05\x42\x03\xe0\x41\x01\x12\x17\n\npage_token\x18\x04 \x01(\tB\x03\xe0\x41\x01"m\n\x14ListDatasetsResponse\x12<\n\x08\x64\x61tasets\x18\x01 \x03(\x0b\x32*.google.cloud.datalabeling.v1beta1.Dataset\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t"Q\n\x14\x44\x65leteDatasetRequest\x12\x39\n\x04name\x18\x01 \x01(\tB+\xe0\x41\x02\xfa\x41%\n#datalabeling.googleapis.com/Dataset"\xb5\x01\n\x11ImportDataRequest\x12\x39\n\x04name\x18\x01 \x01(\tB+\xe0\x41\x02\xfa\x41%\n#datalabeling.googleapis.com/Dataset\x12I\n\x0cinput_config\x18\x02 \x01(\x0b\x32..google.cloud.datalabeling.v1beta1.InputConfigB\x03\xe0\x41\x02\x12\x1a\n\x12user_email_address\x18\x03 \x01(\t"\x9d\x02\n\x11\x45xportDataRequest\x12\x39\n\x04name\x18\x01 \x01(\tB+\xe0\x41\x02\xfa\x41%\n#datalabeling.googleapis.com/Dataset\x12O\n\x11\x61nnotated_dataset\x18\x02 \x01(\tB4\xe0\x41\x02\xfa\x41.\n,datalabeling.googleapis.com/AnnotatedDataset\x12\x13\n\x06\x66ilter\x18\x03 \x01(\tB\x03\xe0\x41\x01\x12K\n\routput_config\x18\x04 \x01(\x0b\x32/.google.cloud.datalabeling.v1beta1.OutputConfigB\x03\xe0\x41\x02\x12\x1a\n\x12user_email_address\x18\x05 \x01(\t"P\n\x12GetDataItemRequest\x12:\n\x04name\x18\x01 \x01(\tB,\xe0\x41\x02\xfa\x41&\n$datalabeling.googleapis.com/DataItem"\x99\x01\n\x14ListDataItemsRequest\x12;\n\x06parent\x18\x01 \x01(\tB+\xe0\x41\x02\xfa\x41%\n#datalabeling.googleapis.com/Dataset\x12\x13\n\x06\x66ilter\x18\x02 \x01(\tB\x03\xe0\x41\x01\x12\x16\n\tpage_size\x18\x03 \x01(\x05\x42\x03\xe0\x41\x01\x12\x17\n\npage_token\x18\x04 \x01(\tB\x03\xe0\x41\x01"q\n\x15ListDataItemsResponse\x12?\n\ndata_items\x18\x01 \x03(\x0b\x32+.google.cloud.datalabeling.v1beta1.DataItem\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t"`\n\x1aGetAnnotatedDatasetRequest\x12\x42\n\x04name\x18\x01 \x01(\tB4\xe0\x41\x02\xfa\x41.\n,datalabeling.googleapis.com/AnnotatedDataset"\xa1\x01\n\x1cListAnnotatedDatasetsRequest\x12;\n\x06parent\x18\x01 \x01(\tB+\xe0\x41\x02\xfa\x41%\n#datalabeling.googleapis.com/Dataset\x12\x13\n\x06\x66ilter\x18\x02 \x01(\tB\x03\xe0\x41\x01\x12\x16\n\tpage_size\x18\x03 \x01(\x05\x42\x03\xe0\x41\x01\x12\x17\n\npage_token\x18\x04 \x01(\tB\x03\xe0\x41\x01"\x89\x01\n\x1dListAnnotatedDatasetsResponse\x12O\n\x12\x61nnotated_datasets\x18\x01 \x03(\x0b\x32\x33.google.cloud.datalabeling.v1beta1.AnnotatedDataset\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t"c\n\x1d\x44\x65leteAnnotatedDatasetRequest\x12\x42\n\x04name\x18\x01 \x01(\tB4\xe0\x41\x02\xfa\x41.\n,datalabeling.googleapis.com/AnnotatedDataset"\x84\x06\n\x11LabelImageRequest\x12\x63\n\x1bimage_classification_config\x18\x04 \x01(\x0b\x32<.google.cloud.datalabeling.v1beta1.ImageClassificationConfigH\x00\x12U\n\x14\x62ounding_poly_config\x18\x05 \x01(\x0b\x32\x35.google.cloud.datalabeling.v1beta1.BoundingPolyConfigH\x00\x12L\n\x0fpolyline_config\x18\x06 \x01(\x0b\x32\x31.google.cloud.datalabeling.v1beta1.PolylineConfigH\x00\x12T\n\x13segmentation_config\x18\x07 \x01(\x0b\x32\x35.google.cloud.datalabeling.v1beta1.SegmentationConfigH\x00\x12;\n\x06parent\x18\x01 \x01(\tB+\xe0\x41\x02\xfa\x41%\n#datalabeling.googleapis.com/Dataset\x12S\n\x0c\x62\x61sic_config\x18\x02 \x01(\x0b\x32\x38.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigB\x03\xe0\x41\x02\x12R\n\x07\x66\x65\x61ture\x18\x03 \x01(\x0e\x32<.google.cloud.datalabeling.v1beta1.LabelImageRequest.FeatureB\x03\xe0\x41\x02"\x96\x01\n\x07\x46\x65\x61ture\x12\x17\n\x13\x46\x45\x41TURE_UNSPECIFIED\x10\x00\x12\x12\n\x0e\x43LASSIFICATION\x10\x01\x12\x10\n\x0c\x42OUNDING_BOX\x10\x02\x12\x19\n\x15ORIENTED_BOUNDING_BOX\x10\x06\x12\x11\n\rBOUNDING_POLY\x10\x03\x12\x0c\n\x08POLYLINE\x10\x04\x12\x10\n\x0cSEGMENTATION\x10\x05\x42\x10\n\x0erequest_config"\xde\x05\n\x11LabelVideoRequest\x12\x63\n\x1bvideo_classification_config\x18\x04 \x01(\x0b\x32<.google.cloud.datalabeling.v1beta1.VideoClassificationConfigH\x00\x12[\n\x17object_detection_config\x18\x05 \x01(\x0b\x32\x38.google.cloud.datalabeling.v1beta1.ObjectDetectionConfigH\x00\x12Y\n\x16object_tracking_config\x18\x06 \x01(\x0b\x32\x37.google.cloud.datalabeling.v1beta1.ObjectTrackingConfigH\x00\x12\x46\n\x0c\x65vent_config\x18\x07 \x01(\x0b\x32..google.cloud.datalabeling.v1beta1.EventConfigH\x00\x12;\n\x06parent\x18\x01 \x01(\tB+\xe0\x41\x02\xfa\x41%\n#datalabeling.googleapis.com/Dataset\x12S\n\x0c\x62\x61sic_config\x18\x02 \x01(\x0b\x32\x38.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigB\x03\xe0\x41\x02\x12R\n\x07\x66\x65\x61ture\x18\x03 \x01(\x0e\x32<.google.cloud.datalabeling.v1beta1.LabelVideoRequest.FeatureB\x03\xe0\x41\x02"l\n\x07\x46\x65\x61ture\x12\x17\n\x13\x46\x45\x41TURE_UNSPECIFIED\x10\x00\x12\x12\n\x0e\x43LASSIFICATION\x10\x01\x12\x14\n\x10OBJECT_DETECTION\x10\x02\x12\x13\n\x0fOBJECT_TRACKING\x10\x03\x12\t\n\x05\x45VENT\x10\x04\x42\x10\n\x0erequest_config"\xad\x04\n\x10LabelTextRequest\x12\x61\n\x1atext_classification_config\x18\x04 \x01(\x0b\x32;.google.cloud.datalabeling.v1beta1.TextClassificationConfigH\x00\x12\x66\n\x1dtext_entity_extraction_config\x18\x05 \x01(\x0b\x32=.google.cloud.datalabeling.v1beta1.TextEntityExtractionConfigH\x00\x12;\n\x06parent\x18\x01 \x01(\tB+\xe0\x41\x02\xfa\x41%\n#datalabeling.googleapis.com/Dataset\x12S\n\x0c\x62\x61sic_config\x18\x02 \x01(\x0b\x32\x38.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigB\x03\xe0\x41\x02\x12Q\n\x07\x66\x65\x61ture\x18\x06 \x01(\x0e\x32;.google.cloud.datalabeling.v1beta1.LabelTextRequest.FeatureB\x03\xe0\x41\x02"W\n\x07\x46\x65\x61ture\x12\x17\n\x13\x46\x45\x41TURE_UNSPECIFIED\x10\x00\x12\x17\n\x13TEXT_CLASSIFICATION\x10\x01\x12\x1a\n\x16TEXT_ENTITY_EXTRACTION\x10\x02\x42\x10\n\x0erequest_config"c\n\x11GetExampleRequest\x12\x39\n\x04name\x18\x01 \x01(\tB+\xe0\x41\x02\xfa\x41%\n#datalabeling.googleapis.com/Example\x12\x13\n\x06\x66ilter\x18\x02 \x01(\tB\x03\xe0\x41\x01"\xa1\x01\n\x13ListExamplesRequest\x12\x44\n\x06parent\x18\x01 \x01(\tB4\xe0\x41\x02\xfa\x41.\n,datalabeling.googleapis.com/AnnotatedDataset\x12\x13\n\x06\x66ilter\x18\x02 \x01(\tB\x03\xe0\x41\x01\x12\x16\n\tpage_size\x18\x03 \x01(\x05\x42\x03\xe0\x41\x01\x12\x17\n\npage_token\x18\x04 \x01(\tB\x03\xe0\x41\x01"m\n\x14ListExamplesResponse\x12<\n\x08\x65xamples\x18\x01 \x03(\x0b\x32*.google.cloud.datalabeling.v1beta1.Example\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t"\xbd\x01\n\x1e\x43reateAnnotationSpecSetRequest\x12\x43\n\x06parent\x18\x01 \x01(\tB3\xe0\x41\x02\xfa\x41-\n+cloudresourcemanager.googleapis.com/Project\x12V\n\x13\x61nnotation_spec_set\x18\x02 \x01(\x0b\x32\x34.google.cloud.datalabeling.v1beta1.AnnotationSpecSetB\x03\xe0\x41\x02"b\n\x1bGetAnnotationSpecSetRequest\x12\x43\n\x04name\x18\x01 \x01(\tB5\xe0\x41\x02\xfa\x41/\n-datalabeling.googleapis.com/AnnotationSpecSet"\xaa\x01\n\x1dListAnnotationSpecSetsRequest\x12\x43\n\x06parent\x18\x01 \x01(\tB3\xe0\x41\x02\xfa\x41-\n+cloudresourcemanager.googleapis.com/Project\x12\x13\n\x06\x66ilter\x18\x02 \x01(\tB\x03\xe0\x41\x01\x12\x16\n\tpage_size\x18\x03 \x01(\x05\x42\x03\xe0\x41\x01\x12\x17\n\npage_token\x18\x04 \x01(\tB\x03\xe0\x41\x01"\x8d\x01\n\x1eListAnnotationSpecSetsResponse\x12R\n\x14\x61nnotation_spec_sets\x18\x01 \x03(\x0b\x32\x34.google.cloud.datalabeling.v1beta1.AnnotationSpecSet\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t"e\n\x1e\x44\x65leteAnnotationSpecSetRequest\x12\x43\n\x04name\x18\x01 \x01(\tB5\xe0\x41\x02\xfa\x41/\n-datalabeling.googleapis.com/AnnotationSpecSet"\xa9\x01\n\x18\x43reateInstructionRequest\x12\x43\n\x06parent\x18\x01 \x01(\tB3\xe0\x41\x02\xfa\x41-\n+cloudresourcemanager.googleapis.com/Project\x12H\n\x0binstruction\x18\x02 \x01(\x0b\x32..google.cloud.datalabeling.v1beta1.InstructionB\x03\xe0\x41\x02"V\n\x15GetInstructionRequest\x12=\n\x04name\x18\x01 \x01(\tB/\xe0\x41\x02\xfa\x41)\n\'datalabeling.googleapis.com/Instruction"Y\n\x18\x44\x65leteInstructionRequest\x12=\n\x04name\x18\x01 \x01(\tB/\xe0\x41\x02\xfa\x41)\n\'datalabeling.googleapis.com/Instruction"\xa4\x01\n\x17ListInstructionsRequest\x12\x43\n\x06parent\x18\x01 \x01(\tB3\xe0\x41\x02\xfa\x41-\n+cloudresourcemanager.googleapis.com/Project\x12\x13\n\x06\x66ilter\x18\x02 \x01(\tB\x03\xe0\x41\x01\x12\x16\n\tpage_size\x18\x03 \x01(\x05\x42\x03\xe0\x41\x01\x12\x17\n\npage_token\x18\x04 \x01(\tB\x03\xe0\x41\x01"y\n\x18ListInstructionsResponse\x12\x44\n\x0cinstructions\x18\x01 \x03(\x0b\x32..google.cloud.datalabeling.v1beta1.Instruction\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t"T\n\x14GetEvaluationRequest\x12<\n\x04name\x18\x01 \x01(\tB.\xe0\x41\x02\xfa\x41(\n&datalabeling.googleapis.com/Evaluation"\xa0\x01\n\x18SearchEvaluationsRequest\x12>\n\x06parent\x18\x01 \x01(\tB.\xe0\x41\x02\xfa\x41(\n&datalabeling.googleapis.com/Evaluation\x12\x13\n\x06\x66ilter\x18\x02 \x01(\tB\x03\xe0\x41\x01\x12\x16\n\tpage_size\x18\x03 \x01(\x05\x42\x03\xe0\x41\x01\x12\x17\n\npage_token\x18\x04 \x01(\tB\x03\xe0\x41\x01"x\n\x19SearchEvaluationsResponse\x12\x42\n\x0b\x65valuations\x18\x01 \x03(\x0b\x32-.google.cloud.datalabeling.v1beta1.Evaluation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t"\x92\x01\n\x1fSearchExampleComparisonsRequest\x12>\n\x06parent\x18\x01 \x01(\tB.\xe0\x41\x02\xfa\x41(\n&datalabeling.googleapis.com/Evaluation\x12\x16\n\tpage_size\x18\x02 \x01(\x05\x42\x03\xe0\x41\x01\x12\x17\n\npage_token\x18\x03 \x01(\tB\x03\xe0\x41\x01"\xdb\x02\n SearchExampleComparisonsResponse\x12r\n\x13\x65xample_comparisons\x18\x01 \x03(\x0b\x32U.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x1a\xa9\x01\n\x11\x45xampleComparison\x12H\n\x14ground_truth_example\x18\x01 \x01(\x0b\x32*.google.cloud.datalabeling.v1beta1.Example\x12J\n\x16model_created_examples\x18\x02 \x03(\x0b\x32*.google.cloud.datalabeling.v1beta1.Example"\xa5\x01\n\x1a\x43reateEvaluationJobRequest\x12\x43\n\x06parent\x18\x01 \x01(\tB3\xe0\x41\x02\xfa\x41-\n+cloudresourcemanager.googleapis.com/Project\x12\x42\n\x03job\x18\x02 \x01(\x0b\x32\x30.google.cloud.datalabeling.v1beta1.EvaluationJobB\x03\xe0\x41\x02"\xa1\x01\n\x1aUpdateEvaluationJobRequest\x12M\n\x0e\x65valuation_job\x18\x01 \x01(\x0b\x32\x30.google.cloud.datalabeling.v1beta1.EvaluationJobB\x03\xe0\x41\x02\x12\x34\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x03\xe0\x41\x01"Z\n\x17GetEvaluationJobRequest\x12?\n\x04name\x18\x01 \x01(\tB1\xe0\x41\x02\xfa\x41+\n)datalabeling.googleapis.com/EvaluationJob"\\\n\x19PauseEvaluationJobRequest\x12?\n\x04name\x18\x01 \x01(\tB1\xe0\x41\x02\xfa\x41+\n)datalabeling.googleapis.com/EvaluationJob"]\n\x1aResumeEvaluationJobRequest\x12?\n\x04name\x18\x01 \x01(\tB1\xe0\x41\x02\xfa\x41+\n)datalabeling.googleapis.com/EvaluationJob"]\n\x1a\x44\x65leteEvaluationJobRequest\x12?\n\x04name\x18\x01 \x01(\tB1\xe0\x41\x02\xfa\x41+\n)datalabeling.googleapis.com/EvaluationJob"\xa6\x01\n\x19ListEvaluationJobsRequest\x12\x43\n\x06parent\x18\x01 \x01(\tB3\xe0\x41\x02\xfa\x41-\n+cloudresourcemanager.googleapis.com/Project\x12\x13\n\x06\x66ilter\x18\x02 \x01(\tB\x03\xe0\x41\x01\x12\x16\n\tpage_size\x18\x03 \x01(\x05\x42\x03\xe0\x41\x01\x12\x17\n\npage_token\x18\x04 \x01(\tB\x03\xe0\x41\x01"\x80\x01\n\x1aListEvaluationJobsResponse\x12I\n\x0f\x65valuation_jobs\x18\x01 \x03(\x0b\x32\x30.google.cloud.datalabeling.v1beta1.EvaluationJob\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xa6\x38\n\x13\x44\x61taLabelingService\x12\xb7\x01\n\rCreateDataset\x12\x37.google.cloud.datalabeling.v1beta1.CreateDatasetRequest\x1a*.google.cloud.datalabeling.v1beta1.Dataset"A\x82\xd3\xe4\x93\x02*"%/v1beta1/{parent=projects/*}/datasets:\x01*\xda\x41\x0eparent,dataset\x12\xa4\x01\n\nGetDataset\x12\x34.google.cloud.datalabeling.v1beta1.GetDatasetRequest\x1a*.google.cloud.datalabeling.v1beta1.Dataset"4\x82\xd3\xe4\x93\x02\'\x12%/v1beta1/{name=projects/*/datasets/*}\xda\x41\x04name\x12\xbe\x01\n\x0cListDatasets\x12\x36.google.cloud.datalabeling.v1beta1.ListDatasetsRequest\x1a\x37.google.cloud.datalabeling.v1beta1.ListDatasetsResponse"=\x82\xd3\xe4\x93\x02\'\x12%/v1beta1/{parent=projects/*}/datasets\xda\x41\rparent,filter\x12\x96\x01\n\rDeleteDataset\x12\x37.google.cloud.datalabeling.v1beta1.DeleteDatasetRequest\x1a\x16.google.protobuf.Empty"4\x82\xd3\xe4\x93\x02\'*%/v1beta1/{name=projects/*/datasets/*}\xda\x41\x04name\x12\xf0\x01\n\nImportData\x12\x34.google.cloud.datalabeling.v1beta1.ImportDataRequest\x1a\x1d.google.longrunning.Operation"\x8c\x01\x82\xd3\xe4\x93\x02\x35"0/v1beta1/{name=projects/*/datasets/*}:importData:\x01*\xda\x41\x11name,input_config\xca\x41:\n\x1bImportDataOperationResponse\x12\x1bImportDataOperationMetadata\x12\x8a\x02\n\nExportData\x12\x34.google.cloud.datalabeling.v1beta1.ExportDataRequest\x1a\x1d.google.longrunning.Operation"\xa6\x01\x82\xd3\xe4\x93\x02\x35"0/v1beta1/{name=projects/*/datasets/*}:exportData:\x01*\xda\x41+name,annotated_dataset,filter,output_config\xca\x41:\n\x1b\x45xportDataOperationResponse\x12\x1b\x45xportDataOperationMetadata\x12\xb3\x01\n\x0bGetDataItem\x12\x35.google.cloud.datalabeling.v1beta1.GetDataItemRequest\x1a+.google.cloud.datalabeling.v1beta1.DataItem"@\x82\xd3\xe4\x93\x02\x33\x12\x31/v1beta1/{name=projects/*/datasets/*/dataItems/*}\xda\x41\x04name\x12\xcd\x01\n\rListDataItems\x12\x37.google.cloud.datalabeling.v1beta1.ListDataItemsRequest\x1a\x38.google.cloud.datalabeling.v1beta1.ListDataItemsResponse"I\x82\xd3\xe4\x93\x02\x33\x12\x31/v1beta1/{parent=projects/*/datasets/*}/dataItems\xda\x41\rparent,filter\x12\xd3\x01\n\x13GetAnnotatedDataset\x12=.google.cloud.datalabeling.v1beta1.GetAnnotatedDatasetRequest\x1a\x33.google.cloud.datalabeling.v1beta1.AnnotatedDataset"H\x82\xd3\xe4\x93\x02;\x12\x39/v1beta1/{name=projects/*/datasets/*/annotatedDatasets/*}\xda\x41\x04name\x12\xed\x01\n\x15ListAnnotatedDatasets\x12?.google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsRequest\x1a@.google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsResponse"Q\x82\xd3\xe4\x93\x02;\x12\x39/v1beta1/{parent=projects/*/datasets/*}/annotatedDatasets\xda\x41\rparent,filter\x12\xb5\x01\n\x16\x44\x65leteAnnotatedDataset\x12@.google.cloud.datalabeling.v1beta1.DeleteAnnotatedDatasetRequest\x1a\x16.google.protobuf.Empty"A\x82\xd3\xe4\x93\x02;*9/v1beta1/{name=projects/*/datasets/*/annotatedDatasets/*}\x12\xed\x01\n\nLabelImage\x12\x34.google.cloud.datalabeling.v1beta1.LabelImageRequest\x1a\x1d.google.longrunning.Operation"\x89\x01\x82\xd3\xe4\x93\x02\x38"3/v1beta1/{parent=projects/*/datasets/*}/image:label:\x01*\xda\x41\x1bparent,basic_config,feature\xca\x41*\n\x10\x41nnotatedDataset\x12\x16LabelOperationMetadata\x12\xed\x01\n\nLabelVideo\x12\x34.google.cloud.datalabeling.v1beta1.LabelVideoRequest\x1a\x1d.google.longrunning.Operation"\x89\x01\x82\xd3\xe4\x93\x02\x38"3/v1beta1/{parent=projects/*/datasets/*}/video:label:\x01*\xda\x41\x1bparent,basic_config,feature\xca\x41*\n\x10\x41nnotatedDataset\x12\x16LabelOperationMetadata\x12\xea\x01\n\tLabelText\x12\x33.google.cloud.datalabeling.v1beta1.LabelTextRequest\x1a\x1d.google.longrunning.Operation"\x88\x01\x82\xd3\xe4\x93\x02\x37"2/v1beta1/{parent=projects/*/datasets/*}/text:label:\x01*\xda\x41\x1bparent,basic_config,feature\xca\x41*\n\x10\x41nnotatedDataset\x12\x16LabelOperationMetadata\x12\xca\x01\n\nGetExample\x12\x34.google.cloud.datalabeling.v1beta1.GetExampleRequest\x1a*.google.cloud.datalabeling.v1beta1.Example"Z\x82\xd3\xe4\x93\x02\x46\x12\x44/v1beta1/{name=projects/*/datasets/*/annotatedDatasets/*/examples/*}\xda\x41\x0bname,filter\x12\xdd\x01\n\x0cListExamples\x12\x36.google.cloud.datalabeling.v1beta1.ListExamplesRequest\x1a\x37.google.cloud.datalabeling.v1beta1.ListExamplesResponse"\\\x82\xd3\xe4\x93\x02\x46\x12\x44/v1beta1/{parent=projects/*/datasets/*/annotatedDatasets/*}/examples\xda\x41\rparent,filter\x12\xeb\x01\n\x17\x43reateAnnotationSpecSet\x12\x41.google.cloud.datalabeling.v1beta1.CreateAnnotationSpecSetRequest\x1a\x34.google.cloud.datalabeling.v1beta1.AnnotationSpecSet"W\x82\xd3\xe4\x93\x02\x34"//v1beta1/{parent=projects/*}/annotationSpecSets:\x01*\xda\x41\x1aparent,annotation_spec_set\x12\xcc\x01\n\x14GetAnnotationSpecSet\x12>.google.cloud.datalabeling.v1beta1.GetAnnotationSpecSetRequest\x1a\x34.google.cloud.datalabeling.v1beta1.AnnotationSpecSet">\x82\xd3\xe4\x93\x02\x31\x12//v1beta1/{name=projects/*/annotationSpecSets/*}\xda\x41\x04name\x12\xe6\x01\n\x16ListAnnotationSpecSets\x12@.google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsRequest\x1a\x41.google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse"G\x82\xd3\xe4\x93\x02\x31\x12//v1beta1/{parent=projects/*}/annotationSpecSets\xda\x41\rparent,filter\x12\xb4\x01\n\x17\x44\x65leteAnnotationSpecSet\x12\x41.google.cloud.datalabeling.v1beta1.DeleteAnnotationSpecSetRequest\x1a\x16.google.protobuf.Empty">\x82\xd3\xe4\x93\x02\x31*//v1beta1/{name=projects/*/annotationSpecSets/*}\xda\x41\x04name\x12\xe5\x01\n\x11\x43reateInstruction\x12;.google.cloud.datalabeling.v1beta1.CreateInstructionRequest\x1a\x1d.google.longrunning.Operation"t\x82\xd3\xe4\x93\x02.")/v1beta1/{parent=projects/*}/instructions:\x01*\xda\x41\x12parent,instruction\xca\x41(\n\x0bInstruction\x12\x19\x43reateInstructionMetadata\x12\xb4\x01\n\x0eGetInstruction\x12\x38.google.cloud.datalabeling.v1beta1.GetInstructionRequest\x1a..google.cloud.datalabeling.v1beta1.Instruction"8\x82\xd3\xe4\x93\x02+\x12)/v1beta1/{name=projects/*/instructions/*}\xda\x41\x04name\x12\xce\x01\n\x10ListInstructions\x12:.google.cloud.datalabeling.v1beta1.ListInstructionsRequest\x1a;.google.cloud.datalabeling.v1beta1.ListInstructionsResponse"A\x82\xd3\xe4\x93\x02+\x12)/v1beta1/{parent=projects/*}/instructions\xda\x41\rparent,filter\x12\xa2\x01\n\x11\x44\x65leteInstruction\x12;.google.cloud.datalabeling.v1beta1.DeleteInstructionRequest\x1a\x16.google.protobuf.Empty"8\x82\xd3\xe4\x93\x02+*)/v1beta1/{name=projects/*/instructions/*}\xda\x41\x04name\x12\xbb\x01\n\rGetEvaluation\x12\x37.google.cloud.datalabeling.v1beta1.GetEvaluationRequest\x1a-.google.cloud.datalabeling.v1beta1.Evaluation"B\x82\xd3\xe4\x93\x02\x35\x12\x33/v1beta1/{name=projects/*/datasets/*/evaluations/*}\xda\x41\x04name\x12\xd7\x01\n\x11SearchEvaluations\x12;.google.cloud.datalabeling.v1beta1.SearchEvaluationsRequest\x1a<.google.cloud.datalabeling.v1beta1.SearchEvaluationsResponse"G\x82\xd3\xe4\x93\x02\x31\x12//v1beta1/{parent=projects/*}/evaluations:search\xda\x41\rparent,filter\x12\x88\x02\n\x18SearchExampleComparisons\x12\x42.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsRequest\x1a\x43.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse"c\x82\xd3\xe4\x93\x02T"O/v1beta1/{parent=projects/*/datasets/*/evaluations/*}/exampleComparisons:search:\x01*\xda\x41\x06parent\x12\xcb\x01\n\x13\x43reateEvaluationJob\x12=.google.cloud.datalabeling.v1beta1.CreateEvaluationJobRequest\x1a\x30.google.cloud.datalabeling.v1beta1.EvaluationJob"C\x82\xd3\xe4\x93\x02\x30"+/v1beta1/{parent=projects/*}/evaluationJobs:\x01*\xda\x41\nparent,job\x12\xf7\x01\n\x13UpdateEvaluationJob\x12=.google.cloud.datalabeling.v1beta1.UpdateEvaluationJobRequest\x1a\x30.google.cloud.datalabeling.v1beta1.EvaluationJob"o\x82\xd3\xe4\x93\x02L2:/v1beta1/{evaluation_job.name=projects/*/evaluationJobs/*}:\x0e\x65valuation_job\xda\x41\x1a\x65valuation_job,update_mask\x12\xbc\x01\n\x10GetEvaluationJob\x12:.google.cloud.datalabeling.v1beta1.GetEvaluationJobRequest\x1a\x30.google.cloud.datalabeling.v1beta1.EvaluationJob":\x82\xd3\xe4\x93\x02-\x12+/v1beta1/{name=projects/*/evaluationJobs/*}\xda\x41\x04name\x12\xaf\x01\n\x12PauseEvaluationJob\x12<.google.cloud.datalabeling.v1beta1.PauseEvaluationJobRequest\x1a\x16.google.protobuf.Empty"C\x82\xd3\xe4\x93\x02\x36"1/v1beta1/{name=projects/*/evaluationJobs/*}:pause:\x01*\xda\x41\x04name\x12\xb2\x01\n\x13ResumeEvaluationJob\x12=.google.cloud.datalabeling.v1beta1.ResumeEvaluationJobRequest\x1a\x16.google.protobuf.Empty"D\x82\xd3\xe4\x93\x02\x37"2/v1beta1/{name=projects/*/evaluationJobs/*}:resume:\x01*\xda\x41\x04name\x12\xa8\x01\n\x13\x44\x65leteEvaluationJob\x12=.google.cloud.datalabeling.v1beta1.DeleteEvaluationJobRequest\x1a\x16.google.protobuf.Empty":\x82\xd3\xe4\x93\x02-*+/v1beta1/{name=projects/*/evaluationJobs/*}\xda\x41\x04name\x12\xd6\x01\n\x12ListEvaluationJobs\x12<.google.cloud.datalabeling.v1beta1.ListEvaluationJobsRequest\x1a=.google.cloud.datalabeling.v1beta1.ListEvaluationJobsResponse"C\x82\xd3\xe4\x93\x02-\x12+/v1beta1/{parent=projects/*}/evaluationJobs\xda\x41\rparent,filter\x1aO\xca\x41\x1b\x64\x61talabeling.googleapis.com\xd2\x41.https://www.googleapis.com/auth/cloud-platformBx\n%com.google.cloud.datalabeling.v1beta1P\x01ZMgoogle.golang.org/genproto/googleapis/cloud/datalabeling/v1beta1;datalabelingb\x06proto3',
     dependencies=[
         google_dot_api_dot_annotations__pb2.DESCRIPTOR,
@@ -70,6 +71,7 @@ _LABELIMAGEREQUEST_FEATURE = _descriptor.EnumDescriptor(
     full_name="google.cloud.datalabeling.v1beta1.LabelImageRequest.Feature",
     filename=None,
     file=DESCRIPTOR,
+    create_key=_descriptor._internal_create_key,
     values=[
         _descriptor.EnumValueDescriptor(
             name="FEATURE_UNSPECIFIED",
@@ -77,12 +79,23 @@ _LABELIMAGEREQUEST_FEATURE = _descriptor.EnumDescriptor(
             number=0,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="CLASSIFICATION", index=1, number=1, serialized_options=None, type=None
+            name="CLASSIFICATION",
+            index=1,
+            number=1,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="BOUNDING_BOX", index=2, number=2, serialized_options=None, type=None
+            name="BOUNDING_BOX",
+            index=2,
+            number=2,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="ORIENTED_BOUNDING_BOX",
@@ -90,15 +103,31 @@ _LABELIMAGEREQUEST_FEATURE = _descriptor.EnumDescriptor(
             number=6,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="BOUNDING_POLY", index=4, number=3, serialized_options=None, type=None
+            name="BOUNDING_POLY",
+            index=4,
+            number=3,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="POLYLINE", index=5, number=4, serialized_options=None, type=None
+            name="POLYLINE",
+            index=5,
+            number=4,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="SEGMENTATION", index=6, number=5, serialized_options=None, type=None
+            name="SEGMENTATION",
+            index=6,
+            number=5,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     containing_type=None,
@@ -113,6 +142,7 @@ _LABELVIDEOREQUEST_FEATURE = _descriptor.EnumDescriptor(
     full_name="google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature",
     filename=None,
     file=DESCRIPTOR,
+    create_key=_descriptor._internal_create_key,
     values=[
         _descriptor.EnumValueDescriptor(
             name="FEATURE_UNSPECIFIED",
@@ -120,9 +150,15 @@ _LABELVIDEOREQUEST_FEATURE = _descriptor.EnumDescriptor(
             number=0,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="CLASSIFICATION", index=1, number=1, serialized_options=None, type=None
+            name="CLASSIFICATION",
+            index=1,
+            number=1,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="OBJECT_DETECTION",
@@ -130,6 +166,7 @@ _LABELVIDEOREQUEST_FEATURE = _descriptor.EnumDescriptor(
             number=2,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="OBJECT_TRACKING",
@@ -137,9 +174,15 @@ _LABELVIDEOREQUEST_FEATURE = _descriptor.EnumDescriptor(
             number=3,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="EVENT", index=4, number=4, serialized_options=None, type=None
+            name="EVENT",
+            index=4,
+            number=4,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     containing_type=None,
@@ -154,6 +197,7 @@ _LABELTEXTREQUEST_FEATURE = _descriptor.EnumDescriptor(
     full_name="google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature",
     filename=None,
     file=DESCRIPTOR,
+    create_key=_descriptor._internal_create_key,
     values=[
         _descriptor.EnumValueDescriptor(
             name="FEATURE_UNSPECIFIED",
@@ -161,6 +205,7 @@ _LABELTEXTREQUEST_FEATURE = _descriptor.EnumDescriptor(
             number=0,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="TEXT_CLASSIFICATION",
@@ -168,6 +213,7 @@ _LABELTEXTREQUEST_FEATURE = _descriptor.EnumDescriptor(
             number=1,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="TEXT_ENTITY_EXTRACTION",
@@ -175,6 +221,7 @@ _LABELTEXTREQUEST_FEATURE = _descriptor.EnumDescriptor(
             number=2,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     containing_type=None,
@@ -191,6 +238,7 @@ _CREATEDATASETREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="parent",
@@ -209,6 +257,7 @@ _CREATEDATASETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A-\n+cloudresourcemanager.googleapis.com/Project",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="dataset",
@@ -227,6 +276,7 @@ _CREATEDATASETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -248,6 +298,7 @@ _GETDATASETREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -266,6 +317,7 @@ _GETDATASETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A%\n#datalabeling.googleapis.com/Dataset",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -287,6 +339,7 @@ _LISTDATASETSREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="parent",
@@ -305,6 +358,7 @@ _LISTDATASETSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A-\n+cloudresourcemanager.googleapis.com/Project",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="filter",
@@ -323,6 +377,7 @@ _LISTDATASETSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_size",
@@ -341,6 +396,7 @@ _LISTDATASETSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_token",
@@ -359,6 +415,7 @@ _LISTDATASETSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -380,6 +437,7 @@ _LISTDATASETSRESPONSE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="datasets",
@@ -398,6 +456,7 @@ _LISTDATASETSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="next_page_token",
@@ -416,6 +475,7 @@ _LISTDATASETSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -437,6 +497,7 @@ _DELETEDATASETREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -455,6 +516,7 @@ _DELETEDATASETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A%\n#datalabeling.googleapis.com/Dataset",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -476,6 +538,7 @@ _IMPORTDATAREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -494,6 +557,7 @@ _IMPORTDATAREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A%\n#datalabeling.googleapis.com/Dataset",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="input_config",
@@ -512,6 +576,7 @@ _IMPORTDATAREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="user_email_address",
@@ -530,6 +595,7 @@ _IMPORTDATAREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -551,6 +617,7 @@ _EXPORTDATAREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -569,6 +636,7 @@ _EXPORTDATAREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A%\n#datalabeling.googleapis.com/Dataset",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="annotated_dataset",
@@ -587,6 +655,7 @@ _EXPORTDATAREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A.\n,datalabeling.googleapis.com/AnnotatedDataset",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="filter",
@@ -605,6 +674,7 @@ _EXPORTDATAREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="output_config",
@@ -623,6 +693,7 @@ _EXPORTDATAREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="user_email_address",
@@ -641,6 +712,7 @@ _EXPORTDATAREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -662,6 +734,7 @@ _GETDATAITEMREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -680,6 +753,7 @@ _GETDATAITEMREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A&\n$datalabeling.googleapis.com/DataItem",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -701,6 +775,7 @@ _LISTDATAITEMSREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="parent",
@@ -719,6 +794,7 @@ _LISTDATAITEMSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A%\n#datalabeling.googleapis.com/Dataset",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="filter",
@@ -737,6 +813,7 @@ _LISTDATAITEMSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_size",
@@ -755,6 +832,7 @@ _LISTDATAITEMSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_token",
@@ -773,6 +851,7 @@ _LISTDATAITEMSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -794,6 +873,7 @@ _LISTDATAITEMSRESPONSE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="data_items",
@@ -812,6 +892,7 @@ _LISTDATAITEMSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="next_page_token",
@@ -830,6 +911,7 @@ _LISTDATAITEMSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -851,6 +933,7 @@ _GETANNOTATEDDATASETREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -869,6 +952,7 @@ _GETANNOTATEDDATASETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A.\n,datalabeling.googleapis.com/AnnotatedDataset",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -890,6 +974,7 @@ _LISTANNOTATEDDATASETSREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="parent",
@@ -908,6 +993,7 @@ _LISTANNOTATEDDATASETSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A%\n#datalabeling.googleapis.com/Dataset",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="filter",
@@ -926,6 +1012,7 @@ _LISTANNOTATEDDATASETSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_size",
@@ -944,6 +1031,7 @@ _LISTANNOTATEDDATASETSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_token",
@@ -962,6 +1050,7 @@ _LISTANNOTATEDDATASETSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -983,6 +1072,7 @@ _LISTANNOTATEDDATASETSRESPONSE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="annotated_datasets",
@@ -1001,6 +1091,7 @@ _LISTANNOTATEDDATASETSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="next_page_token",
@@ -1019,6 +1110,7 @@ _LISTANNOTATEDDATASETSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1040,6 +1132,7 @@ _DELETEANNOTATEDDATASETREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -1058,6 +1151,7 @@ _DELETEANNOTATEDDATASETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A.\n,datalabeling.googleapis.com/AnnotatedDataset",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -1079,6 +1173,7 @@ _LABELIMAGEREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="image_classification_config",
@@ -1097,6 +1192,7 @@ _LABELIMAGEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="bounding_poly_config",
@@ -1115,6 +1211,7 @@ _LABELIMAGEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="polyline_config",
@@ -1133,6 +1230,7 @@ _LABELIMAGEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="segmentation_config",
@@ -1151,6 +1249,7 @@ _LABELIMAGEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="parent",
@@ -1169,6 +1268,7 @@ _LABELIMAGEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A%\n#datalabeling.googleapis.com/Dataset",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="basic_config",
@@ -1187,6 +1287,7 @@ _LABELIMAGEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="feature",
@@ -1205,6 +1306,7 @@ _LABELIMAGEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1220,6 +1322,7 @@ _LABELIMAGEREQUEST = _descriptor.Descriptor(
             full_name="google.cloud.datalabeling.v1beta1.LabelImageRequest.request_config",
             index=0,
             containing_type=None,
+            create_key=_descriptor._internal_create_key,
             fields=[],
         )
     ],
@@ -1234,6 +1337,7 @@ _LABELVIDEOREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="video_classification_config",
@@ -1252,6 +1356,7 @@ _LABELVIDEOREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="object_detection_config",
@@ -1270,6 +1375,7 @@ _LABELVIDEOREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="object_tracking_config",
@@ -1288,6 +1394,7 @@ _LABELVIDEOREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="event_config",
@@ -1306,6 +1413,7 @@ _LABELVIDEOREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="parent",
@@ -1324,6 +1432,7 @@ _LABELVIDEOREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A%\n#datalabeling.googleapis.com/Dataset",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="basic_config",
@@ -1342,6 +1451,7 @@ _LABELVIDEOREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="feature",
@@ -1360,6 +1470,7 @@ _LABELVIDEOREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1375,6 +1486,7 @@ _LABELVIDEOREQUEST = _descriptor.Descriptor(
             full_name="google.cloud.datalabeling.v1beta1.LabelVideoRequest.request_config",
             index=0,
             containing_type=None,
+            create_key=_descriptor._internal_create_key,
             fields=[],
         )
     ],
@@ -1389,6 +1501,7 @@ _LABELTEXTREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="text_classification_config",
@@ -1407,6 +1520,7 @@ _LABELTEXTREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="text_entity_extraction_config",
@@ -1425,6 +1539,7 @@ _LABELTEXTREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="parent",
@@ -1443,6 +1558,7 @@ _LABELTEXTREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A%\n#datalabeling.googleapis.com/Dataset",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="basic_config",
@@ -1461,6 +1577,7 @@ _LABELTEXTREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="feature",
@@ -1479,6 +1596,7 @@ _LABELTEXTREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1494,6 +1612,7 @@ _LABELTEXTREQUEST = _descriptor.Descriptor(
             full_name="google.cloud.datalabeling.v1beta1.LabelTextRequest.request_config",
             index=0,
             containing_type=None,
+            create_key=_descriptor._internal_create_key,
             fields=[],
         )
     ],
@@ -1508,6 +1627,7 @@ _GETEXAMPLEREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -1526,6 +1646,7 @@ _GETEXAMPLEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A%\n#datalabeling.googleapis.com/Example",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="filter",
@@ -1544,6 +1665,7 @@ _GETEXAMPLEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1565,6 +1687,7 @@ _LISTEXAMPLESREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="parent",
@@ -1583,6 +1706,7 @@ _LISTEXAMPLESREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A.\n,datalabeling.googleapis.com/AnnotatedDataset",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="filter",
@@ -1601,6 +1725,7 @@ _LISTEXAMPLESREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_size",
@@ -1619,6 +1744,7 @@ _LISTEXAMPLESREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_token",
@@ -1637,6 +1763,7 @@ _LISTEXAMPLESREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1658,6 +1785,7 @@ _LISTEXAMPLESRESPONSE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="examples",
@@ -1676,6 +1804,7 @@ _LISTEXAMPLESRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="next_page_token",
@@ -1694,6 +1823,7 @@ _LISTEXAMPLESRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1715,6 +1845,7 @@ _CREATEANNOTATIONSPECSETREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="parent",
@@ -1733,6 +1864,7 @@ _CREATEANNOTATIONSPECSETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A-\n+cloudresourcemanager.googleapis.com/Project",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="annotation_spec_set",
@@ -1751,6 +1883,7 @@ _CREATEANNOTATIONSPECSETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1772,6 +1905,7 @@ _GETANNOTATIONSPECSETREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -1790,6 +1924,7 @@ _GETANNOTATIONSPECSETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A/\n-datalabeling.googleapis.com/AnnotationSpecSet",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -1811,6 +1946,7 @@ _LISTANNOTATIONSPECSETSREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="parent",
@@ -1829,6 +1965,7 @@ _LISTANNOTATIONSPECSETSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A-\n+cloudresourcemanager.googleapis.com/Project",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="filter",
@@ -1847,6 +1984,7 @@ _LISTANNOTATIONSPECSETSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_size",
@@ -1865,6 +2003,7 @@ _LISTANNOTATIONSPECSETSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_token",
@@ -1883,6 +2022,7 @@ _LISTANNOTATIONSPECSETSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1904,6 +2044,7 @@ _LISTANNOTATIONSPECSETSRESPONSE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="annotation_spec_sets",
@@ -1922,6 +2063,7 @@ _LISTANNOTATIONSPECSETSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="next_page_token",
@@ -1940,6 +2082,7 @@ _LISTANNOTATIONSPECSETSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1961,6 +2104,7 @@ _DELETEANNOTATIONSPECSETREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -1979,6 +2123,7 @@ _DELETEANNOTATIONSPECSETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A/\n-datalabeling.googleapis.com/AnnotationSpecSet",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -2000,6 +2145,7 @@ _CREATEINSTRUCTIONREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="parent",
@@ -2018,6 +2164,7 @@ _CREATEINSTRUCTIONREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A-\n+cloudresourcemanager.googleapis.com/Project",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="instruction",
@@ -2036,6 +2183,7 @@ _CREATEINSTRUCTIONREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -2057,6 +2205,7 @@ _GETINSTRUCTIONREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -2075,6 +2224,7 @@ _GETINSTRUCTIONREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A)\n'datalabeling.googleapis.com/Instruction",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -2096,6 +2246,7 @@ _DELETEINSTRUCTIONREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -2114,6 +2265,7 @@ _DELETEINSTRUCTIONREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A)\n'datalabeling.googleapis.com/Instruction",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -2135,6 +2287,7 @@ _LISTINSTRUCTIONSREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="parent",
@@ -2153,6 +2306,7 @@ _LISTINSTRUCTIONSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A-\n+cloudresourcemanager.googleapis.com/Project",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="filter",
@@ -2171,6 +2325,7 @@ _LISTINSTRUCTIONSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_size",
@@ -2189,6 +2344,7 @@ _LISTINSTRUCTIONSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_token",
@@ -2207,6 +2363,7 @@ _LISTINSTRUCTIONSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -2228,6 +2385,7 @@ _LISTINSTRUCTIONSRESPONSE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="instructions",
@@ -2246,6 +2404,7 @@ _LISTINSTRUCTIONSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="next_page_token",
@@ -2264,6 +2423,7 @@ _LISTINSTRUCTIONSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -2285,6 +2445,7 @@ _GETEVALUATIONREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -2303,6 +2464,7 @@ _GETEVALUATIONREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A(\n&datalabeling.googleapis.com/Evaluation",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -2324,6 +2486,7 @@ _SEARCHEVALUATIONSREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="parent",
@@ -2342,6 +2505,7 @@ _SEARCHEVALUATIONSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A(\n&datalabeling.googleapis.com/Evaluation",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="filter",
@@ -2360,6 +2524,7 @@ _SEARCHEVALUATIONSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_size",
@@ -2378,6 +2543,7 @@ _SEARCHEVALUATIONSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_token",
@@ -2396,6 +2562,7 @@ _SEARCHEVALUATIONSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -2417,6 +2584,7 @@ _SEARCHEVALUATIONSRESPONSE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="evaluations",
@@ -2435,6 +2603,7 @@ _SEARCHEVALUATIONSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="next_page_token",
@@ -2453,6 +2622,7 @@ _SEARCHEVALUATIONSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -2474,6 +2644,7 @@ _SEARCHEXAMPLECOMPARISONSREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="parent",
@@ -2492,6 +2663,7 @@ _SEARCHEXAMPLECOMPARISONSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A(\n&datalabeling.googleapis.com/Evaluation",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_size",
@@ -2510,6 +2682,7 @@ _SEARCHEXAMPLECOMPARISONSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_token",
@@ -2528,6 +2701,7 @@ _SEARCHEXAMPLECOMPARISONSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -2549,6 +2723,7 @@ _SEARCHEXAMPLECOMPARISONSRESPONSE_EXAMPLECOMPARISON = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="ground_truth_example",
@@ -2567,6 +2742,7 @@ _SEARCHEXAMPLECOMPARISONSRESPONSE_EXAMPLECOMPARISON = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="model_created_examples",
@@ -2585,6 +2761,7 @@ _SEARCHEXAMPLECOMPARISONSRESPONSE_EXAMPLECOMPARISON = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -2605,6 +2782,7 @@ _SEARCHEXAMPLECOMPARISONSRESPONSE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="example_comparisons",
@@ -2623,6 +2801,7 @@ _SEARCHEXAMPLECOMPARISONSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="next_page_token",
@@ -2641,6 +2820,7 @@ _SEARCHEXAMPLECOMPARISONSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -2662,6 +2842,7 @@ _CREATEEVALUATIONJOBREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="parent",
@@ -2680,6 +2861,7 @@ _CREATEEVALUATIONJOBREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A-\n+cloudresourcemanager.googleapis.com/Project",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="job",
@@ -2698,6 +2880,7 @@ _CREATEEVALUATIONJOBREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -2719,6 +2902,7 @@ _UPDATEEVALUATIONJOBREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="evaluation_job",
@@ -2737,6 +2921,7 @@ _UPDATEEVALUATIONJOBREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="update_mask",
@@ -2755,6 +2940,7 @@ _UPDATEEVALUATIONJOBREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -2776,6 +2962,7 @@ _GETEVALUATIONJOBREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -2794,6 +2981,7 @@ _GETEVALUATIONJOBREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A+\n)datalabeling.googleapis.com/EvaluationJob",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -2815,6 +3003,7 @@ _PAUSEEVALUATIONJOBREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -2833,6 +3022,7 @@ _PAUSEEVALUATIONJOBREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A+\n)datalabeling.googleapis.com/EvaluationJob",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -2854,6 +3044,7 @@ _RESUMEEVALUATIONJOBREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -2872,6 +3063,7 @@ _RESUMEEVALUATIONJOBREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A+\n)datalabeling.googleapis.com/EvaluationJob",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -2893,6 +3085,7 @@ _DELETEEVALUATIONJOBREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -2911,6 +3104,7 @@ _DELETEEVALUATIONJOBREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A+\n)datalabeling.googleapis.com/EvaluationJob",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -2932,6 +3126,7 @@ _LISTEVALUATIONJOBSREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="parent",
@@ -2950,6 +3145,7 @@ _LISTEVALUATIONJOBSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A-\n+cloudresourcemanager.googleapis.com/Project",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="filter",
@@ -2968,6 +3164,7 @@ _LISTEVALUATIONJOBSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_size",
@@ -2986,6 +3183,7 @@ _LISTEVALUATIONJOBSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_token",
@@ -3004,6 +3202,7 @@ _LISTEVALUATIONJOBSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -3025,6 +3224,7 @@ _LISTEVALUATIONJOBSRESPONSE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="evaluation_jobs",
@@ -3043,6 +3243,7 @@ _LISTEVALUATIONJOBSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="next_page_token",
@@ -3061,6 +3262,7 @@ _LISTEVALUATIONJOBSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -4475,6 +4677,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
     file=DESCRIPTOR,
     index=0,
     serialized_options=b"\312A\033datalabeling.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platform",
+    create_key=_descriptor._internal_create_key,
     serialized_start=8298,
     serialized_end=15504,
     methods=[
@@ -4486,6 +4689,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_CREATEDATASETREQUEST,
             output_type=google_dot_cloud_dot_datalabeling__v1beta1_dot_proto_dot_dataset__pb2._DATASET,
             serialized_options=b'\202\323\344\223\002*"%/v1beta1/{parent=projects/*}/datasets:\001*\332A\016parent,dataset',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="GetDataset",
@@ -4495,6 +4699,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_GETDATASETREQUEST,
             output_type=google_dot_cloud_dot_datalabeling__v1beta1_dot_proto_dot_dataset__pb2._DATASET,
             serialized_options=b"\202\323\344\223\002'\022%/v1beta1/{name=projects/*/datasets/*}\332A\004name",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="ListDatasets",
@@ -4504,6 +4709,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_LISTDATASETSREQUEST,
             output_type=_LISTDATASETSRESPONSE,
             serialized_options=b"\202\323\344\223\002'\022%/v1beta1/{parent=projects/*}/datasets\332A\rparent,filter",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="DeleteDataset",
@@ -4513,6 +4719,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_DELETEDATASETREQUEST,
             output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
             serialized_options=b"\202\323\344\223\002'*%/v1beta1/{name=projects/*/datasets/*}\332A\004name",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="ImportData",
@@ -4522,6 +4729,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_IMPORTDATAREQUEST,
             output_type=google_dot_longrunning_dot_operations__pb2._OPERATION,
             serialized_options=b'\202\323\344\223\0025"0/v1beta1/{name=projects/*/datasets/*}:importData:\001*\332A\021name,input_config\312A:\n\033ImportDataOperationResponse\022\033ImportDataOperationMetadata',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="ExportData",
@@ -4531,6 +4739,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_EXPORTDATAREQUEST,
             output_type=google_dot_longrunning_dot_operations__pb2._OPERATION,
             serialized_options=b'\202\323\344\223\0025"0/v1beta1/{name=projects/*/datasets/*}:exportData:\001*\332A+name,annotated_dataset,filter,output_config\312A:\n\033ExportDataOperationResponse\022\033ExportDataOperationMetadata',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="GetDataItem",
@@ -4540,6 +4749,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_GETDATAITEMREQUEST,
             output_type=google_dot_cloud_dot_datalabeling__v1beta1_dot_proto_dot_dataset__pb2._DATAITEM,
             serialized_options=b"\202\323\344\223\0023\0221/v1beta1/{name=projects/*/datasets/*/dataItems/*}\332A\004name",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="ListDataItems",
@@ -4549,6 +4759,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_LISTDATAITEMSREQUEST,
             output_type=_LISTDATAITEMSRESPONSE,
             serialized_options=b"\202\323\344\223\0023\0221/v1beta1/{parent=projects/*/datasets/*}/dataItems\332A\rparent,filter",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="GetAnnotatedDataset",
@@ -4558,6 +4769,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_GETANNOTATEDDATASETREQUEST,
             output_type=google_dot_cloud_dot_datalabeling__v1beta1_dot_proto_dot_dataset__pb2._ANNOTATEDDATASET,
             serialized_options=b"\202\323\344\223\002;\0229/v1beta1/{name=projects/*/datasets/*/annotatedDatasets/*}\332A\004name",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="ListAnnotatedDatasets",
@@ -4567,6 +4779,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_LISTANNOTATEDDATASETSREQUEST,
             output_type=_LISTANNOTATEDDATASETSRESPONSE,
             serialized_options=b"\202\323\344\223\002;\0229/v1beta1/{parent=projects/*/datasets/*}/annotatedDatasets\332A\rparent,filter",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="DeleteAnnotatedDataset",
@@ -4576,6 +4789,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_DELETEANNOTATEDDATASETREQUEST,
             output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
             serialized_options=b"\202\323\344\223\002;*9/v1beta1/{name=projects/*/datasets/*/annotatedDatasets/*}",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="LabelImage",
@@ -4585,6 +4799,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_LABELIMAGEREQUEST,
             output_type=google_dot_longrunning_dot_operations__pb2._OPERATION,
             serialized_options=b'\202\323\344\223\0028"3/v1beta1/{parent=projects/*/datasets/*}/image:label:\001*\332A\033parent,basic_config,feature\312A*\n\020AnnotatedDataset\022\026LabelOperationMetadata',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="LabelVideo",
@@ -4594,6 +4809,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_LABELVIDEOREQUEST,
             output_type=google_dot_longrunning_dot_operations__pb2._OPERATION,
             serialized_options=b'\202\323\344\223\0028"3/v1beta1/{parent=projects/*/datasets/*}/video:label:\001*\332A\033parent,basic_config,feature\312A*\n\020AnnotatedDataset\022\026LabelOperationMetadata',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="LabelText",
@@ -4603,6 +4819,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_LABELTEXTREQUEST,
             output_type=google_dot_longrunning_dot_operations__pb2._OPERATION,
             serialized_options=b'\202\323\344\223\0027"2/v1beta1/{parent=projects/*/datasets/*}/text:label:\001*\332A\033parent,basic_config,feature\312A*\n\020AnnotatedDataset\022\026LabelOperationMetadata',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="GetExample",
@@ -4612,6 +4829,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_GETEXAMPLEREQUEST,
             output_type=google_dot_cloud_dot_datalabeling__v1beta1_dot_proto_dot_dataset__pb2._EXAMPLE,
             serialized_options=b"\202\323\344\223\002F\022D/v1beta1/{name=projects/*/datasets/*/annotatedDatasets/*/examples/*}\332A\013name,filter",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="ListExamples",
@@ -4621,6 +4839,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_LISTEXAMPLESREQUEST,
             output_type=_LISTEXAMPLESRESPONSE,
             serialized_options=b"\202\323\344\223\002F\022D/v1beta1/{parent=projects/*/datasets/*/annotatedDatasets/*}/examples\332A\rparent,filter",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="CreateAnnotationSpecSet",
@@ -4630,6 +4849,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_CREATEANNOTATIONSPECSETREQUEST,
             output_type=google_dot_cloud_dot_datalabeling__v1beta1_dot_proto_dot_annotation__spec__set__pb2._ANNOTATIONSPECSET,
             serialized_options=b'\202\323\344\223\0024"//v1beta1/{parent=projects/*}/annotationSpecSets:\001*\332A\032parent,annotation_spec_set',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="GetAnnotationSpecSet",
@@ -4639,6 +4859,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_GETANNOTATIONSPECSETREQUEST,
             output_type=google_dot_cloud_dot_datalabeling__v1beta1_dot_proto_dot_annotation__spec__set__pb2._ANNOTATIONSPECSET,
             serialized_options=b"\202\323\344\223\0021\022//v1beta1/{name=projects/*/annotationSpecSets/*}\332A\004name",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="ListAnnotationSpecSets",
@@ -4648,6 +4869,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_LISTANNOTATIONSPECSETSREQUEST,
             output_type=_LISTANNOTATIONSPECSETSRESPONSE,
             serialized_options=b"\202\323\344\223\0021\022//v1beta1/{parent=projects/*}/annotationSpecSets\332A\rparent,filter",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="DeleteAnnotationSpecSet",
@@ -4657,6 +4879,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_DELETEANNOTATIONSPECSETREQUEST,
             output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
             serialized_options=b"\202\323\344\223\0021*//v1beta1/{name=projects/*/annotationSpecSets/*}\332A\004name",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="CreateInstruction",
@@ -4666,6 +4889,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_CREATEINSTRUCTIONREQUEST,
             output_type=google_dot_longrunning_dot_operations__pb2._OPERATION,
             serialized_options=b'\202\323\344\223\002.")/v1beta1/{parent=projects/*}/instructions:\001*\332A\022parent,instruction\312A(\n\013Instruction\022\031CreateInstructionMetadata',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="GetInstruction",
@@ -4675,6 +4899,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_GETINSTRUCTIONREQUEST,
             output_type=google_dot_cloud_dot_datalabeling__v1beta1_dot_proto_dot_instruction__pb2._INSTRUCTION,
             serialized_options=b"\202\323\344\223\002+\022)/v1beta1/{name=projects/*/instructions/*}\332A\004name",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="ListInstructions",
@@ -4684,6 +4909,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_LISTINSTRUCTIONSREQUEST,
             output_type=_LISTINSTRUCTIONSRESPONSE,
             serialized_options=b"\202\323\344\223\002+\022)/v1beta1/{parent=projects/*}/instructions\332A\rparent,filter",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="DeleteInstruction",
@@ -4693,6 +4919,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_DELETEINSTRUCTIONREQUEST,
             output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
             serialized_options=b"\202\323\344\223\002+*)/v1beta1/{name=projects/*/instructions/*}\332A\004name",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="GetEvaluation",
@@ -4702,6 +4929,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_GETEVALUATIONREQUEST,
             output_type=google_dot_cloud_dot_datalabeling__v1beta1_dot_proto_dot_evaluation__pb2._EVALUATION,
             serialized_options=b"\202\323\344\223\0025\0223/v1beta1/{name=projects/*/datasets/*/evaluations/*}\332A\004name",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="SearchEvaluations",
@@ -4711,6 +4939,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_SEARCHEVALUATIONSREQUEST,
             output_type=_SEARCHEVALUATIONSRESPONSE,
             serialized_options=b"\202\323\344\223\0021\022//v1beta1/{parent=projects/*}/evaluations:search\332A\rparent,filter",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="SearchExampleComparisons",
@@ -4720,6 +4949,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_SEARCHEXAMPLECOMPARISONSREQUEST,
             output_type=_SEARCHEXAMPLECOMPARISONSRESPONSE,
             serialized_options=b'\202\323\344\223\002T"O/v1beta1/{parent=projects/*/datasets/*/evaluations/*}/exampleComparisons:search:\001*\332A\006parent',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="CreateEvaluationJob",
@@ -4729,6 +4959,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_CREATEEVALUATIONJOBREQUEST,
             output_type=google_dot_cloud_dot_datalabeling__v1beta1_dot_proto_dot_evaluation__job__pb2._EVALUATIONJOB,
             serialized_options=b'\202\323\344\223\0020"+/v1beta1/{parent=projects/*}/evaluationJobs:\001*\332A\nparent,job',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="UpdateEvaluationJob",
@@ -4738,6 +4969,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_UPDATEEVALUATIONJOBREQUEST,
             output_type=google_dot_cloud_dot_datalabeling__v1beta1_dot_proto_dot_evaluation__job__pb2._EVALUATIONJOB,
             serialized_options=b"\202\323\344\223\002L2:/v1beta1/{evaluation_job.name=projects/*/evaluationJobs/*}:\016evaluation_job\332A\032evaluation_job,update_mask",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="GetEvaluationJob",
@@ -4747,6 +4979,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_GETEVALUATIONJOBREQUEST,
             output_type=google_dot_cloud_dot_datalabeling__v1beta1_dot_proto_dot_evaluation__job__pb2._EVALUATIONJOB,
             serialized_options=b"\202\323\344\223\002-\022+/v1beta1/{name=projects/*/evaluationJobs/*}\332A\004name",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="PauseEvaluationJob",
@@ -4756,6 +4989,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_PAUSEEVALUATIONJOBREQUEST,
             output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
             serialized_options=b'\202\323\344\223\0026"1/v1beta1/{name=projects/*/evaluationJobs/*}:pause:\001*\332A\004name',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="ResumeEvaluationJob",
@@ -4765,6 +4999,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_RESUMEEVALUATIONJOBREQUEST,
             output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
             serialized_options=b'\202\323\344\223\0027"2/v1beta1/{name=projects/*/evaluationJobs/*}:resume:\001*\332A\004name',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="DeleteEvaluationJob",
@@ -4774,6 +5009,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_DELETEEVALUATIONJOBREQUEST,
             output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
             serialized_options=b"\202\323\344\223\002-*+/v1beta1/{name=projects/*/evaluationJobs/*}\332A\004name",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="ListEvaluationJobs",
@@ -4783,6 +5019,7 @@ _DATALABELINGSERVICE = _descriptor.ServiceDescriptor(
             input_type=_LISTEVALUATIONJOBSREQUEST,
             output_type=_LISTEVALUATIONJOBSRESPONSE,
             serialized_options=b"\202\323\344\223\002-\022+/v1beta1/{parent=projects/*}/evaluationJobs\332A\rparent,filter",
+            create_key=_descriptor._internal_create_key,
         ),
     ],
 )

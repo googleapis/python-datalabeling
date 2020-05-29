@@ -35,6 +35,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     package="google.cloud.datalabeling.v1beta1",
     syntax="proto3",
     serialized_options=b"\n%com.google.cloud.datalabeling.v1beta1P\001ZMgoogle.golang.org/genproto/googleapis/cloud/datalabeling/v1beta1;datalabeling",
+    create_key=_descriptor._internal_create_key,
     serialized_pb=b'\n5google/cloud/datalabeling_v1beta1/proto/dataset.proto\x12!google.cloud.datalabeling.v1beta1\x1a\x1cgoogle/api/annotations.proto\x1a\x19google/api/resource.proto\x1a\x38google/cloud/datalabeling_v1beta1/proto/annotation.proto\x1a\x41google/cloud/datalabeling_v1beta1/proto/annotation_spec_set.proto\x1a;google/cloud/datalabeling_v1beta1/proto/data_payloads.proto\x1a\x45google/cloud/datalabeling_v1beta1/proto/human_annotation_config.proto\x1a\x1fgoogle/protobuf/timestamp.proto"\xc0\x02\n\x07\x44\x61taset\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12/\n\x0b\x63reate_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x45\n\rinput_configs\x18\x05 \x03(\x0b\x32..google.cloud.datalabeling.v1beta1.InputConfig\x12\x1a\n\x12\x62locking_resources\x18\x06 \x03(\t\x12\x17\n\x0f\x64\x61ta_item_count\x18\x07 \x01(\x03:O\xea\x41L\n#datalabeling.googleapis.com/Dataset\x12%projects/{project}/datasets/{dataset}"\xf1\x03\n\x0bInputConfig\x12H\n\rtext_metadata\x18\x06 \x01(\x0b\x32/.google.cloud.datalabeling.v1beta1.TextMetadataH\x00\x12\x42\n\ngcs_source\x18\x02 \x01(\x0b\x32,.google.cloud.datalabeling.v1beta1.GcsSourceH\x01\x12L\n\x0f\x62igquery_source\x18\x05 \x01(\x0b\x32\x31.google.cloud.datalabeling.v1beta1.BigQuerySourceH\x01\x12>\n\tdata_type\x18\x01 \x01(\x0e\x32+.google.cloud.datalabeling.v1beta1.DataType\x12J\n\x0f\x61nnotation_type\x18\x03 \x01(\x0e\x32\x31.google.cloud.datalabeling.v1beta1.AnnotationType\x12Z\n\x17\x63lassification_metadata\x18\x04 \x01(\x0b\x32\x39.google.cloud.datalabeling.v1beta1.ClassificationMetadataB\x14\n\x12\x64\x61ta_type_metadataB\x08\n\x06source"%\n\x0cTextMetadata\x12\x15\n\rlanguage_code\x18\x01 \x01(\t"0\n\x16\x43lassificationMetadata\x12\x16\n\x0eis_multi_label\x18\x01 \x01(\x08"1\n\tGcsSource\x12\x11\n\tinput_uri\x18\x01 \x01(\t\x12\x11\n\tmime_type\x18\x02 \x01(\t"#\n\x0e\x42igQuerySource\x12\x11\n\tinput_uri\x18\x01 \x01(\t"\xc6\x01\n\x0cOutputConfig\x12L\n\x0fgcs_destination\x18\x01 \x01(\x0b\x32\x31.google.cloud.datalabeling.v1beta1.GcsDestinationH\x00\x12Y\n\x16gcs_folder_destination\x18\x02 \x01(\x0b\x32\x37.google.cloud.datalabeling.v1beta1.GcsFolderDestinationH\x00\x42\r\n\x0b\x64\x65stination"7\n\x0eGcsDestination\x12\x12\n\noutput_uri\x18\x01 \x01(\t\x12\x11\n\tmime_type\x18\x02 \x01(\t"1\n\x14GcsFolderDestination\x12\x19\n\x11output_folder_uri\x18\x01 \x01(\t"\xe7\x02\n\x08\x44\x61taItem\x12H\n\rimage_payload\x18\x02 \x01(\x0b\x32/.google.cloud.datalabeling.v1beta1.ImagePayloadH\x00\x12\x46\n\x0ctext_payload\x18\x03 \x01(\x0b\x32..google.cloud.datalabeling.v1beta1.TextPayloadH\x00\x12H\n\rvideo_payload\x18\x04 \x01(\x0b\x32/.google.cloud.datalabeling.v1beta1.VideoPayloadH\x00\x12\x0c\n\x04name\x18\x01 \x01(\t:f\xea\x41\x63\n$datalabeling.googleapis.com/DataItem\x12;projects/{project}/datasets/{dataset}/dataItems/{data_item}B\t\n\x07payload"\xff\x04\n\x10\x41nnotatedDataset\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\t \x01(\t\x12N\n\x11\x61nnotation_source\x18\x03 \x01(\x0e\x32\x33.google.cloud.datalabeling.v1beta1.AnnotationSource\x12J\n\x0f\x61nnotation_type\x18\x08 \x01(\x0e\x32\x31.google.cloud.datalabeling.v1beta1.AnnotationType\x12\x15\n\rexample_count\x18\x04 \x01(\x03\x12\x1f\n\x17\x63ompleted_example_count\x18\x05 \x01(\x03\x12\x42\n\x0blabel_stats\x18\x06 \x01(\x0b\x32-.google.cloud.datalabeling.v1beta1.LabelStats\x12/\n\x0b\x63reate_time\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12M\n\x08metadata\x18\n \x01(\x0b\x32;.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata\x12\x1a\n\x12\x62locking_resources\x18\x0b \x03(\t:~\xea\x41{\n,datalabeling.googleapis.com/AnnotatedDataset\x12Kprojects/{project}/datasets/{dataset}/annotatedDatasets/{annotated_dataset}"\x99\x01\n\nLabelStats\x12V\n\rexample_count\x18\x01 \x03(\x0b\x32?.google.cloud.datalabeling.v1beta1.LabelStats.ExampleCountEntry\x1a\x33\n\x11\x45xampleCountEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x03:\x02\x38\x01"\xa2\x08\n\x18\x41nnotatedDatasetMetadata\x12\x63\n\x1bimage_classification_config\x18\x02 \x01(\x0b\x32<.google.cloud.datalabeling.v1beta1.ImageClassificationConfigH\x00\x12U\n\x14\x62ounding_poly_config\x18\x03 \x01(\x0b\x32\x35.google.cloud.datalabeling.v1beta1.BoundingPolyConfigH\x00\x12L\n\x0fpolyline_config\x18\x04 \x01(\x0b\x32\x31.google.cloud.datalabeling.v1beta1.PolylineConfigH\x00\x12T\n\x13segmentation_config\x18\x05 \x01(\x0b\x32\x35.google.cloud.datalabeling.v1beta1.SegmentationConfigH\x00\x12\x63\n\x1bvideo_classification_config\x18\x06 \x01(\x0b\x32<.google.cloud.datalabeling.v1beta1.VideoClassificationConfigH\x00\x12[\n\x17object_detection_config\x18\x07 \x01(\x0b\x32\x38.google.cloud.datalabeling.v1beta1.ObjectDetectionConfigH\x00\x12Y\n\x16object_tracking_config\x18\x08 \x01(\x0b\x32\x37.google.cloud.datalabeling.v1beta1.ObjectTrackingConfigH\x00\x12\x46\n\x0c\x65vent_config\x18\t \x01(\x0b\x32..google.cloud.datalabeling.v1beta1.EventConfigH\x00\x12\x61\n\x1atext_classification_config\x18\n \x01(\x0b\x32;.google.cloud.datalabeling.v1beta1.TextClassificationConfigH\x00\x12\x66\n\x1dtext_entity_extraction_config\x18\x0b \x01(\x0b\x32=.google.cloud.datalabeling.v1beta1.TextEntityExtractionConfigH\x00\x12Y\n\x17human_annotation_config\x18\x01 \x01(\x0b\x32\x38.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigB\x1b\n\x19\x61nnotation_request_config"\xce\x03\n\x07\x45xample\x12H\n\rimage_payload\x18\x02 \x01(\x0b\x32/.google.cloud.datalabeling.v1beta1.ImagePayloadH\x00\x12\x46\n\x0ctext_payload\x18\x06 \x01(\x0b\x32..google.cloud.datalabeling.v1beta1.TextPayloadH\x00\x12H\n\rvideo_payload\x18\x07 \x01(\x0b\x32/.google.cloud.datalabeling.v1beta1.VideoPayloadH\x00\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x42\n\x0b\x61nnotations\x18\x05 \x03(\x0b\x32-.google.cloud.datalabeling.v1beta1.Annotation:\x89\x01\xea\x41\x85\x01\n#datalabeling.googleapis.com/Example\x12^projects/{project}/datasets/{dataset}/annotatedDatasets/{annotated_dataset}/examples/{example}B\t\n\x07payload*W\n\x08\x44\x61taType\x12\x19\n\x15\x44\x41TA_TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05IMAGE\x10\x01\x12\t\n\x05VIDEO\x10\x02\x12\x08\n\x04TEXT\x10\x04\x12\x10\n\x0cGENERAL_DATA\x10\x06\x42x\n%com.google.cloud.datalabeling.v1beta1P\x01ZMgoogle.golang.org/genproto/googleapis/cloud/datalabeling/v1beta1;datalabelingb\x06proto3',
     dependencies=[
         google_dot_api_dot_annotations__pb2.DESCRIPTOR,
@@ -52,6 +53,7 @@ _DATATYPE = _descriptor.EnumDescriptor(
     full_name="google.cloud.datalabeling.v1beta1.DataType",
     filename=None,
     file=DESCRIPTOR,
+    create_key=_descriptor._internal_create_key,
     values=[
         _descriptor.EnumValueDescriptor(
             name="DATA_TYPE_UNSPECIFIED",
@@ -59,18 +61,39 @@ _DATATYPE = _descriptor.EnumDescriptor(
             number=0,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="IMAGE", index=1, number=1, serialized_options=None, type=None
+            name="IMAGE",
+            index=1,
+            number=1,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="VIDEO", index=2, number=2, serialized_options=None, type=None
+            name="VIDEO",
+            index=2,
+            number=2,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="TEXT", index=3, number=4, serialized_options=None, type=None
+            name="TEXT",
+            index=3,
+            number=4,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="GENERAL_DATA", index=4, number=6, serialized_options=None, type=None
+            name="GENERAL_DATA",
+            index=4,
+            number=6,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     containing_type=None,
@@ -94,6 +117,7 @@ _DATASET = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -112,6 +136,7 @@ _DATASET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="display_name",
@@ -130,6 +155,7 @@ _DATASET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="description",
@@ -148,6 +174,7 @@ _DATASET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="create_time",
@@ -166,6 +193,7 @@ _DATASET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="input_configs",
@@ -184,6 +212,7 @@ _DATASET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="blocking_resources",
@@ -202,6 +231,7 @@ _DATASET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="data_item_count",
@@ -220,6 +250,7 @@ _DATASET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -241,6 +272,7 @@ _INPUTCONFIG = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="text_metadata",
@@ -259,6 +291,7 @@ _INPUTCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="gcs_source",
@@ -277,6 +310,7 @@ _INPUTCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="bigquery_source",
@@ -295,6 +329,7 @@ _INPUTCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="data_type",
@@ -313,6 +348,7 @@ _INPUTCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="annotation_type",
@@ -331,6 +367,7 @@ _INPUTCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="classification_metadata",
@@ -349,6 +386,7 @@ _INPUTCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -364,6 +402,7 @@ _INPUTCONFIG = _descriptor.Descriptor(
             full_name="google.cloud.datalabeling.v1beta1.InputConfig.data_type_metadata",
             index=0,
             containing_type=None,
+            create_key=_descriptor._internal_create_key,
             fields=[],
         ),
         _descriptor.OneofDescriptor(
@@ -371,6 +410,7 @@ _INPUTCONFIG = _descriptor.Descriptor(
             full_name="google.cloud.datalabeling.v1beta1.InputConfig.source",
             index=1,
             containing_type=None,
+            create_key=_descriptor._internal_create_key,
             fields=[],
         ),
     ],
@@ -385,6 +425,7 @@ _TEXTMETADATA = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="language_code",
@@ -403,6 +444,7 @@ _TEXTMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -424,6 +466,7 @@ _CLASSIFICATIONMETADATA = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="is_multi_label",
@@ -442,6 +485,7 @@ _CLASSIFICATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -463,6 +507,7 @@ _GCSSOURCE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="input_uri",
@@ -481,6 +526,7 @@ _GCSSOURCE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="mime_type",
@@ -499,6 +545,7 @@ _GCSSOURCE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -520,6 +567,7 @@ _BIGQUERYSOURCE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="input_uri",
@@ -538,6 +586,7 @@ _BIGQUERYSOURCE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -559,6 +608,7 @@ _OUTPUTCONFIG = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="gcs_destination",
@@ -577,6 +627,7 @@ _OUTPUTCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="gcs_folder_destination",
@@ -595,6 +646,7 @@ _OUTPUTCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -610,6 +662,7 @@ _OUTPUTCONFIG = _descriptor.Descriptor(
             full_name="google.cloud.datalabeling.v1beta1.OutputConfig.destination",
             index=0,
             containing_type=None,
+            create_key=_descriptor._internal_create_key,
             fields=[],
         )
     ],
@@ -624,6 +677,7 @@ _GCSDESTINATION = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="output_uri",
@@ -642,6 +696,7 @@ _GCSDESTINATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="mime_type",
@@ -660,6 +715,7 @@ _GCSDESTINATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -681,6 +737,7 @@ _GCSFOLDERDESTINATION = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="output_folder_uri",
@@ -699,6 +756,7 @@ _GCSFOLDERDESTINATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -720,6 +778,7 @@ _DATAITEM = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="image_payload",
@@ -738,6 +797,7 @@ _DATAITEM = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="text_payload",
@@ -756,6 +816,7 @@ _DATAITEM = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="video_payload",
@@ -774,6 +835,7 @@ _DATAITEM = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="name",
@@ -792,6 +854,7 @@ _DATAITEM = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -807,6 +870,7 @@ _DATAITEM = _descriptor.Descriptor(
             full_name="google.cloud.datalabeling.v1beta1.DataItem.payload",
             index=0,
             containing_type=None,
+            create_key=_descriptor._internal_create_key,
             fields=[],
         )
     ],
@@ -821,6 +885,7 @@ _ANNOTATEDDATASET = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -839,6 +904,7 @@ _ANNOTATEDDATASET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="display_name",
@@ -857,6 +923,7 @@ _ANNOTATEDDATASET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="description",
@@ -875,6 +942,7 @@ _ANNOTATEDDATASET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="annotation_source",
@@ -893,6 +961,7 @@ _ANNOTATEDDATASET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="annotation_type",
@@ -911,6 +980,7 @@ _ANNOTATEDDATASET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="example_count",
@@ -929,6 +999,7 @@ _ANNOTATEDDATASET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="completed_example_count",
@@ -947,6 +1018,7 @@ _ANNOTATEDDATASET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="label_stats",
@@ -965,6 +1037,7 @@ _ANNOTATEDDATASET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="create_time",
@@ -983,6 +1056,7 @@ _ANNOTATEDDATASET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="metadata",
@@ -1001,6 +1075,7 @@ _ANNOTATEDDATASET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="blocking_resources",
@@ -1019,6 +1094,7 @@ _ANNOTATEDDATASET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1040,6 +1116,7 @@ _LABELSTATS_EXAMPLECOUNTENTRY = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="key",
@@ -1058,6 +1135,7 @@ _LABELSTATS_EXAMPLECOUNTENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="value",
@@ -1076,6 +1154,7 @@ _LABELSTATS_EXAMPLECOUNTENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1096,6 +1175,7 @@ _LABELSTATS = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="example_count",
@@ -1114,6 +1194,7 @@ _LABELSTATS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -1135,6 +1216,7 @@ _ANNOTATEDDATASETMETADATA = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="image_classification_config",
@@ -1153,6 +1235,7 @@ _ANNOTATEDDATASETMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="bounding_poly_config",
@@ -1171,6 +1254,7 @@ _ANNOTATEDDATASETMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="polyline_config",
@@ -1189,6 +1273,7 @@ _ANNOTATEDDATASETMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="segmentation_config",
@@ -1207,6 +1292,7 @@ _ANNOTATEDDATASETMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="video_classification_config",
@@ -1225,6 +1311,7 @@ _ANNOTATEDDATASETMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="object_detection_config",
@@ -1243,6 +1330,7 @@ _ANNOTATEDDATASETMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="object_tracking_config",
@@ -1261,6 +1349,7 @@ _ANNOTATEDDATASETMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="event_config",
@@ -1279,6 +1368,7 @@ _ANNOTATEDDATASETMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="text_classification_config",
@@ -1297,6 +1387,7 @@ _ANNOTATEDDATASETMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="text_entity_extraction_config",
@@ -1315,6 +1406,7 @@ _ANNOTATEDDATASETMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="human_annotation_config",
@@ -1333,6 +1425,7 @@ _ANNOTATEDDATASETMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1348,6 +1441,7 @@ _ANNOTATEDDATASETMETADATA = _descriptor.Descriptor(
             full_name="google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata.annotation_request_config",
             index=0,
             containing_type=None,
+            create_key=_descriptor._internal_create_key,
             fields=[],
         )
     ],
@@ -1362,6 +1456,7 @@ _EXAMPLE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="image_payload",
@@ -1380,6 +1475,7 @@ _EXAMPLE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="text_payload",
@@ -1398,6 +1494,7 @@ _EXAMPLE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="video_payload",
@@ -1416,6 +1513,7 @@ _EXAMPLE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="name",
@@ -1434,6 +1532,7 @@ _EXAMPLE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="annotations",
@@ -1452,6 +1551,7 @@ _EXAMPLE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1467,6 +1567,7 @@ _EXAMPLE = _descriptor.Descriptor(
             full_name="google.cloud.datalabeling.v1beta1.Example.payload",
             index=0,
             containing_type=None,
+            create_key=_descriptor._internal_create_key,
             fields=[],
         )
     ],

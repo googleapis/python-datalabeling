@@ -28,6 +28,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     package="google.cloud.datalabeling.v1beta1",
     syntax="proto3",
     serialized_options=b"\n%com.google.cloud.datalabeling.v1beta1P\001ZMgoogle.golang.org/genproto/googleapis/cloud/datalabeling/v1beta1;datalabeling",
+    create_key=_descriptor._internal_create_key,
     serialized_pb=b'\n8google/cloud/datalabeling_v1beta1/proto/evaluation.proto\x12!google.cloud.datalabeling.v1beta1\x1a\x1cgoogle/api/annotations.proto\x1a\x19google/api/resource.proto\x1a\x38google/cloud/datalabeling_v1beta1/proto/annotation.proto\x1a\x41google/cloud/datalabeling_v1beta1/proto/annotation_spec_set.proto\x1a\x1fgoogle/protobuf/timestamp.proto"\xf6\x03\n\nEvaluation\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x43\n\x06\x63onfig\x18\x02 \x01(\x0b\x32\x33.google.cloud.datalabeling.v1beta1.EvaluationConfig\x12;\n\x17\x65valuation_job_run_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x63reate_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12P\n\x12\x65valuation_metrics\x18\x05 \x01(\x0b\x32\x34.google.cloud.datalabeling.v1beta1.EvaluationMetrics\x12J\n\x0f\x61nnotation_type\x18\x06 \x01(\x0e\x32\x31.google.cloud.datalabeling.v1beta1.AnnotationType\x12\x1c\n\x14\x65valuated_item_count\x18\x07 \x01(\x03:k\xea\x41h\n&datalabeling.googleapis.com/Evaluation\x12>projects/{project}/datasets/{dataset}/evaluations/{evaluation}"\x91\x01\n\x10\x45valuationConfig\x12j\n\x1f\x62ounding_box_evaluation_options\x18\x01 \x01(\x0b\x32?.google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptionsH\x00\x42\x11\n\x0fvertical_option"5\n\x1c\x42oundingBoxEvaluationOptions\x12\x15\n\riou_threshold\x18\x01 \x01(\x02"\xd9\x01\n\x11\x45valuationMetrics\x12Z\n\x16\x63lassification_metrics\x18\x01 \x01(\x0b\x32\x38.google.cloud.datalabeling.v1beta1.ClassificationMetricsH\x00\x12]\n\x18object_detection_metrics\x18\x02 \x01(\x0b\x32\x39.google.cloud.datalabeling.v1beta1.ObjectDetectionMetricsH\x00\x42\t\n\x07metrics"\xa3\x01\n\x15\x43lassificationMetrics\x12<\n\x08pr_curve\x18\x01 \x01(\x0b\x32*.google.cloud.datalabeling.v1beta1.PrCurve\x12L\n\x10\x63onfusion_matrix\x18\x02 \x01(\x0b\x32\x32.google.cloud.datalabeling.v1beta1.ConfusionMatrix"V\n\x16ObjectDetectionMetrics\x12<\n\x08pr_curve\x18\x01 \x01(\x0b\x32*.google.cloud.datalabeling.v1beta1.PrCurve"\xe6\x03\n\x07PrCurve\x12J\n\x0f\x61nnotation_spec\x18\x01 \x01(\x0b\x32\x31.google.cloud.datalabeling.v1beta1.AnnotationSpec\x12\x18\n\x10\x61rea_under_curve\x18\x02 \x01(\x02\x12\x65\n\x1a\x63onfidence_metrics_entries\x18\x03 \x03(\x0b\x32\x41.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry\x12\x1e\n\x16mean_average_precision\x18\x04 \x01(\x02\x1a\xed\x01\n\x16\x43onfidenceMetricsEntry\x12\x1c\n\x14\x63onfidence_threshold\x18\x01 \x01(\x02\x12\x0e\n\x06recall\x18\x02 \x01(\x02\x12\x11\n\tprecision\x18\x03 \x01(\x02\x12\x10\n\x08\x66\x31_score\x18\x04 \x01(\x02\x12\x12\n\nrecall_at1\x18\x05 \x01(\x02\x12\x15\n\rprecision_at1\x18\x06 \x01(\x02\x12\x14\n\x0c\x66\x31_score_at1\x18\x07 \x01(\x02\x12\x12\n\nrecall_at5\x18\x08 \x01(\x02\x12\x15\n\rprecision_at5\x18\t \x01(\x02\x12\x14\n\x0c\x66\x31_score_at5\x18\n \x01(\x02"\xfc\x02\n\x0f\x43onfusionMatrix\x12\x43\n\x03row\x18\x01 \x03(\x0b\x32\x36.google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row\x1av\n\x14\x43onfusionMatrixEntry\x12J\n\x0f\x61nnotation_spec\x18\x01 \x01(\x0b\x32\x31.google.cloud.datalabeling.v1beta1.AnnotationSpec\x12\x12\n\nitem_count\x18\x02 \x01(\x05\x1a\xab\x01\n\x03Row\x12J\n\x0f\x61nnotation_spec\x18\x01 \x01(\x0b\x32\x31.google.cloud.datalabeling.v1beta1.AnnotationSpec\x12X\n\x07\x65ntries\x18\x02 \x03(\x0b\x32G.google.cloud.datalabeling.v1beta1.ConfusionMatrix.ConfusionMatrixEntryBx\n%com.google.cloud.datalabeling.v1beta1P\x01ZMgoogle.golang.org/genproto/googleapis/cloud/datalabeling/v1beta1;datalabelingb\x06proto3',
     dependencies=[
         google_dot_api_dot_annotations__pb2.DESCRIPTOR,
@@ -45,6 +46,7 @@ _EVALUATION = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -63,6 +65,7 @@ _EVALUATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="config",
@@ -81,6 +84,7 @@ _EVALUATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="evaluation_job_run_time",
@@ -99,6 +103,7 @@ _EVALUATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="create_time",
@@ -117,6 +122,7 @@ _EVALUATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="evaluation_metrics",
@@ -135,6 +141,7 @@ _EVALUATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="annotation_type",
@@ -153,6 +160,7 @@ _EVALUATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="evaluated_item_count",
@@ -171,6 +179,7 @@ _EVALUATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -192,6 +201,7 @@ _EVALUATIONCONFIG = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="bounding_box_evaluation_options",
@@ -210,6 +220,7 @@ _EVALUATIONCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -225,6 +236,7 @@ _EVALUATIONCONFIG = _descriptor.Descriptor(
             full_name="google.cloud.datalabeling.v1beta1.EvaluationConfig.vertical_option",
             index=0,
             containing_type=None,
+            create_key=_descriptor._internal_create_key,
             fields=[],
         )
     ],
@@ -239,6 +251,7 @@ _BOUNDINGBOXEVALUATIONOPTIONS = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="iou_threshold",
@@ -257,6 +270,7 @@ _BOUNDINGBOXEVALUATIONOPTIONS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -278,6 +292,7 @@ _EVALUATIONMETRICS = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="classification_metrics",
@@ -296,6 +311,7 @@ _EVALUATIONMETRICS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="object_detection_metrics",
@@ -314,6 +330,7 @@ _EVALUATIONMETRICS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -329,6 +346,7 @@ _EVALUATIONMETRICS = _descriptor.Descriptor(
             full_name="google.cloud.datalabeling.v1beta1.EvaluationMetrics.metrics",
             index=0,
             containing_type=None,
+            create_key=_descriptor._internal_create_key,
             fields=[],
         )
     ],
@@ -343,6 +361,7 @@ _CLASSIFICATIONMETRICS = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="pr_curve",
@@ -361,6 +380,7 @@ _CLASSIFICATIONMETRICS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="confusion_matrix",
@@ -379,6 +399,7 @@ _CLASSIFICATIONMETRICS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -400,6 +421,7 @@ _OBJECTDETECTIONMETRICS = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="pr_curve",
@@ -418,6 +440,7 @@ _OBJECTDETECTIONMETRICS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -439,6 +462,7 @@ _PRCURVE_CONFIDENCEMETRICSENTRY = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="confidence_threshold",
@@ -457,6 +481,7 @@ _PRCURVE_CONFIDENCEMETRICSENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="recall",
@@ -475,6 +500,7 @@ _PRCURVE_CONFIDENCEMETRICSENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="precision",
@@ -493,6 +519,7 @@ _PRCURVE_CONFIDENCEMETRICSENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="f1_score",
@@ -511,6 +538,7 @@ _PRCURVE_CONFIDENCEMETRICSENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="recall_at1",
@@ -529,6 +557,7 @@ _PRCURVE_CONFIDENCEMETRICSENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="precision_at1",
@@ -547,6 +576,7 @@ _PRCURVE_CONFIDENCEMETRICSENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="f1_score_at1",
@@ -565,6 +595,7 @@ _PRCURVE_CONFIDENCEMETRICSENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="recall_at5",
@@ -583,6 +614,7 @@ _PRCURVE_CONFIDENCEMETRICSENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="precision_at5",
@@ -601,6 +633,7 @@ _PRCURVE_CONFIDENCEMETRICSENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="f1_score_at5",
@@ -619,6 +652,7 @@ _PRCURVE_CONFIDENCEMETRICSENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -639,6 +673,7 @@ _PRCURVE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="annotation_spec",
@@ -657,6 +692,7 @@ _PRCURVE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="area_under_curve",
@@ -675,6 +711,7 @@ _PRCURVE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="confidence_metrics_entries",
@@ -693,6 +730,7 @@ _PRCURVE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="mean_average_precision",
@@ -711,6 +749,7 @@ _PRCURVE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -732,6 +771,7 @@ _CONFUSIONMATRIX_CONFUSIONMATRIXENTRY = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="annotation_spec",
@@ -750,6 +790,7 @@ _CONFUSIONMATRIX_CONFUSIONMATRIXENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="item_count",
@@ -768,6 +809,7 @@ _CONFUSIONMATRIX_CONFUSIONMATRIXENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -788,6 +830,7 @@ _CONFUSIONMATRIX_ROW = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="annotation_spec",
@@ -806,6 +849,7 @@ _CONFUSIONMATRIX_ROW = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="entries",
@@ -824,6 +868,7 @@ _CONFUSIONMATRIX_ROW = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -844,6 +889,7 @@ _CONFUSIONMATRIX = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="row",
@@ -862,6 +908,7 @@ _CONFUSIONMATRIX = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
