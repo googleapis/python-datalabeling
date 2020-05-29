@@ -74,6 +74,203 @@ class CustomException(Exception):
 
 
 class TestDataLabelingServiceClient(object):
+    def test_delete_dataset(self):
+        channel = ChannelStub()
+        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
+        with patch as create_channel:
+            create_channel.return_value = channel
+            client = datalabeling_v1beta1.DataLabelingServiceClient()
+
+        # Setup Request
+        name = client.dataset_path("[PROJECT]", "[DATASET]")
+
+        client.delete_dataset(name)
+
+        assert len(channel.requests) == 1
+        expected_request = data_labeling_service_pb2.DeleteDatasetRequest(name=name)
+        actual_request = channel.requests[0][1]
+        assert expected_request == actual_request
+
+    def test_delete_dataset_exception(self):
+        # Mock the API response
+        channel = ChannelStub(responses=[CustomException()])
+        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
+        with patch as create_channel:
+            create_channel.return_value = channel
+            client = datalabeling_v1beta1.DataLabelingServiceClient()
+
+        # Setup request
+        name = client.dataset_path("[PROJECT]", "[DATASET]")
+
+        with pytest.raises(CustomException):
+            client.delete_dataset(name)
+
+    def test_export_data(self):
+        # Setup Expected Response
+        dataset = "dataset1443214456"
+        total_count = 407761836
+        export_count = 529256252
+        expected_response = {
+            "dataset": dataset,
+            "total_count": total_count,
+            "export_count": export_count,
+        }
+        expected_response = proto_operations_pb2.ExportDataOperationResponse(
+            **expected_response
+        )
+        operation = longrunning_operations_pb2.Operation(
+            name="operations/test_export_data", done=True
+        )
+        operation.response.Pack(expected_response)
+
+        # Mock the API response
+        channel = ChannelStub(responses=[operation])
+        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
+        with patch as create_channel:
+            create_channel.return_value = channel
+            client = datalabeling_v1beta1.DataLabelingServiceClient()
+
+        # Setup Request
+        name = client.dataset_path("[PROJECT]", "[DATASET]")
+        annotated_dataset = client.annotated_dataset_path(
+            "[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]"
+        )
+        output_config = {}
+
+        response = client.export_data(name, annotated_dataset, output_config)
+        result = response.result()
+        assert expected_response == result
+
+        assert len(channel.requests) == 1
+        expected_request = data_labeling_service_pb2.ExportDataRequest(
+            name=name, annotated_dataset=annotated_dataset, output_config=output_config
+        )
+        actual_request = channel.requests[0][1]
+        assert expected_request == actual_request
+
+    def test_export_data_exception(self):
+        # Setup Response
+        error = status_pb2.Status()
+        operation = longrunning_operations_pb2.Operation(
+            name="operations/test_export_data_exception", done=True
+        )
+        operation.error.CopyFrom(error)
+
+        # Mock the API response
+        channel = ChannelStub(responses=[operation])
+        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
+        with patch as create_channel:
+            create_channel.return_value = channel
+            client = datalabeling_v1beta1.DataLabelingServiceClient()
+
+        # Setup Request
+        name = client.dataset_path("[PROJECT]", "[DATASET]")
+        annotated_dataset = client.annotated_dataset_path(
+            "[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]"
+        )
+        output_config = {}
+
+        response = client.export_data(name, annotated_dataset, output_config)
+        exception = response.exception()
+        assert exception.errors[0] == error
+
+    def test_delete_annotation_spec_set(self):
+        channel = ChannelStub()
+        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
+        with patch as create_channel:
+            create_channel.return_value = channel
+            client = datalabeling_v1beta1.DataLabelingServiceClient()
+
+        # Setup Request
+        name = client.annotation_spec_set_path("[PROJECT]", "[ANNOTATION_SPEC_SET]")
+
+        client.delete_annotation_spec_set(name)
+
+        assert len(channel.requests) == 1
+        expected_request = data_labeling_service_pb2.DeleteAnnotationSpecSetRequest(
+            name=name
+        )
+        actual_request = channel.requests[0][1]
+        assert expected_request == actual_request
+
+    def test_delete_annotation_spec_set_exception(self):
+        # Mock the API response
+        channel = ChannelStub(responses=[CustomException()])
+        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
+        with patch as create_channel:
+            create_channel.return_value = channel
+            client = datalabeling_v1beta1.DataLabelingServiceClient()
+
+        # Setup request
+        name = client.annotation_spec_set_path("[PROJECT]", "[ANNOTATION_SPEC_SET]")
+
+        with pytest.raises(CustomException):
+            client.delete_annotation_spec_set(name)
+
+    def test_delete_instruction(self):
+        channel = ChannelStub()
+        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
+        with patch as create_channel:
+            create_channel.return_value = channel
+            client = datalabeling_v1beta1.DataLabelingServiceClient()
+
+        # Setup Request
+        name = client.instruction_path("[PROJECT]", "[INSTRUCTION]")
+
+        client.delete_instruction(name)
+
+        assert len(channel.requests) == 1
+        expected_request = data_labeling_service_pb2.DeleteInstructionRequest(name=name)
+        actual_request = channel.requests[0][1]
+        assert expected_request == actual_request
+
+    def test_delete_instruction_exception(self):
+        # Mock the API response
+        channel = ChannelStub(responses=[CustomException()])
+        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
+        with patch as create_channel:
+            create_channel.return_value = channel
+            client = datalabeling_v1beta1.DataLabelingServiceClient()
+
+        # Setup request
+        name = client.instruction_path("[PROJECT]", "[INSTRUCTION]")
+
+        with pytest.raises(CustomException):
+            client.delete_instruction(name)
+
+    def test_delete_evaluation_job(self):
+        channel = ChannelStub()
+        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
+        with patch as create_channel:
+            create_channel.return_value = channel
+            client = datalabeling_v1beta1.DataLabelingServiceClient()
+
+        # Setup Request
+        name = client.evaluation_job_path("[PROJECT]", "[EVALUATION_JOB]")
+
+        client.delete_evaluation_job(name)
+
+        assert len(channel.requests) == 1
+        expected_request = data_labeling_service_pb2.DeleteEvaluationJobRequest(
+            name=name
+        )
+        actual_request = channel.requests[0][1]
+        assert expected_request == actual_request
+
+    def test_delete_evaluation_job_exception(self):
+        # Mock the API response
+        channel = ChannelStub(responses=[CustomException()])
+        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
+        with patch as create_channel:
+            create_channel.return_value = channel
+            client = datalabeling_v1beta1.DataLabelingServiceClient()
+
+        # Setup request
+        name = client.evaluation_job_path("[PROJECT]", "[EVALUATION_JOB]")
+
+        with pytest.raises(CustomException):
+            client.delete_evaluation_job(name)
+
     def test_create_dataset(self):
         # Setup Expected Response
         name = "name3373707"
@@ -215,37 +412,6 @@ class TestDataLabelingServiceClient(object):
         with pytest.raises(CustomException):
             list(paged_list_response)
 
-    def test_delete_dataset(self):
-        channel = ChannelStub()
-        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
-        with patch as create_channel:
-            create_channel.return_value = channel
-            client = datalabeling_v1beta1.DataLabelingServiceClient()
-
-        # Setup Request
-        name = client.dataset_path("[PROJECT]", "[DATASET]")
-
-        client.delete_dataset(name)
-
-        assert len(channel.requests) == 1
-        expected_request = data_labeling_service_pb2.DeleteDatasetRequest(name=name)
-        actual_request = channel.requests[0][1]
-        assert expected_request == actual_request
-
-    def test_delete_dataset_exception(self):
-        # Mock the API response
-        channel = ChannelStub(responses=[CustomException()])
-        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
-        with patch as create_channel:
-            create_channel.return_value = channel
-            client = datalabeling_v1beta1.DataLabelingServiceClient()
-
-        # Setup request
-        name = client.dataset_path("[PROJECT]", "[DATASET]")
-
-        with pytest.raises(CustomException):
-            client.delete_dataset(name)
-
     def test_import_data(self):
         # Setup Expected Response
         dataset = "dataset1443214456"
@@ -306,75 +472,6 @@ class TestDataLabelingServiceClient(object):
         input_config = {}
 
         response = client.import_data(name, input_config)
-        exception = response.exception()
-        assert exception.errors[0] == error
-
-    def test_export_data(self):
-        # Setup Expected Response
-        dataset = "dataset1443214456"
-        total_count = 407761836
-        export_count = 529256252
-        expected_response = {
-            "dataset": dataset,
-            "total_count": total_count,
-            "export_count": export_count,
-        }
-        expected_response = proto_operations_pb2.ExportDataOperationResponse(
-            **expected_response
-        )
-        operation = longrunning_operations_pb2.Operation(
-            name="operations/test_export_data", done=True
-        )
-        operation.response.Pack(expected_response)
-
-        # Mock the API response
-        channel = ChannelStub(responses=[operation])
-        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
-        with patch as create_channel:
-            create_channel.return_value = channel
-            client = datalabeling_v1beta1.DataLabelingServiceClient()
-
-        # Setup Request
-        name = client.dataset_path("[PROJECT]", "[DATASET]")
-        annotated_dataset = client.annotated_dataset_path(
-            "[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]"
-        )
-        output_config = {}
-
-        response = client.export_data(name, annotated_dataset, output_config)
-        result = response.result()
-        assert expected_response == result
-
-        assert len(channel.requests) == 1
-        expected_request = data_labeling_service_pb2.ExportDataRequest(
-            name=name, annotated_dataset=annotated_dataset, output_config=output_config
-        )
-        actual_request = channel.requests[0][1]
-        assert expected_request == actual_request
-
-    def test_export_data_exception(self):
-        # Setup Response
-        error = status_pb2.Status()
-        operation = longrunning_operations_pb2.Operation(
-            name="operations/test_export_data_exception", done=True
-        )
-        operation.error.CopyFrom(error)
-
-        # Mock the API response
-        channel = ChannelStub(responses=[operation])
-        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
-        with patch as create_channel:
-            create_channel.return_value = channel
-            client = datalabeling_v1beta1.DataLabelingServiceClient()
-
-        # Setup Request
-        name = client.dataset_path("[PROJECT]", "[DATASET]")
-        annotated_dataset = client.annotated_dataset_path(
-            "[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]"
-        )
-        output_config = {}
-
-        response = client.export_data(name, annotated_dataset, output_config)
         exception = response.exception()
         assert exception.errors[0] == error
 
@@ -1045,39 +1142,6 @@ class TestDataLabelingServiceClient(object):
         with pytest.raises(CustomException):
             list(paged_list_response)
 
-    def test_delete_annotation_spec_set(self):
-        channel = ChannelStub()
-        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
-        with patch as create_channel:
-            create_channel.return_value = channel
-            client = datalabeling_v1beta1.DataLabelingServiceClient()
-
-        # Setup Request
-        name = client.annotation_spec_set_path("[PROJECT]", "[ANNOTATION_SPEC_SET]")
-
-        client.delete_annotation_spec_set(name)
-
-        assert len(channel.requests) == 1
-        expected_request = data_labeling_service_pb2.DeleteAnnotationSpecSetRequest(
-            name=name
-        )
-        actual_request = channel.requests[0][1]
-        assert expected_request == actual_request
-
-    def test_delete_annotation_spec_set_exception(self):
-        # Mock the API response
-        channel = ChannelStub(responses=[CustomException()])
-        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
-        with patch as create_channel:
-            create_channel.return_value = channel
-            client = datalabeling_v1beta1.DataLabelingServiceClient()
-
-        # Setup request
-        name = client.annotation_spec_set_path("[PROJECT]", "[ANNOTATION_SPEC_SET]")
-
-        with pytest.raises(CustomException):
-            client.delete_annotation_spec_set(name)
-
     def test_create_instruction(self):
         # Setup Expected Response
         name = "name3373707"
@@ -1232,37 +1296,6 @@ class TestDataLabelingServiceClient(object):
         paged_list_response = client.list_instructions(parent)
         with pytest.raises(CustomException):
             list(paged_list_response)
-
-    def test_delete_instruction(self):
-        channel = ChannelStub()
-        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
-        with patch as create_channel:
-            create_channel.return_value = channel
-            client = datalabeling_v1beta1.DataLabelingServiceClient()
-
-        # Setup Request
-        name = client.instruction_path("[PROJECT]", "[INSTRUCTION]")
-
-        client.delete_instruction(name)
-
-        assert len(channel.requests) == 1
-        expected_request = data_labeling_service_pb2.DeleteInstructionRequest(name=name)
-        actual_request = channel.requests[0][1]
-        assert expected_request == actual_request
-
-    def test_delete_instruction_exception(self):
-        # Mock the API response
-        channel = ChannelStub(responses=[CustomException()])
-        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
-        with patch as create_channel:
-            create_channel.return_value = channel
-            client = datalabeling_v1beta1.DataLabelingServiceClient()
-
-        # Setup request
-        name = client.instruction_path("[PROJECT]", "[INSTRUCTION]")
-
-        with pytest.raises(CustomException):
-            client.delete_instruction(name)
 
     def test_get_evaluation(self):
         # Setup Expected Response
@@ -1627,39 +1660,6 @@ class TestDataLabelingServiceClient(object):
 
         with pytest.raises(CustomException):
             client.resume_evaluation_job(name)
-
-    def test_delete_evaluation_job(self):
-        channel = ChannelStub()
-        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
-        with patch as create_channel:
-            create_channel.return_value = channel
-            client = datalabeling_v1beta1.DataLabelingServiceClient()
-
-        # Setup Request
-        name = client.evaluation_job_path("[PROJECT]", "[EVALUATION_JOB]")
-
-        client.delete_evaluation_job(name)
-
-        assert len(channel.requests) == 1
-        expected_request = data_labeling_service_pb2.DeleteEvaluationJobRequest(
-            name=name
-        )
-        actual_request = channel.requests[0][1]
-        assert expected_request == actual_request
-
-    def test_delete_evaluation_job_exception(self):
-        # Mock the API response
-        channel = ChannelStub(responses=[CustomException()])
-        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
-        with patch as create_channel:
-            create_channel.return_value = channel
-            client = datalabeling_v1beta1.DataLabelingServiceClient()
-
-        # Setup request
-        name = client.evaluation_job_path("[PROJECT]", "[EVALUATION_JOB]")
-
-        with pytest.raises(CustomException):
-            client.delete_evaluation_job(name)
 
     def test_list_evaluation_jobs(self):
         # Setup Expected Response
