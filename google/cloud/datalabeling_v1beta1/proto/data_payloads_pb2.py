@@ -347,8 +347,6 @@ ImagePayload = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _IMAGEPAYLOAD,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.data_payloads_pb2",
         "__doc__": """Container of information about an image.
-  
-  
   Attributes:
       mime_type:
           Image format.
@@ -371,8 +369,6 @@ TextPayload = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _TEXTPAYLOAD,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.data_payloads_pb2",
         "__doc__": """Container of information about a piece of text.
-  
-  
   Attributes:
       text_content:
           Text content.
@@ -389,8 +385,6 @@ VideoThumbnail = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _VIDEOTHUMBNAIL,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.data_payloads_pb2",
         "__doc__": """Container of information of a video thumbnail.
-  
-  
   Attributes:
       thumbnail:
           A byte string of the video frame.
@@ -411,8 +405,6 @@ VideoPayload = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _VIDEOPAYLOAD,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.data_payloads_pb2",
         "__doc__": """Container of information of a video.
-  
-  
   Attributes:
       mime_type:
           Video format.

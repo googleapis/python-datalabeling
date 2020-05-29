@@ -1770,11 +1770,9 @@ Dataset = _reflection.GeneratedProtocolMessageType(
     {
         "DESCRIPTOR": _DATASET,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.dataset_pb2",
-        "__doc__": """Dataset is the resource to hold your data. You can request
-  multiple labeling tasks for a dataset while each one will generate an
+        "__doc__": """Dataset is the resource to hold your data. You can request multiple
+  labeling tasks for a dataset while each one will generate an
   AnnotatedDataset.
-  
-  
   Attributes:
       name:
           Output only. Dataset resource name, format is:
@@ -1809,10 +1807,7 @@ InputConfig = _reflection.GeneratedProtocolMessageType(
     {
         "DESCRIPTOR": _INPUTCONFIG,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.dataset_pb2",
-        "__doc__": """The configuration of input data, including data type,
-  location, etc.
-  
-  
+        "__doc__": """The configuration of input data, including data type, location, etc.
   Attributes:
       data_type_metadata:
           Optional. The metadata associated with each data type.
@@ -1852,8 +1847,6 @@ TextMetadata = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _TEXTMETADATA,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.dataset_pb2",
         "__doc__": """Metadata for the text.
-  
-  
   Attributes:
       language_code:
           The language of this text, as a `BCP-47 <https://www.rfc-
@@ -1871,8 +1864,6 @@ ClassificationMetadata = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _CLASSIFICATIONMETADATA,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.dataset_pb2",
         "__doc__": """Metadata for classification annotations.
-  
-  
   Attributes:
       is_multi_label:
           Whether the classification task is multi-label or not.
@@ -1889,8 +1880,6 @@ GcsSource = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _GCSSOURCE,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.dataset_pb2",
         "__doc__": """Source of the Cloud Storage file to be imported.
-  
-  
   Attributes:
       input_uri:
           Required. The input URI of source file. This must be a Cloud
@@ -1912,10 +1901,8 @@ BigQuerySource = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.datalabeling_v1beta1.proto.dataset_pb2",
         "__doc__": """The BigQuery location for input data. If used in an
   [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob], this
-  is where the service saves the prediction input and output sampled from
-  the model version.
-  
-  
+  is where the service saves the prediction input and output sampled
+  from the model version.
   Attributes:
       input_uri:
           Required. BigQuery URI to a table, up to 2,000 characters
@@ -1943,8 +1930,6 @@ OutputConfig = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _OUTPUTCONFIG,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.dataset_pb2",
         "__doc__": """The configuration of output data.
-  
-  
   Attributes:
       destination:
           Required. Location to output data to.
@@ -1966,10 +1951,7 @@ GcsDestination = _reflection.GeneratedProtocolMessageType(
     {
         "DESCRIPTOR": _GCSDESTINATION,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.dataset_pb2",
-        "__doc__": """Export destination of the data.Only gcs path is allowed in
-  output_uri.
-  
-  
+        "__doc__": """Export destination of the data.Only gcs path is allowed in output_uri.
   Attributes:
       output_uri:
           Required. The output uri of destination file.
@@ -1989,8 +1971,6 @@ GcsFolderDestination = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _GCSFOLDERDESTINATION,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.dataset_pb2",
         "__doc__": """Export folder destination of the data.
-  
-  
   Attributes:
       output_folder_uri:
           Required. Cloud Storage directory to export data to.
@@ -2006,10 +1986,8 @@ DataItem = _reflection.GeneratedProtocolMessageType(
     {
         "DESCRIPTOR": _DATAITEM,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.dataset_pb2",
-        "__doc__": """DataItem is a piece of data, without annotation. For
-  example, an image.
-  
-  
+        "__doc__": """DataItem is a piece of data, without annotation. For example, an
+  image.
   Attributes:
       payload:
           Output only.
@@ -2034,11 +2012,9 @@ AnnotatedDataset = _reflection.GeneratedProtocolMessageType(
     {
         "DESCRIPTOR": _ANNOTATEDDATASET,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.dataset_pb2",
-        "__doc__": """AnnotatedDataset is a set holding annotations for data in
-  a Dataset. Each labeling task will generate an AnnotatedDataset under
-  the Dataset that the task is requested for.
-  
-  
+        "__doc__": """AnnotatedDataset is a set holding annotations for data in a Dataset.
+  Each labeling task will generate an AnnotatedDataset under the Dataset
+  that the task is requested for.
   Attributes:
       name:
           Output only. AnnotatedDataset resource name in format of:
@@ -2093,8 +2069,6 @@ LabelStats = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _LABELSTATS,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.dataset_pb2",
         "__doc__": """Statistics about annotation specs.
-  
-  
   Attributes:
       example_count:
           Map of each annotation spec’s example count. Key is the
@@ -2116,8 +2090,6 @@ AnnotatedDatasetMetadata = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _ANNOTATEDDATASETMETADATA,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.dataset_pb2",
         "__doc__": """Metadata on AnnotatedDataset.
-  
-  
   Attributes:
       annotation_request_config:
           Specific request configuration used when requesting the
@@ -2157,10 +2129,8 @@ Example = _reflection.GeneratedProtocolMessageType(
     {
         "DESCRIPTOR": _EXAMPLE,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.dataset_pb2",
-        "__doc__": """An Example is a piece of data and its annotation. For
-  example, an image with label “house”.
-  
-  
+        "__doc__": """An Example is a piece of data and its annotation. For example, an
+  image with label “house”.
   Attributes:
       payload:
           Output only. The data part of Example.
