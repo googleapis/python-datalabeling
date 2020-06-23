@@ -318,7 +318,7 @@ _GETDATASETREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A%\n#datalabeling.googleapis.com/Dataset",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -517,7 +517,7 @@ _DELETEDATASETREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A%\n#datalabeling.googleapis.com/Dataset",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -754,7 +754,7 @@ _GETDATAITEMREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A&\n$datalabeling.googleapis.com/DataItem",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -953,7 +953,7 @@ _GETANNOTATEDDATASETREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A.\n,datalabeling.googleapis.com/AnnotatedDataset",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -1152,7 +1152,7 @@ _DELETEANNOTATEDDATASETREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A.\n,datalabeling.googleapis.com/AnnotatedDataset",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -1311,7 +1311,7 @@ _LABELIMAGEREQUEST = _descriptor.Descriptor(
     ],
     extensions=[],
     nested_types=[],
-    enum_types=[_LABELIMAGEREQUEST_FEATURE],
+    enum_types=[_LABELIMAGEREQUEST_FEATURE,],
     serialized_options=None,
     is_extendable=False,
     syntax="proto3",
@@ -1324,7 +1324,7 @@ _LABELIMAGEREQUEST = _descriptor.Descriptor(
             containing_type=None,
             create_key=_descriptor._internal_create_key,
             fields=[],
-        )
+        ),
     ],
     serialized_start=2619,
     serialized_end=3391,
@@ -1475,7 +1475,7 @@ _LABELVIDEOREQUEST = _descriptor.Descriptor(
     ],
     extensions=[],
     nested_types=[],
-    enum_types=[_LABELVIDEOREQUEST_FEATURE],
+    enum_types=[_LABELVIDEOREQUEST_FEATURE,],
     serialized_options=None,
     is_extendable=False,
     syntax="proto3",
@@ -1488,7 +1488,7 @@ _LABELVIDEOREQUEST = _descriptor.Descriptor(
             containing_type=None,
             create_key=_descriptor._internal_create_key,
             fields=[],
-        )
+        ),
     ],
     serialized_start=3394,
     serialized_end=4128,
@@ -1601,7 +1601,7 @@ _LABELTEXTREQUEST = _descriptor.Descriptor(
     ],
     extensions=[],
     nested_types=[],
-    enum_types=[_LABELTEXTREQUEST_FEATURE],
+    enum_types=[_LABELTEXTREQUEST_FEATURE,],
     serialized_options=None,
     is_extendable=False,
     syntax="proto3",
@@ -1614,7 +1614,7 @@ _LABELTEXTREQUEST = _descriptor.Descriptor(
             containing_type=None,
             create_key=_descriptor._internal_create_key,
             fields=[],
-        )
+        ),
     ],
     serialized_start=4131,
     serialized_end=4688,
@@ -1925,7 +1925,7 @@ _GETANNOTATIONSPECSETREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A/\n-datalabeling.googleapis.com/AnnotationSpecSet",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -2124,7 +2124,7 @@ _DELETEANNOTATIONSPECSETREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A/\n-datalabeling.googleapis.com/AnnotationSpecSet",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -2225,7 +2225,7 @@ _GETINSTRUCTIONREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A)\n'datalabeling.googleapis.com/Instruction",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -2266,7 +2266,7 @@ _DELETEINSTRUCTIONREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A)\n'datalabeling.googleapis.com/Instruction",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -2465,7 +2465,7 @@ _GETEVALUATIONREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A(\n&datalabeling.googleapis.com/Evaluation",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -2824,7 +2824,7 @@ _SEARCHEXAMPLECOMPARISONSRESPONSE = _descriptor.Descriptor(
         ),
     ],
     extensions=[],
-    nested_types=[_SEARCHEXAMPLECOMPARISONSRESPONSE_EXAMPLECOMPARISON],
+    nested_types=[_SEARCHEXAMPLECOMPARISONSRESPONSE_EXAMPLECOMPARISON,],
     enum_types=[],
     serialized_options=None,
     is_extendable=False,
@@ -2982,7 +2982,7 @@ _GETEVALUATIONJOBREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A+\n)datalabeling.googleapis.com/EvaluationJob",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -3023,7 +3023,7 @@ _PAUSEEVALUATIONJOBREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A+\n)datalabeling.googleapis.com/EvaluationJob",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -3064,7 +3064,7 @@ _RESUMEEVALUATIONJOBREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A+\n)datalabeling.googleapis.com/EvaluationJob",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -3105,7 +3105,7 @@ _DELETEEVALUATIONJOBREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A+\n)datalabeling.googleapis.com/EvaluationJob",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],

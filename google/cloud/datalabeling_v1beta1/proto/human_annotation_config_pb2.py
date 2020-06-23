@@ -645,7 +645,7 @@ _VIDEOCLASSIFICATIONCONFIG = _descriptor.Descriptor(
         ),
     ],
     extensions=[],
-    nested_types=[_VIDEOCLASSIFICATIONCONFIG_ANNOTATIONSPECSETCONFIG],
+    nested_types=[_VIDEOCLASSIFICATIONCONFIG_ANNOTATIONSPECSETCONFIG,],
     enum_types=[],
     serialized_options=None,
     is_extendable=False,
@@ -743,7 +743,7 @@ _OBJECTTRACKINGCONFIG = _descriptor.Descriptor(
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -784,7 +784,7 @@ _EVENTCONFIG = _descriptor.Descriptor(
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -904,7 +904,7 @@ _SENTIMENTCONFIG = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -945,7 +945,7 @@ _TEXTENTITYEXTRACTIONCONFIG = _descriptor.Descriptor(
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],

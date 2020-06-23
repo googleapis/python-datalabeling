@@ -56,7 +56,7 @@ from google.protobuf import field_mask_pb2
 
 
 _GAPIC_LIBRARY_VERSION = pkg_resources.get_distribution(
-    "google-cloud-datalabeling"
+    "google-cloud-datalabeling",
 ).version
 
 
@@ -121,7 +121,7 @@ class DataLabelingServiceClient(object):
     def dataset_path(cls, project, dataset):
         """Return a fully-qualified dataset string."""
         return google.api_core.path_template.expand(
-            "projects/{project}/datasets/{dataset}", project=project, dataset=dataset
+            "projects/{project}/datasets/{dataset}", project=project, dataset=dataset,
         )
 
     @classmethod
@@ -167,7 +167,7 @@ class DataLabelingServiceClient(object):
     def project_path(cls, project):
         """Return a fully-qualified project string."""
         return google.api_core.path_template.expand(
-            "projects/{project}", project=project
+            "projects/{project}", project=project,
         )
 
     def __init__(
@@ -257,12 +257,12 @@ class DataLabelingServiceClient(object):
                 self.transport = transport
         else:
             self.transport = data_labeling_service_grpc_transport.DataLabelingServiceGrpcTransport(
-                address=api_endpoint, channel=channel, credentials=credentials
+                address=api_endpoint, channel=channel, credentials=credentials,
             )
 
         if client_info is None:
             client_info = google.api_core.gapic_v1.client_info.ClientInfo(
-                gapic_version=_GAPIC_LIBRARY_VERSION
+                gapic_version=_GAPIC_LIBRARY_VERSION,
             )
         else:
             client_info.gapic_version = _GAPIC_LIBRARY_VERSION
@@ -273,7 +273,7 @@ class DataLabelingServiceClient(object):
         # (Ordinarily, these are the defaults specified in the `*_config.py`
         # file next to this one.)
         self._method_configs = google.api_core.gapic_v1.config.parse_method_configs(
-            client_config["interfaces"][self._INTERFACE_NAME]
+            client_config["interfaces"][self._INTERFACE_NAME],
         )
 
         # Save a dictionary of cached API call functions.
@@ -332,7 +332,7 @@ class DataLabelingServiceClient(object):
                 client_info=self._client_info,
             )
 
-        request = data_labeling_service_pb2.DeleteDatasetRequest(name=name)
+        request = data_labeling_service_pb2.DeleteDatasetRequest(name=name,)
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -510,7 +510,7 @@ class DataLabelingServiceClient(object):
                 client_info=self._client_info,
             )
 
-        request = data_labeling_service_pb2.DeleteAnnotationSpecSetRequest(name=name)
+        request = data_labeling_service_pb2.DeleteAnnotationSpecSetRequest(name=name,)
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -577,7 +577,7 @@ class DataLabelingServiceClient(object):
                 client_info=self._client_info,
             )
 
-        request = data_labeling_service_pb2.DeleteInstructionRequest(name=name)
+        request = data_labeling_service_pb2.DeleteInstructionRequest(name=name,)
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -646,7 +646,7 @@ class DataLabelingServiceClient(object):
                 client_info=self._client_info,
             )
 
-        request = data_labeling_service_pb2.DeleteEvaluationJobRequest(name=name)
+        request = data_labeling_service_pb2.DeleteEvaluationJobRequest(name=name,)
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -724,7 +724,7 @@ class DataLabelingServiceClient(object):
             )
 
         request = data_labeling_service_pb2.CreateDatasetRequest(
-            parent=parent, dataset=dataset
+            parent=parent, dataset=dataset,
         )
         if metadata is None:
             metadata = []
@@ -795,7 +795,7 @@ class DataLabelingServiceClient(object):
                 client_info=self._client_info,
             )
 
-        request = data_labeling_service_pb2.GetDatasetRequest(name=name)
+        request = data_labeling_service_pb2.GetDatasetRequest(name=name,)
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -888,7 +888,7 @@ class DataLabelingServiceClient(object):
             )
 
         request = data_labeling_service_pb2.ListDatasetsRequest(
-            parent=parent, filter=filter_, page_size=page_size
+            parent=parent, filter=filter_, page_size=page_size,
         )
         if metadata is None:
             metadata = []
@@ -995,7 +995,7 @@ class DataLabelingServiceClient(object):
             )
 
         request = data_labeling_service_pb2.ImportDataRequest(
-            name=name, input_config=input_config, user_email_address=user_email_address
+            name=name, input_config=input_config, user_email_address=user_email_address,
         )
         if metadata is None:
             metadata = []
@@ -1073,7 +1073,7 @@ class DataLabelingServiceClient(object):
                 client_info=self._client_info,
             )
 
-        request = data_labeling_service_pb2.GetDataItemRequest(name=name)
+        request = data_labeling_service_pb2.GetDataItemRequest(name=name,)
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -1168,7 +1168,7 @@ class DataLabelingServiceClient(object):
             )
 
         request = data_labeling_service_pb2.ListDataItemsRequest(
-            parent=parent, filter=filter_, page_size=page_size
+            parent=parent, filter=filter_, page_size=page_size,
         )
         if metadata is None:
             metadata = []
@@ -1251,7 +1251,7 @@ class DataLabelingServiceClient(object):
                 client_info=self._client_info,
             )
 
-        request = data_labeling_service_pb2.GetAnnotatedDatasetRequest(name=name)
+        request = data_labeling_service_pb2.GetAnnotatedDatasetRequest(name=name,)
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -1345,7 +1345,7 @@ class DataLabelingServiceClient(object):
             )
 
         request = data_labeling_service_pb2.ListAnnotatedDatasetsRequest(
-            parent=parent, filter=filter_, page_size=page_size
+            parent=parent, filter=filter_, page_size=page_size,
         )
         if metadata is None:
             metadata = []
@@ -1425,7 +1425,7 @@ class DataLabelingServiceClient(object):
                 client_info=self._client_info,
             )
 
-        request = data_labeling_service_pb2.DeleteAnnotatedDatasetRequest(name=name)
+        request = data_labeling_service_pb2.DeleteAnnotatedDatasetRequest(name=name,)
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -1917,7 +1917,9 @@ class DataLabelingServiceClient(object):
                 client_info=self._client_info,
             )
 
-        request = data_labeling_service_pb2.GetExampleRequest(name=name, filter=filter_)
+        request = data_labeling_service_pb2.GetExampleRequest(
+            name=name, filter=filter_,
+        )
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -2013,7 +2015,7 @@ class DataLabelingServiceClient(object):
             )
 
         request = data_labeling_service_pb2.ListExamplesRequest(
-            parent=parent, filter=filter_, page_size=page_size
+            parent=parent, filter=filter_, page_size=page_size,
         )
         if metadata is None:
             metadata = []
@@ -2106,7 +2108,7 @@ class DataLabelingServiceClient(object):
             )
 
         request = data_labeling_service_pb2.CreateAnnotationSpecSetRequest(
-            parent=parent, annotation_spec_set=annotation_spec_set
+            parent=parent, annotation_spec_set=annotation_spec_set,
         )
         if metadata is None:
             metadata = []
@@ -2177,7 +2179,7 @@ class DataLabelingServiceClient(object):
                 client_info=self._client_info,
             )
 
-        request = data_labeling_service_pb2.GetAnnotationSpecSetRequest(name=name)
+        request = data_labeling_service_pb2.GetAnnotationSpecSetRequest(name=name,)
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -2271,7 +2273,7 @@ class DataLabelingServiceClient(object):
             )
 
         request = data_labeling_service_pb2.ListAnnotationSpecSetsRequest(
-            parent=parent, filter=filter_, page_size=page_size
+            parent=parent, filter=filter_, page_size=page_size,
         )
         if metadata is None:
             metadata = []
@@ -2370,7 +2372,7 @@ class DataLabelingServiceClient(object):
             )
 
         request = data_labeling_service_pb2.CreateInstructionRequest(
-            parent=parent, instruction=instruction
+            parent=parent, instruction=instruction,
         )
         if metadata is None:
             metadata = []
@@ -2447,7 +2449,7 @@ class DataLabelingServiceClient(object):
                 client_info=self._client_info,
             )
 
-        request = data_labeling_service_pb2.GetInstructionRequest(name=name)
+        request = data_labeling_service_pb2.GetInstructionRequest(name=name,)
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -2540,7 +2542,7 @@ class DataLabelingServiceClient(object):
             )
 
         request = data_labeling_service_pb2.ListInstructionsRequest(
-            parent=parent, filter=filter_, page_size=page_size
+            parent=parent, filter=filter_, page_size=page_size,
         )
         if metadata is None:
             metadata = []
@@ -2624,7 +2626,7 @@ class DataLabelingServiceClient(object):
                 client_info=self._client_info,
             )
 
-        request = data_labeling_service_pb2.GetEvaluationRequest(name=name)
+        request = data_labeling_service_pb2.GetEvaluationRequest(name=name,)
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -2740,7 +2742,7 @@ class DataLabelingServiceClient(object):
             )
 
         request = data_labeling_service_pb2.SearchEvaluationsRequest(
-            parent=parent, filter=filter_, page_size=page_size
+            parent=parent, filter=filter_, page_size=page_size,
         )
         if metadata is None:
             metadata = []
@@ -2850,7 +2852,7 @@ class DataLabelingServiceClient(object):
             )
 
         request = data_labeling_service_pb2.SearchExampleComparisonsRequest(
-            parent=parent, page_size=page_size
+            parent=parent, page_size=page_size,
         )
         if metadata is None:
             metadata = []
@@ -2941,7 +2943,7 @@ class DataLabelingServiceClient(object):
             )
 
         request = data_labeling_service_pb2.CreateEvaluationJobRequest(
-            parent=parent, job=job
+            parent=parent, job=job,
         )
         if metadata is None:
             metadata = []
@@ -3034,7 +3036,7 @@ class DataLabelingServiceClient(object):
             )
 
         request = data_labeling_service_pb2.UpdateEvaluationJobRequest(
-            evaluation_job=evaluation_job, update_mask=update_mask
+            evaluation_job=evaluation_job, update_mask=update_mask,
         )
         if metadata is None:
             metadata = []
@@ -3106,7 +3108,7 @@ class DataLabelingServiceClient(object):
                 client_info=self._client_info,
             )
 
-        request = data_labeling_service_pb2.GetEvaluationJobRequest(name=name)
+        request = data_labeling_service_pb2.GetEvaluationJobRequest(name=name,)
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -3176,7 +3178,7 @@ class DataLabelingServiceClient(object):
                 client_info=self._client_info,
             )
 
-        request = data_labeling_service_pb2.PauseEvaluationJobRequest(name=name)
+        request = data_labeling_service_pb2.PauseEvaluationJobRequest(name=name,)
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -3246,7 +3248,7 @@ class DataLabelingServiceClient(object):
                 client_info=self._client_info,
             )
 
-        request = data_labeling_service_pb2.ResumeEvaluationJobRequest(name=name)
+        request = data_labeling_service_pb2.ResumeEvaluationJobRequest(name=name,)
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -3347,7 +3349,7 @@ class DataLabelingServiceClient(object):
             )
 
         request = data_labeling_service_pb2.ListEvaluationJobsRequest(
-            parent=parent, filter=filter_, page_size=page_size
+            parent=parent, filter=filter_, page_size=page_size,
         )
         if metadata is None:
             metadata = []

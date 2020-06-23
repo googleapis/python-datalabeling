@@ -445,7 +445,7 @@ _TEXTMETADATA = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -486,7 +486,7 @@ _CLASSIFICATIONMETADATA = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -587,7 +587,7 @@ _BIGQUERYSOURCE = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -664,7 +664,7 @@ _OUTPUTCONFIG = _descriptor.Descriptor(
             containing_type=None,
             create_key=_descriptor._internal_create_key,
             fields=[],
-        )
+        ),
     ],
     serialized_start=1440,
     serialized_end=1638,
@@ -757,7 +757,7 @@ _GCSFOLDERDESTINATION = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -872,7 +872,7 @@ _DATAITEM = _descriptor.Descriptor(
             containing_type=None,
             create_key=_descriptor._internal_create_key,
             fields=[],
-        )
+        ),
     ],
     serialized_start=1749,
     serialized_end=2108,
@@ -1195,10 +1195,10 @@ _LABELSTATS = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
-    nested_types=[_LABELSTATS_EXAMPLECOUNTENTRY],
+    nested_types=[_LABELSTATS_EXAMPLECOUNTENTRY,],
     enum_types=[],
     serialized_options=None,
     is_extendable=False,
@@ -1443,7 +1443,7 @@ _ANNOTATEDDATASETMETADATA = _descriptor.Descriptor(
             containing_type=None,
             create_key=_descriptor._internal_create_key,
             fields=[],
-        )
+        ),
     ],
     serialized_start=2909,
     serialized_end=3967,
@@ -1569,7 +1569,7 @@ _EXAMPLE = _descriptor.Descriptor(
             containing_type=None,
             create_key=_descriptor._internal_create_key,
             fields=[],
-        )
+        ),
     ],
     serialized_start=3970,
     serialized_end=4432,

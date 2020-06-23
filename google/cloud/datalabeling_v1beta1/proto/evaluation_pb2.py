@@ -221,7 +221,7 @@ _EVALUATIONCONFIG = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -238,7 +238,7 @@ _EVALUATIONCONFIG = _descriptor.Descriptor(
             containing_type=None,
             create_key=_descriptor._internal_create_key,
             fields=[],
-        )
+        ),
     ],
     serialized_start=816,
     serialized_end=961,
@@ -271,7 +271,7 @@ _BOUNDINGBOXEVALUATIONOPTIONS = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -348,7 +348,7 @@ _EVALUATIONMETRICS = _descriptor.Descriptor(
             containing_type=None,
             create_key=_descriptor._internal_create_key,
             fields=[],
-        )
+        ),
     ],
     serialized_start=1019,
     serialized_end=1236,
@@ -441,7 +441,7 @@ _OBJECTDETECTIONMETRICS = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -753,7 +753,7 @@ _PRCURVE = _descriptor.Descriptor(
         ),
     ],
     extensions=[],
-    nested_types=[_PRCURVE_CONFIDENCEMETRICSENTRY],
+    nested_types=[_PRCURVE_CONFIDENCEMETRICSENTRY,],
     enum_types=[],
     serialized_options=None,
     is_extendable=False,
@@ -909,10 +909,10 @@ _CONFUSIONMATRIX = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
-    nested_types=[_CONFUSIONMATRIX_CONFUSIONMATRIXENTRY, _CONFUSIONMATRIX_ROW],
+    nested_types=[_CONFUSIONMATRIX_CONFUSIONMATRIXENTRY, _CONFUSIONMATRIX_ROW,],
     enum_types=[],
     serialized_options=None,
     is_extendable=False,

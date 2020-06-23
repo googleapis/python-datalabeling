@@ -705,7 +705,7 @@ _LABELOPERATIONMETADATA = _descriptor.Descriptor(
             containing_type=None,
             create_key=_descriptor._internal_create_key,
             fields=[],
-        )
+        ),
     ],
     serialized_start=948,
     serialized_end=2496,
@@ -738,7 +738,7 @@ _LABELIMAGECLASSIFICATIONOPERATIONMETADATA = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -779,7 +779,7 @@ _LABELIMAGEBOUNDINGBOXOPERATIONMETADATA = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -820,7 +820,7 @@ _LABELIMAGEORIENTEDBOUNDINGBOXOPERATIONMETADATA = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -861,7 +861,7 @@ _LABELIMAGEBOUNDINGPOLYOPERATIONMETADATA = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -902,7 +902,7 @@ _LABELIMAGEPOLYLINEOPERATIONMETADATA = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -943,7 +943,7 @@ _LABELIMAGESEGMENTATIONOPERATIONMETADATA = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -984,7 +984,7 @@ _LABELVIDEOCLASSIFICATIONOPERATIONMETADATA = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -1025,7 +1025,7 @@ _LABELVIDEOOBJECTDETECTIONOPERATIONMETADATA = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -1066,7 +1066,7 @@ _LABELVIDEOOBJECTTRACKINGOPERATIONMETADATA = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -1107,7 +1107,7 @@ _LABELVIDEOEVENTOPERATIONMETADATA = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -1148,7 +1148,7 @@ _LABELTEXTCLASSIFICATIONOPERATIONMETADATA = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -1189,7 +1189,7 @@ _LABELTEXTENTITYEXTRACTIONOPERATIONMETADATA = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],

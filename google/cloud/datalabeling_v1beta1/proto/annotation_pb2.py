@@ -569,7 +569,7 @@ _ANNOTATIONVALUE = _descriptor.Descriptor(
             containing_type=None,
             create_key=_descriptor._internal_create_key,
             fields=[],
-        )
+        ),
     ],
     serialized_start=609,
     serialized_end=1586,
@@ -602,7 +602,7 @@ _IMAGECLASSIFICATIONANNOTATION = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -763,7 +763,7 @@ _BOUNDINGPOLY = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -804,7 +804,7 @@ _NORMALIZEDBOUNDINGPOLY = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -900,7 +900,7 @@ _IMAGEBOUNDINGPOLYANNOTATION = _descriptor.Descriptor(
             containing_type=None,
             create_key=_descriptor._internal_create_key,
             fields=[],
-        )
+        ),
     ],
     serialized_start=1957,
     serialized_end=2247,
@@ -933,7 +933,7 @@ _POLYLINE = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -974,7 +974,7 @@ _NORMALIZEDPOLYLINE = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -1070,7 +1070,7 @@ _IMAGEPOLYLINEANNOTATION = _descriptor.Descriptor(
             containing_type=None,
             create_key=_descriptor._internal_create_key,
             fields=[],
-        )
+        ),
     ],
     serialized_start=2427,
     serialized_end=2687,
@@ -1203,7 +1203,7 @@ _IMAGESEGMENTATIONANNOTATION = _descriptor.Descriptor(
         ),
     ],
     extensions=[],
-    nested_types=[_IMAGESEGMENTATIONANNOTATION_ANNOTATIONCOLORSENTRY],
+    nested_types=[_IMAGESEGMENTATIONANNOTATION_ANNOTATIONCOLORSENTRY,],
     enum_types=[],
     serialized_options=None,
     is_extendable=False,
@@ -1241,7 +1241,7 @@ _TEXTCLASSIFICATIONANNOTATION = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -1577,7 +1577,7 @@ _OBJECTTRACKINGFRAME = _descriptor.Descriptor(
             containing_type=None,
             create_key=_descriptor._internal_create_key,
             fields=[],
-        )
+        ),
     ],
     serialized_start=3634,
     serialized_end=3888,
@@ -1749,7 +1749,7 @@ _ANNOTATIONMETADATA = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
