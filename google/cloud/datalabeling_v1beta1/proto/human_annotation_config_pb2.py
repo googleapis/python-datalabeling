@@ -23,6 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     package="google.cloud.datalabeling.v1beta1",
     syntax="proto3",
     serialized_options=b"\n%com.google.cloud.datalabeling.v1beta1P\001ZMgoogle.golang.org/genproto/googleapis/cloud/datalabeling/v1beta1;datalabeling",
+    create_key=_descriptor._internal_create_key,
     serialized_pb=b'\nEgoogle/cloud/datalabeling_v1beta1/proto/human_annotation_config.proto\x12!google.cloud.datalabeling.v1beta1\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x1egoogle/protobuf/duration.proto"\xd4\x02\n\x15HumanAnnotationConfig\x12\x18\n\x0binstruction\x18\x01 \x01(\tB\x03\xe0\x41\x02\x12+\n\x1e\x61nnotated_dataset_display_name\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12*\n\x1d\x61nnotated_dataset_description\x18\x03 \x01(\tB\x03\xe0\x41\x01\x12\x18\n\x0blabel_group\x18\x04 \x01(\tB\x03\xe0\x41\x01\x12\x1a\n\rlanguage_code\x18\x05 \x01(\tB\x03\xe0\x41\x01\x12\x1a\n\rreplica_count\x18\x06 \x01(\x05\x42\x03\xe0\x41\x01\x12\x39\n\x11question_duration\x18\x07 \x01(\x0b\x32\x19.google.protobuf.DurationB\x03\xe0\x41\x01\x12\x1f\n\x12\x63ontributor_emails\x18\t \x03(\tB\x03\xe0\x41\x01\x12\x1a\n\x12user_email_address\x18\n \x01(\t"\xbd\x01\n\x19ImageClassificationConfig\x12 \n\x13\x61nnotation_spec_set\x18\x01 \x01(\tB\x03\xe0\x41\x02\x12\x1e\n\x11\x61llow_multi_label\x18\x02 \x01(\x08\x42\x03\xe0\x41\x01\x12^\n\x17\x61nswer_aggregation_type\x18\x03 \x01(\x0e\x32\x38.google.cloud.datalabeling.v1beta1.StringAggregationTypeB\x03\xe0\x41\x01"X\n\x12\x42oundingPolyConfig\x12 \n\x13\x61nnotation_spec_set\x18\x01 \x01(\tB\x03\xe0\x41\x02\x12 \n\x13instruction_message\x18\x02 \x01(\tB\x03\xe0\x41\x01"T\n\x0ePolylineConfig\x12 \n\x13\x61nnotation_spec_set\x18\x01 \x01(\tB\x03\xe0\x41\x02\x12 \n\x13instruction_message\x18\x02 \x01(\tB\x03\xe0\x41\x01"S\n\x12SegmentationConfig\x12 \n\x13\x61nnotation_spec_set\x18\x01 \x01(\tB\x03\xe0\x41\x02\x12\x1b\n\x13instruction_message\x18\x02 \x01(\t"\x9b\x02\n\x19VideoClassificationConfig\x12~\n\x1b\x61nnotation_spec_set_configs\x18\x01 \x03(\x0b\x32T.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfigB\x03\xe0\x41\x02\x12!\n\x14\x61pply_shot_detection\x18\x02 \x01(\x08\x42\x03\xe0\x41\x01\x1a[\n\x17\x41nnotationSpecSetConfig\x12 \n\x13\x61nnotation_spec_set\x18\x01 \x01(\tB\x03\xe0\x41\x02\x12\x1e\n\x11\x61llow_multi_label\x18\x02 \x01(\x08\x42\x03\xe0\x41\x01"]\n\x15ObjectDetectionConfig\x12 \n\x13\x61nnotation_spec_set\x18\x01 \x01(\tB\x03\xe0\x41\x02\x12"\n\x15\x65xtraction_frame_rate\x18\x03 \x01(\x01\x42\x03\xe0\x41\x02"8\n\x14ObjectTrackingConfig\x12 \n\x13\x61nnotation_spec_set\x18\x01 \x01(\tB\x03\xe0\x41\x02"0\n\x0b\x45ventConfig\x12!\n\x14\x61nnotation_spec_sets\x18\x01 \x03(\tB\x03\xe0\x41\x02"\xaf\x01\n\x18TextClassificationConfig\x12\x1e\n\x11\x61llow_multi_label\x18\x01 \x01(\x08\x42\x03\xe0\x41\x01\x12 \n\x13\x61nnotation_spec_set\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12Q\n\x10sentiment_config\x18\x03 \x01(\x0b\x32\x32.google.cloud.datalabeling.v1beta1.SentimentConfigB\x03\xe0\x41\x01";\n\x0fSentimentConfig\x12(\n enable_label_sentiment_selection\x18\x01 \x01(\x08">\n\x1aTextEntityExtractionConfig\x12 \n\x13\x61nnotation_spec_set\x18\x01 \x01(\tB\x03\xe0\x41\x02*{\n\x15StringAggregationType\x12\'\n#STRING_AGGREGATION_TYPE_UNSPECIFIED\x10\x00\x12\x11\n\rMAJORITY_VOTE\x10\x01\x12\x12\n\x0eUNANIMOUS_VOTE\x10\x02\x12\x12\n\x0eNO_AGGREGATION\x10\x03\x42x\n%com.google.cloud.datalabeling.v1beta1P\x01ZMgoogle.golang.org/genproto/googleapis/cloud/datalabeling/v1beta1;datalabelingb\x06proto3',
     dependencies=[
         google_dot_api_dot_annotations__pb2.DESCRIPTOR,
@@ -36,6 +37,7 @@ _STRINGAGGREGATIONTYPE = _descriptor.EnumDescriptor(
     full_name="google.cloud.datalabeling.v1beta1.StringAggregationType",
     filename=None,
     file=DESCRIPTOR,
+    create_key=_descriptor._internal_create_key,
     values=[
         _descriptor.EnumValueDescriptor(
             name="STRING_AGGREGATION_TYPE_UNSPECIFIED",
@@ -43,15 +45,31 @@ _STRINGAGGREGATIONTYPE = _descriptor.EnumDescriptor(
             number=0,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="MAJORITY_VOTE", index=1, number=1, serialized_options=None, type=None
+            name="MAJORITY_VOTE",
+            index=1,
+            number=1,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="UNANIMOUS_VOTE", index=2, number=2, serialized_options=None, type=None
+            name="UNANIMOUS_VOTE",
+            index=2,
+            number=2,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="NO_AGGREGATION", index=3, number=3, serialized_options=None, type=None
+            name="NO_AGGREGATION",
+            index=3,
+            number=3,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     containing_type=None,
@@ -74,6 +92,7 @@ _HUMANANNOTATIONCONFIG = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="instruction",
@@ -92,6 +111,7 @@ _HUMANANNOTATIONCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="annotated_dataset_display_name",
@@ -110,6 +130,7 @@ _HUMANANNOTATIONCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="annotated_dataset_description",
@@ -128,6 +149,7 @@ _HUMANANNOTATIONCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="label_group",
@@ -146,6 +168,7 @@ _HUMANANNOTATIONCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="language_code",
@@ -164,6 +187,7 @@ _HUMANANNOTATIONCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="replica_count",
@@ -182,6 +206,7 @@ _HUMANANNOTATIONCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="question_duration",
@@ -200,6 +225,7 @@ _HUMANANNOTATIONCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="contributor_emails",
@@ -218,6 +244,7 @@ _HUMANANNOTATIONCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="user_email_address",
@@ -236,6 +263,7 @@ _HUMANANNOTATIONCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -257,6 +285,7 @@ _IMAGECLASSIFICATIONCONFIG = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="annotation_spec_set",
@@ -275,6 +304,7 @@ _IMAGECLASSIFICATIONCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="allow_multi_label",
@@ -293,6 +323,7 @@ _IMAGECLASSIFICATIONCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="answer_aggregation_type",
@@ -311,6 +342,7 @@ _IMAGECLASSIFICATIONCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -332,6 +364,7 @@ _BOUNDINGPOLYCONFIG = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="annotation_spec_set",
@@ -350,6 +383,7 @@ _BOUNDINGPOLYCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="instruction_message",
@@ -368,6 +402,7 @@ _BOUNDINGPOLYCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -389,6 +424,7 @@ _POLYLINECONFIG = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="annotation_spec_set",
@@ -407,6 +443,7 @@ _POLYLINECONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="instruction_message",
@@ -425,6 +462,7 @@ _POLYLINECONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -446,6 +484,7 @@ _SEGMENTATIONCONFIG = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="annotation_spec_set",
@@ -464,6 +503,7 @@ _SEGMENTATIONCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="instruction_message",
@@ -482,6 +522,7 @@ _SEGMENTATIONCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -503,6 +544,7 @@ _VIDEOCLASSIFICATIONCONFIG_ANNOTATIONSPECSETCONFIG = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="annotation_spec_set",
@@ -521,6 +563,7 @@ _VIDEOCLASSIFICATIONCONFIG_ANNOTATIONSPECSETCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="allow_multi_label",
@@ -539,6 +582,7 @@ _VIDEOCLASSIFICATIONCONFIG_ANNOTATIONSPECSETCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -559,6 +603,7 @@ _VIDEOCLASSIFICATIONCONFIG = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="annotation_spec_set_configs",
@@ -577,6 +622,7 @@ _VIDEOCLASSIFICATIONCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="apply_shot_detection",
@@ -595,6 +641,7 @@ _VIDEOCLASSIFICATIONCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -616,6 +663,7 @@ _OBJECTDETECTIONCONFIG = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="annotation_spec_set",
@@ -634,6 +682,7 @@ _OBJECTDETECTIONCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="extraction_frame_rate",
@@ -652,6 +701,7 @@ _OBJECTDETECTIONCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -673,6 +723,7 @@ _OBJECTTRACKINGCONFIG = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="annotation_spec_set",
@@ -691,6 +742,7 @@ _OBJECTTRACKINGCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -712,6 +764,7 @@ _EVENTCONFIG = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="annotation_spec_sets",
@@ -730,6 +783,7 @@ _EVENTCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -751,6 +805,7 @@ _TEXTCLASSIFICATIONCONFIG = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="allow_multi_label",
@@ -769,6 +824,7 @@ _TEXTCLASSIFICATIONCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="annotation_spec_set",
@@ -787,6 +843,7 @@ _TEXTCLASSIFICATIONCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="sentiment_config",
@@ -805,6 +862,7 @@ _TEXTCLASSIFICATIONCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -826,6 +884,7 @@ _SENTIMENTCONFIG = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="enable_label_sentiment_selection",
@@ -844,6 +903,7 @@ _SENTIMENTCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -865,6 +925,7 @@ _TEXTENTITYEXTRACTIONCONFIG = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="annotation_spec_set",
@@ -883,6 +944,7 @@ _TEXTENTITYEXTRACTIONCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],

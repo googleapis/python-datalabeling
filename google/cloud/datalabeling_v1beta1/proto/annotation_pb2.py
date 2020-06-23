@@ -26,6 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     package="google.cloud.datalabeling.v1beta1",
     syntax="proto3",
     serialized_options=b"\n%com.google.cloud.datalabeling.v1beta1P\001ZMgoogle.golang.org/genproto/googleapis/cloud/datalabeling/v1beta1;datalabeling",
+    create_key=_descriptor._internal_create_key,
     serialized_pb=b'\n8google/cloud/datalabeling_v1beta1/proto/annotation.proto\x12!google.cloud.datalabeling.v1beta1\x1a\x1cgoogle/api/annotations.proto\x1a\x19google/api/resource.proto\x1a\x41google/cloud/datalabeling_v1beta1/proto/annotation_spec_set.proto\x1a\x1egoogle/protobuf/duration.proto"\xe2\x02\n\nAnnotation\x12\x0c\n\x04name\x18\x01 \x01(\t\x12N\n\x11\x61nnotation_source\x18\x02 \x01(\x0e\x32\x33.google.cloud.datalabeling.v1beta1.AnnotationSource\x12L\n\x10\x61nnotation_value\x18\x03 \x01(\x0b\x32\x32.google.cloud.datalabeling.v1beta1.AnnotationValue\x12R\n\x13\x61nnotation_metadata\x18\x04 \x01(\x0b\x32\x35.google.cloud.datalabeling.v1beta1.AnnotationMetadata\x12T\n\x14\x61nnotation_sentiment\x18\x06 \x01(\x0e\x32\x36.google.cloud.datalabeling.v1beta1.AnnotationSentiment"\xd1\x07\n\x0f\x41nnotationValue\x12k\n\x1fimage_classification_annotation\x18\x01 \x01(\x0b\x32@.google.cloud.datalabeling.v1beta1.ImageClassificationAnnotationH\x00\x12h\n\x1eimage_bounding_poly_annotation\x18\x02 \x01(\x0b\x32>.google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotationH\x00\x12_\n\x19image_polyline_annotation\x18\x08 \x01(\x0b\x32:.google.cloud.datalabeling.v1beta1.ImagePolylineAnnotationH\x00\x12g\n\x1dimage_segmentation_annotation\x18\t \x01(\x0b\x32>.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotationH\x00\x12i\n\x1etext_classification_annotation\x18\x03 \x01(\x0b\x32?.google.cloud.datalabeling.v1beta1.TextClassificationAnnotationH\x00\x12n\n!text_entity_extraction_annotation\x18\n \x01(\x0b\x32\x41.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotationH\x00\x12k\n\x1fvideo_classification_annotation\x18\x04 \x01(\x0b\x32@.google.cloud.datalabeling.v1beta1.VideoClassificationAnnotationH\x00\x12l\n video_object_tracking_annotation\x18\x05 \x01(\x0b\x32@.google.cloud.datalabeling.v1beta1.VideoObjectTrackingAnnotationH\x00\x12Y\n\x16video_event_annotation\x18\x06 \x01(\x0b\x32\x37.google.cloud.datalabeling.v1beta1.VideoEventAnnotationH\x00\x42\x0c\n\nvalue_type"k\n\x1dImageClassificationAnnotation\x12J\n\x0f\x61nnotation_spec\x18\x01 \x01(\x0b\x32\x31.google.cloud.datalabeling.v1beta1.AnnotationSpec"\x1e\n\x06Vertex\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05"(\n\x10NormalizedVertex\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02"K\n\x0c\x42oundingPoly\x12;\n\x08vertices\x18\x01 \x03(\x0b\x32).google.cloud.datalabeling.v1beta1.Vertex"j\n\x16NormalizedBoundingPoly\x12P\n\x13normalized_vertices\x18\x01 \x03(\x0b\x32\x33.google.cloud.datalabeling.v1beta1.NormalizedVertex"\xa2\x02\n\x1bImageBoundingPolyAnnotation\x12H\n\rbounding_poly\x18\x02 \x01(\x0b\x32/.google.cloud.datalabeling.v1beta1.BoundingPolyH\x00\x12]\n\x18normalized_bounding_poly\x18\x03 \x01(\x0b\x32\x39.google.cloud.datalabeling.v1beta1.NormalizedBoundingPolyH\x00\x12J\n\x0f\x61nnotation_spec\x18\x01 \x01(\x0b\x32\x31.google.cloud.datalabeling.v1beta1.AnnotationSpecB\x0e\n\x0c\x62ounded_area"G\n\x08Polyline\x12;\n\x08vertices\x18\x01 \x03(\x0b\x32).google.cloud.datalabeling.v1beta1.Vertex"f\n\x12NormalizedPolyline\x12P\n\x13normalized_vertices\x18\x01 \x03(\x0b\x32\x33.google.cloud.datalabeling.v1beta1.NormalizedVertex"\x84\x02\n\x17ImagePolylineAnnotation\x12?\n\x08polyline\x18\x02 \x01(\x0b\x32+.google.cloud.datalabeling.v1beta1.PolylineH\x00\x12T\n\x13normalized_polyline\x18\x03 \x01(\x0b\x32\x35.google.cloud.datalabeling.v1beta1.NormalizedPolylineH\x00\x12J\n\x0f\x61nnotation_spec\x18\x01 \x01(\x0b\x32\x31.google.cloud.datalabeling.v1beta1.AnnotationSpecB\x06\n\x04poly"\xa2\x02\n\x1bImageSegmentationAnnotation\x12o\n\x11\x61nnotation_colors\x18\x01 \x03(\x0b\x32T.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation.AnnotationColorsEntry\x12\x11\n\tmime_type\x18\x02 \x01(\t\x12\x13\n\x0bimage_bytes\x18\x03 \x01(\x0c\x1aj\n\x15\x41nnotationColorsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12@\n\x05value\x18\x02 \x01(\x0b\x32\x31.google.cloud.datalabeling.v1beta1.AnnotationSpec:\x02\x38\x01"j\n\x1cTextClassificationAnnotation\x12J\n\x0f\x61nnotation_spec\x18\x01 \x01(\x0b\x32\x31.google.cloud.datalabeling.v1beta1.AnnotationSpec"\xbe\x01\n\x1eTextEntityExtractionAnnotation\x12J\n\x0f\x61nnotation_spec\x18\x01 \x01(\x0b\x32\x31.google.cloud.datalabeling.v1beta1.AnnotationSpec\x12P\n\x12sequential_segment\x18\x02 \x01(\x0b\x32\x34.google.cloud.datalabeling.v1beta1.SequentialSegment"/\n\x11SequentialSegment\x12\r\n\x05start\x18\x01 \x01(\x05\x12\x0b\n\x03\x65nd\x18\x02 \x01(\x05"w\n\x0bTimeSegment\x12\x34\n\x11start_time_offset\x18\x01 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x32\n\x0f\x65nd_time_offset\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration"\xb1\x01\n\x1dVideoClassificationAnnotation\x12\x44\n\x0ctime_segment\x18\x01 \x01(\x0b\x32..google.cloud.datalabeling.v1beta1.TimeSegment\x12J\n\x0f\x61nnotation_spec\x18\x02 \x01(\x0b\x32\x31.google.cloud.datalabeling.v1beta1.AnnotationSpec"\xfe\x01\n\x13ObjectTrackingFrame\x12H\n\rbounding_poly\x18\x01 \x01(\x0b\x32/.google.cloud.datalabeling.v1beta1.BoundingPolyH\x00\x12]\n\x18normalized_bounding_poly\x18\x02 \x01(\x0b\x32\x39.google.cloud.datalabeling.v1beta1.NormalizedBoundingPolyH\x00\x12.\n\x0btime_offset\x18\x03 \x01(\x0b\x32\x19.google.protobuf.DurationB\x0e\n\x0c\x62ounded_area"\x89\x02\n\x1dVideoObjectTrackingAnnotation\x12J\n\x0f\x61nnotation_spec\x18\x01 \x01(\x0b\x32\x31.google.cloud.datalabeling.v1beta1.AnnotationSpec\x12\x44\n\x0ctime_segment\x18\x02 \x01(\x0b\x32..google.cloud.datalabeling.v1beta1.TimeSegment\x12V\n\x16object_tracking_frames\x18\x03 \x03(\x0b\x32\x36.google.cloud.datalabeling.v1beta1.ObjectTrackingFrame"\xa8\x01\n\x14VideoEventAnnotation\x12J\n\x0f\x61nnotation_spec\x18\x01 \x01(\x0b\x32\x31.google.cloud.datalabeling.v1beta1.AnnotationSpec\x12\x44\n\x0ctime_segment\x18\x02 \x01(\x0b\x32..google.cloud.datalabeling.v1beta1.TimeSegment"d\n\x12\x41nnotationMetadata\x12N\n\x11operator_metadata\x18\x02 \x01(\x0b\x32\x33.google.cloud.datalabeling.v1beta1.OperatorMetadata"]\n\x10OperatorMetadata\x12\r\n\x05score\x18\x01 \x01(\x02\x12\x13\n\x0btotal_votes\x18\x02 \x01(\x05\x12\x13\n\x0blabel_votes\x18\x03 \x01(\x05\x12\x10\n\x08\x63omments\x18\x04 \x03(\t*C\n\x10\x41nnotationSource\x12!\n\x1d\x41NNOTATION_SOURCE_UNSPECIFIED\x10\x00\x12\x0c\n\x08OPERATOR\x10\x03*W\n\x13\x41nnotationSentiment\x12$\n ANNOTATION_SENTIMENT_UNSPECIFIED\x10\x00\x12\x0c\n\x08NEGATIVE\x10\x01\x12\x0c\n\x08POSITIVE\x10\x02*\x91\x04\n\x0e\x41nnotationType\x12\x1f\n\x1b\x41NNOTATION_TYPE_UNSPECIFIED\x10\x00\x12#\n\x1fIMAGE_CLASSIFICATION_ANNOTATION\x10\x01\x12!\n\x1dIMAGE_BOUNDING_BOX_ANNOTATION\x10\x02\x12*\n&IMAGE_ORIENTED_BOUNDING_BOX_ANNOTATION\x10\r\x12"\n\x1eIMAGE_BOUNDING_POLY_ANNOTATION\x10\n\x12\x1d\n\x19IMAGE_POLYLINE_ANNOTATION\x10\x0b\x12!\n\x1dIMAGE_SEGMENTATION_ANNOTATION\x10\x0c\x12)\n%VIDEO_SHOTS_CLASSIFICATION_ANNOTATION\x10\x03\x12$\n VIDEO_OBJECT_TRACKING_ANNOTATION\x10\x04\x12%\n!VIDEO_OBJECT_DETECTION_ANNOTATION\x10\x05\x12\x1a\n\x16VIDEO_EVENT_ANNOTATION\x10\x06\x12"\n\x1eTEXT_CLASSIFICATION_ANNOTATION\x10\x08\x12%\n!TEXT_ENTITY_EXTRACTION_ANNOTATION\x10\t\x12%\n!GENERAL_CLASSIFICATION_ANNOTATION\x10\x0e\x42x\n%com.google.cloud.datalabeling.v1beta1P\x01ZMgoogle.golang.org/genproto/googleapis/cloud/datalabeling/v1beta1;datalabelingb\x06proto3',
     dependencies=[
         google_dot_api_dot_annotations__pb2.DESCRIPTOR,
@@ -40,6 +41,7 @@ _ANNOTATIONSOURCE = _descriptor.EnumDescriptor(
     full_name="google.cloud.datalabeling.v1beta1.AnnotationSource",
     filename=None,
     file=DESCRIPTOR,
+    create_key=_descriptor._internal_create_key,
     values=[
         _descriptor.EnumValueDescriptor(
             name="ANNOTATION_SOURCE_UNSPECIFIED",
@@ -47,9 +49,15 @@ _ANNOTATIONSOURCE = _descriptor.EnumDescriptor(
             number=0,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="OPERATOR", index=1, number=3, serialized_options=None, type=None
+            name="OPERATOR",
+            index=1,
+            number=3,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     containing_type=None,
@@ -65,6 +73,7 @@ _ANNOTATIONSENTIMENT = _descriptor.EnumDescriptor(
     full_name="google.cloud.datalabeling.v1beta1.AnnotationSentiment",
     filename=None,
     file=DESCRIPTOR,
+    create_key=_descriptor._internal_create_key,
     values=[
         _descriptor.EnumValueDescriptor(
             name="ANNOTATION_SENTIMENT_UNSPECIFIED",
@@ -72,12 +81,23 @@ _ANNOTATIONSENTIMENT = _descriptor.EnumDescriptor(
             number=0,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="NEGATIVE", index=1, number=1, serialized_options=None, type=None
+            name="NEGATIVE",
+            index=1,
+            number=1,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="POSITIVE", index=2, number=2, serialized_options=None, type=None
+            name="POSITIVE",
+            index=2,
+            number=2,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     containing_type=None,
@@ -93,6 +113,7 @@ _ANNOTATIONTYPE = _descriptor.EnumDescriptor(
     full_name="google.cloud.datalabeling.v1beta1.AnnotationType",
     filename=None,
     file=DESCRIPTOR,
+    create_key=_descriptor._internal_create_key,
     values=[
         _descriptor.EnumValueDescriptor(
             name="ANNOTATION_TYPE_UNSPECIFIED",
@@ -100,6 +121,7 @@ _ANNOTATIONTYPE = _descriptor.EnumDescriptor(
             number=0,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="IMAGE_CLASSIFICATION_ANNOTATION",
@@ -107,6 +129,7 @@ _ANNOTATIONTYPE = _descriptor.EnumDescriptor(
             number=1,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="IMAGE_BOUNDING_BOX_ANNOTATION",
@@ -114,6 +137,7 @@ _ANNOTATIONTYPE = _descriptor.EnumDescriptor(
             number=2,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="IMAGE_ORIENTED_BOUNDING_BOX_ANNOTATION",
@@ -121,6 +145,7 @@ _ANNOTATIONTYPE = _descriptor.EnumDescriptor(
             number=13,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="IMAGE_BOUNDING_POLY_ANNOTATION",
@@ -128,6 +153,7 @@ _ANNOTATIONTYPE = _descriptor.EnumDescriptor(
             number=10,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="IMAGE_POLYLINE_ANNOTATION",
@@ -135,6 +161,7 @@ _ANNOTATIONTYPE = _descriptor.EnumDescriptor(
             number=11,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="IMAGE_SEGMENTATION_ANNOTATION",
@@ -142,6 +169,7 @@ _ANNOTATIONTYPE = _descriptor.EnumDescriptor(
             number=12,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="VIDEO_SHOTS_CLASSIFICATION_ANNOTATION",
@@ -149,6 +177,7 @@ _ANNOTATIONTYPE = _descriptor.EnumDescriptor(
             number=3,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="VIDEO_OBJECT_TRACKING_ANNOTATION",
@@ -156,6 +185,7 @@ _ANNOTATIONTYPE = _descriptor.EnumDescriptor(
             number=4,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="VIDEO_OBJECT_DETECTION_ANNOTATION",
@@ -163,6 +193,7 @@ _ANNOTATIONTYPE = _descriptor.EnumDescriptor(
             number=5,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="VIDEO_EVENT_ANNOTATION",
@@ -170,6 +201,7 @@ _ANNOTATIONTYPE = _descriptor.EnumDescriptor(
             number=6,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="TEXT_CLASSIFICATION_ANNOTATION",
@@ -177,6 +209,7 @@ _ANNOTATIONTYPE = _descriptor.EnumDescriptor(
             number=8,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="TEXT_ENTITY_EXTRACTION_ANNOTATION",
@@ -184,6 +217,7 @@ _ANNOTATIONTYPE = _descriptor.EnumDescriptor(
             number=9,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="GENERAL_CLASSIFICATION_ANNOTATION",
@@ -191,6 +225,7 @@ _ANNOTATIONTYPE = _descriptor.EnumDescriptor(
             number=14,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     containing_type=None,
@@ -228,6 +263,7 @@ _ANNOTATION = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -246,6 +282,7 @@ _ANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="annotation_source",
@@ -264,6 +301,7 @@ _ANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="annotation_value",
@@ -282,6 +320,7 @@ _ANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="annotation_metadata",
@@ -300,6 +339,7 @@ _ANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="annotation_sentiment",
@@ -318,6 +358,7 @@ _ANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -339,6 +380,7 @@ _ANNOTATIONVALUE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="image_classification_annotation",
@@ -357,6 +399,7 @@ _ANNOTATIONVALUE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="image_bounding_poly_annotation",
@@ -375,6 +418,7 @@ _ANNOTATIONVALUE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="image_polyline_annotation",
@@ -393,6 +437,7 @@ _ANNOTATIONVALUE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="image_segmentation_annotation",
@@ -411,6 +456,7 @@ _ANNOTATIONVALUE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="text_classification_annotation",
@@ -429,6 +475,7 @@ _ANNOTATIONVALUE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="text_entity_extraction_annotation",
@@ -447,6 +494,7 @@ _ANNOTATIONVALUE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="video_classification_annotation",
@@ -465,6 +513,7 @@ _ANNOTATIONVALUE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="video_object_tracking_annotation",
@@ -483,6 +532,7 @@ _ANNOTATIONVALUE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="video_event_annotation",
@@ -501,6 +551,7 @@ _ANNOTATIONVALUE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -516,6 +567,7 @@ _ANNOTATIONVALUE = _descriptor.Descriptor(
             full_name="google.cloud.datalabeling.v1beta1.AnnotationValue.value_type",
             index=0,
             containing_type=None,
+            create_key=_descriptor._internal_create_key,
             fields=[],
         )
     ],
@@ -530,6 +582,7 @@ _IMAGECLASSIFICATIONANNOTATION = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="annotation_spec",
@@ -548,6 +601,7 @@ _IMAGECLASSIFICATIONANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -569,6 +623,7 @@ _VERTEX = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="x",
@@ -587,6 +642,7 @@ _VERTEX = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="y",
@@ -605,6 +661,7 @@ _VERTEX = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -626,6 +683,7 @@ _NORMALIZEDVERTEX = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="x",
@@ -644,6 +702,7 @@ _NORMALIZEDVERTEX = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="y",
@@ -662,6 +721,7 @@ _NORMALIZEDVERTEX = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -683,6 +743,7 @@ _BOUNDINGPOLY = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="vertices",
@@ -701,6 +762,7 @@ _BOUNDINGPOLY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -722,6 +784,7 @@ _NORMALIZEDBOUNDINGPOLY = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="normalized_vertices",
@@ -740,6 +803,7 @@ _NORMALIZEDBOUNDINGPOLY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -761,6 +825,7 @@ _IMAGEBOUNDINGPOLYANNOTATION = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="bounding_poly",
@@ -779,6 +844,7 @@ _IMAGEBOUNDINGPOLYANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="normalized_bounding_poly",
@@ -797,6 +863,7 @@ _IMAGEBOUNDINGPOLYANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="annotation_spec",
@@ -815,6 +882,7 @@ _IMAGEBOUNDINGPOLYANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -830,6 +898,7 @@ _IMAGEBOUNDINGPOLYANNOTATION = _descriptor.Descriptor(
             full_name="google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation.bounded_area",
             index=0,
             containing_type=None,
+            create_key=_descriptor._internal_create_key,
             fields=[],
         )
     ],
@@ -844,6 +913,7 @@ _POLYLINE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="vertices",
@@ -862,6 +932,7 @@ _POLYLINE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -883,6 +954,7 @@ _NORMALIZEDPOLYLINE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="normalized_vertices",
@@ -901,6 +973,7 @@ _NORMALIZEDPOLYLINE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -922,6 +995,7 @@ _IMAGEPOLYLINEANNOTATION = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="polyline",
@@ -940,6 +1014,7 @@ _IMAGEPOLYLINEANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="normalized_polyline",
@@ -958,6 +1033,7 @@ _IMAGEPOLYLINEANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="annotation_spec",
@@ -976,6 +1052,7 @@ _IMAGEPOLYLINEANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -991,6 +1068,7 @@ _IMAGEPOLYLINEANNOTATION = _descriptor.Descriptor(
             full_name="google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation.poly",
             index=0,
             containing_type=None,
+            create_key=_descriptor._internal_create_key,
             fields=[],
         )
     ],
@@ -1005,6 +1083,7 @@ _IMAGESEGMENTATIONANNOTATION_ANNOTATIONCOLORSENTRY = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="key",
@@ -1023,6 +1102,7 @@ _IMAGESEGMENTATIONANNOTATION_ANNOTATIONCOLORSENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="value",
@@ -1041,6 +1121,7 @@ _IMAGESEGMENTATIONANNOTATION_ANNOTATIONCOLORSENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1061,6 +1142,7 @@ _IMAGESEGMENTATIONANNOTATION = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="annotation_colors",
@@ -1079,6 +1161,7 @@ _IMAGESEGMENTATIONANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="mime_type",
@@ -1097,6 +1180,7 @@ _IMAGESEGMENTATIONANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="image_bytes",
@@ -1115,6 +1199,7 @@ _IMAGESEGMENTATIONANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1136,6 +1221,7 @@ _TEXTCLASSIFICATIONANNOTATION = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="annotation_spec",
@@ -1154,6 +1240,7 @@ _TEXTCLASSIFICATIONANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -1175,6 +1262,7 @@ _TEXTENTITYEXTRACTIONANNOTATION = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="annotation_spec",
@@ -1193,6 +1281,7 @@ _TEXTENTITYEXTRACTIONANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="sequential_segment",
@@ -1211,6 +1300,7 @@ _TEXTENTITYEXTRACTIONANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1232,6 +1322,7 @@ _SEQUENTIALSEGMENT = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="start",
@@ -1250,6 +1341,7 @@ _SEQUENTIALSEGMENT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="end",
@@ -1268,6 +1360,7 @@ _SEQUENTIALSEGMENT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1289,6 +1382,7 @@ _TIMESEGMENT = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="start_time_offset",
@@ -1307,6 +1401,7 @@ _TIMESEGMENT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="end_time_offset",
@@ -1325,6 +1420,7 @@ _TIMESEGMENT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1346,6 +1442,7 @@ _VIDEOCLASSIFICATIONANNOTATION = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="time_segment",
@@ -1364,6 +1461,7 @@ _VIDEOCLASSIFICATIONANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="annotation_spec",
@@ -1382,6 +1480,7 @@ _VIDEOCLASSIFICATIONANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1403,6 +1502,7 @@ _OBJECTTRACKINGFRAME = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="bounding_poly",
@@ -1421,6 +1521,7 @@ _OBJECTTRACKINGFRAME = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="normalized_bounding_poly",
@@ -1439,6 +1540,7 @@ _OBJECTTRACKINGFRAME = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="time_offset",
@@ -1457,6 +1559,7 @@ _OBJECTTRACKINGFRAME = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1472,6 +1575,7 @@ _OBJECTTRACKINGFRAME = _descriptor.Descriptor(
             full_name="google.cloud.datalabeling.v1beta1.ObjectTrackingFrame.bounded_area",
             index=0,
             containing_type=None,
+            create_key=_descriptor._internal_create_key,
             fields=[],
         )
     ],
@@ -1486,6 +1590,7 @@ _VIDEOOBJECTTRACKINGANNOTATION = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="annotation_spec",
@@ -1504,6 +1609,7 @@ _VIDEOOBJECTTRACKINGANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="time_segment",
@@ -1522,6 +1628,7 @@ _VIDEOOBJECTTRACKINGANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="object_tracking_frames",
@@ -1540,6 +1647,7 @@ _VIDEOOBJECTTRACKINGANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1561,6 +1669,7 @@ _VIDEOEVENTANNOTATION = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="annotation_spec",
@@ -1579,6 +1688,7 @@ _VIDEOEVENTANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="time_segment",
@@ -1597,6 +1707,7 @@ _VIDEOEVENTANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1618,6 +1729,7 @@ _ANNOTATIONMETADATA = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="operator_metadata",
@@ -1636,6 +1748,7 @@ _ANNOTATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -1657,6 +1770,7 @@ _OPERATORMETADATA = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="score",
@@ -1675,6 +1789,7 @@ _OPERATORMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="total_votes",
@@ -1693,6 +1808,7 @@ _OPERATORMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="label_votes",
@@ -1711,6 +1827,7 @@ _OPERATORMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="comments",
@@ -1729,6 +1846,7 @@ _OPERATORMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],

@@ -32,6 +32,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     package="google.cloud.datalabeling.v1beta1",
     syntax="proto3",
     serialized_options=b"\n%com.google.cloud.datalabeling.v1beta1P\001ZMgoogle.golang.org/genproto/googleapis/cloud/datalabeling/v1beta1;datalabeling",
+    create_key=_descriptor._internal_create_key,
     serialized_pb=b'\n<google/cloud/datalabeling_v1beta1/proto/evaluation_job.proto\x12!google.cloud.datalabeling.v1beta1\x1a\x1cgoogle/api/annotations.proto\x1a\x19google/api/resource.proto\x1a\x35google/cloud/datalabeling_v1beta1/proto/dataset.proto\x1a\x38google/cloud/datalabeling_v1beta1/proto/evaluation.proto\x1a\x45google/cloud/datalabeling_v1beta1/proto/human_annotation_config.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17google/rpc/status.proto"\xe2\x04\n\rEvaluationJob\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x45\n\x05state\x18\x03 \x01(\x0e\x32\x36.google.cloud.datalabeling.v1beta1.EvaluationJob.State\x12\x10\n\x08schedule\x18\x04 \x01(\t\x12\x15\n\rmodel_version\x18\x05 \x01(\t\x12U\n\x15\x65valuation_job_config\x18\x06 \x01(\x0b\x32\x36.google.cloud.datalabeling.v1beta1.EvaluationJobConfig\x12\x1b\n\x13\x61nnotation_spec_set\x18\x07 \x01(\t\x12"\n\x1alabel_missing_ground_truth\x18\x08 \x01(\x08\x12<\n\x08\x61ttempts\x18\t \x03(\x0b\x32*.google.cloud.datalabeling.v1beta1.Attempt\x12/\n\x0b\x63reate_time\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp"S\n\x05State\x12\x15\n\x11STATE_UNSPECIFIED\x10\x00\x12\r\n\tSCHEDULED\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\n\n\x06PAUSED\x10\x03\x12\x0b\n\x07STOPPED\x10\x04:b\xea\x41_\n)datalabeling.googleapis.com/EvaluationJob\x12\x32projects/{project}/evaluationJobs/{evaluation_job}"\x8d\x07\n\x13\x45valuationJobConfig\x12\x63\n\x1bimage_classification_config\x18\x04 \x01(\x0b\x32<.google.cloud.datalabeling.v1beta1.ImageClassificationConfigH\x00\x12U\n\x14\x62ounding_poly_config\x18\x05 \x01(\x0b\x32\x35.google.cloud.datalabeling.v1beta1.BoundingPolyConfigH\x00\x12\x61\n\x1atext_classification_config\x18\x08 \x01(\x0b\x32;.google.cloud.datalabeling.v1beta1.TextClassificationConfigH\x00\x12\x44\n\x0cinput_config\x18\x01 \x01(\x0b\x32..google.cloud.datalabeling.v1beta1.InputConfig\x12N\n\x11\x65valuation_config\x18\x02 \x01(\x0b\x32\x33.google.cloud.datalabeling.v1beta1.EvaluationConfig\x12Y\n\x17human_annotation_config\x18\x03 \x01(\x0b\x32\x38.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig\x12l\n\x14\x62igquery_import_keys\x18\t \x03(\x0b\x32N.google.cloud.datalabeling.v1beta1.EvaluationJobConfig.BigqueryImportKeysEntry\x12\x15\n\rexample_count\x18\n \x01(\x05\x12!\n\x19\x65xample_sample_percentage\x18\x0b \x01(\x01\x12`\n\x1b\x65valuation_job_alert_config\x18\r \x01(\x0b\x32;.google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig\x1a\x39\n\x17\x42igqueryImportKeysEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42!\n\x1fhuman_annotation_request_config"X\n\x18\x45valuationJobAlertConfig\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12-\n%min_acceptable_mean_average_precision\x18\x02 \x01(\x01"i\n\x07\x41ttempt\x12\x30\n\x0c\x61ttempt_time\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x10partial_failures\x18\x02 \x03(\x0b\x32\x12.google.rpc.StatusBx\n%com.google.cloud.datalabeling.v1beta1P\x01ZMgoogle.golang.org/genproto/googleapis/cloud/datalabeling/v1beta1;datalabelingb\x06proto3',
     dependencies=[
         google_dot_api_dot_annotations__pb2.DESCRIPTOR,
@@ -50,6 +51,7 @@ _EVALUATIONJOB_STATE = _descriptor.EnumDescriptor(
     full_name="google.cloud.datalabeling.v1beta1.EvaluationJob.State",
     filename=None,
     file=DESCRIPTOR,
+    create_key=_descriptor._internal_create_key,
     values=[
         _descriptor.EnumValueDescriptor(
             name="STATE_UNSPECIFIED",
@@ -57,18 +59,39 @@ _EVALUATIONJOB_STATE = _descriptor.EnumDescriptor(
             number=0,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="SCHEDULED", index=1, number=1, serialized_options=None, type=None
+            name="SCHEDULED",
+            index=1,
+            number=1,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="RUNNING", index=2, number=2, serialized_options=None, type=None
+            name="RUNNING",
+            index=2,
+            number=2,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="PAUSED", index=3, number=3, serialized_options=None, type=None
+            name="PAUSED",
+            index=3,
+            number=3,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="STOPPED", index=4, number=4, serialized_options=None, type=None
+            name="STOPPED",
+            index=4,
+            number=4,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     containing_type=None,
@@ -85,6 +108,7 @@ _EVALUATIONJOB = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -103,6 +127,7 @@ _EVALUATIONJOB = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="description",
@@ -121,6 +146,7 @@ _EVALUATIONJOB = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="state",
@@ -139,6 +165,7 @@ _EVALUATIONJOB = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="schedule",
@@ -157,6 +184,7 @@ _EVALUATIONJOB = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="model_version",
@@ -175,6 +203,7 @@ _EVALUATIONJOB = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="evaluation_job_config",
@@ -193,6 +222,7 @@ _EVALUATIONJOB = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="annotation_spec_set",
@@ -211,6 +241,7 @@ _EVALUATIONJOB = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="label_missing_ground_truth",
@@ -229,6 +260,7 @@ _EVALUATIONJOB = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="attempts",
@@ -247,6 +279,7 @@ _EVALUATIONJOB = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="create_time",
@@ -265,6 +298,7 @@ _EVALUATIONJOB = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -286,6 +320,7 @@ _EVALUATIONJOBCONFIG_BIGQUERYIMPORTKEYSENTRY = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="key",
@@ -304,6 +339,7 @@ _EVALUATIONJOBCONFIG_BIGQUERYIMPORTKEYSENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="value",
@@ -322,6 +358,7 @@ _EVALUATIONJOBCONFIG_BIGQUERYIMPORTKEYSENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -342,6 +379,7 @@ _EVALUATIONJOBCONFIG = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="image_classification_config",
@@ -360,6 +398,7 @@ _EVALUATIONJOBCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="bounding_poly_config",
@@ -378,6 +417,7 @@ _EVALUATIONJOBCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="text_classification_config",
@@ -396,6 +436,7 @@ _EVALUATIONJOBCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="input_config",
@@ -414,6 +455,7 @@ _EVALUATIONJOBCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="evaluation_config",
@@ -432,6 +474,7 @@ _EVALUATIONJOBCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="human_annotation_config",
@@ -450,6 +493,7 @@ _EVALUATIONJOBCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="bigquery_import_keys",
@@ -468,6 +512,7 @@ _EVALUATIONJOBCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="example_count",
@@ -486,6 +531,7 @@ _EVALUATIONJOBCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="example_sample_percentage",
@@ -504,6 +550,7 @@ _EVALUATIONJOBCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="evaluation_job_alert_config",
@@ -522,6 +569,7 @@ _EVALUATIONJOBCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -537,6 +585,7 @@ _EVALUATIONJOBCONFIG = _descriptor.Descriptor(
             full_name="google.cloud.datalabeling.v1beta1.EvaluationJobConfig.human_annotation_request_config",
             index=0,
             containing_type=None,
+            create_key=_descriptor._internal_create_key,
             fields=[],
         )
     ],
@@ -551,6 +600,7 @@ _EVALUATIONJOBALERTCONFIG = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="email",
@@ -569,6 +619,7 @@ _EVALUATIONJOBALERTCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="min_acceptable_mean_average_precision",
@@ -587,6 +638,7 @@ _EVALUATIONJOBALERTCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -608,6 +660,7 @@ _ATTEMPT = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="attempt_time",
@@ -626,6 +679,7 @@ _ATTEMPT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="partial_failures",
@@ -644,6 +698,7 @@ _ATTEMPT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],

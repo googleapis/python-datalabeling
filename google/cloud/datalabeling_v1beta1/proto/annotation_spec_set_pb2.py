@@ -21,6 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     package="google.cloud.datalabeling.v1beta1",
     syntax="proto3",
     serialized_options=b"\n%com.google.cloud.datalabeling.v1beta1P\001ZMgoogle.golang.org/genproto/googleapis/cloud/datalabeling/v1beta1;datalabeling",
+    create_key=_descriptor._internal_create_key,
     serialized_pb=b'\nAgoogle/cloud/datalabeling_v1beta1/proto/annotation_spec_set.proto\x12!google.cloud.datalabeling.v1beta1\x1a\x1cgoogle/api/annotations.proto\x1a\x19google/api/resource.proto"\xa6\x02\n\x11\x41nnotationSpecSet\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12K\n\x10\x61nnotation_specs\x18\x04 \x03(\x0b\x32\x31.google.cloud.datalabeling.v1beta1.AnnotationSpec\x12\x1a\n\x12\x62locking_resources\x18\x05 \x03(\t:o\xea\x41l\n-datalabeling.googleapis.com/AnnotationSpecSet\x12;projects/{project}/annotationSpecSets/{annotation_spec_set}";\n\x0e\x41nnotationSpec\x12\x14\n\x0c\x64isplay_name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\tBx\n%com.google.cloud.datalabeling.v1beta1P\x01ZMgoogle.golang.org/genproto/googleapis/cloud/datalabeling/v1beta1;datalabelingb\x06proto3',
     dependencies=[
         google_dot_api_dot_annotations__pb2.DESCRIPTOR,
@@ -35,6 +36,7 @@ _ANNOTATIONSPECSET = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -53,6 +55,7 @@ _ANNOTATIONSPECSET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="display_name",
@@ -71,6 +74,7 @@ _ANNOTATIONSPECSET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="description",
@@ -89,6 +93,7 @@ _ANNOTATIONSPECSET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="annotation_specs",
@@ -107,6 +112,7 @@ _ANNOTATIONSPECSET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="blocking_resources",
@@ -125,6 +131,7 @@ _ANNOTATIONSPECSET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -146,6 +153,7 @@ _ANNOTATIONSPEC = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="display_name",
@@ -164,6 +172,7 @@ _ANNOTATIONSPEC = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="description",
@@ -182,6 +191,7 @@ _ANNOTATIONSPEC = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
