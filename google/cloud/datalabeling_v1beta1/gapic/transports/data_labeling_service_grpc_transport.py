@@ -118,6 +118,71 @@ class DataLabelingServiceGrpcTransport(object):
         return self._channel
 
     @property
+    def delete_dataset(self):
+        """Return the gRPC stub for :meth:`DataLabelingServiceClient.delete_dataset`.
+
+        Deletes a dataset by resource name.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["data_labeling_service_stub"].DeleteDataset
+
+    @property
+    def export_data(self):
+        """Return the gRPC stub for :meth:`DataLabelingServiceClient.export_data`.
+
+        Exports data and annotations from dataset.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["data_labeling_service_stub"].ExportData
+
+    @property
+    def delete_annotation_spec_set(self):
+        """Return the gRPC stub for :meth:`DataLabelingServiceClient.delete_annotation_spec_set`.
+
+        Deletes an annotation spec set by resource name.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["data_labeling_service_stub"].DeleteAnnotationSpecSet
+
+    @property
+    def delete_instruction(self):
+        """Return the gRPC stub for :meth:`DataLabelingServiceClient.delete_instruction`.
+
+        Deletes an instruction object by resource name.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["data_labeling_service_stub"].DeleteInstruction
+
+    @property
+    def delete_evaluation_job(self):
+        """Return the gRPC stub for :meth:`DataLabelingServiceClient.delete_evaluation_job`.
+
+        Stops and deletes an evaluation job.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["data_labeling_service_stub"].DeleteEvaluationJob
+
+    @property
     def create_dataset(self):
         """Return the gRPC stub for :meth:`DataLabelingServiceClient.create_dataset`.
 
@@ -157,19 +222,6 @@ class DataLabelingServiceGrpcTransport(object):
         return self._stubs["data_labeling_service_stub"].ListDatasets
 
     @property
-    def delete_dataset(self):
-        """Return the gRPC stub for :meth:`DataLabelingServiceClient.delete_dataset`.
-
-        Deletes a dataset by resource name.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["data_labeling_service_stub"].DeleteDataset
-
-    @property
     def import_data(self):
         """Return the gRPC stub for :meth:`DataLabelingServiceClient.import_data`.
 
@@ -185,19 +237,6 @@ class DataLabelingServiceGrpcTransport(object):
                 deserialized response object.
         """
         return self._stubs["data_labeling_service_stub"].ImportData
-
-    @property
-    def export_data(self):
-        """Return the gRPC stub for :meth:`DataLabelingServiceClient.export_data`.
-
-        Exports data and annotations from dataset.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["data_labeling_service_stub"].ExportData
 
     @property
     def get_data_item(self):
@@ -374,19 +413,6 @@ class DataLabelingServiceGrpcTransport(object):
         return self._stubs["data_labeling_service_stub"].ListAnnotationSpecSets
 
     @property
-    def delete_annotation_spec_set(self):
-        """Return the gRPC stub for :meth:`DataLabelingServiceClient.delete_annotation_spec_set`.
-
-        Deletes an annotation spec set by resource name.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["data_labeling_service_stub"].DeleteAnnotationSpecSet
-
-    @property
     def create_instruction(self):
         """Return the gRPC stub for :meth:`DataLabelingServiceClient.create_instruction`.
 
@@ -424,19 +450,6 @@ class DataLabelingServiceGrpcTransport(object):
                 deserialized response object.
         """
         return self._stubs["data_labeling_service_stub"].ListInstructions
-
-    @property
-    def delete_instruction(self):
-        """Return the gRPC stub for :meth:`DataLabelingServiceClient.delete_instruction`.
-
-        Deletes an instruction object by resource name.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["data_labeling_service_stub"].DeleteInstruction
 
     @property
     def get_evaluation(self):
@@ -551,19 +564,6 @@ class DataLabelingServiceGrpcTransport(object):
                 deserialized response object.
         """
         return self._stubs["data_labeling_service_stub"].ResumeEvaluationJob
-
-    @property
-    def delete_evaluation_job(self):
-        """Return the gRPC stub for :meth:`DataLabelingServiceClient.delete_evaluation_job`.
-
-        Stops and deletes an evaluation job.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["data_labeling_service_stub"].DeleteEvaluationJob
 
     @property
     def list_evaluation_jobs(self):
