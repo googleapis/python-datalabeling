@@ -805,6 +805,7 @@ EvaluationJob = _reflection.GeneratedProtocolMessageType(
   [Evaluations][google.cloud.datalabeling.v1beta1.Evaluation]. `Creating
   an evaluation job </ml-engine/docs/continuous-evaluation/create-
   job>`__ is the starting point for using continuous evaluation.
+  
   Attributes:
       name:
           Output only. After you create a job, Data Labeling Service
@@ -879,6 +880,7 @@ EvaluationJobConfig = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.datalabeling_v1beta1.proto.evaluation_job_pb2",
         "__doc__": """Configures specific details of how a continuous evaluation job works.
   Provide this configuration when you create an EvaluationJob.
+  
   Attributes:
       human_annotation_request_config:
           Required. Details for how you want human reviewers to provide
@@ -992,6 +994,7 @@ EvaluationJobAlertConfig = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.datalabeling_v1beta1.proto.evaluation_job_pb2",
         "__doc__": """Provides details for how an evaluation job sends email alerts based on
   the results of a run.
+  
   Attributes:
       email:
           Required. An email address to send alerts to.
@@ -1016,6 +1019,7 @@ Attempt = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _ATTEMPT,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.evaluation_job_pb2",
         "__doc__": """Records a failed evaluation job run.
+  
   Attributes:
       partial_failures:
           Details of errors that occurred.

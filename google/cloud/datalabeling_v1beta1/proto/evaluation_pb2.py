@@ -1015,6 +1015,7 @@ Evaluation = _reflection.GeneratedProtocolMessageType(
   and ground truth labels. Created when an
   [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob] runs
   successfully.
+  
   Attributes:
       name:
           Output only. Resource name of an evaluation. The name has the
@@ -1056,6 +1057,7 @@ EvaluationConfig = _reflection.GeneratedProtocolMessageType(
         "__doc__": """Configuration details used for calculating evaluation metrics and
   creating an
   [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation].
+  
   Attributes:
       vertical_option:
           Vertical specific options for general metrics.
@@ -1076,6 +1078,7 @@ BoundingBoxEvaluationOptions = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _BOUNDINGBOXEVALUATIONOPTIONS,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.evaluation_pb2",
         "__doc__": """Options regarding evaluation between bounding boxes.
+  
   Attributes:
       iou_threshold:
           Minimum [intersection-over-union
@@ -1111,6 +1114,7 @@ ClassificationMetrics = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _CLASSIFICATIONMETRICS,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.evaluation_pb2",
         "__doc__": """Metrics calculated for a classification model.
+  
   Attributes:
       pr_curve:
           Precision-recall curve based on ground truth labels, predicted
@@ -1130,6 +1134,7 @@ ObjectDetectionMetrics = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _OBJECTDETECTIONMETRICS,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.evaluation_pb2",
         "__doc__": """Metrics calculated for an image object detection (bounding box) model.
+  
   Attributes:
       pr_curve:
           Precision-recall curve.
@@ -1242,6 +1247,7 @@ ConfusionMatrix = _reflection.GeneratedProtocolMessageType(
                 "__module__": "google.cloud.datalabeling_v1beta1.proto.evaluation_pb2",
                 "__doc__": """A row in the confusion matrix. Each entry in this row has the same
     ground truth label.
+    
     Attributes:
         annotation_spec:
             The annotation spec of the ground truth label for this row.

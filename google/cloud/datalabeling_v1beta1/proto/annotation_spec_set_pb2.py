@@ -221,6 +221,7 @@ AnnotationSpecSet = _reflection.GeneratedProtocolMessageType(
   example, in image classification tasks, you define a set of possible
   labels for images as an AnnotationSpecSet. An AnnotationSpecSet is
   immutable upon creation.
+  
   Attributes:
       name:
           Output only. The AnnotationSpecSet resource name in the
@@ -256,6 +257,7 @@ AnnotationSpec = _reflection.GeneratedProtocolMessageType(
   be used in a labeling task. For example, an image classification task
   where images are labeled as ``dog`` or ``cat`` must reference an
   AnnotationSpec for ``dog`` and an AnnotationSpec for ``cat``.
+  
   Attributes:
       display_name:
           Required. The display name of the AnnotationSpec. Maximum of
