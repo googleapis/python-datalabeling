@@ -940,8 +940,6 @@ HumanAnnotationConfig = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _HUMANANNOTATIONCONFIG,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.human_annotation_config_pb2",
         "__doc__": """Configuration for how human labeling task should be done.
-  
-  
   Attributes:
       instruction:
           Required. Instruction resource name.
@@ -991,8 +989,6 @@ ImageClassificationConfig = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _IMAGECLASSIFICATIONCONFIG,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.human_annotation_config_pb2",
         "__doc__": """Config for image classification human labeling task.
-  
-  
   Attributes:
       annotation_spec_set:
           Required. Annotation spec set resource name.
@@ -1013,10 +1009,7 @@ BoundingPolyConfig = _reflection.GeneratedProtocolMessageType(
     {
         "DESCRIPTOR": _BOUNDINGPOLYCONFIG,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.human_annotation_config_pb2",
-        "__doc__": """Config for image bounding poly (and bounding box) human
-  labeling task.
-  
-  
+        "__doc__": """Config for image bounding poly (and bounding box) human labeling task.
   Attributes:
       annotation_spec_set:
           Required. Annotation spec set resource name.
@@ -1035,8 +1028,6 @@ PolylineConfig = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _POLYLINECONFIG,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.human_annotation_config_pb2",
         "__doc__": """Config for image polyline human labeling task.
-  
-  
   Attributes:
       annotation_spec_set:
           Required. Annotation spec set resource name.
@@ -1055,8 +1046,6 @@ SegmentationConfig = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _SEGMENTATIONCONFIG,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.human_annotation_config_pb2",
         "__doc__": """Config for image segmentation
-  
-  
   Attributes:
       annotation_spec_set:
           Required. Annotation spec set resource name. format: projects/
@@ -1079,10 +1068,7 @@ VideoClassificationConfig = _reflection.GeneratedProtocolMessageType(
             {
                 "DESCRIPTOR": _VIDEOCLASSIFICATIONCONFIG_ANNOTATIONSPECSETCONFIG,
                 "__module__": "google.cloud.datalabeling_v1beta1.proto.human_annotation_config_pb2",
-                "__doc__": """Annotation spec set with the setting of allowing multi
-    labels or not.
-    
-    
+                "__doc__": """Annotation spec set with the setting of allowing multi labels or not.
     Attributes:
         annotation_spec_set:
             Required. Annotation spec set resource name.
@@ -1095,12 +1081,10 @@ VideoClassificationConfig = _reflection.GeneratedProtocolMessageType(
         ),
         "DESCRIPTOR": _VIDEOCLASSIFICATIONCONFIG,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.human_annotation_config_pb2",
-        "__doc__": """Config for video classification human labeling task.
-  Currently two types of video classification are supported: 1. Assign
-  labels on the entire video. 2. Split the video into multiple video clips
-  based on camera shot, and assign labels on each video clip.
-  
-  
+        "__doc__": """Config for video classification human labeling task. Currently two
+  types of video classification are supported: 1. Assign labels on the
+  entire video. 2. Split the video into multiple video clips based on
+  camera shot, and assign labels on each video clip.
   Attributes:
       annotation_spec_set_configs:
           Required. The list of annotation spec set configs. Since
@@ -1124,13 +1108,11 @@ ObjectDetectionConfig = _reflection.GeneratedProtocolMessageType(
     {
         "DESCRIPTOR": _OBJECTDETECTIONCONFIG,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.human_annotation_config_pb2",
-        "__doc__": """Config for video object detection human labeling task.
-  Object detection will be conducted on the images extracted from the
-  video, and those objects will be labeled with bounding boxes. User need
-  to specify the number of images to be extracted per second as the
+        "__doc__": """Config for video object detection human labeling task. Object
+  detection will be conducted on the images extracted from the video,
+  and those objects will be labeled with bounding boxes. User need to
+  specify the number of images to be extracted per second as the
   extraction frame rate.
-  
-  
   Attributes:
       annotation_spec_set:
           Required. Annotation spec set resource name.
@@ -1150,8 +1132,6 @@ ObjectTrackingConfig = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _OBJECTTRACKINGCONFIG,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.human_annotation_config_pb2",
         "__doc__": """Config for video object tracking human labeling task.
-  
-  
   Attributes:
       annotation_spec_set:
           Required. Annotation spec set resource name.
@@ -1168,8 +1148,6 @@ EventConfig = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _EVENTCONFIG,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.human_annotation_config_pb2",
         "__doc__": """Config for video event human labeling task.
-  
-  
   Attributes:
       annotation_spec_sets:
           Required. The list of annotation spec set resource name.
@@ -1188,8 +1166,6 @@ TextClassificationConfig = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _TEXTCLASSIFICATIONCONFIG,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.human_annotation_config_pb2",
         "__doc__": """Config for text classification human labeling task.
-  
-  
   Attributes:
       allow_multi_label:
           Optional. If allow_multi_label is true, contributors are able
@@ -1211,8 +1187,6 @@ SentimentConfig = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _SENTIMENTCONFIG,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.human_annotation_config_pb2",
         "__doc__": """Config for setting up sentiments.
-  
-  
   Attributes:
       enable_label_sentiment_selection:
           If set to true, contributors will have the option to select
@@ -1231,8 +1205,6 @@ TextEntityExtractionConfig = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _TEXTENTITYEXTRACTIONCONFIG,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.human_annotation_config_pb2",
         "__doc__": """Config for text entity extraction human labeling task.
-  
-  
   Attributes:
       annotation_spec_set:
           Required. Annotation spec set resource name.

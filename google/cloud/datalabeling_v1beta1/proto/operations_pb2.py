@@ -1481,8 +1481,6 @@ ImportDataOperationResponse = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _IMPORTDATAOPERATIONRESPONSE,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.operations_pb2",
         "__doc__": """Response used for ImportData longrunning operation.
-  
-  
   Attributes:
       dataset:
           Ouptut only. The name of imported dataset.
@@ -1503,8 +1501,6 @@ ExportDataOperationResponse = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _EXPORTDATAOPERATIONRESPONSE,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.operations_pb2",
         "__doc__": """Response used for ExportDataset longrunning operation.
-  
-  
   Attributes:
       dataset:
           Ouptut only. The name of dataset. “projects/\ */datasets/*”
@@ -1530,8 +1526,6 @@ ImportDataOperationMetadata = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _IMPORTDATAOPERATIONMETADATA,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.operations_pb2",
         "__doc__": """Metadata of an ImportData operation.
-  
-  
   Attributes:
       dataset:
           Output only. The name of imported dataset. “projects/\
@@ -1556,8 +1550,6 @@ ExportDataOperationMetadata = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _EXPORTDATAOPERATIONMETADATA,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.operations_pb2",
         "__doc__": """Metadata of an ExportData operation.
-  
-  
   Attributes:
       dataset:
           Output only. The name of dataset to be exported. “projects/\
@@ -1581,10 +1573,8 @@ LabelOperationMetadata = _reflection.GeneratedProtocolMessageType(
     {
         "DESCRIPTOR": _LABELOPERATIONMETADATA,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.operations_pb2",
-        "__doc__": """Metadata of a labeling operation, such as LabelImage or
-  LabelVideo. Next tag: 20
-  
-  
+        "__doc__": """Metadata of a labeling operation, such as LabelImage or LabelVideo.
+  Next tag: 20
   Attributes:
       details:
           Ouptut only. Details of specific label operation.
@@ -1633,8 +1623,6 @@ LabelImageClassificationOperationMetadata = _reflection.GeneratedProtocolMessage
         "DESCRIPTOR": _LABELIMAGECLASSIFICATIONOPERATIONMETADATA,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.operations_pb2",
         "__doc__": """Metadata of a LabelImageClassification operation.
-  
-  
   Attributes:
       basic_config:
           Basic human annotation config used in labeling request.
@@ -1651,8 +1639,6 @@ LabelImageBoundingBoxOperationMetadata = _reflection.GeneratedProtocolMessageTyp
         "DESCRIPTOR": _LABELIMAGEBOUNDINGBOXOPERATIONMETADATA,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.operations_pb2",
         "__doc__": """Details of a LabelImageBoundingBox operation metadata.
-  
-  
   Attributes:
       basic_config:
           Basic human annotation config used in labeling request.
@@ -1668,10 +1654,7 @@ LabelImageOrientedBoundingBoxOperationMetadata = _reflection.GeneratedProtocolMe
     {
         "DESCRIPTOR": _LABELIMAGEORIENTEDBOUNDINGBOXOPERATIONMETADATA,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.operations_pb2",
-        "__doc__": """Details of a LabelImageOrientedBoundingBox operation
-  metadata.
-  
-  
+        "__doc__": """Details of a LabelImageOrientedBoundingBox operation metadata.
   Attributes:
       basic_config:
           Basic human annotation config.
@@ -1688,8 +1671,6 @@ LabelImageBoundingPolyOperationMetadata = _reflection.GeneratedProtocolMessageTy
         "DESCRIPTOR": _LABELIMAGEBOUNDINGPOLYOPERATIONMETADATA,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.operations_pb2",
         "__doc__": """Details of LabelImageBoundingPoly operation metadata.
-  
-  
   Attributes:
       basic_config:
           Basic human annotation config used in labeling request.
@@ -1706,8 +1687,6 @@ LabelImagePolylineOperationMetadata = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _LABELIMAGEPOLYLINEOPERATIONMETADATA,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.operations_pb2",
         "__doc__": """Details of LabelImagePolyline operation metadata.
-  
-  
   Attributes:
       basic_config:
           Basic human annotation config used in labeling request.
@@ -1724,8 +1703,6 @@ LabelImageSegmentationOperationMetadata = _reflection.GeneratedProtocolMessageTy
         "DESCRIPTOR": _LABELIMAGESEGMENTATIONOPERATIONMETADATA,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.operations_pb2",
         "__doc__": """Details of a LabelImageSegmentation operation metadata.
-  
-  
   Attributes:
       basic_config:
           Basic human annotation config.
@@ -1742,8 +1719,6 @@ LabelVideoClassificationOperationMetadata = _reflection.GeneratedProtocolMessage
         "DESCRIPTOR": _LABELVIDEOCLASSIFICATIONOPERATIONMETADATA,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.operations_pb2",
         "__doc__": """Details of a LabelVideoClassification operation metadata.
-  
-  
   Attributes:
       basic_config:
           Basic human annotation config used in labeling request.
@@ -1760,8 +1735,6 @@ LabelVideoObjectDetectionOperationMetadata = _reflection.GeneratedProtocolMessag
         "DESCRIPTOR": _LABELVIDEOOBJECTDETECTIONOPERATIONMETADATA,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.operations_pb2",
         "__doc__": """Details of a LabelVideoObjectDetection operation metadata.
-  
-  
   Attributes:
       basic_config:
           Basic human annotation config used in labeling request.
@@ -1778,8 +1751,6 @@ LabelVideoObjectTrackingOperationMetadata = _reflection.GeneratedProtocolMessage
         "DESCRIPTOR": _LABELVIDEOOBJECTTRACKINGOPERATIONMETADATA,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.operations_pb2",
         "__doc__": """Details of a LabelVideoObjectTracking operation metadata.
-  
-  
   Attributes:
       basic_config:
           Basic human annotation config used in labeling request.
@@ -1796,8 +1767,6 @@ LabelVideoEventOperationMetadata = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _LABELVIDEOEVENTOPERATIONMETADATA,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.operations_pb2",
         "__doc__": """Details of a LabelVideoEvent operation metadata.
-  
-  
   Attributes:
       basic_config:
           Basic human annotation config used in labeling request.
@@ -1814,8 +1783,6 @@ LabelTextClassificationOperationMetadata = _reflection.GeneratedProtocolMessageT
         "DESCRIPTOR": _LABELTEXTCLASSIFICATIONOPERATIONMETADATA,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.operations_pb2",
         "__doc__": """Details of a LabelTextClassification operation metadata.
-  
-  
   Attributes:
       basic_config:
           Basic human annotation config used in labeling request.
@@ -1832,8 +1799,6 @@ LabelTextEntityExtractionOperationMetadata = _reflection.GeneratedProtocolMessag
         "DESCRIPTOR": _LABELTEXTENTITYEXTRACTIONOPERATIONMETADATA,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.operations_pb2",
         "__doc__": """Details of a LabelTextEntityExtraction operation metadata.
-  
-  
   Attributes:
       basic_config:
           Basic human annotation config used in labeling request.
@@ -1850,8 +1815,6 @@ CreateInstructionMetadata = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _CREATEINSTRUCTIONMETADATA,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.operations_pb2",
         "__doc__": """Metadata of a CreateInstruction operation.
-  
-  
   Attributes:
       instruction:
           The name of the created Instruction.
