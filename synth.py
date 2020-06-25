@@ -69,6 +69,14 @@ s.replace(
     Attributes:''',
 )
 
+# Escape '_' at the end of the line in pb2 docstrings
+s.replace(
+"google/cloud/**/*_pb2.py",
+"""\_$""",
+"""\_""",
+)
+
+
 # TODO(busunkim): Use latest sphinx after microgenerator transition
 s.replace("noxfile.py", """['"]sphinx['"]""", '"sphinx<3.0.0"')
 

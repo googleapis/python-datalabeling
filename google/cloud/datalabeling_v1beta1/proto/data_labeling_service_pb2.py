@@ -4309,7 +4309,7 @@ GetEvaluationRequest = _reflection.GeneratedProtocolMessageType(
   
   Attributes:
       name:
-          Required. Name of the evaluation. Format:  "projects/{project_
+          Required. Name of the evaluation. Format:  "projects/{project\_
           id}/datasets/{dataset_id}/evaluations/{evaluation_id}’
   """,
         # @@protoc_insertion_point(class_scope:google.cloud.datalabeling.v1beta1.GetEvaluationRequest)
@@ -4608,7 +4608,7 @@ ListEvaluationJobsRequest = _reflection.GeneratedProtocolMessageType(
       page_token:
           Optional. A token identifying a page of results for the server
           to return. Typically obtained by the [nextPageToken][google.cl
-          oud.datalabeling.v1beta1.ListEvaluationJobsResponse.next_page_
+          oud.datalabeling.v1beta1.ListEvaluationJobsResponse.next_page\_
           token] in the response to the previous request. The request
           returns the first page if this is empty.
   """,
