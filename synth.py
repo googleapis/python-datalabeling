@@ -64,10 +64,13 @@ s.replace(
 # Fix docstrings with no summary line
 s.replace(
     "google/cloud/**/proto/*_pb2.py",
-    '''__doc__ = """Attributes:''',
-    '''__doc__ = """
+    '''['"]__doc__['"]: """Attributes:''',
+    '''"__doc__": """
     Attributes:''',
 )
+
+# TODO(busunkim): Use latest sphinx after microgenerator transition
+s.replace("noxfile.py", """['"]sphinx['"]""", '"sphinx<3.0.0"')
 
 # ----------------------------------------------------------------------------
 # Add templated files

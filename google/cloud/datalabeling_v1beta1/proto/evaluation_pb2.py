@@ -1098,7 +1098,8 @@ EvaluationMetrics = _reflection.GeneratedProtocolMessageType(
     {
         "DESCRIPTOR": _EVALUATIONMETRICS,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.evaluation_pb2",
-        "__doc__": """Attributes:
+        "__doc__": """
+    Attributes:
       metrics:
           Common metrics covering most general cases.
   """,
@@ -1154,7 +1155,8 @@ PrCurve = _reflection.GeneratedProtocolMessageType(
             {
                 "DESCRIPTOR": _PRCURVE_CONFIDENCEMETRICSENTRY,
                 "__module__": "google.cloud.datalabeling_v1beta1.proto.evaluation_pb2",
-                "__doc__": """Attributes:
+                "__doc__": """
+    Attributes:
         confidence_threshold:
             Threshold used for this entry.  For classification tasks, this
             is a classification threshold: a predicted label is
@@ -1196,7 +1198,8 @@ PrCurve = _reflection.GeneratedProtocolMessageType(
         ),
         "DESCRIPTOR": _PRCURVE,
         "__module__": "google.cloud.datalabeling_v1beta1.proto.evaluation_pb2",
-        "__doc__": """Attributes:
+        "__doc__": """
+    Attributes:
       annotation_spec:
           The annotation spec of the label for which the precision-
           recall curve calculated. If this field is empty, that means
@@ -1228,7 +1231,8 @@ ConfusionMatrix = _reflection.GeneratedProtocolMessageType(
             {
                 "DESCRIPTOR": _CONFUSIONMATRIX_CONFUSIONMATRIXENTRY,
                 "__module__": "google.cloud.datalabeling_v1beta1.proto.evaluation_pb2",
-                "__doc__": """Attributes:
+                "__doc__": """
+    Attributes:
         annotation_spec:
             The annotation spec of a predicted label.
         item_count:
