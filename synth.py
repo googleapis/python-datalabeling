@@ -49,16 +49,11 @@ s.replace(
     "proto_operations_pb2.ImportDataOperationResponse",
 )
 
-s.replace(
-    "./**/gapic/**/*client.py",
-    r"operations_pb2.ImportDataOperationMetadata",
-    "proto_operations_pb2.ImportDataOperationMetadata",
-)
 
 s.replace(
-    "./tests/unit/gapic/**/test*_client*.py",
-    r"operations_pb2.Operation\(",
-    "longrunning_operations_pb2.Operation(",
+    ["google/**/data_labeling_service_client.py", "tests/**/test*_client*.py"],
+    r"operations_pb2.",
+    "longrunning_operations_pb2.",
 )
 
 # Fix docstrings with no summary line
@@ -68,6 +63,14 @@ s.replace(
     '''"__doc__": """
     Attributes:''',
 )
+
+# Escape '_' at the end of the line in pb2 docstrings
+s.replace(
+"google/cloud/**/*_pb2.py",
+"""\_$""",
+"""\_""",
+)
+
 
 # TODO(busunkim): Use latest sphinx after microgenerator transition
 s.replace("noxfile.py", """['"]sphinx['"]""", '"sphinx<3.0.0"')

@@ -457,8 +457,8 @@ class DataLabelingServiceClient(object):
         return google.api_core.operation.from_gapic(
             operation,
             self.transport._operations_client,
-            operations_pb2.ExportDataOperationResponse,
-            metadata_type=operations_pb2.ExportDataOperationMetadata,
+            longrunning_operations_pb2.ExportDataOperationResponse,
+            metadata_type=longrunning_operations_pb2.ExportDataOperationMetadata,
         )
 
     def delete_annotation_spec_set(
@@ -1016,8 +1016,8 @@ class DataLabelingServiceClient(object):
         return google.api_core.operation.from_gapic(
             operation,
             self.transport._operations_client,
-            proto_proto_operations_pb2.ImportDataOperationResponse,
-            metadata_type=proto_proto_operations_pb2.ImportDataOperationMetadata,
+            proto_operations_pb2.ImportDataOperationResponse,
+            metadata_type=proto_operations_pb2.ImportDataOperationMetadata,
         )
 
     def get_data_item(
