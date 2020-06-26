@@ -49,11 +49,16 @@ s.replace(
     "proto_operations_pb2.ImportDataOperationResponse",
 )
 
+s.replace(
+    "google/**/*client.py",
+    r"=operations_pb2",
+    "=proto_operations_pb2",
+)
 
 s.replace(
-    ["google/**/data_labeling_service_client.py", "tests/**/test*_client*.py"],
-    r"operations_pb2.",
-    "longrunning_operations_pb2.",
+    "tests/**/test*_client*.py",
+    r"operations_pb2.Operation\(",
+    "longrunning_operations_pb2.Operation(",
 )
 
 # Fix docstrings with no summary line

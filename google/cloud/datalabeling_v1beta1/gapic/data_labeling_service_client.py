@@ -283,387 +283,6 @@ class DataLabelingServiceClient(object):
         self._inner_api_calls = {}
 
     # Service calls
-    def delete_dataset(
-        self,
-        name,
-        retry=google.api_core.gapic_v1.method.DEFAULT,
-        timeout=google.api_core.gapic_v1.method.DEFAULT,
-        metadata=None,
-    ):
-        """
-        Deletes a dataset by resource name.
-
-        Example:
-            >>> from google.cloud import datalabeling_v1beta1
-            >>>
-            >>> client = datalabeling_v1beta1.DataLabelingServiceClient()
-            >>>
-            >>> name = client.dataset_path('[PROJECT]', '[DATASET]')
-            >>>
-            >>> client.delete_dataset(name)
-
-        Args:
-            name (str): Required. Dataset resource name, format:
-                projects/{project_id}/datasets/{dataset_id}
-            retry (Optional[google.api_core.retry.Retry]):  A retry object used
-                to retry requests. If ``None`` is specified, requests will
-                be retried using a default configuration.
-            timeout (Optional[float]): The amount of time, in seconds, to wait
-                for the request to complete. Note that if ``retry`` is
-                specified, the timeout applies to each individual attempt.
-            metadata (Optional[Sequence[Tuple[str, str]]]): Additional metadata
-                that is provided to the method.
-
-        Raises:
-            google.api_core.exceptions.GoogleAPICallError: If the request
-                    failed for any reason.
-            google.api_core.exceptions.RetryError: If the request failed due
-                    to a retryable error and retry attempts failed.
-            ValueError: If the parameters are invalid.
-        """
-        # Wrap the transport method to add retry and timeout logic.
-        if "delete_dataset" not in self._inner_api_calls:
-            self._inner_api_calls[
-                "delete_dataset"
-            ] = google.api_core.gapic_v1.method.wrap_method(
-                self.transport.delete_dataset,
-                default_retry=self._method_configs["DeleteDataset"].retry,
-                default_timeout=self._method_configs["DeleteDataset"].timeout,
-                client_info=self._client_info,
-            )
-
-        request = data_labeling_service_pb2.DeleteDatasetRequest(name=name,)
-        if metadata is None:
-            metadata = []
-        metadata = list(metadata)
-        try:
-            routing_header = [("name", name)]
-        except AttributeError:
-            pass
-        else:
-            routing_metadata = google.api_core.gapic_v1.routing_header.to_grpc_metadata(
-                routing_header
-            )
-            metadata.append(routing_metadata)
-
-        self._inner_api_calls["delete_dataset"](
-            request, retry=retry, timeout=timeout, metadata=metadata
-        )
-
-    def export_data(
-        self,
-        name,
-        annotated_dataset,
-        output_config,
-        filter_=None,
-        user_email_address=None,
-        retry=google.api_core.gapic_v1.method.DEFAULT,
-        timeout=google.api_core.gapic_v1.method.DEFAULT,
-        metadata=None,
-    ):
-        """
-        Exports data and annotations from dataset.
-
-        Example:
-            >>> from google.cloud import datalabeling_v1beta1
-            >>>
-            >>> client = datalabeling_v1beta1.DataLabelingServiceClient()
-            >>>
-            >>> name = client.dataset_path('[PROJECT]', '[DATASET]')
-            >>> annotated_dataset = client.annotated_dataset_path('[PROJECT]', '[DATASET]', '[ANNOTATED_DATASET]')
-            >>>
-            >>> # TODO: Initialize `output_config`:
-            >>> output_config = {}
-            >>>
-            >>> response = client.export_data(name, annotated_dataset, output_config)
-            >>>
-            >>> def callback(operation_future):
-            ...     # Handle result.
-            ...     result = operation_future.result()
-            >>>
-            >>> response.add_done_callback(callback)
-            >>>
-            >>> # Handle metadata.
-            >>> metadata = response.metadata()
-
-        Args:
-            name (str): Required. Dataset resource name, format:
-                projects/{project_id}/datasets/{dataset_id}
-            annotated_dataset (str): Required. Annotated dataset resource name. DataItem in Dataset and
-                their annotations in specified annotated dataset will be exported. It's
-                in format of
-                projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/
-                {annotated_dataset_id}
-            output_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.OutputConfig]): Required. Specify the output destination.
-
-                If a dict is provided, it must be of the same form as the protobuf
-                message :class:`~google.cloud.datalabeling_v1beta1.types.OutputConfig`
-            filter_ (str): Optional. Filter is not supported at this moment.
-            user_email_address (str): Email of the user who started the export task and should be notified by
-                email. If empty no notification will be sent.
-            retry (Optional[google.api_core.retry.Retry]):  A retry object used
-                to retry requests. If ``None`` is specified, requests will
-                be retried using a default configuration.
-            timeout (Optional[float]): The amount of time, in seconds, to wait
-                for the request to complete. Note that if ``retry`` is
-                specified, the timeout applies to each individual attempt.
-            metadata (Optional[Sequence[Tuple[str, str]]]): Additional metadata
-                that is provided to the method.
-
-        Returns:
-            A :class:`~google.cloud.datalabeling_v1beta1.types._OperationFuture` instance.
-
-        Raises:
-            google.api_core.exceptions.GoogleAPICallError: If the request
-                    failed for any reason.
-            google.api_core.exceptions.RetryError: If the request failed due
-                    to a retryable error and retry attempts failed.
-            ValueError: If the parameters are invalid.
-        """
-        # Wrap the transport method to add retry and timeout logic.
-        if "export_data" not in self._inner_api_calls:
-            self._inner_api_calls[
-                "export_data"
-            ] = google.api_core.gapic_v1.method.wrap_method(
-                self.transport.export_data,
-                default_retry=self._method_configs["ExportData"].retry,
-                default_timeout=self._method_configs["ExportData"].timeout,
-                client_info=self._client_info,
-            )
-
-        request = data_labeling_service_pb2.ExportDataRequest(
-            name=name,
-            annotated_dataset=annotated_dataset,
-            output_config=output_config,
-            filter=filter_,
-            user_email_address=user_email_address,
-        )
-        if metadata is None:
-            metadata = []
-        metadata = list(metadata)
-        try:
-            routing_header = [("name", name)]
-        except AttributeError:
-            pass
-        else:
-            routing_metadata = google.api_core.gapic_v1.routing_header.to_grpc_metadata(
-                routing_header
-            )
-            metadata.append(routing_metadata)
-
-        operation = self._inner_api_calls["export_data"](
-            request, retry=retry, timeout=timeout, metadata=metadata
-        )
-        return google.api_core.operation.from_gapic(
-            operation,
-            self.transport._operations_client,
-            longrunning_operations_pb2.ExportDataOperationResponse,
-            metadata_type=longrunning_operations_pb2.ExportDataOperationMetadata,
-        )
-
-    def delete_annotation_spec_set(
-        self,
-        name,
-        retry=google.api_core.gapic_v1.method.DEFAULT,
-        timeout=google.api_core.gapic_v1.method.DEFAULT,
-        metadata=None,
-    ):
-        """
-        Deletes an annotation spec set by resource name.
-
-        Example:
-            >>> from google.cloud import datalabeling_v1beta1
-            >>>
-            >>> client = datalabeling_v1beta1.DataLabelingServiceClient()
-            >>>
-            >>> name = client.annotation_spec_set_path('[PROJECT]', '[ANNOTATION_SPEC_SET]')
-            >>>
-            >>> client.delete_annotation_spec_set(name)
-
-        Args:
-            name (str): Required. AnnotationSpec resource name, format:
-                ``projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}``.
-            retry (Optional[google.api_core.retry.Retry]):  A retry object used
-                to retry requests. If ``None`` is specified, requests will
-                be retried using a default configuration.
-            timeout (Optional[float]): The amount of time, in seconds, to wait
-                for the request to complete. Note that if ``retry`` is
-                specified, the timeout applies to each individual attempt.
-            metadata (Optional[Sequence[Tuple[str, str]]]): Additional metadata
-                that is provided to the method.
-
-        Raises:
-            google.api_core.exceptions.GoogleAPICallError: If the request
-                    failed for any reason.
-            google.api_core.exceptions.RetryError: If the request failed due
-                    to a retryable error and retry attempts failed.
-            ValueError: If the parameters are invalid.
-        """
-        # Wrap the transport method to add retry and timeout logic.
-        if "delete_annotation_spec_set" not in self._inner_api_calls:
-            self._inner_api_calls[
-                "delete_annotation_spec_set"
-            ] = google.api_core.gapic_v1.method.wrap_method(
-                self.transport.delete_annotation_spec_set,
-                default_retry=self._method_configs["DeleteAnnotationSpecSet"].retry,
-                default_timeout=self._method_configs["DeleteAnnotationSpecSet"].timeout,
-                client_info=self._client_info,
-            )
-
-        request = data_labeling_service_pb2.DeleteAnnotationSpecSetRequest(name=name,)
-        if metadata is None:
-            metadata = []
-        metadata = list(metadata)
-        try:
-            routing_header = [("name", name)]
-        except AttributeError:
-            pass
-        else:
-            routing_metadata = google.api_core.gapic_v1.routing_header.to_grpc_metadata(
-                routing_header
-            )
-            metadata.append(routing_metadata)
-
-        self._inner_api_calls["delete_annotation_spec_set"](
-            request, retry=retry, timeout=timeout, metadata=metadata
-        )
-
-    def delete_instruction(
-        self,
-        name,
-        retry=google.api_core.gapic_v1.method.DEFAULT,
-        timeout=google.api_core.gapic_v1.method.DEFAULT,
-        metadata=None,
-    ):
-        """
-        Deletes an instruction object by resource name.
-
-        Example:
-            >>> from google.cloud import datalabeling_v1beta1
-            >>>
-            >>> client = datalabeling_v1beta1.DataLabelingServiceClient()
-            >>>
-            >>> name = client.instruction_path('[PROJECT]', '[INSTRUCTION]')
-            >>>
-            >>> client.delete_instruction(name)
-
-        Args:
-            name (str): Required. Instruction resource name, format:
-                projects/{project_id}/instructions/{instruction_id}
-            retry (Optional[google.api_core.retry.Retry]):  A retry object used
-                to retry requests. If ``None`` is specified, requests will
-                be retried using a default configuration.
-            timeout (Optional[float]): The amount of time, in seconds, to wait
-                for the request to complete. Note that if ``retry`` is
-                specified, the timeout applies to each individual attempt.
-            metadata (Optional[Sequence[Tuple[str, str]]]): Additional metadata
-                that is provided to the method.
-
-        Raises:
-            google.api_core.exceptions.GoogleAPICallError: If the request
-                    failed for any reason.
-            google.api_core.exceptions.RetryError: If the request failed due
-                    to a retryable error and retry attempts failed.
-            ValueError: If the parameters are invalid.
-        """
-        # Wrap the transport method to add retry and timeout logic.
-        if "delete_instruction" not in self._inner_api_calls:
-            self._inner_api_calls[
-                "delete_instruction"
-            ] = google.api_core.gapic_v1.method.wrap_method(
-                self.transport.delete_instruction,
-                default_retry=self._method_configs["DeleteInstruction"].retry,
-                default_timeout=self._method_configs["DeleteInstruction"].timeout,
-                client_info=self._client_info,
-            )
-
-        request = data_labeling_service_pb2.DeleteInstructionRequest(name=name,)
-        if metadata is None:
-            metadata = []
-        metadata = list(metadata)
-        try:
-            routing_header = [("name", name)]
-        except AttributeError:
-            pass
-        else:
-            routing_metadata = google.api_core.gapic_v1.routing_header.to_grpc_metadata(
-                routing_header
-            )
-            metadata.append(routing_metadata)
-
-        self._inner_api_calls["delete_instruction"](
-            request, retry=retry, timeout=timeout, metadata=metadata
-        )
-
-    def delete_evaluation_job(
-        self,
-        name,
-        retry=google.api_core.gapic_v1.method.DEFAULT,
-        timeout=google.api_core.gapic_v1.method.DEFAULT,
-        metadata=None,
-    ):
-        """
-        Stops and deletes an evaluation job.
-
-        Example:
-            >>> from google.cloud import datalabeling_v1beta1
-            >>>
-            >>> client = datalabeling_v1beta1.DataLabelingServiceClient()
-            >>>
-            >>> name = client.evaluation_job_path('[PROJECT]', '[EVALUATION_JOB]')
-            >>>
-            >>> client.delete_evaluation_job(name)
-
-        Args:
-            name (str): Required. Name of the evaluation job that is going to be deleted.
-                Format:
-
-                "projects/{project_id}/evaluationJobs/{evaluation_job_id}"
-            retry (Optional[google.api_core.retry.Retry]):  A retry object used
-                to retry requests. If ``None`` is specified, requests will
-                be retried using a default configuration.
-            timeout (Optional[float]): The amount of time, in seconds, to wait
-                for the request to complete. Note that if ``retry`` is
-                specified, the timeout applies to each individual attempt.
-            metadata (Optional[Sequence[Tuple[str, str]]]): Additional metadata
-                that is provided to the method.
-
-        Raises:
-            google.api_core.exceptions.GoogleAPICallError: If the request
-                    failed for any reason.
-            google.api_core.exceptions.RetryError: If the request failed due
-                    to a retryable error and retry attempts failed.
-            ValueError: If the parameters are invalid.
-        """
-        # Wrap the transport method to add retry and timeout logic.
-        if "delete_evaluation_job" not in self._inner_api_calls:
-            self._inner_api_calls[
-                "delete_evaluation_job"
-            ] = google.api_core.gapic_v1.method.wrap_method(
-                self.transport.delete_evaluation_job,
-                default_retry=self._method_configs["DeleteEvaluationJob"].retry,
-                default_timeout=self._method_configs["DeleteEvaluationJob"].timeout,
-                client_info=self._client_info,
-            )
-
-        request = data_labeling_service_pb2.DeleteEvaluationJobRequest(name=name,)
-        if metadata is None:
-            metadata = []
-        metadata = list(metadata)
-        try:
-            routing_header = [("name", name)]
-        except AttributeError:
-            pass
-        else:
-            routing_metadata = google.api_core.gapic_v1.routing_header.to_grpc_metadata(
-                routing_header
-            )
-            metadata.append(routing_metadata)
-
-        self._inner_api_calls["delete_evaluation_job"](
-            request, retry=retry, timeout=timeout, metadata=metadata
-        )
-
     def create_dataset(
         self,
         parent,
@@ -918,6 +537,73 @@ class DataLabelingServiceClient(object):
         )
         return iterator
 
+    def delete_dataset(
+        self,
+        name,
+        retry=google.api_core.gapic_v1.method.DEFAULT,
+        timeout=google.api_core.gapic_v1.method.DEFAULT,
+        metadata=None,
+    ):
+        """
+        Deletes a dataset by resource name.
+
+        Example:
+            >>> from google.cloud import datalabeling_v1beta1
+            >>>
+            >>> client = datalabeling_v1beta1.DataLabelingServiceClient()
+            >>>
+            >>> name = client.dataset_path('[PROJECT]', '[DATASET]')
+            >>>
+            >>> client.delete_dataset(name)
+
+        Args:
+            name (str): Required. Dataset resource name, format:
+                projects/{project_id}/datasets/{dataset_id}
+            retry (Optional[google.api_core.retry.Retry]):  A retry object used
+                to retry requests. If ``None`` is specified, requests will
+                be retried using a default configuration.
+            timeout (Optional[float]): The amount of time, in seconds, to wait
+                for the request to complete. Note that if ``retry`` is
+                specified, the timeout applies to each individual attempt.
+            metadata (Optional[Sequence[Tuple[str, str]]]): Additional metadata
+                that is provided to the method.
+
+        Raises:
+            google.api_core.exceptions.GoogleAPICallError: If the request
+                    failed for any reason.
+            google.api_core.exceptions.RetryError: If the request failed due
+                    to a retryable error and retry attempts failed.
+            ValueError: If the parameters are invalid.
+        """
+        # Wrap the transport method to add retry and timeout logic.
+        if "delete_dataset" not in self._inner_api_calls:
+            self._inner_api_calls[
+                "delete_dataset"
+            ] = google.api_core.gapic_v1.method.wrap_method(
+                self.transport.delete_dataset,
+                default_retry=self._method_configs["DeleteDataset"].retry,
+                default_timeout=self._method_configs["DeleteDataset"].timeout,
+                client_info=self._client_info,
+            )
+
+        request = data_labeling_service_pb2.DeleteDatasetRequest(name=name,)
+        if metadata is None:
+            metadata = []
+        metadata = list(metadata)
+        try:
+            routing_header = [("name", name)]
+        except AttributeError:
+            pass
+        else:
+            routing_metadata = google.api_core.gapic_v1.routing_header.to_grpc_metadata(
+                routing_header
+            )
+            metadata.append(routing_metadata)
+
+        self._inner_api_calls["delete_dataset"](
+            request, retry=retry, timeout=timeout, metadata=metadata
+        )
+
     def import_data(
         self,
         name,
@@ -1018,6 +704,117 @@ class DataLabelingServiceClient(object):
             self.transport._operations_client,
             proto_operations_pb2.ImportDataOperationResponse,
             metadata_type=proto_operations_pb2.ImportDataOperationMetadata,
+        )
+
+    def export_data(
+        self,
+        name,
+        annotated_dataset,
+        output_config,
+        filter_=None,
+        user_email_address=None,
+        retry=google.api_core.gapic_v1.method.DEFAULT,
+        timeout=google.api_core.gapic_v1.method.DEFAULT,
+        metadata=None,
+    ):
+        """
+        Exports data and annotations from dataset.
+
+        Example:
+            >>> from google.cloud import datalabeling_v1beta1
+            >>>
+            >>> client = datalabeling_v1beta1.DataLabelingServiceClient()
+            >>>
+            >>> name = client.dataset_path('[PROJECT]', '[DATASET]')
+            >>> annotated_dataset = client.annotated_dataset_path('[PROJECT]', '[DATASET]', '[ANNOTATED_DATASET]')
+            >>>
+            >>> # TODO: Initialize `output_config`:
+            >>> output_config = {}
+            >>>
+            >>> response = client.export_data(name, annotated_dataset, output_config)
+            >>>
+            >>> def callback(operation_future):
+            ...     # Handle result.
+            ...     result = operation_future.result()
+            >>>
+            >>> response.add_done_callback(callback)
+            >>>
+            >>> # Handle metadata.
+            >>> metadata = response.metadata()
+
+        Args:
+            name (str): Required. Dataset resource name, format:
+                projects/{project_id}/datasets/{dataset_id}
+            annotated_dataset (str): Required. Annotated dataset resource name. DataItem in Dataset and
+                their annotations in specified annotated dataset will be exported. It's
+                in format of
+                projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/
+                {annotated_dataset_id}
+            output_config (Union[dict, ~google.cloud.datalabeling_v1beta1.types.OutputConfig]): Required. Specify the output destination.
+
+                If a dict is provided, it must be of the same form as the protobuf
+                message :class:`~google.cloud.datalabeling_v1beta1.types.OutputConfig`
+            filter_ (str): Optional. Filter is not supported at this moment.
+            user_email_address (str): Email of the user who started the export task and should be notified by
+                email. If empty no notification will be sent.
+            retry (Optional[google.api_core.retry.Retry]):  A retry object used
+                to retry requests. If ``None`` is specified, requests will
+                be retried using a default configuration.
+            timeout (Optional[float]): The amount of time, in seconds, to wait
+                for the request to complete. Note that if ``retry`` is
+                specified, the timeout applies to each individual attempt.
+            metadata (Optional[Sequence[Tuple[str, str]]]): Additional metadata
+                that is provided to the method.
+
+        Returns:
+            A :class:`~google.cloud.datalabeling_v1beta1.types._OperationFuture` instance.
+
+        Raises:
+            google.api_core.exceptions.GoogleAPICallError: If the request
+                    failed for any reason.
+            google.api_core.exceptions.RetryError: If the request failed due
+                    to a retryable error and retry attempts failed.
+            ValueError: If the parameters are invalid.
+        """
+        # Wrap the transport method to add retry and timeout logic.
+        if "export_data" not in self._inner_api_calls:
+            self._inner_api_calls[
+                "export_data"
+            ] = google.api_core.gapic_v1.method.wrap_method(
+                self.transport.export_data,
+                default_retry=self._method_configs["ExportData"].retry,
+                default_timeout=self._method_configs["ExportData"].timeout,
+                client_info=self._client_info,
+            )
+
+        request = data_labeling_service_pb2.ExportDataRequest(
+            name=name,
+            annotated_dataset=annotated_dataset,
+            output_config=output_config,
+            filter=filter_,
+            user_email_address=user_email_address,
+        )
+        if metadata is None:
+            metadata = []
+        metadata = list(metadata)
+        try:
+            routing_header = [("name", name)]
+        except AttributeError:
+            pass
+        else:
+            routing_metadata = google.api_core.gapic_v1.routing_header.to_grpc_metadata(
+                routing_header
+            )
+            metadata.append(routing_metadata)
+
+        operation = self._inner_api_calls["export_data"](
+            request, retry=retry, timeout=timeout, metadata=metadata
+        )
+        return google.api_core.operation.from_gapic(
+            operation,
+            self.transport._operations_client,
+            proto_operations_pb2.ExportDataOperationResponse,
+            metadata_type=proto_operations_pb2.ExportDataOperationMetadata,
         )
 
     def get_data_item(
@@ -2303,6 +2100,73 @@ class DataLabelingServiceClient(object):
         )
         return iterator
 
+    def delete_annotation_spec_set(
+        self,
+        name,
+        retry=google.api_core.gapic_v1.method.DEFAULT,
+        timeout=google.api_core.gapic_v1.method.DEFAULT,
+        metadata=None,
+    ):
+        """
+        Deletes an annotation spec set by resource name.
+
+        Example:
+            >>> from google.cloud import datalabeling_v1beta1
+            >>>
+            >>> client = datalabeling_v1beta1.DataLabelingServiceClient()
+            >>>
+            >>> name = client.annotation_spec_set_path('[PROJECT]', '[ANNOTATION_SPEC_SET]')
+            >>>
+            >>> client.delete_annotation_spec_set(name)
+
+        Args:
+            name (str): Required. AnnotationSpec resource name, format:
+                ``projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}``.
+            retry (Optional[google.api_core.retry.Retry]):  A retry object used
+                to retry requests. If ``None`` is specified, requests will
+                be retried using a default configuration.
+            timeout (Optional[float]): The amount of time, in seconds, to wait
+                for the request to complete. Note that if ``retry`` is
+                specified, the timeout applies to each individual attempt.
+            metadata (Optional[Sequence[Tuple[str, str]]]): Additional metadata
+                that is provided to the method.
+
+        Raises:
+            google.api_core.exceptions.GoogleAPICallError: If the request
+                    failed for any reason.
+            google.api_core.exceptions.RetryError: If the request failed due
+                    to a retryable error and retry attempts failed.
+            ValueError: If the parameters are invalid.
+        """
+        # Wrap the transport method to add retry and timeout logic.
+        if "delete_annotation_spec_set" not in self._inner_api_calls:
+            self._inner_api_calls[
+                "delete_annotation_spec_set"
+            ] = google.api_core.gapic_v1.method.wrap_method(
+                self.transport.delete_annotation_spec_set,
+                default_retry=self._method_configs["DeleteAnnotationSpecSet"].retry,
+                default_timeout=self._method_configs["DeleteAnnotationSpecSet"].timeout,
+                client_info=self._client_info,
+            )
+
+        request = data_labeling_service_pb2.DeleteAnnotationSpecSetRequest(name=name,)
+        if metadata is None:
+            metadata = []
+        metadata = list(metadata)
+        try:
+            routing_header = [("name", name)]
+        except AttributeError:
+            pass
+        else:
+            routing_metadata = google.api_core.gapic_v1.routing_header.to_grpc_metadata(
+                routing_header
+            )
+            metadata.append(routing_metadata)
+
+        self._inner_api_calls["delete_annotation_spec_set"](
+            request, retry=retry, timeout=timeout, metadata=metadata
+        )
+
     def create_instruction(
         self,
         parent,
@@ -2571,6 +2435,73 @@ class DataLabelingServiceClient(object):
             response_token_field="next_page_token",
         )
         return iterator
+
+    def delete_instruction(
+        self,
+        name,
+        retry=google.api_core.gapic_v1.method.DEFAULT,
+        timeout=google.api_core.gapic_v1.method.DEFAULT,
+        metadata=None,
+    ):
+        """
+        Deletes an instruction object by resource name.
+
+        Example:
+            >>> from google.cloud import datalabeling_v1beta1
+            >>>
+            >>> client = datalabeling_v1beta1.DataLabelingServiceClient()
+            >>>
+            >>> name = client.instruction_path('[PROJECT]', '[INSTRUCTION]')
+            >>>
+            >>> client.delete_instruction(name)
+
+        Args:
+            name (str): Required. Instruction resource name, format:
+                projects/{project_id}/instructions/{instruction_id}
+            retry (Optional[google.api_core.retry.Retry]):  A retry object used
+                to retry requests. If ``None`` is specified, requests will
+                be retried using a default configuration.
+            timeout (Optional[float]): The amount of time, in seconds, to wait
+                for the request to complete. Note that if ``retry`` is
+                specified, the timeout applies to each individual attempt.
+            metadata (Optional[Sequence[Tuple[str, str]]]): Additional metadata
+                that is provided to the method.
+
+        Raises:
+            google.api_core.exceptions.GoogleAPICallError: If the request
+                    failed for any reason.
+            google.api_core.exceptions.RetryError: If the request failed due
+                    to a retryable error and retry attempts failed.
+            ValueError: If the parameters are invalid.
+        """
+        # Wrap the transport method to add retry and timeout logic.
+        if "delete_instruction" not in self._inner_api_calls:
+            self._inner_api_calls[
+                "delete_instruction"
+            ] = google.api_core.gapic_v1.method.wrap_method(
+                self.transport.delete_instruction,
+                default_retry=self._method_configs["DeleteInstruction"].retry,
+                default_timeout=self._method_configs["DeleteInstruction"].timeout,
+                client_info=self._client_info,
+            )
+
+        request = data_labeling_service_pb2.DeleteInstructionRequest(name=name,)
+        if metadata is None:
+            metadata = []
+        metadata = list(metadata)
+        try:
+            routing_header = [("name", name)]
+        except AttributeError:
+            pass
+        else:
+            routing_metadata = google.api_core.gapic_v1.routing_header.to_grpc_metadata(
+                routing_header
+            )
+            metadata.append(routing_metadata)
+
+        self._inner_api_calls["delete_instruction"](
+            request, retry=retry, timeout=timeout, metadata=metadata
+        )
 
     def get_evaluation(
         self,
@@ -3263,6 +3194,75 @@ class DataLabelingServiceClient(object):
             metadata.append(routing_metadata)
 
         self._inner_api_calls["resume_evaluation_job"](
+            request, retry=retry, timeout=timeout, metadata=metadata
+        )
+
+    def delete_evaluation_job(
+        self,
+        name,
+        retry=google.api_core.gapic_v1.method.DEFAULT,
+        timeout=google.api_core.gapic_v1.method.DEFAULT,
+        metadata=None,
+    ):
+        """
+        Stops and deletes an evaluation job.
+
+        Example:
+            >>> from google.cloud import datalabeling_v1beta1
+            >>>
+            >>> client = datalabeling_v1beta1.DataLabelingServiceClient()
+            >>>
+            >>> name = client.evaluation_job_path('[PROJECT]', '[EVALUATION_JOB]')
+            >>>
+            >>> client.delete_evaluation_job(name)
+
+        Args:
+            name (str): Required. Name of the evaluation job that is going to be deleted.
+                Format:
+
+                "projects/{project_id}/evaluationJobs/{evaluation_job_id}"
+            retry (Optional[google.api_core.retry.Retry]):  A retry object used
+                to retry requests. If ``None`` is specified, requests will
+                be retried using a default configuration.
+            timeout (Optional[float]): The amount of time, in seconds, to wait
+                for the request to complete. Note that if ``retry`` is
+                specified, the timeout applies to each individual attempt.
+            metadata (Optional[Sequence[Tuple[str, str]]]): Additional metadata
+                that is provided to the method.
+
+        Raises:
+            google.api_core.exceptions.GoogleAPICallError: If the request
+                    failed for any reason.
+            google.api_core.exceptions.RetryError: If the request failed due
+                    to a retryable error and retry attempts failed.
+            ValueError: If the parameters are invalid.
+        """
+        # Wrap the transport method to add retry and timeout logic.
+        if "delete_evaluation_job" not in self._inner_api_calls:
+            self._inner_api_calls[
+                "delete_evaluation_job"
+            ] = google.api_core.gapic_v1.method.wrap_method(
+                self.transport.delete_evaluation_job,
+                default_retry=self._method_configs["DeleteEvaluationJob"].retry,
+                default_timeout=self._method_configs["DeleteEvaluationJob"].timeout,
+                client_info=self._client_info,
+            )
+
+        request = data_labeling_service_pb2.DeleteEvaluationJobRequest(name=name,)
+        if metadata is None:
+            metadata = []
+        metadata = list(metadata)
+        try:
+            routing_header = [("name", name)]
+        except AttributeError:
+            pass
+        else:
+            routing_metadata = google.api_core.gapic_v1.routing_header.to_grpc_metadata(
+                routing_header
+            )
+            metadata.append(routing_metadata)
+
+        self._inner_api_calls["delete_evaluation_job"](
             request, retry=retry, timeout=timeout, metadata=metadata
         )
 
