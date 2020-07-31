@@ -3,8 +3,8 @@
     {
       "git": {
         "name": ".",
-        "remote": "git@github.com:googleapis/python-datalabeling.git",
-        "sha": "62a52b2e2143640c62524a0a6970d10a4f2308a6"
+        "remote": "https://github.com/googleapis/python-datalabeling.git",
+        "sha": "b39f4975eceee93eec20ccfb0e301e2ff514e023"
       }
     },
     {
