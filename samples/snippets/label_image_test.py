@@ -76,6 +76,7 @@ def cleaner():
 
 # Passing in dataset as the last argument in test_label_image since it needs
 # to be deleted before the annotation_spec_set can be deleted.
+@pytest.mark.skip(reason="currently unavailable")
 def test_label_image(
         capsys, annotation_spec_set, instruction, dataset, cleaner):
 
