@@ -24,12 +24,11 @@ import create_instruction
 import testing_lib
 
 
-PROJECT_ID = os.getenv('GOOGLE_CLOUD_PROJECT')
-INSTRUCTION_GCS_URI = ('gs://cloud-samples-data/datalabeling'
-                       '/instruction/test.pdf')
+PROJECT_ID = os.getenv("GOOGLE_CLOUD_PROJECT")
+INSTRUCTION_GCS_URI = "gs://cloud-samples-data/datalabeling" "/instruction/test.pdf"
 
 
-@pytest.fixture(scope='module')
+@pytest.fixture(scope="module")
 def cleaner():
     resource_names = []
 
@@ -40,15 +39,16 @@ def cleaner():
 
 
 def test_create_instruction(cleaner, capsys):
-
     @backoff.on_exception(
-        backoff.expo, ServerError, max_time=testing_lib.RETRY_DEADLINE)
+        backoff.expo, ServerError, max_time=testing_lib.RETRY_DEADLINE
+    )
     def run_sample():
         return create_instruction.create_instruction(
-            PROJECT_ID, 'IMAGE', INSTRUCTION_GCS_URI)
+            PROJECT_ID, "IMAGE", INSTRUCTION_GCS_URI
+        )
 
     instruction = run_sample()
     cleaner.append(instruction.name)
 
     out, _ = capsys.readouterr()
-    assert 'The instruction resource name: ' in out
+    assert "The instruction resource name: " in out

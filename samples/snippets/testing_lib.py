@@ -33,8 +33,8 @@ RETRY_DEADLINE = 60
 def create_client():
     # If provided, use a provided test endpoint - this will prevent tests on
     # this snippet from triggering any action by a real human
-    if 'DATALABELING_ENDPOINT' in os.environ:
-        opts = ClientOptions(api_endpoint=os.getenv('DATALABELING_ENDPOINT'))
+    if "DATALABELING_ENDPOINT" in os.environ:
+        opts = ClientOptions(api_endpoint=os.getenv("DATALABELING_ENDPOINT"))
         client = datalabeling.DataLabelingServiceClient(client_options=opts)
     else:
         client = datalabeling.DataLabelingServiceClient()
@@ -53,9 +53,9 @@ def delete_dataset(name):
 
 def delete_old_datasets(project_id):
     client = create_client()
-    formatted_project_name = client.project_path(project_id)
+    formatted_project_name = f"projects/{project_id}"
 
-    response = client.list_datasets(formatted_project_name)
+    response = client.list_datasets(request={"parent": formatted_project_name})
     # It will delete datasets created more than 2 hours ago
     cutoff_time = time.time() - 7200
     for element in response:
@@ -80,7 +80,7 @@ def create_annotation_spec_set(project_id):
 @backoff.on_exception(backoff.expo, DeadlineExceeded, max_time=RETRY_DEADLINE)
 def delete_annotation_spec_set(name):
     client = create_client()
-    client.delete_annotation_spec_set(name)
+    client.delete_annotation_spec_set(request={"name": name})
 
 
 @backoff.on_exception(backoff.expo, DeadlineExceeded, max_time=RETRY_DEADLINE)
@@ -91,7 +91,7 @@ def create_instruction(project_id, data_type, gcs_uri):
 @backoff.on_exception(backoff.expo, DeadlineExceeded, max_time=RETRY_DEADLINE)
 def delete_instruction(name):
     client = create_client()
-    client.delete_instruction(name)
+    client.delete_instruction(request={"name": name})
 
 
 @backoff.on_exception(backoff.expo, DeadlineExceeded, max_time=RETRY_DEADLINE)
