@@ -54,7 +54,7 @@ def label_video(
             "parent": dataset_resource_name,
             "basic_config": basic_config,
             "feature": feature,
-            "video_classification_config": config,
+            "object_tracking_config": config,
         }
     )
 

@@ -97,7 +97,7 @@ def delete_instruction(name):
 @backoff.on_exception(backoff.expo, DeadlineExceeded, max_time=RETRY_DEADLINE)
 def cancel_operation(name):
     client = create_client()
-    client.transport._operations_client.cancel_operation(name)
+    client._transport.operations_client.cancel_operation(name)
 
 
 @backoff.on_exception(backoff.expo, DeadlineExceeded, max_time=RETRY_DEADLINE)
