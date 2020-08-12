@@ -18,6 +18,7 @@ import os
 
 import backoff
 from google.api_core.exceptions import ServerError
+from google.cloud import datalabeling
 import pytest
 
 import create_instruction
@@ -44,7 +45,7 @@ def test_create_instruction(cleaner, capsys):
     )
     def run_sample():
         return create_instruction.create_instruction(
-            PROJECT_ID, "IMAGE", INSTRUCTION_GCS_URI
+            PROJECT_ID, datalabeling.DataType.IMAGE, INSTRUCTION_GCS_URI
         )
 
     instruction = run_sample()

@@ -18,6 +18,7 @@ import os
 
 import backoff
 from google.api_core.exceptions import ServerError
+from google.cloud import datalabeling
 import pytest
 
 import label_image
@@ -34,7 +35,7 @@ def dataset():
     # create a temporary dataset
     dataset = testing_lib.create_dataset(PROJECT_ID)
 
-    testing_lib.import_data(dataset.name, "IMAGE", INPUT_GCS_URI)
+    testing_lib.import_data(dataset.name, datalabeling.DataType.IMAGE, INPUT_GCS_URI)
     yield dataset
 
     # tear down
@@ -55,7 +56,7 @@ def annotation_spec_set():
 def instruction():
     # create a temporary instruction
     instruction = testing_lib.create_instruction(
-        PROJECT_ID, "IMAGE", INSTRUCTION_GCS_URI
+        PROJECT_ID, datalabeling.DataType.IMAGE, INSTRUCTION_GCS_URI
     )
 
     yield instruction

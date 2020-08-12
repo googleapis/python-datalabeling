@@ -18,6 +18,7 @@ import os
 
 import backoff
 from google.api_core.exceptions import ServerError
+from google.cloud import datalabeling
 import pytest
 
 import import_data
@@ -44,7 +45,9 @@ def test_import_data(capsys, dataset):
         backoff.expo, ServerError, max_time=testing_lib.RETRY_DEADLINE
     )
     def run_sample():
-        import_data.import_data(dataset.name, "IMAGE", INPUT_GCS_URI)
+        import_data.import_data(
+            dataset.name, datalabeling.DataType.IMAGE, INPUT_GCS_URI
+        )
 
     run_sample()
     out, _ = capsys.readouterr()
