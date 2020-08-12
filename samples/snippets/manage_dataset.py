@@ -50,8 +50,8 @@ def create_dataset(project_id):
     print("Display name: {}".format(response.display_name))
     print("Description: {}".format(response.description))
     print("Create time:")
-    print("\tseconds: {}".format(response.create_time.seconds))
-    print("\tnanos: {}\n".format(response.create_time.nanos))
+    print("\tseconds: {}".format(response.create_time.timestamp_pb().seconds))
+    print("\tnanos: {}\n".format(response.create_time.timestamp_pb().nanos))
 
     return response
 
@@ -83,8 +83,8 @@ def list_datasets(project_id):
         print("Display name: {}".format(element.display_name))
         print("Description: {}".format(element.description))
         print("Create time:")
-        print("\tseconds: {}".format(element.create_time.seconds))
-        print("\tnanos: {}".format(element.create_time.nanos))
+        print("\tseconds: {}".format(element.create_time.timestamp_pb().seconds))
+        print("\tnanos: {}".format(element.create_time.timestamp_pb().nanos))
 
 
 # [END datalabeling_list_datasets_beta]
@@ -110,8 +110,8 @@ def get_dataset(dataset_resource_name):
     print("Display name: {}".format(response.display_name))
     print("Description: {}".format(response.description))
     print("Create time:")
-    print("\tseconds: {}".format(response.create_time.seconds))
-    print("\tnanos: {}".format(response.create_time.nanos))
+    print("\tseconds: {}".format(response.create_time.timestamp_pb().seconds))
+    print("\tnanos: {}".format(response.create_time.timestamp_pb().nanos))
 
 
 # [END datalabeling_get_dataset_beta]

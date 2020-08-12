@@ -59,7 +59,7 @@ def delete_old_datasets(project_id):
     # It will delete datasets created more than 2 hours ago
     cutoff_time = time.time() - 7200
     for element in response:
-        if element.create_time.seconds < cutoff_time:
+        if element.create_time.timestamp_pb().seconds < cutoff_time:
             print("Deleting {}".format(element.name))
             try:
                 dataset_sample.delete_dataset(element.name)
