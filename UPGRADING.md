@@ -45,7 +45,7 @@ from google.cloud import datalabeling
 
 client = datalabeling.DataLabelingServiceClient()
 
-datasets = client.list_datasets(request={'parent' : "projects/project"})
+datasets = client.list_datasets(request={"parent": "projects/project"})
 ```
 
 ### More Details
