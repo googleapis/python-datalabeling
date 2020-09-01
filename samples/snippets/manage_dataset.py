@@ -34,15 +34,13 @@ def create_dataset(project_id):
         client = datalabeling.DataLabelingServiceClient(client_options=opts)
     # [START datalabeling_create_dataset_beta]
 
-    formatted_project_name = f"projects/{project_id}"
+    parent = client.project_path(project_id)
 
-    dataset = datalabeling.Dataset(
+    dataset = datalabeling.types.Dataset(
         display_name="YOUR_DATASET_SET_DISPLAY_NAME", description="YOUR_DESCRIPTION"
     )
 
-    response = client.create_dataset(
-        request={"parent": formatted_project_name, "dataset": dataset}
-    )
+    response = client.create_dataset(parent, dataset)
 
     # The format of resource name:
     # project_id/{project_id}/datasets/{dataset_id}
@@ -50,8 +48,8 @@ def create_dataset(project_id):
     print("Display name: {}".format(response.display_name))
     print("Description: {}".format(response.description))
     print("Create time:")
-    print("\tseconds: {}".format(response.create_time.timestamp_pb().seconds))
-    print("\tnanos: {}\n".format(response.create_time.timestamp_pb().nanos))
+    print("\tseconds: {}".format(response.create_time.seconds))
+    print("\tnanos: {}\n".format(response.create_time.nanos))
 
     return response
 
@@ -73,9 +71,9 @@ def list_datasets(project_id):
         client = datalabeling.DataLabelingServiceClient(client_options=opts)
     # [START datalabeling_list_datasets_beta]
 
-    formatted_project_name = f"projects/{project_id}"
+    parent = client.project_path(project_id)
 
-    response = client.list_datasets(request={"parent": formatted_project_name})
+    response = client.list_datasets(parent)
     for element in response:
         # The format of resource name:
         # project_id/{project_id}/datasets/{dataset_id}
@@ -83,15 +81,15 @@ def list_datasets(project_id):
         print("Display name: {}".format(element.display_name))
         print("Description: {}".format(element.description))
         print("Create time:")
-        print("\tseconds: {}".format(element.create_time.timestamp_pb().seconds))
-        print("\tnanos: {}".format(element.create_time.timestamp_pb().nanos))
+        print("\tseconds: {}".format(element.create_time.seconds))
+        print("\tnanos: {}".format(element.create_time.nanos))
 
 
 # [END datalabeling_list_datasets_beta]
 
 
 # [START datalabeling_get_dataset_beta]
-def get_dataset(dataset_resource_name):
+def get_dataset(project_id, dataset_resource_name):
     """Gets a dataset for the given Google Cloud project."""
     from google.cloud import datalabeling_v1beta1 as datalabeling
 
@@ -104,21 +102,22 @@ def get_dataset(dataset_resource_name):
         client = datalabeling.DataLabelingServiceClient(client_options=opts)
     # [START datalabeling_get_dataset_beta]
 
-    response = client.get_dataset(request={"name": dataset_resource_name})
+    name = client.dataset_path(project_id, dataset_resource_name)
+    response = client.get_dataset(name)
 
     print("The dataset resource name: {}\n".format(response.name))
     print("Display name: {}".format(response.display_name))
     print("Description: {}".format(response.description))
     print("Create time:")
-    print("\tseconds: {}".format(response.create_time.timestamp_pb().seconds))
-    print("\tnanos: {}".format(response.create_time.timestamp_pb().nanos))
+    print("\tseconds: {}".format(response.create_time.seconds))
+    print("\tnanos: {}".format(response.create_time.nanos))
 
 
 # [END datalabeling_get_dataset_beta]
 
 
 # [START datalabeling_delete_dataset_beta]
-def delete_dataset(dataset_resource_name):
+def delete_dataset(project_id, dataset_resource_name):
     """Deletes a dataset for the given Google Cloud project."""
     from google.cloud import datalabeling_v1beta1 as datalabeling
 
@@ -131,7 +130,9 @@ def delete_dataset(dataset_resource_name):
         client = datalabeling.DataLabelingServiceClient(client_options=opts)
     # [START datalabeling_delete_dataset_beta]
 
-    response = client.delete_dataset(request={"name": dataset_resource_name})
+    name = client.dataset_path(project_id, dataset_resource_name)
+
+    response = client.delete_dataset(name)
 
     print("Dataset deleted. {}\n".format(response))
 
@@ -160,13 +161,25 @@ if __name__ == "__main__":
         "get", help="Get a dataset by the dataset resource name."
     )
     get_parser.add_argument(
+       "--project-id",
+        help="The dataset resource name. Used in the get or delete operation.",
+        required=True,
+    )
+
+    get_parser.add_argument(
         "--dataset-resource-name",
         help="The dataset resource name. Used in the get or delete operation.",
         required=True,
     )
 
+
     delete_parser = subparsers.add_parser(
         "delete", help="Delete a dataset by the dataset resource name."
+    )
+    delete_parser.add_argument(
+       "--project-id",
+        help="The dataset resource name. Used in the get or delete operation.",
+        required=True,
     )
     delete_parser.add_argument(
         "--dataset-resource-name",
@@ -181,6 +194,6 @@ if __name__ == "__main__":
     elif args.command == "list":
         list_datasets(args.project_id)
     elif args.command == "get":
-        get_dataset(args.dataset_resource_name)
+        get_dataset(args.project_id, args.dataset_resource_name)
     elif args.command == "delete":
-        delete_dataset(args.dataset_resource_name)
+        delete_dataset(args.project_id, args.dataset_resource_name)
