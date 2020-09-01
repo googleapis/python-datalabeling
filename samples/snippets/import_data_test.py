@@ -18,7 +18,7 @@ import os
 
 import backoff
 from google.api_core.exceptions import ServerError
-from google.cloud import datalabeling
+from google.cloud import datalabeling_v1beta1 as datalabeling
 import pytest
 
 import import_data
@@ -46,7 +46,10 @@ def test_import_data(capsys, dataset):
     )
     def run_sample():
         import_data.import_data(
-            dataset.name, datalabeling.DataType.IMAGE, INPUT_GCS_URI
+            PROJECT_ID,
+            dataset.name.split("/")[3],
+            datalabeling.types.dataset_pb2.DataType.IMAGE,
+            INPUT_GCS_URI,
         )
 
     run_sample()

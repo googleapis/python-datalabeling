@@ -48,21 +48,24 @@ def create_dataset(project_id):
 
 @backoff.on_exception(backoff.expo, DeadlineExceeded, max_time=RETRY_DEADLINE)
 def delete_dataset(name):
-    return dataset_sample.delete_dataset(name)
+    params = name.split("/")
+
+    return dataset_sample.delete_dataset(params[1], params[3])
 
 
 def delete_old_datasets(project_id):
     client = create_client()
-    formatted_project_name = f"projects/{project_id}"
+    parent = client.project_path(project_id)
 
-    response = client.list_datasets(request={"parent": formatted_project_name})
+    response = client.list_datasets(parent)
     # It will delete datasets created more than 2 hours ago
     cutoff_time = time.time() - 7200
     for element in response:
-        if element.create_time.timestamp_pb().seconds < cutoff_time:
+        if element.create_time.seconds < cutoff_time:
             print("Deleting {}".format(element.name))
             try:
-                dataset_sample.delete_dataset(element.name)
+                dataset_id = element.name.split("/")[3]
+                dataset_sample.delete_dataset(project_id, dataset_id)
             except FailedPrecondition as e:
                 # We're always getting FailedPrecondition with 400
                 # resource conflict. I don't know why.

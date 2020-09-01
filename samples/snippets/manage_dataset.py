@@ -42,8 +42,6 @@ def create_dataset(project_id):
 
     response = client.create_dataset(parent, dataset)
 
-    # The format of resource name:
-    # project_id/{project_id}/datasets/{dataset_id}
     print("The dataset resource name: {}".format(response.name))
     print("Display name: {}".format(response.display_name))
     print("Description: {}".format(response.description))
@@ -75,8 +73,6 @@ def list_datasets(project_id):
 
     response = client.list_datasets(parent)
     for element in response:
-        # The format of resource name:
-        # project_id/{project_id}/datasets/{dataset_id}
         print("The dataset resource name: {}\n".format(element.name))
         print("Display name: {}".format(element.display_name))
         print("Description: {}".format(element.description))
@@ -89,7 +85,7 @@ def list_datasets(project_id):
 
 
 # [START datalabeling_get_dataset_beta]
-def get_dataset(project_id, dataset_resource_name):
+def get_dataset(project_id, dataset_id):
     """Gets a dataset for the given Google Cloud project."""
     from google.cloud import datalabeling_v1beta1 as datalabeling
 
@@ -102,7 +98,7 @@ def get_dataset(project_id, dataset_resource_name):
         client = datalabeling.DataLabelingServiceClient(client_options=opts)
     # [START datalabeling_get_dataset_beta]
 
-    name = client.dataset_path(project_id, dataset_resource_name)
+    name = client.dataset_path(project_id, dataset_id)
     response = client.get_dataset(name)
 
     print("The dataset resource name: {}\n".format(response.name))
@@ -117,7 +113,7 @@ def get_dataset(project_id, dataset_resource_name):
 
 
 # [START datalabeling_delete_dataset_beta]
-def delete_dataset(project_id, dataset_resource_name):
+def delete_dataset(project_id, dataset_id):
     """Deletes a dataset for the given Google Cloud project."""
     from google.cloud import datalabeling_v1beta1 as datalabeling
 
@@ -130,7 +126,7 @@ def delete_dataset(project_id, dataset_resource_name):
         client = datalabeling.DataLabelingServiceClient(client_options=opts)
     # [START datalabeling_delete_dataset_beta]
 
-    name = client.dataset_path(project_id, dataset_resource_name)
+    name = client.dataset_path(project_id, dataset_id)
 
     response = client.delete_dataset(name)
 
@@ -162,13 +158,13 @@ if __name__ == "__main__":
     )
     get_parser.add_argument(
         "--project-id",
-        help="The dataset resource name. Used in the get or delete operation.",
+        help="The Project ID. Used in the get or delete operation.",
         required=True,
     )
 
     get_parser.add_argument(
-        "--dataset-resource-name",
-        help="The dataset resource name. Used in the get or delete operation.",
+        "--dataset-id",
+        help="The dataset id. Used in the get or delete operation.",
         required=True,
     )
 
@@ -177,12 +173,12 @@ if __name__ == "__main__":
     )
     delete_parser.add_argument(
         "--project-id",
-        help="The dataset resource name. Used in the get or delete operation.",
+        help="The Project id. Used in the get or delete operation.",
         required=True,
     )
     delete_parser.add_argument(
-        "--dataset-resource-name",
-        help="The dataset resource name. Used in the get or delete operation.",
+        "--dataset-id",
+        help="The dataset id. Used in the get or delete operation.",
         required=True,
     )
 
@@ -193,6 +189,6 @@ if __name__ == "__main__":
     elif args.command == "list":
         list_datasets(args.project_id)
     elif args.command == "get":
-        get_dataset(args.project_id, args.dataset_resource_name)
+        get_dataset(args.project_id, args.dataset_id)
     elif args.command == "delete":
-        delete_dataset(args.project_id, args.dataset_resource_name)
+        delete_dataset(args.project_id, args.dataset_id)

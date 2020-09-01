@@ -21,7 +21,7 @@ from google.api_core.client_options import ClientOptions
 
 
 # [START datalabeling_import_data_beta]
-def import_data(dataset_resource_name, data_type, input_gcs_uri):
+def import_data(project_id, dataset_id, data_type, input_gcs_uri):
     """Imports data to the given Google Cloud project and dataset."""
     from google.cloud import datalabeling_v1beta1 as datalabeling
 
@@ -34,20 +34,20 @@ def import_data(dataset_resource_name, data_type, input_gcs_uri):
         client = datalabeling.DataLabelingServiceClient(client_options=opts)
     # [START datalabeling_import_data_beta]
 
-    gcs_source = datalabeling.GcsSource(input_uri=input_gcs_uri, mime_type="text/csv")
+    name = client.dataset_path(project_id, dataset_id)
 
-    csv_input_config = datalabeling.InputConfig(
+    gcs_source = datalabeling.types.GcsSource(
+        input_uri=input_gcs_uri, mime_type="text/csv"
+    )
+
+    input_config = datalabeling.types.InputConfig(
         data_type=data_type, gcs_source=gcs_source
     )
 
-    response = client.import_data(
-        request={"name": dataset_resource_name, "input_config": csv_input_config}
-    )
+    response = client.import_data(name, input_config)
 
     result = response.result()
 
-    # The format of resource name:
-    # project_id/{project_id}/datasets/{dataset_id}
     print("Dataset resource name: {}\n".format(result.dataset))
 
     return result
@@ -60,10 +60,14 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
     )
-
     parser.add_argument(
-        "--dataset-resource-name",
-        help="Dataset resource name. Required.",
+        "--project-id",
+        help="The project id.",
+        required=True,
+    )
+    parser.add_argument(
+        "--dataset-id",
+        help="Dataset id. Required.",
         required=True,
     )
 
@@ -81,4 +85,4 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    import_data(args.dataset_resource_name, args.data_type, args.input_gcs_uri)
+    import_data(args.project_id, args.dataset_id, args.data_type, args.input_gcs_uri)
