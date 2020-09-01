@@ -161,7 +161,7 @@ if __name__ == "__main__":
         "get", help="Get a dataset by the dataset resource name."
     )
     get_parser.add_argument(
-       "--project-id",
+        "--project-id",
         help="The dataset resource name. Used in the get or delete operation.",
         required=True,
     )
@@ -172,12 +172,11 @@ if __name__ == "__main__":
         required=True,
     )
 
-
     delete_parser = subparsers.add_parser(
         "delete", help="Delete a dataset by the dataset resource name."
     )
     delete_parser.add_argument(
-       "--project-id",
+        "--project-id",
         help="The dataset resource name. Used in the get or delete operation.",
         required=True,
     )
