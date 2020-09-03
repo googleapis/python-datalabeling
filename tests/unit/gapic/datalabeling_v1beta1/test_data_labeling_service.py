@@ -191,6 +191,7 @@ def test_data_labeling_service_client_client_options(
             api_mtls_endpoint="squid.clam.whelk",
             client_cert_source=None,
             quota_project_id=None,
+            client_info=transports.base.DEFAULT_CLIENT_INFO,
         )
 
     # Check the case api_endpoint is not provided and GOOGLE_API_USE_MTLS is
@@ -207,6 +208,7 @@ def test_data_labeling_service_client_client_options(
                 api_mtls_endpoint=client.DEFAULT_ENDPOINT,
                 client_cert_source=None,
                 quota_project_id=None,
+                client_info=transports.base.DEFAULT_CLIENT_INFO,
             )
 
     # Check the case api_endpoint is not provided and GOOGLE_API_USE_MTLS is
@@ -223,6 +225,7 @@ def test_data_labeling_service_client_client_options(
                 api_mtls_endpoint=client.DEFAULT_MTLS_ENDPOINT,
                 client_cert_source=None,
                 quota_project_id=None,
+                client_info=transports.base.DEFAULT_CLIENT_INFO,
             )
 
     # Check the case api_endpoint is not provided, GOOGLE_API_USE_MTLS is
@@ -242,6 +245,7 @@ def test_data_labeling_service_client_client_options(
                 api_mtls_endpoint=client.DEFAULT_MTLS_ENDPOINT,
                 client_cert_source=client_cert_source_callback,
                 quota_project_id=None,
+                client_info=transports.base.DEFAULT_CLIENT_INFO,
             )
 
     # Check the case api_endpoint is not provided, GOOGLE_API_USE_MTLS is
@@ -262,6 +266,7 @@ def test_data_labeling_service_client_client_options(
                     api_mtls_endpoint=client.DEFAULT_MTLS_ENDPOINT,
                     client_cert_source=None,
                     quota_project_id=None,
+                    client_info=transports.base.DEFAULT_CLIENT_INFO,
                 )
 
     # Check the case api_endpoint is not provided, GOOGLE_API_USE_MTLS is
@@ -282,6 +287,7 @@ def test_data_labeling_service_client_client_options(
                     api_mtls_endpoint=client.DEFAULT_ENDPOINT,
                     client_cert_source=None,
                     quota_project_id=None,
+                    client_info=transports.base.DEFAULT_CLIENT_INFO,
                 )
 
     # Check the case api_endpoint is not provided and GOOGLE_API_USE_MTLS has
@@ -303,6 +309,7 @@ def test_data_labeling_service_client_client_options(
             api_mtls_endpoint=client.DEFAULT_ENDPOINT,
             client_cert_source=None,
             quota_project_id="octopus",
+            client_info=transports.base.DEFAULT_CLIENT_INFO,
         )
 
 
@@ -337,6 +344,7 @@ def test_data_labeling_service_client_client_options_scopes(
             api_mtls_endpoint=client.DEFAULT_ENDPOINT,
             client_cert_source=None,
             quota_project_id=None,
+            client_info=transports.base.DEFAULT_CLIENT_INFO,
         )
 
 
@@ -371,6 +379,7 @@ def test_data_labeling_service_client_client_options_credentials_file(
             api_mtls_endpoint=client.DEFAULT_ENDPOINT,
             client_cert_source=None,
             quota_project_id=None,
+            client_info=transports.base.DEFAULT_CLIENT_INFO,
         )
 
 
@@ -390,6 +399,7 @@ def test_data_labeling_service_client_client_options_from_dict():
             api_mtls_endpoint="squid.clam.whelk",
             client_cert_source=None,
             quota_project_id=None,
+            client_info=transports.base.DEFAULT_CLIENT_INFO,
         )
 
 
@@ -1113,8 +1123,8 @@ def test_list_datasets_pages():
             RuntimeError,
         )
         pages = list(client.list_datasets(request={}).pages)
-        for page, token in zip(pages, ["abc", "def", "ghi", ""]):
-            assert page.raw_page.next_page_token == token
+        for page_, token in zip(pages, ["abc", "def", "ghi", ""]):
+            assert page_.raw_page.next_page_token == token
 
 
 @pytest.mark.asyncio
@@ -1186,10 +1196,10 @@ async def test_list_datasets_async_pages():
             RuntimeError,
         )
         pages = []
-        async for page in (await client.list_datasets(request={})).pages:
-            pages.append(page)
-        for page, token in zip(pages, ["abc", "def", "ghi", ""]):
-            assert page.raw_page.next_page_token == token
+        async for page_ in (await client.list_datasets(request={})).pages:
+            pages.append(page_)
+        for page_, token in zip(pages, ["abc", "def", "ghi", ""]):
+            assert page_.raw_page.next_page_token == token
 
 
 def test_delete_dataset(
@@ -2299,8 +2309,8 @@ def test_list_data_items_pages():
             RuntimeError,
         )
         pages = list(client.list_data_items(request={}).pages)
-        for page, token in zip(pages, ["abc", "def", "ghi", ""]):
-            assert page.raw_page.next_page_token == token
+        for page_, token in zip(pages, ["abc", "def", "ghi", ""]):
+            assert page_.raw_page.next_page_token == token
 
 
 @pytest.mark.asyncio
@@ -2380,10 +2390,10 @@ async def test_list_data_items_async_pages():
             RuntimeError,
         )
         pages = []
-        async for page in (await client.list_data_items(request={})).pages:
-            pages.append(page)
-        for page, token in zip(pages, ["abc", "def", "ghi", ""]):
-            assert page.raw_page.next_page_token == token
+        async for page_ in (await client.list_data_items(request={})).pages:
+            pages.append(page_)
+        for page_, token in zip(pages, ["abc", "def", "ghi", ""]):
+            assert page_.raw_page.next_page_token == token
 
 
 def test_get_annotated_dataset(
@@ -2935,8 +2945,8 @@ def test_list_annotated_datasets_pages():
             RuntimeError,
         )
         pages = list(client.list_annotated_datasets(request={}).pages)
-        for page, token in zip(pages, ["abc", "def", "ghi", ""]):
-            assert page.raw_page.next_page_token == token
+        for page_, token in zip(pages, ["abc", "def", "ghi", ""]):
+            assert page_.raw_page.next_page_token == token
 
 
 @pytest.mark.asyncio
@@ -3022,10 +3032,10 @@ async def test_list_annotated_datasets_async_pages():
             RuntimeError,
         )
         pages = []
-        async for page in (await client.list_annotated_datasets(request={})).pages:
-            pages.append(page)
-        for page, token in zip(pages, ["abc", "def", "ghi", ""]):
-            assert page.raw_page.next_page_token == token
+        async for page_ in (await client.list_annotated_datasets(request={})).pages:
+            pages.append(page_)
+        for page_, token in zip(pages, ["abc", "def", "ghi", ""]):
+            assert page_.raw_page.next_page_token == token
 
 
 def test_delete_annotated_dataset(
@@ -4314,8 +4324,8 @@ def test_list_examples_pages():
             RuntimeError,
         )
         pages = list(client.list_examples(request={}).pages)
-        for page, token in zip(pages, ["abc", "def", "ghi", ""]):
-            assert page.raw_page.next_page_token == token
+        for page_, token in zip(pages, ["abc", "def", "ghi", ""]):
+            assert page_.raw_page.next_page_token == token
 
 
 @pytest.mark.asyncio
@@ -4387,10 +4397,10 @@ async def test_list_examples_async_pages():
             RuntimeError,
         )
         pages = []
-        async for page in (await client.list_examples(request={})).pages:
-            pages.append(page)
-        for page, token in zip(pages, ["abc", "def", "ghi", ""]):
-            assert page.raw_page.next_page_token == token
+        async for page_ in (await client.list_examples(request={})).pages:
+            pages.append(page_)
+        for page_, token in zip(pages, ["abc", "def", "ghi", ""]):
+            assert page_.raw_page.next_page_token == token
 
 
 def test_create_annotation_spec_set(
@@ -5166,8 +5176,8 @@ def test_list_annotation_spec_sets_pages():
             RuntimeError,
         )
         pages = list(client.list_annotation_spec_sets(request={}).pages)
-        for page, token in zip(pages, ["abc", "def", "ghi", ""]):
-            assert page.raw_page.next_page_token == token
+        for page_, token in zip(pages, ["abc", "def", "ghi", ""]):
+            assert page_.raw_page.next_page_token == token
 
 
 @pytest.mark.asyncio
@@ -5257,10 +5267,10 @@ async def test_list_annotation_spec_sets_async_pages():
             RuntimeError,
         )
         pages = []
-        async for page in (await client.list_annotation_spec_sets(request={})).pages:
-            pages.append(page)
-        for page, token in zip(pages, ["abc", "def", "ghi", ""]):
-            assert page.raw_page.next_page_token == token
+        async for page_ in (await client.list_annotation_spec_sets(request={})).pages:
+            pages.append(page_)
+        for page_, token in zip(pages, ["abc", "def", "ghi", ""]):
+            assert page_.raw_page.next_page_token == token
 
 
 def test_delete_annotation_spec_set(
@@ -6177,8 +6187,8 @@ def test_list_instructions_pages():
             RuntimeError,
         )
         pages = list(client.list_instructions(request={}).pages)
-        for page, token in zip(pages, ["abc", "def", "ghi", ""]):
-            assert page.raw_page.next_page_token == token
+        for page_, token in zip(pages, ["abc", "def", "ghi", ""]):
+            assert page_.raw_page.next_page_token == token
 
 
 @pytest.mark.asyncio
@@ -6258,10 +6268,10 @@ async def test_list_instructions_async_pages():
             RuntimeError,
         )
         pages = []
-        async for page in (await client.list_instructions(request={})).pages:
-            pages.append(page)
-        for page, token in zip(pages, ["abc", "def", "ghi", ""]):
-            assert page.raw_page.next_page_token == token
+        async for page_ in (await client.list_instructions(request={})).pages:
+            pages.append(page_)
+        for page_, token in zip(pages, ["abc", "def", "ghi", ""]):
+            assert page_.raw_page.next_page_token == token
 
 
 def test_delete_instruction(
@@ -6960,8 +6970,8 @@ def test_search_evaluations_pages():
             RuntimeError,
         )
         pages = list(client.search_evaluations(request={}).pages)
-        for page, token in zip(pages, ["abc", "def", "ghi", ""]):
-            assert page.raw_page.next_page_token == token
+        for page_, token in zip(pages, ["abc", "def", "ghi", ""]):
+            assert page_.raw_page.next_page_token == token
 
 
 @pytest.mark.asyncio
@@ -7041,10 +7051,10 @@ async def test_search_evaluations_async_pages():
             RuntimeError,
         )
         pages = []
-        async for page in (await client.search_evaluations(request={})).pages:
-            pages.append(page)
-        for page, token in zip(pages, ["abc", "def", "ghi", ""]):
-            assert page.raw_page.next_page_token == token
+        async for page_ in (await client.search_evaluations(request={})).pages:
+            pages.append(page_)
+        for page_, token in zip(pages, ["abc", "def", "ghi", ""]):
+            assert page_.raw_page.next_page_token == token
 
 
 def test_search_example_comparisons(
@@ -7344,8 +7354,8 @@ def test_search_example_comparisons_pages():
             RuntimeError,
         )
         pages = list(client.search_example_comparisons(request={}).pages)
-        for page, token in zip(pages, ["abc", "def", "ghi", ""]):
-            assert page.raw_page.next_page_token == token
+        for page_, token in zip(pages, ["abc", "def", "ghi", ""]):
+            assert page_.raw_page.next_page_token == token
 
 
 @pytest.mark.asyncio
@@ -7443,10 +7453,10 @@ async def test_search_example_comparisons_async_pages():
             RuntimeError,
         )
         pages = []
-        async for page in (await client.search_example_comparisons(request={})).pages:
-            pages.append(page)
-        for page, token in zip(pages, ["abc", "def", "ghi", ""]):
-            assert page.raw_page.next_page_token == token
+        async for page_ in (await client.search_example_comparisons(request={})).pages:
+            pages.append(page_)
+        for page_, token in zip(pages, ["abc", "def", "ghi", ""]):
+            assert page_.raw_page.next_page_token == token
 
 
 def test_create_evaluation_job(
@@ -9083,8 +9093,8 @@ def test_list_evaluation_jobs_pages():
             RuntimeError,
         )
         pages = list(client.list_evaluation_jobs(request={}).pages)
-        for page, token in zip(pages, ["abc", "def", "ghi", ""]):
-            assert page.raw_page.next_page_token == token
+        for page_, token in zip(pages, ["abc", "def", "ghi", ""]):
+            assert page_.raw_page.next_page_token == token
 
 
 @pytest.mark.asyncio
@@ -9172,10 +9182,10 @@ async def test_list_evaluation_jobs_async_pages():
             RuntimeError,
         )
         pages = []
-        async for page in (await client.list_evaluation_jobs(request={})).pages:
-            pages.append(page)
-        for page, token in zip(pages, ["abc", "def", "ghi", ""]):
-            assert page.raw_page.next_page_token == token
+        async for page_ in (await client.list_evaluation_jobs(request={})).pages:
+            pages.append(page_)
+        for page_, token in zip(pages, ["abc", "def", "ghi", ""]):
+            assert page_.raw_page.next_page_token == token
 
 
 def test_credentials_transport_error():
@@ -9573,6 +9583,29 @@ def test_data_labeling_service_grpc_lro_async_client():
     assert transport.operations_client is transport.operations_client
 
 
+def test_dataset_path():
+    project = "squid"
+    dataset = "clam"
+
+    expected = "projects/{project}/datasets/{dataset}".format(
+        project=project, dataset=dataset,
+    )
+    actual = DataLabelingServiceClient.dataset_path(project, dataset)
+    assert expected == actual
+
+
+def test_parse_dataset_path():
+    expected = {
+        "project": "whelk",
+        "dataset": "octopus",
+    }
+    path = DataLabelingServiceClient.dataset_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = DataLabelingServiceClient.parse_dataset_path(path)
+    assert expected == actual
+
+
 def test_instruction_path():
     project = "squid"
     instruction = "clam"
@@ -9593,6 +9626,29 @@ def test_parse_instruction_path():
 
     # Check that the path construction is reversible.
     actual = DataLabelingServiceClient.parse_instruction_path(path)
+    assert expected == actual
+
+
+def test_evaluation_job_path():
+    project = "squid"
+    evaluation_job = "clam"
+
+    expected = "projects/{project}/evaluationJobs/{evaluation_job}".format(
+        project=project, evaluation_job=evaluation_job,
+    )
+    actual = DataLabelingServiceClient.evaluation_job_path(project, evaluation_job)
+    assert expected == actual
+
+
+def test_parse_evaluation_job_path():
+    expected = {
+        "project": "whelk",
+        "evaluation_job": "octopus",
+    }
+    path = DataLabelingServiceClient.evaluation_job_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = DataLabelingServiceClient.parse_evaluation_job_path(path)
     assert expected == actual
 
 
@@ -9621,47 +9677,22 @@ def test_parse_annotation_spec_set_path():
     assert expected == actual
 
 
-def test_evaluation_job_path():
-    project = "squid"
-    evaluation_job = "clam"
+def test_client_withDEFAULT_CLIENT_INFO():
+    client_info = gapic_v1.client_info.ClientInfo()
 
-    expected = "projects/{project}/evaluationJobs/{evaluation_job}".format(
-        project=project, evaluation_job=evaluation_job,
-    )
-    actual = DataLabelingServiceClient.evaluation_job_path(project, evaluation_job)
-    assert expected == actual
+    with mock.patch.object(
+        transports.DataLabelingServiceTransport, "_prep_wrapped_messages"
+    ) as prep:
+        client = DataLabelingServiceClient(
+            credentials=credentials.AnonymousCredentials(), client_info=client_info,
+        )
+        prep.assert_called_once_with(client_info)
 
-
-def test_parse_evaluation_job_path():
-    expected = {
-        "project": "whelk",
-        "evaluation_job": "octopus",
-    }
-    path = DataLabelingServiceClient.evaluation_job_path(**expected)
-
-    # Check that the path construction is reversible.
-    actual = DataLabelingServiceClient.parse_evaluation_job_path(path)
-    assert expected == actual
-
-
-def test_dataset_path():
-    project = "squid"
-    dataset = "clam"
-
-    expected = "projects/{project}/datasets/{dataset}".format(
-        project=project, dataset=dataset,
-    )
-    actual = DataLabelingServiceClient.dataset_path(project, dataset)
-    assert expected == actual
-
-
-def test_parse_dataset_path():
-    expected = {
-        "project": "whelk",
-        "dataset": "octopus",
-    }
-    path = DataLabelingServiceClient.dataset_path(**expected)
-
-    # Check that the path construction is reversible.
-    actual = DataLabelingServiceClient.parse_dataset_path(path)
-    assert expected == actual
+    with mock.patch.object(
+        transports.DataLabelingServiceTransport, "_prep_wrapped_messages"
+    ) as prep:
+        transport_class = DataLabelingServiceClient.get_transport_class()
+        transport = transport_class(
+            credentials=credentials.AnonymousCredentials(), client_info=client_info,
+        )
+        prep.assert_called_once_with(client_info)
