@@ -46,7 +46,7 @@ def label_image(
     feature = datalabeling.LabelImageRequest.Feature.CLASSIFICATION
 
     # annotation_spec_set_resource_name needs to be created beforehand.
-    # See the examples in the following 
+    # See the examples in the following
     # https://cloud.google.com/ai-platform/data-labeling/docs/label-sets
     config = datalabeling.ImageClassificationConfig(
         annotation_spec_set=annotation_spec_set_resource_name,
