@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/python-datalabeling.git",
-        "sha": "3d643383e481fa22093756343bdf50eba002b1f8"
+        "sha": "19e8f0c1a82d6b096e0787c1249a2e0cbdf5e429"
       }
     },
     {
@@ -19,14 +19,14 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "7fcc405a579d5d53a726ff3da1b7c8c08f0f2d58"
+        "sha": "9a7d9fbb7045c34c9d3d22c1ff766eeae51f04c9"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "7fcc405a579d5d53a726ff3da1b7c8c08f0f2d58"
+        "sha": "9a7d9fbb7045c34c9d3d22c1ff766eeae51f04c9"
       }
     }
   ],
