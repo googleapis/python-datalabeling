@@ -132,6 +132,22 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
     )
 
     @classmethod
+    def from_service_account_info(cls, info: dict, *args, **kwargs):
+        """Creates an instance of this client using the provided credentials info.
+
+        Args:
+            info (dict): The service account private key info.
+            args: Additional arguments to pass to the constructor.
+            kwargs: Additional arguments to pass to the constructor.
+
+        Returns:
+            DataLabelingServiceClient: The constructed client.
+        """
+        credentials = service_account.Credentials.from_service_account_info(info)
+        kwargs["credentials"] = credentials
+        return cls(*args, **kwargs)
+
+    @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
         file.
@@ -143,7 +159,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             kwargs: Additional arguments to pass to the constructor.
 
         Returns:
-            {@api.name}: The constructed client.
+            DataLabelingServiceClient: The constructed client.
         """
         credentials = service_account.Credentials.from_service_account_file(filename)
         kwargs["credentials"] = credentials
@@ -365,10 +381,10 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 credentials identify the application to the service; if none
                 are specified, the client will attempt to ascertain the
                 credentials from the environment.
-            transport (Union[str, ~.DataLabelingServiceTransport]): The
+            transport (Union[str, DataLabelingServiceTransport]): The
                 transport to use. If set to None, a transport is chosen
                 automatically.
-            client_options (client_options_lib.ClientOptions): Custom options for the
+            client_options (google.api_core.client_options.ClientOptions): Custom options for the
                 client. It won't take effect if a ``transport`` instance is provided.
                 (1) The ``api_endpoint`` property can be used to override the
                 default endpoint provided by the client. GOOGLE_API_USE_MTLS_ENDPOINT
@@ -480,15 +496,16 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         resource.
 
         Args:
-            request (:class:`~.data_labeling_service.CreateDatasetRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.CreateDatasetRequest):
                 The request object. Request message for CreateDataset.
-            parent (:class:`str`):
+            parent (str):
                 Required. Dataset resource parent, format:
                 projects/{project_id}
+
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            dataset (:class:`~.gcd_dataset.Dataset`):
+            dataset (google.cloud.datalabeling_v1beta1.types.Dataset):
                 Required. The dataset to be created.
                 This corresponds to the ``dataset`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -501,7 +518,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.gcd_dataset.Dataset:
+            google.cloud.datalabeling_v1beta1.types.Dataset:
                 Dataset is the resource to hold your
                 data. You can request multiple labeling
                 tasks for a dataset while each one will
@@ -561,11 +578,12 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Gets dataset by resource name.
 
         Args:
-            request (:class:`~.data_labeling_service.GetDatasetRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.GetDatasetRequest):
                 The request object. Request message for GetDataSet.
-            name (:class:`str`):
+            name (str):
                 Required. Dataset resource name, format:
                 projects/{project_id}/datasets/{dataset_id}
+
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -577,7 +595,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.dataset.Dataset:
+            google.cloud.datalabeling_v1beta1.types.Dataset:
                 Dataset is the resource to hold your
                 data. You can request multiple labeling
                 tasks for a dataset while each one will
@@ -637,17 +655,19 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         supported.
 
         Args:
-            request (:class:`~.data_labeling_service.ListDatasetsRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.ListDatasetsRequest):
                 The request object. Request message for ListDataset.
-            parent (:class:`str`):
+            parent (str):
                 Required. Dataset resource parent, format:
                 projects/{project_id}
+
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            filter (:class:`str`):
+            filter (str):
                 Optional. Filter on dataset is not
                 supported at this moment.
+
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -659,7 +679,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.pagers.ListDatasetsPager:
+            google.cloud.datalabeling_v1beta1.services.data_labeling_service.pagers.ListDatasetsPager:
                 Results of listing datasets within a
                 project.
                 Iterating over this object will yield
@@ -726,11 +746,12 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Deletes a dataset by resource name.
 
         Args:
-            request (:class:`~.data_labeling_service.DeleteDatasetRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.DeleteDatasetRequest):
                 The request object. Request message for DeleteDataset.
-            name (:class:`str`):
+            name (str):
                 Required. Dataset resource name, format:
                 projects/{project_id}/datasets/{dataset_id}
+
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -797,17 +818,19 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         started while importing is still ongoing. Vice versa.
 
         Args:
-            request (:class:`~.data_labeling_service.ImportDataRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.ImportDataRequest):
                 The request object. Request message for ImportData API.
-            name (:class:`str`):
+            name (str):
                 Required. Dataset resource name, format:
                 projects/{project_id}/datasets/{dataset_id}
+
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            input_config (:class:`~.dataset.InputConfig`):
+            input_config (google.cloud.datalabeling_v1beta1.types.InputConfig):
                 Required. Specify the input source of
                 the data.
+
                 This corresponds to the ``input_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -819,11 +842,11 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.operation.Operation:
+            google.api_core.operation.Operation:
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:``~.operations.ImportDataOperationResponse``:
+                :class:`google.cloud.datalabeling_v1beta1.types.ImportDataOperationResponse`
                 Response used for ImportData longrunning operation.
 
         """
@@ -891,32 +914,36 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Exports data and annotations from dataset.
 
         Args:
-            request (:class:`~.data_labeling_service.ExportDataRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.ExportDataRequest):
                 The request object. Request message for ExportData API.
-            name (:class:`str`):
+            name (str):
                 Required. Dataset resource name, format:
                 projects/{project_id}/datasets/{dataset_id}
+
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            annotated_dataset (:class:`str`):
+            annotated_dataset (str):
                 Required. Annotated dataset resource name. DataItem in
                 Dataset and their annotations in specified annotated
                 dataset will be exported. It's in format of
                 projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/
                 {annotated_dataset_id}
+
                 This corresponds to the ``annotated_dataset`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            filter (:class:`str`):
+            filter (str):
                 Optional. Filter is not supported at
                 this moment.
+
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            output_config (:class:`~.dataset.OutputConfig`):
+            output_config (google.cloud.datalabeling_v1beta1.types.OutputConfig):
                 Required. Specify the output
                 destination.
+
                 This corresponds to the ``output_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -928,11 +955,11 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.operation.Operation:
+            google.api_core.operation.Operation:
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:``~.operations.ExportDataOperationResponse``:
+                :class:`google.cloud.datalabeling_v1beta1.types.ExportDataOperationResponse`
                 Response used for ExportDataset longrunning operation.
 
         """
@@ -1002,11 +1029,12 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         API can be called after data are imported into dataset.
 
         Args:
-            request (:class:`~.data_labeling_service.GetDataItemRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.GetDataItemRequest):
                 The request object. Request message for GetDataItem.
-            name (:class:`str`):
+            name (str):
                 Required. The name of the data item to get, format:
                 projects/{project_id}/datasets/{dataset_id}/dataItems/{data_item_id}
+
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1018,7 +1046,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.dataset.DataItem:
+            google.cloud.datalabeling_v1beta1.types.DataItem:
                 DataItem is a piece of data, without
                 annotation. For example, an image.
 
@@ -1077,17 +1105,19 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         supported.
 
         Args:
-            request (:class:`~.data_labeling_service.ListDataItemsRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.ListDataItemsRequest):
                 The request object. Request message for ListDataItems.
-            parent (:class:`str`):
+            parent (str):
                 Required. Name of the dataset to list data items,
                 format: projects/{project_id}/datasets/{dataset_id}
+
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            filter (:class:`str`):
+            filter (str):
                 Optional. Filter is not supported at
                 this moment.
+
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1099,7 +1129,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.pagers.ListDataItemsPager:
+            google.cloud.datalabeling_v1beta1.services.data_labeling_service.pagers.ListDataItemsPager:
                 Results of listing data items in a
                 dataset.
                 Iterating over this object will yield
@@ -1166,13 +1196,14 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Gets an annotated dataset by resource name.
 
         Args:
-            request (:class:`~.data_labeling_service.GetAnnotatedDatasetRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.GetAnnotatedDatasetRequest):
                 The request object. Request message for
                 GetAnnotatedDataset.
-            name (:class:`str`):
+            name (str):
                 Required. Name of the annotated dataset to get, format:
                 projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/
                 {annotated_dataset_id}
+
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1184,7 +1215,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.dataset.AnnotatedDataset:
+            google.cloud.datalabeling_v1beta1.types.AnnotatedDataset:
                 AnnotatedDataset is a set holding
                 annotations for data in a Dataset. Each
                 labeling task will generate an
@@ -1245,19 +1276,21 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         supported.
 
         Args:
-            request (:class:`~.data_labeling_service.ListAnnotatedDatasetsRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.ListAnnotatedDatasetsRequest):
                 The request object. Request message for
                 ListAnnotatedDatasets.
-            parent (:class:`str`):
+            parent (str):
                 Required. Name of the dataset to list annotated
                 datasets, format:
                 projects/{project_id}/datasets/{dataset_id}
+
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            filter (:class:`str`):
+            filter (str):
                 Optional. Filter is not supported at
                 this moment.
+
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1269,7 +1302,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.pagers.ListAnnotatedDatasetsPager:
+            google.cloud.datalabeling_v1beta1.services.data_labeling_service.pagers.ListAnnotatedDatasetsPager:
                 Results of listing annotated datasets
                 for a dataset.
                 Iterating over this object will yield
@@ -1335,7 +1368,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Deletes an annotated dataset by resource name.
 
         Args:
-            request (:class:`~.data_labeling_service.DeleteAnnotatedDatasetRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.DeleteAnnotatedDatasetRequest):
                 The request object. Request message for
                 DeleteAnnotatedDataset.
 
@@ -1384,24 +1417,27 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         labeling task is configured by feature in the request.
 
         Args:
-            request (:class:`~.data_labeling_service.LabelImageRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.LabelImageRequest):
                 The request object. Request message for starting an
                 image labeling task.
-            parent (:class:`str`):
+            parent (str):
                 Required. Name of the dataset to request labeling task,
                 format: projects/{project_id}/datasets/{dataset_id}
+
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            basic_config (:class:`~.human_annotation_config.HumanAnnotationConfig`):
+            basic_config (google.cloud.datalabeling_v1beta1.types.HumanAnnotationConfig):
                 Required. Basic human annotation
                 config.
+
                 This corresponds to the ``basic_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            feature (:class:`~.data_labeling_service.LabelImageRequest.Feature`):
+            feature (google.cloud.datalabeling_v1beta1.types.LabelImageRequest.Feature):
                 Required. The type of image labeling
                 task.
+
                 This corresponds to the ``feature`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1413,14 +1449,12 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.operation.Operation:
+            google.api_core.operation.Operation:
                 An object representing a long-running operation.
 
-                The result type for the operation will be
-                :class:``~.dataset.AnnotatedDataset``: AnnotatedDataset
-                is a set holding annotations for data in a Dataset. Each
-                labeling task will generate an AnnotatedDataset under
-                the Dataset that the task is requested for.
+                The result type for the operation will be :class:`google.cloud.datalabeling_v1beta1.types.AnnotatedDataset` AnnotatedDataset is a set holding annotations for data in a Dataset. Each
+                   labeling task will generate an AnnotatedDataset under
+                   the Dataset that the task is requested for.
 
         """
         # Create or coerce a protobuf request object.
@@ -1489,23 +1523,26 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         labeling task is configured by feature in the request.
 
         Args:
-            request (:class:`~.data_labeling_service.LabelVideoRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.LabelVideoRequest):
                 The request object. Request message for LabelVideo.
-            parent (:class:`str`):
+            parent (str):
                 Required. Name of the dataset to request labeling task,
                 format: projects/{project_id}/datasets/{dataset_id}
+
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            basic_config (:class:`~.human_annotation_config.HumanAnnotationConfig`):
+            basic_config (google.cloud.datalabeling_v1beta1.types.HumanAnnotationConfig):
                 Required. Basic human annotation
                 config.
+
                 This corresponds to the ``basic_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            feature (:class:`~.data_labeling_service.LabelVideoRequest.Feature`):
+            feature (google.cloud.datalabeling_v1beta1.types.LabelVideoRequest.Feature):
                 Required. The type of video labeling
                 task.
+
                 This corresponds to the ``feature`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1517,14 +1554,12 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.operation.Operation:
+            google.api_core.operation.Operation:
                 An object representing a long-running operation.
 
-                The result type for the operation will be
-                :class:``~.dataset.AnnotatedDataset``: AnnotatedDataset
-                is a set holding annotations for data in a Dataset. Each
-                labeling task will generate an AnnotatedDataset under
-                the Dataset that the task is requested for.
+                The result type for the operation will be :class:`google.cloud.datalabeling_v1beta1.types.AnnotatedDataset` AnnotatedDataset is a set holding annotations for data in a Dataset. Each
+                   labeling task will generate an AnnotatedDataset under
+                   the Dataset that the task is requested for.
 
         """
         # Create or coerce a protobuf request object.
@@ -1593,23 +1628,26 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         labeling task is configured by feature in the request.
 
         Args:
-            request (:class:`~.data_labeling_service.LabelTextRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.LabelTextRequest):
                 The request object. Request message for LabelText.
-            parent (:class:`str`):
+            parent (str):
                 Required. Name of the data set to request labeling task,
                 format: projects/{project_id}/datasets/{dataset_id}
+
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            basic_config (:class:`~.human_annotation_config.HumanAnnotationConfig`):
+            basic_config (google.cloud.datalabeling_v1beta1.types.HumanAnnotationConfig):
                 Required. Basic human annotation
                 config.
+
                 This corresponds to the ``basic_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            feature (:class:`~.data_labeling_service.LabelTextRequest.Feature`):
+            feature (google.cloud.datalabeling_v1beta1.types.LabelTextRequest.Feature):
                 Required. The type of text labeling
                 task.
+
                 This corresponds to the ``feature`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1621,14 +1659,12 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.operation.Operation:
+            google.api_core.operation.Operation:
                 An object representing a long-running operation.
 
-                The result type for the operation will be
-                :class:``~.dataset.AnnotatedDataset``: AnnotatedDataset
-                is a set holding annotations for data in a Dataset. Each
-                labeling task will generate an AnnotatedDataset under
-                the Dataset that the task is requested for.
+                The result type for the operation will be :class:`google.cloud.datalabeling_v1beta1.types.AnnotatedDataset` AnnotatedDataset is a set holding annotations for data in a Dataset. Each
+                   labeling task will generate an AnnotatedDataset under
+                   the Dataset that the task is requested for.
 
         """
         # Create or coerce a protobuf request object.
@@ -1696,19 +1732,21 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         and annotation.
 
         Args:
-            request (:class:`~.data_labeling_service.GetExampleRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.GetExampleRequest):
                 The request object. Request message for GetExample
-            name (:class:`str`):
+            name (str):
                 Required. Name of example, format:
                 projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/
                 {annotated_dataset_id}/examples/{example_id}
+
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            filter (:class:`str`):
+            filter (str):
                 Optional. An expression for filtering Examples. Filter
                 by annotation_spec.display_name is supported. Format
-                "annotation_spec.display_name = {display_name}".
+                "annotation_spec.display_name = {display_name}"
+
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1720,7 +1758,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.dataset.Example:
+            google.cloud.datalabeling_v1beta1.types.Example:
                 An Example is a piece of data and its
                 annotation. For example, an image with
                 label "house".
@@ -1781,18 +1819,19 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         supported.
 
         Args:
-            request (:class:`~.data_labeling_service.ListExamplesRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.ListExamplesRequest):
                 The request object. Request message for ListExamples.
-            parent (:class:`str`):
+            parent (str):
                 Required. Example resource parent.
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            filter (:class:`str`):
+            filter (str):
                 Optional. An expression for filtering Examples. For
                 annotated datasets that have annotation spec set, filter
                 by annotation_spec.display_name is supported. Format
-                "annotation_spec.display_name = {display_name}".
+                "annotation_spec.display_name = {display_name}"
+
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1804,7 +1843,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.pagers.ListExamplesPager:
+            google.cloud.datalabeling_v1beta1.services.data_labeling_service.pagers.ListExamplesPager:
                 Results of listing Examples in and
                 annotated dataset.
                 Iterating over this object will yield
@@ -1873,19 +1912,21 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         labels.
 
         Args:
-            request (:class:`~.data_labeling_service.CreateAnnotationSpecSetRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.CreateAnnotationSpecSetRequest):
                 The request object. Request message for
                 CreateAnnotationSpecSet.
-            parent (:class:`str`):
+            parent (str):
                 Required. AnnotationSpecSet resource parent, format:
                 projects/{project_id}
+
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            annotation_spec_set (:class:`~.gcd_annotation_spec_set.AnnotationSpecSet`):
+            annotation_spec_set (google.cloud.datalabeling_v1beta1.types.AnnotationSpecSet):
                 Required. Annotation spec set to create. Annotation
                 specs must be included. Only one annotation spec will be
                 accepted for annotation specs with same display_name.
+
                 This corresponds to the ``annotation_spec_set`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1897,7 +1938,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.gcd_annotation_spec_set.AnnotationSpecSet:
+            google.cloud.datalabeling_v1beta1.types.AnnotationSpecSet:
                 An AnnotationSpecSet is a collection
                 of label definitions. For example, in
                 image classification tasks, you define a
@@ -1963,12 +2004,13 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Gets an annotation spec set by resource name.
 
         Args:
-            request (:class:`~.data_labeling_service.GetAnnotationSpecSetRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.GetAnnotationSpecSetRequest):
                 The request object. Request message for
                 GetAnnotationSpecSet.
-            name (:class:`str`):
+            name (str):
                 Required. AnnotationSpecSet resource name, format:
                 projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}
+
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1980,7 +2022,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.annotation_spec_set.AnnotationSpecSet:
+            google.cloud.datalabeling_v1beta1.types.AnnotationSpecSet:
                 An AnnotationSpecSet is a collection
                 of label definitions. For example, in
                 image classification tasks, you define a
@@ -2042,18 +2084,20 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         is supported.
 
         Args:
-            request (:class:`~.data_labeling_service.ListAnnotationSpecSetsRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.ListAnnotationSpecSetsRequest):
                 The request object. Request message for
                 ListAnnotationSpecSets.
-            parent (:class:`str`):
+            parent (str):
                 Required. Parent of AnnotationSpecSet resource, format:
                 projects/{project_id}
+
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            filter (:class:`str`):
+            filter (str):
                 Optional. Filter is not supported at
                 this moment.
+
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -2065,7 +2109,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.pagers.ListAnnotationSpecSetsPager:
+            google.cloud.datalabeling_v1beta1.services.data_labeling_service.pagers.ListAnnotationSpecSetsPager:
                 Results of listing annotation spec
                 set under a project.
                 Iterating over this object will yield
@@ -2134,12 +2178,13 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Deletes an annotation spec set by resource name.
 
         Args:
-            request (:class:`~.data_labeling_service.DeleteAnnotationSpecSetRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.DeleteAnnotationSpecSetRequest):
                 The request object. Request message for
                 DeleteAnnotationSpecSet.
-            name (:class:`str`):
+            name (str):
                 Required. AnnotationSpec resource name, format:
                 ``projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}``.
+
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -2206,18 +2251,20 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         labeled.
 
         Args:
-            request (:class:`~.data_labeling_service.CreateInstructionRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.CreateInstructionRequest):
                 The request object. Request message for
                 CreateInstruction.
-            parent (:class:`str`):
+            parent (str):
                 Required. Instruction resource parent, format:
                 projects/{project_id}
+
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            instruction (:class:`~.gcd_instruction.Instruction`):
+            instruction (google.cloud.datalabeling_v1beta1.types.Instruction):
                 Required. Instruction of how to
                 perform the labeling task.
+
                 This corresponds to the ``instruction`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -2229,13 +2276,11 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.operation.Operation:
+            google.api_core.operation.Operation:
                 An object representing a long-running operation.
 
-                The result type for the operation will be
-                :class:``~.gcd_instruction.Instruction``: Instruction of
-                how to perform the labeling task for human operators.
-                Currently only PDF instruction is supported.
+                The result type for the operation will be :class:`google.cloud.datalabeling_v1beta1.types.Instruction` Instruction of how to perform the labeling task for human operators.
+                   Currently only PDF instruction is supported.
 
         """
         # Create or coerce a protobuf request object.
@@ -2299,11 +2344,12 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Gets an instruction by resource name.
 
         Args:
-            request (:class:`~.data_labeling_service.GetInstructionRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.GetInstructionRequest):
                 The request object. Request message for GetInstruction.
-            name (:class:`str`):
+            name (str):
                 Required. Instruction resource name, format:
                 projects/{project_id}/instructions/{instruction_id}
+
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -2315,7 +2361,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.instruction.Instruction:
+            google.cloud.datalabeling_v1beta1.types.Instruction:
                 Instruction of how to perform the
                 labeling task for human operators.
                 Currently only PDF instruction is
@@ -2375,18 +2421,20 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         supported.
 
         Args:
-            request (:class:`~.data_labeling_service.ListInstructionsRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.ListInstructionsRequest):
                 The request object. Request message for
                 ListInstructions.
-            parent (:class:`str`):
+            parent (str):
                 Required. Instruction resource parent, format:
                 projects/{project_id}
+
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            filter (:class:`str`):
+            filter (str):
                 Optional. Filter is not supported at
                 this moment.
+
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -2398,7 +2446,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.pagers.ListInstructionsPager:
+            google.cloud.datalabeling_v1beta1.services.data_labeling_service.pagers.ListInstructionsPager:
                 Results of listing instructions under
                 a project.
                 Iterating over this object will yield
@@ -2465,12 +2513,13 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Deletes an instruction object by resource name.
 
         Args:
-            request (:class:`~.data_labeling_service.DeleteInstructionRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.DeleteInstructionRequest):
                 The request object. Request message for
                 DeleteInstruction.
-            name (:class:`str`):
+            name (str):
                 Required. Instruction resource name, format:
                 projects/{project_id}/instructions/{instruction_id}
+
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -2532,12 +2581,13 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         [projects.evaluations.search][google.cloud.datalabeling.v1beta1.DataLabelingService.SearchEvaluations]).
 
         Args:
-            request (:class:`~.data_labeling_service.GetEvaluationRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.GetEvaluationRequest):
                 The request object. Request message for GetEvaluation.
-            name (:class:`str`):
+            name (str):
                 Required. Name of the evaluation. Format:
 
                 "projects/{project_id}/datasets/{dataset_id}/evaluations/{evaluation_id}'
+
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -2549,12 +2599,11 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.evaluation.Evaluation:
-                Describes an evaluation between a machine learning
-                model's predictions and ground truth labels. Created
-                when an
-                [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob]
-                runs successfully.
+            google.cloud.datalabeling_v1beta1.types.Evaluation:
+                Describes an evaluation between a machine learning model's predictions and
+                   ground truth labels. Created when an
+                   [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob]
+                   runs successfully.
 
         """
         # Create or coerce a protobuf request object.
@@ -2611,16 +2660,17 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         within a project.
 
         Args:
-            request (:class:`~.data_labeling_service.SearchEvaluationsRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.SearchEvaluationsRequest):
                 The request object. Request message for
                 SearchEvaluation.
-            parent (:class:`str`):
+            parent (str):
                 Required. Evaluation search parent (project ID). Format:
-                "projects/{project_id}".
+                "projects/{project_id}"
+
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            filter (:class:`str`):
+            filter (str):
                 Optional. To search evaluations, you can filter by the
                 following:
 
@@ -2653,7 +2703,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 {timestamp_1} AND
                 evaluation*\ job.evaluation_job_run_time_end =
                 {timestamp_2} AND annotation\_spec.display_name =
-                {display_name}".
+                {display_name}"
+
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -2665,7 +2716,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.pagers.SearchEvaluationsPager:
+            google.cloud.datalabeling_v1beta1.services.data_labeling_service.pagers.SearchEvaluationsPager:
                 Results of searching evaluations.
                 Iterating over this object will yield
                 results and resolve additional pages
@@ -2734,15 +2785,16 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         Search by providing an evaluation ID.
 
         Args:
-            request (:class:`~.data_labeling_service.SearchExampleComparisonsRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.SearchExampleComparisonsRequest):
                 The request object. Request message of
                 SearchExampleComparisons.
-            parent (:class:`str`):
+            parent (str):
                 Required. Name of the
                 [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation]
                 resource to search for example comparisons from. Format:
 
-                "projects/{project_id}/datasets/{dataset_id}/evaluations/{evaluation_id}".
+                "projects/{project_id}/datasets/{dataset_id}/evaluations/{evaluation_id}"
+
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -2754,7 +2806,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.pagers.SearchExampleComparisonsPager:
+            google.cloud.datalabeling_v1beta1.services.data_labeling_service.pagers.SearchExampleComparisonsPager:
                 Results of searching example
                 comparisons.
                 Iterating over this object will yield
@@ -2824,18 +2876,20 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Creates an evaluation job.
 
         Args:
-            request (:class:`~.data_labeling_service.CreateEvaluationJobRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.CreateEvaluationJobRequest):
                 The request object. Request message for
                 CreateEvaluationJob.
-            parent (:class:`str`):
+            parent (str):
                 Required. Evaluation job resource parent. Format:
-                "projects/{project_id}".
+                "projects/{project_id}"
+
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            job (:class:`~.evaluation_job.EvaluationJob`):
+            job (google.cloud.datalabeling_v1beta1.types.EvaluationJob):
                 Required. The evaluation job to
                 create.
+
                 This corresponds to the ``job`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -2847,13 +2901,13 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.evaluation_job.EvaluationJob:
-                Defines an evaluation job that runs periodically to
-                generate
-                [Evaluations][google.cloud.datalabeling.v1beta1.Evaluation].
-                `Creating an evaluation
-                job </ml-engine/docs/continuous-evaluation/create-job>`__
-                is the starting point for using continuous evaluation.
+            google.cloud.datalabeling_v1beta1.types.EvaluationJob:
+                Defines an evaluation job that runs periodically to generate
+                   [Evaluations][google.cloud.datalabeling.v1beta1.Evaluation].
+                   [Creating an evaluation
+                   job](/ml-engine/docs/continuous-evaluation/create-job)
+                   is the starting point for using continuous
+                   evaluation.
 
         """
         # Create or coerce a protobuf request object.
@@ -2917,16 +2971,17 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         you must delete the job and create a new one.
 
         Args:
-            request (:class:`~.data_labeling_service.UpdateEvaluationJobRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.UpdateEvaluationJobRequest):
                 The request object. Request message for
                 UpdateEvaluationJob.
-            evaluation_job (:class:`~.gcd_evaluation_job.EvaluationJob`):
+            evaluation_job (google.cloud.datalabeling_v1beta1.types.EvaluationJob):
                 Required. Evaluation job that is
                 going to be updated.
+
                 This corresponds to the ``evaluation_job`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            update_mask (:class:`~.field_mask.FieldMask`):
+            update_mask (google.protobuf.field_mask_pb2.FieldMask):
                 Optional. Mask for which fields to update. You can only
                 provide the following fields:
 
@@ -2936,6 +2991,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
                 You can provide more than one of these fields by
                 separating them with commas.
+
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -2947,13 +3003,13 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.gcd_evaluation_job.EvaluationJob:
-                Defines an evaluation job that runs periodically to
-                generate
-                [Evaluations][google.cloud.datalabeling.v1beta1.Evaluation].
-                `Creating an evaluation
-                job </ml-engine/docs/continuous-evaluation/create-job>`__
-                is the starting point for using continuous evaluation.
+            google.cloud.datalabeling_v1beta1.types.EvaluationJob:
+                Defines an evaluation job that runs periodically to generate
+                   [Evaluations][google.cloud.datalabeling.v1beta1.Evaluation].
+                   [Creating an evaluation
+                   job](/ml-engine/docs/continuous-evaluation/create-job)
+                   is the starting point for using continuous
+                   evaluation.
 
         """
         # Create or coerce a protobuf request object.
@@ -3011,13 +3067,14 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Gets an evaluation job by resource name.
 
         Args:
-            request (:class:`~.data_labeling_service.GetEvaluationJobRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.GetEvaluationJobRequest):
                 The request object. Request message for
                 GetEvaluationJob.
-            name (:class:`str`):
+            name (str):
                 Required. Name of the evaluation job. Format:
 
-                "projects/{project_id}/evaluationJobs/{evaluation_job_id}".
+                "projects/{project_id}/evaluationJobs/{evaluation_job_id}"
+
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -3029,13 +3086,13 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.evaluation_job.EvaluationJob:
-                Defines an evaluation job that runs periodically to
-                generate
-                [Evaluations][google.cloud.datalabeling.v1beta1.Evaluation].
-                `Creating an evaluation
-                job </ml-engine/docs/continuous-evaluation/create-job>`__
-                is the starting point for using continuous evaluation.
+            google.cloud.datalabeling_v1beta1.types.EvaluationJob:
+                Defines an evaluation job that runs periodically to generate
+                   [Evaluations][google.cloud.datalabeling.v1beta1.Evaluation].
+                   [Creating an evaluation
+                   job](/ml-engine/docs/continuous-evaluation/create-job)
+                   is the starting point for using continuous
+                   evaluation.
 
         """
         # Create or coerce a protobuf request object.
@@ -3090,14 +3147,15 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         already in a ``PAUSED`` state is a no-op.
 
         Args:
-            request (:class:`~.data_labeling_service.PauseEvaluationJobRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.PauseEvaluationJobRequest):
                 The request object. Request message for
                 PauseEvaluationJob.
-            name (:class:`str`):
+            name (str):
                 Required. Name of the evaluation job that is going to be
                 paused. Format:
 
-                "projects/{project_id}/evaluationJobs/{evaluation_job_id}".
+                "projects/{project_id}/evaluationJobs/{evaluation_job_id}"
+
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -3160,13 +3218,14 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         evaluation job is a no-op.
 
         Args:
-            request (:class:`~.data_labeling_service.ResumeEvaluationJobRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.ResumeEvaluationJobRequest):
                 The request object. Request message ResumeEvaluationJob.
-            name (:class:`str`):
+            name (str):
                 Required. Name of the evaluation job that is going to be
                 resumed. Format:
 
-                "projects/{project_id}/evaluationJobs/{evaluation_job_id}".
+                "projects/{project_id}/evaluationJobs/{evaluation_job_id}"
+
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -3227,13 +3286,14 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Stops and deletes an evaluation job.
 
         Args:
-            request (:class:`~.data_labeling_service.DeleteEvaluationJobRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.DeleteEvaluationJobRequest):
                 The request object. Request message DeleteEvaluationJob.
-            name (:class:`str`):
+            name (str):
                 Required. Name of the evaluation job that is going to be
                 deleted. Format:
 
-                "projects/{project_id}/evaluationJobs/{evaluation_job_id}".
+                "projects/{project_id}/evaluationJobs/{evaluation_job_id}"
+
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -3296,16 +3356,17 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         possible filters. Pagination is supported.
 
         Args:
-            request (:class:`~.data_labeling_service.ListEvaluationJobsRequest`):
+            request (google.cloud.datalabeling_v1beta1.types.ListEvaluationJobsRequest):
                 The request object. Request message for
                 ListEvaluationJobs.
-            parent (:class:`str`):
+            parent (str):
                 Required. Evaluation job resource parent. Format:
-                "projects/{project_id}".
+                "projects/{project_id}"
+
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            filter (:class:`str`):
+            filter (str):
                 Optional. You can filter the jobs to list by model_id
                 (also known as model_name, as described in
                 [EvaluationJob.modelVersion][google.cloud.datalabeling.v1beta1.EvaluationJob.model_version])
@@ -3315,7 +3376,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 the ``OR`` operator. For example, you can use the
                 following string for your filter:
                 "evaluation\ *job.model_id = {model_name} AND
-                evaluation*\ job.state = {evaluation_job_state}".
+                evaluation*\ job.state = {evaluation_job_state}"
+
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -3327,7 +3389,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.pagers.ListEvaluationJobsPager:
+            google.cloud.datalabeling_v1beta1.services.data_labeling_service.pagers.ListEvaluationJobsPager:
                 Results for listing evaluation jobs.
                 Iterating over this object will yield
                 results and resolve additional pages
