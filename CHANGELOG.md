@@ -4,6 +4,18 @@
 
 [1]: https://pypi.org/project/google-cloud-datalabeling/#history
 
+## [1.1.0](https://www.github.com/googleapis/python-datalabeling/compare/v1.0.0...v1.1.0) (2021-01-30)
+
+
+### Features
+
+* add common resource helper paths; expose client transport ([#49](https://www.github.com/googleapis/python-datalabeling/issues/49)) ([3d64338](https://www.github.com/googleapis/python-datalabeling/commit/3d643383e481fa22093756343bdf50eba002b1f8))
+
+
+### Bug Fixes
+
+* remove client recv msg limit fix: add enums to `types/__init__.py` ([#62](https://www.github.com/googleapis/python-datalabeling/issues/62)) ([19e8f0c](https://www.github.com/googleapis/python-datalabeling/commit/19e8f0c1a82d6b096e0787c1249a2e0cbdf5e429))
+
 ## [1.0.0](https://www.github.com/googleapis/python-datalabeling/compare/v0.4.1...v1.0.0) (2020-08-12)
 
 
