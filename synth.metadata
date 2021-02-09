@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/python-datalabeling.git",
-        "sha": "49841927f11659999a6dc39f90b2744d4c422aaf"
+        "sha": "0b82ca9eb6cc443ee4e5e6448d366ca1d559441b"
       }
     },
     {
