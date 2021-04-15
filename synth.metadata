@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/python-datalabeling.git",
-        "sha": "96e7f27760824bd87118dd2c4e08a37273ac7503"
+        "sha": "b6fecb7dff714fd7ae31db047c234ff4c9bff075"
       }
     },
     {
@@ -98,6 +98,7 @@
     "CONTRIBUTING.rst",
     "LICENSE",
     "MANIFEST.in",
+    "datalabeling-v1beta1-py.tar.gz",
     "docs/_static/custom.css",
     "docs/_templates/layout.html",
     "docs/conf.py",
