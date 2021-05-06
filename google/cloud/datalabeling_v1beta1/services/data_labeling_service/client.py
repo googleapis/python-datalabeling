@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -53,7 +51,6 @@ from google.cloud.datalabeling_v1beta1.types import instruction as gcd_instructi
 from google.cloud.datalabeling_v1beta1.types import operations
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
 from .transports.base import DataLabelingServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import DataLabelingServiceGrpcTransport
 from .transports.grpc_asyncio import DataLabelingServiceGrpcAsyncIOTransport
@@ -493,7 +490,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.CreateDatasetRequest):
-                The request object. Request message for CreateDataset.
+                The request object.
+                Request message for CreateDataset.
             parent (str):
                 Required. Dataset resource parent, format:
                 projects/{project_id}
@@ -506,7 +504,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``dataset`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -537,10 +534,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.CreateDatasetRequest):
             request = data_labeling_service.CreateDatasetRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if dataset is not None:
@@ -575,7 +570,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.GetDatasetRequest):
-                The request object. Request message for GetDataSet.
+                The request object.
+                Request message for GetDataSet.
             name (str):
                 Required. Dataset resource name, format:
                 projects/{project_id}/datasets/{dataset_id}
@@ -583,7 +579,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -614,10 +609,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.GetDatasetRequest):
             request = data_labeling_service.GetDatasetRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -652,7 +645,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.ListDatasetsRequest):
-                The request object. Request message for ListDataset.
+                The request object.
+                Request message for ListDataset.
             parent (str):
                 Required. Dataset resource parent, format:
                 projects/{project_id}
@@ -667,7 +661,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -699,10 +692,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.ListDatasetsRequest):
             request = data_labeling_service.ListDatasetsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -743,7 +734,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.DeleteDatasetRequest):
-                The request object. Request message for DeleteDataset.
+                The request object.
+                Request message for DeleteDataset.
             name (str):
                 Required. Dataset resource name, format:
                 projects/{project_id}/datasets/{dataset_id}
@@ -751,7 +743,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -774,10 +765,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.DeleteDatasetRequest):
             request = data_labeling_service.DeleteDatasetRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -815,7 +804,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.ImportDataRequest):
-                The request object. Request message for ImportData API.
+                The request object.
+                Request message for ImportData API.
             name (str):
                 Required. Dataset resource name, format:
                 projects/{project_id}/datasets/{dataset_id}
@@ -830,7 +820,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``input_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -862,10 +851,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.ImportDataRequest):
             request = data_labeling_service.ImportDataRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if input_config is not None:
@@ -911,7 +898,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.ExportDataRequest):
-                The request object. Request message for ExportData API.
+                The request object.
+                Request message for ExportData API.
             name (str):
                 Required. Dataset resource name, format:
                 projects/{project_id}/datasets/{dataset_id}
@@ -943,7 +931,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``output_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -975,10 +962,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.ExportDataRequest):
             request = data_labeling_service.ExportDataRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if annotated_dataset is not None:
@@ -1026,7 +1011,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.GetDataItemRequest):
-                The request object. Request message for GetDataItem.
+                The request object.
+                Request message for GetDataItem.
             name (str):
                 Required. The name of the data item to get, format:
                 projects/{project_id}/datasets/{dataset_id}/dataItems/{data_item_id}
@@ -1034,7 +1020,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1063,10 +1048,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.GetDataItemRequest):
             request = data_labeling_service.GetDataItemRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1102,7 +1085,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.ListDataItemsRequest):
-                The request object. Request message for ListDataItems.
+                The request object.
+                Request message for ListDataItems.
             parent (str):
                 Required. Name of the dataset to list data items,
                 format: projects/{project_id}/datasets/{dataset_id}
@@ -1117,7 +1101,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1149,10 +1132,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.ListDataItemsRequest):
             request = data_labeling_service.ListDataItemsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -1193,7 +1174,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.GetAnnotatedDatasetRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GetAnnotatedDataset.
             name (str):
                 Required. Name of the annotated dataset to get, format:
@@ -1203,7 +1185,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1235,10 +1216,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.GetAnnotatedDatasetRequest):
             request = data_labeling_service.GetAnnotatedDatasetRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1273,7 +1252,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.ListAnnotatedDatasetsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ListAnnotatedDatasets.
             parent (str):
                 Required. Name of the dataset to list annotated
@@ -1290,7 +1270,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1322,10 +1301,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.ListAnnotatedDatasetsRequest):
             request = data_labeling_service.ListAnnotatedDatasetsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -1365,9 +1342,9 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.DeleteAnnotatedDatasetRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 DeleteAnnotatedDataset.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1375,7 +1352,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a data_labeling_service.DeleteAnnotatedDatasetRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1414,7 +1390,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.LabelImageRequest):
-                The request object. Request message for starting an
+                The request object.
+                Request message for starting an
                 image labeling task.
             parent (str):
                 Required. Name of the dataset to request labeling task,
@@ -1437,7 +1414,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``feature`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1469,10 +1445,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.LabelImageRequest):
             request = data_labeling_service.LabelImageRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if basic_config is not None:
@@ -1520,7 +1494,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.LabelVideoRequest):
-                The request object. Request message for LabelVideo.
+                The request object.
+                Request message for LabelVideo.
             parent (str):
                 Required. Name of the dataset to request labeling task,
                 format: projects/{project_id}/datasets/{dataset_id}
@@ -1542,7 +1517,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``feature`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1574,10 +1548,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.LabelVideoRequest):
             request = data_labeling_service.LabelVideoRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if basic_config is not None:
@@ -1625,7 +1597,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.LabelTextRequest):
-                The request object. Request message for LabelText.
+                The request object.
+                Request message for LabelText.
             parent (str):
                 Required. Name of the data set to request labeling task,
                 format: projects/{project_id}/datasets/{dataset_id}
@@ -1647,7 +1620,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``feature`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1679,10 +1651,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.LabelTextRequest):
             request = data_labeling_service.LabelTextRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if basic_config is not None:
@@ -1729,7 +1699,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.GetExampleRequest):
-                The request object. Request message for GetExample
+                The request object.
+                Request message for GetExample
             name (str):
                 Required. Name of example, format:
                 projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/
@@ -1746,7 +1717,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1776,10 +1746,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.GetExampleRequest):
             request = data_labeling_service.GetExampleRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if filter is not None:
@@ -1816,7 +1784,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.ListExamplesRequest):
-                The request object. Request message for ListExamples.
+                The request object.
+                Request message for ListExamples.
             parent (str):
                 Required. Example resource parent.
                 This corresponds to the ``parent`` field
@@ -1831,7 +1800,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1863,10 +1831,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.ListExamplesRequest):
             request = data_labeling_service.ListExamplesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -1909,7 +1875,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.CreateAnnotationSpecSetRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateAnnotationSpecSet.
             parent (str):
                 Required. AnnotationSpecSet resource parent, format:
@@ -1926,7 +1893,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``annotation_spec_set`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1961,10 +1927,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             request, data_labeling_service.CreateAnnotationSpecSetRequest
         ):
             request = data_labeling_service.CreateAnnotationSpecSetRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if annotation_spec_set is not None:
@@ -2001,7 +1965,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.GetAnnotationSpecSetRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GetAnnotationSpecSet.
             name (str):
                 Required. AnnotationSpecSet resource name, format:
@@ -2010,7 +1975,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2043,10 +2007,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.GetAnnotationSpecSetRequest):
             request = data_labeling_service.GetAnnotationSpecSetRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2081,7 +2043,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.ListAnnotationSpecSetsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ListAnnotationSpecSets.
             parent (str):
                 Required. Parent of AnnotationSpecSet resource, format:
@@ -2097,7 +2060,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2129,10 +2091,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.ListAnnotationSpecSetsRequest):
             request = data_labeling_service.ListAnnotationSpecSetsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -2175,7 +2135,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.DeleteAnnotationSpecSetRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 DeleteAnnotationSpecSet.
             name (str):
                 Required. AnnotationSpec resource name, format:
@@ -2184,7 +2145,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2209,10 +2169,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             request, data_labeling_service.DeleteAnnotationSpecSetRequest
         ):
             request = data_labeling_service.DeleteAnnotationSpecSetRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2248,7 +2206,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.CreateInstructionRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateInstruction.
             parent (str):
                 Required. Instruction resource parent, format:
@@ -2264,7 +2223,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``instruction`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2295,10 +2253,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.CreateInstructionRequest):
             request = data_labeling_service.CreateInstructionRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if instruction is not None:
@@ -2341,7 +2297,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.GetInstructionRequest):
-                The request object. Request message for GetInstruction.
+                The request object.
+                Request message for GetInstruction.
             name (str):
                 Required. Instruction resource name, format:
                 projects/{project_id}/instructions/{instruction_id}
@@ -2349,7 +2306,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2380,10 +2336,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.GetInstructionRequest):
             request = data_labeling_service.GetInstructionRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2418,7 +2372,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.ListInstructionsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ListInstructions.
             parent (str):
                 Required. Instruction resource parent, format:
@@ -2434,7 +2389,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2466,10 +2420,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.ListInstructionsRequest):
             request = data_labeling_service.ListInstructionsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -2510,7 +2462,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.DeleteInstructionRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 DeleteInstruction.
             name (str):
                 Required. Instruction resource name, format:
@@ -2519,7 +2472,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2542,10 +2494,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.DeleteInstructionRequest):
             request = data_labeling_service.DeleteInstructionRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2578,7 +2528,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.GetEvaluationRequest):
-                The request object. Request message for GetEvaluation.
+                The request object.
+                Request message for GetEvaluation.
             name (str):
                 Required. Name of the evaluation. Format:
 
@@ -2587,7 +2538,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2618,10 +2568,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.GetEvaluationRequest):
             request = data_labeling_service.GetEvaluationRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2657,7 +2605,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.SearchEvaluationsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 SearchEvaluation.
             parent (str):
                 Required. Evaluation search parent (project ID). Format:
@@ -2704,7 +2653,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2735,10 +2683,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.SearchEvaluationsRequest):
             request = data_labeling_service.SearchEvaluationsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -2782,7 +2728,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.SearchExampleComparisonsRequest):
-                The request object. Request message of
+                The request object.
+                Request message of
                 SearchExampleComparisons.
             parent (str):
                 Required. Name of the
@@ -2794,7 +2741,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2828,10 +2774,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             request, data_labeling_service.SearchExampleComparisonsRequest
         ):
             request = data_labeling_service.SearchExampleComparisonsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -2873,7 +2817,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.CreateEvaluationJobRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateEvaluationJob.
             parent (str):
                 Required. Evaluation job resource parent. Format:
@@ -2889,7 +2834,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``job`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2922,10 +2866,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.CreateEvaluationJobRequest):
             request = data_labeling_service.CreateEvaluationJobRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if job is not None:
@@ -2968,7 +2910,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.UpdateEvaluationJobRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 UpdateEvaluationJob.
             evaluation_job (google.cloud.datalabeling_v1beta1.types.EvaluationJob):
                 Required. Evaluation job that is
@@ -2991,7 +2934,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3024,10 +2966,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.UpdateEvaluationJobRequest):
             request = data_labeling_service.UpdateEvaluationJobRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if evaluation_job is not None:
                 request.evaluation_job = evaluation_job
             if update_mask is not None:
@@ -3064,7 +3004,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.GetEvaluationJobRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GetEvaluationJob.
             name (str):
                 Required. Name of the evaluation job. Format:
@@ -3074,7 +3015,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3107,10 +3047,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.GetEvaluationJobRequest):
             request = data_labeling_service.GetEvaluationJobRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -3144,7 +3082,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.PauseEvaluationJobRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 PauseEvaluationJob.
             name (str):
                 Required. Name of the evaluation job that is going to be
@@ -3155,7 +3094,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3178,10 +3116,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.PauseEvaluationJobRequest):
             request = data_labeling_service.PauseEvaluationJobRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -3215,7 +3151,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.ResumeEvaluationJobRequest):
-                The request object. Request message ResumeEvaluationJob.
+                The request object.
+                Request message ResumeEvaluationJob.
             name (str):
                 Required. Name of the evaluation job that is going to be
                 resumed. Format:
@@ -3225,7 +3162,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3248,10 +3184,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.ResumeEvaluationJobRequest):
             request = data_labeling_service.ResumeEvaluationJobRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -3283,7 +3217,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.DeleteEvaluationJobRequest):
-                The request object. Request message DeleteEvaluationJob.
+                The request object.
+                Request message DeleteEvaluationJob.
             name (str):
                 Required. Name of the evaluation job that is going to be
                 deleted. Format:
@@ -3293,7 +3228,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3316,10 +3250,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.DeleteEvaluationJobRequest):
             request = data_labeling_service.DeleteEvaluationJobRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -3353,7 +3285,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         Args:
             request (google.cloud.datalabeling_v1beta1.types.ListEvaluationJobsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ListEvaluationJobs.
             parent (str):
                 Required. Evaluation job resource parent. Format:
@@ -3377,7 +3310,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3408,10 +3340,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.ListEvaluationJobsRequest):
             request = data_labeling_service.ListEvaluationJobsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:

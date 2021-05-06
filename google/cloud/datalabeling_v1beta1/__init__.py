@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,7 @@
 #
 
 from .services.data_labeling_service import DataLabelingServiceClient
+
 from .types.annotation import Annotation
 from .types.annotation import AnnotationMetadata
 from .types.annotation import AnnotationSentiment
@@ -151,7 +151,6 @@ from .types.operations import LabelVideoClassificationOperationMetadata
 from .types.operations import LabelVideoEventOperationMetadata
 from .types.operations import LabelVideoObjectDetectionOperationMetadata
 from .types.operations import LabelVideoObjectTrackingOperationMetadata
-
 
 __all__ = (
     "AnnotatedDataset",
