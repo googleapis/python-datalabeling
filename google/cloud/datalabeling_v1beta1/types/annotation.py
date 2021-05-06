@@ -20,33 +20,33 @@ from google.protobuf import duration_pb2 as duration  # type: ignore
 
 
 __protobuf__ = proto.module(
-    package="google.cloud.datalabeling.v1beta1",
+    package='google.cloud.datalabeling.v1beta1',
     manifest={
-        "AnnotationSource",
-        "AnnotationSentiment",
-        "AnnotationType",
-        "Annotation",
-        "AnnotationValue",
-        "ImageClassificationAnnotation",
-        "Vertex",
-        "NormalizedVertex",
-        "BoundingPoly",
-        "NormalizedBoundingPoly",
-        "ImageBoundingPolyAnnotation",
-        "Polyline",
-        "NormalizedPolyline",
-        "ImagePolylineAnnotation",
-        "ImageSegmentationAnnotation",
-        "TextClassificationAnnotation",
-        "TextEntityExtractionAnnotation",
-        "SequentialSegment",
-        "TimeSegment",
-        "VideoClassificationAnnotation",
-        "ObjectTrackingFrame",
-        "VideoObjectTrackingAnnotation",
-        "VideoEventAnnotation",
-        "AnnotationMetadata",
-        "OperatorMetadata",
+        'AnnotationSource',
+        'AnnotationSentiment',
+        'AnnotationType',
+        'Annotation',
+        'AnnotationValue',
+        'ImageClassificationAnnotation',
+        'Vertex',
+        'NormalizedVertex',
+        'BoundingPoly',
+        'NormalizedBoundingPoly',
+        'ImageBoundingPolyAnnotation',
+        'Polyline',
+        'NormalizedPolyline',
+        'ImagePolylineAnnotation',
+        'ImageSegmentationAnnotation',
+        'TextClassificationAnnotation',
+        'TextEntityExtractionAnnotation',
+        'SequentialSegment',
+        'TimeSegment',
+        'VideoClassificationAnnotation',
+        'ObjectTrackingFrame',
+        'VideoObjectTrackingAnnotation',
+        'VideoEventAnnotation',
+        'AnnotationMetadata',
+        'OperatorMetadata',
     },
 )
 
@@ -108,14 +108,29 @@ class Annotation(proto.Message):
             Output only. Sentiment for this annotation.
     """
 
-    name = proto.Field(proto.STRING, number=1,)
-    annotation_source = proto.Field(proto.ENUM, number=2, enum="AnnotationSource",)
-    annotation_value = proto.Field(proto.MESSAGE, number=3, message="AnnotationValue",)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    annotation_source = proto.Field(
+        proto.ENUM,
+        number=2,
+        enum='AnnotationSource',
+    )
+    annotation_value = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message='AnnotationValue',
+    )
     annotation_metadata = proto.Field(
-        proto.MESSAGE, number=4, message="AnnotationMetadata",
+        proto.MESSAGE,
+        number=4,
+        message='AnnotationMetadata',
     )
     annotation_sentiment = proto.Field(
-        proto.ENUM, number=6, enum="AnnotationSentiment",
+        proto.ENUM,
+        number=6,
+        enum='AnnotationSentiment',
     )
 
 
@@ -155,50 +170,56 @@ class AnnotationValue(proto.Message):
     image_classification_annotation = proto.Field(
         proto.MESSAGE,
         number=1,
-        oneof="value_type",
-        message="ImageClassificationAnnotation",
+        oneof='value_type',
+        message='ImageClassificationAnnotation',
     )
     image_bounding_poly_annotation = proto.Field(
         proto.MESSAGE,
         number=2,
-        oneof="value_type",
-        message="ImageBoundingPolyAnnotation",
+        oneof='value_type',
+        message='ImageBoundingPolyAnnotation',
     )
     image_polyline_annotation = proto.Field(
-        proto.MESSAGE, number=8, oneof="value_type", message="ImagePolylineAnnotation",
+        proto.MESSAGE,
+        number=8,
+        oneof='value_type',
+        message='ImagePolylineAnnotation',
     )
     image_segmentation_annotation = proto.Field(
         proto.MESSAGE,
         number=9,
-        oneof="value_type",
-        message="ImageSegmentationAnnotation",
+        oneof='value_type',
+        message='ImageSegmentationAnnotation',
     )
     text_classification_annotation = proto.Field(
         proto.MESSAGE,
         number=3,
-        oneof="value_type",
-        message="TextClassificationAnnotation",
+        oneof='value_type',
+        message='TextClassificationAnnotation',
     )
     text_entity_extraction_annotation = proto.Field(
         proto.MESSAGE,
         number=10,
-        oneof="value_type",
-        message="TextEntityExtractionAnnotation",
+        oneof='value_type',
+        message='TextEntityExtractionAnnotation',
     )
     video_classification_annotation = proto.Field(
         proto.MESSAGE,
         number=4,
-        oneof="value_type",
-        message="VideoClassificationAnnotation",
+        oneof='value_type',
+        message='VideoClassificationAnnotation',
     )
     video_object_tracking_annotation = proto.Field(
         proto.MESSAGE,
         number=5,
-        oneof="value_type",
-        message="VideoObjectTrackingAnnotation",
+        oneof='value_type',
+        message='VideoObjectTrackingAnnotation',
     )
     video_event_annotation = proto.Field(
-        proto.MESSAGE, number=6, oneof="value_type", message="VideoEventAnnotation",
+        proto.MESSAGE,
+        number=6,
+        oneof='value_type',
+        message='VideoEventAnnotation',
     )
 
 
@@ -210,7 +231,9 @@ class ImageClassificationAnnotation(proto.Message):
     """
 
     annotation_spec = proto.Field(
-        proto.MESSAGE, number=1, message=annotation_spec_set.AnnotationSpec,
+        proto.MESSAGE,
+        number=1,
+        message=annotation_spec_set.AnnotationSpec,
     )
 
 
@@ -226,8 +249,14 @@ class Vertex(proto.Message):
             Y coordinate.
     """
 
-    x = proto.Field(proto.INT32, number=1,)
-    y = proto.Field(proto.INT32, number=2,)
+    x = proto.Field(
+        proto.INT32,
+        number=1,
+    )
+    y = proto.Field(
+        proto.INT32,
+        number=2,
+    )
 
 
 class NormalizedVertex(proto.Message):
@@ -242,8 +271,14 @@ class NormalizedVertex(proto.Message):
             Y coordinate.
     """
 
-    x = proto.Field(proto.FLOAT, number=1,)
-    y = proto.Field(proto.FLOAT, number=2,)
+    x = proto.Field(
+        proto.FLOAT,
+        number=1,
+    )
+    y = proto.Field(
+        proto.FLOAT,
+        number=2,
+    )
 
 
 class BoundingPoly(proto.Message):
@@ -253,7 +288,11 @@ class BoundingPoly(proto.Message):
             The bounding polygon vertices.
     """
 
-    vertices = proto.RepeatedField(proto.MESSAGE, number=1, message="Vertex",)
+    vertices = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
+        message='Vertex',
+    )
 
 
 class NormalizedBoundingPoly(proto.Message):
@@ -264,7 +303,9 @@ class NormalizedBoundingPoly(proto.Message):
     """
 
     normalized_vertices = proto.RepeatedField(
-        proto.MESSAGE, number=1, message="NormalizedVertex",
+        proto.MESSAGE,
+        number=1,
+        message='NormalizedVertex',
     )
 
 
@@ -282,13 +323,21 @@ class ImageBoundingPolyAnnotation(proto.Message):
     """
 
     bounding_poly = proto.Field(
-        proto.MESSAGE, number=2, oneof="bounded_area", message="BoundingPoly",
+        proto.MESSAGE,
+        number=2,
+        oneof='bounded_area',
+        message='BoundingPoly',
     )
     normalized_bounding_poly = proto.Field(
-        proto.MESSAGE, number=3, oneof="bounded_area", message="NormalizedBoundingPoly",
+        proto.MESSAGE,
+        number=3,
+        oneof='bounded_area',
+        message='NormalizedBoundingPoly',
     )
     annotation_spec = proto.Field(
-        proto.MESSAGE, number=1, message=annotation_spec_set.AnnotationSpec,
+        proto.MESSAGE,
+        number=1,
+        message=annotation_spec_set.AnnotationSpec,
     )
 
 
@@ -299,7 +348,11 @@ class Polyline(proto.Message):
             The polyline vertices.
     """
 
-    vertices = proto.RepeatedField(proto.MESSAGE, number=1, message="Vertex",)
+    vertices = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
+        message='Vertex',
+    )
 
 
 class NormalizedPolyline(proto.Message):
@@ -310,7 +363,9 @@ class NormalizedPolyline(proto.Message):
     """
 
     normalized_vertices = proto.RepeatedField(
-        proto.MESSAGE, number=1, message="NormalizedVertex",
+        proto.MESSAGE,
+        number=1,
+        message='NormalizedVertex',
     )
 
 
@@ -325,12 +380,22 @@ class ImagePolylineAnnotation(proto.Message):
             Label of this polyline.
     """
 
-    polyline = proto.Field(proto.MESSAGE, number=2, oneof="poly", message="Polyline",)
+    polyline = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='poly',
+        message='Polyline',
+    )
     normalized_polyline = proto.Field(
-        proto.MESSAGE, number=3, oneof="poly", message="NormalizedPolyline",
+        proto.MESSAGE,
+        number=3,
+        oneof='poly',
+        message='NormalizedPolyline',
     )
     annotation_spec = proto.Field(
-        proto.MESSAGE, number=1, message=annotation_spec_set.AnnotationSpec,
+        proto.MESSAGE,
+        number=1,
+        message=annotation_spec_set.AnnotationSpec,
     )
 
 
@@ -351,11 +416,17 @@ class ImageSegmentationAnnotation(proto.Message):
     annotation_colors = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=1,
+        number=1
         message=annotation_spec_set.AnnotationSpec,
     )
-    mime_type = proto.Field(proto.STRING, number=2,)
-    image_bytes = proto.Field(proto.BYTES, number=3,)
+    mime_type = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    image_bytes = proto.Field(
+        proto.BYTES,
+        number=3,
+    )
 
 
 class TextClassificationAnnotation(proto.Message):
@@ -366,7 +437,9 @@ class TextClassificationAnnotation(proto.Message):
     """
 
     annotation_spec = proto.Field(
-        proto.MESSAGE, number=1, message=annotation_spec_set.AnnotationSpec,
+        proto.MESSAGE,
+        number=1,
+        message=annotation_spec_set.AnnotationSpec,
     )
 
 
@@ -380,10 +453,14 @@ class TextEntityExtractionAnnotation(proto.Message):
     """
 
     annotation_spec = proto.Field(
-        proto.MESSAGE, number=1, message=annotation_spec_set.AnnotationSpec,
+        proto.MESSAGE,
+        number=1,
+        message=annotation_spec_set.AnnotationSpec,
     )
     sequential_segment = proto.Field(
-        proto.MESSAGE, number=2, message="SequentialSegment",
+        proto.MESSAGE,
+        number=2,
+        message='SequentialSegment',
     )
 
 
@@ -396,8 +473,14 @@ class SequentialSegment(proto.Message):
             End position (exclusive).
     """
 
-    start = proto.Field(proto.INT32, number=1,)
-    end = proto.Field(proto.INT32, number=2,)
+    start = proto.Field(
+        proto.INT32,
+        number=1,
+    )
+    end = proto.Field(
+        proto.INT32,
+        number=2,
+    )
 
 
 class TimeSegment(proto.Message):
@@ -415,8 +498,16 @@ class TimeSegment(proto.Message):
             start.
     """
 
-    start_time_offset = proto.Field(proto.MESSAGE, number=1, message=duration.Duration,)
-    end_time_offset = proto.Field(proto.MESSAGE, number=2, message=duration.Duration,)
+    start_time_offset = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=duration.Duration,
+    )
+    end_time_offset = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=duration.Duration,
+    )
 
 
 class VideoClassificationAnnotation(proto.Message):
@@ -429,9 +520,15 @@ class VideoClassificationAnnotation(proto.Message):
             Label of the segment specified by time_segment.
     """
 
-    time_segment = proto.Field(proto.MESSAGE, number=1, message="TimeSegment",)
+    time_segment = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message='TimeSegment',
+    )
     annotation_spec = proto.Field(
-        proto.MESSAGE, number=2, message=annotation_spec_set.AnnotationSpec,
+        proto.MESSAGE,
+        number=2,
+        message=annotation_spec_set.AnnotationSpec,
     )
 
 
@@ -450,12 +547,22 @@ class ObjectTrackingFrame(proto.Message):
     """
 
     bounding_poly = proto.Field(
-        proto.MESSAGE, number=1, oneof="bounded_area", message="BoundingPoly",
+        proto.MESSAGE,
+        number=1,
+        oneof='bounded_area',
+        message='BoundingPoly',
     )
     normalized_bounding_poly = proto.Field(
-        proto.MESSAGE, number=2, oneof="bounded_area", message="NormalizedBoundingPoly",
+        proto.MESSAGE,
+        number=2,
+        oneof='bounded_area',
+        message='NormalizedBoundingPoly',
     )
-    time_offset = proto.Field(proto.MESSAGE, number=3, message=duration.Duration,)
+    time_offset = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=duration.Duration,
+    )
 
 
 class VideoObjectTrackingAnnotation(proto.Message):
@@ -473,11 +580,19 @@ class VideoObjectTrackingAnnotation(proto.Message):
     """
 
     annotation_spec = proto.Field(
-        proto.MESSAGE, number=1, message=annotation_spec_set.AnnotationSpec,
+        proto.MESSAGE,
+        number=1,
+        message=annotation_spec_set.AnnotationSpec,
     )
-    time_segment = proto.Field(proto.MESSAGE, number=2, message="TimeSegment",)
+    time_segment = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message='TimeSegment',
+    )
     object_tracking_frames = proto.RepeatedField(
-        proto.MESSAGE, number=3, message="ObjectTrackingFrame",
+        proto.MESSAGE,
+        number=3,
+        message='ObjectTrackingFrame',
     )
 
 
@@ -492,9 +607,15 @@ class VideoEventAnnotation(proto.Message):
     """
 
     annotation_spec = proto.Field(
-        proto.MESSAGE, number=1, message=annotation_spec_set.AnnotationSpec,
+        proto.MESSAGE,
+        number=1,
+        message=annotation_spec_set.AnnotationSpec,
     )
-    time_segment = proto.Field(proto.MESSAGE, number=2, message="TimeSegment",)
+    time_segment = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message='TimeSegment',
+    )
 
 
 class AnnotationMetadata(proto.Message):
@@ -505,7 +626,9 @@ class AnnotationMetadata(proto.Message):
     """
 
     operator_metadata = proto.Field(
-        proto.MESSAGE, number=2, message="OperatorMetadata",
+        proto.MESSAGE,
+        number=2,
+        message='OperatorMetadata',
     )
 
 
@@ -529,10 +652,22 @@ class OperatorMetadata(proto.Message):
             Comments from contributors.
     """
 
-    score = proto.Field(proto.FLOAT, number=1,)
-    total_votes = proto.Field(proto.INT32, number=2,)
-    label_votes = proto.Field(proto.INT32, number=3,)
-    comments = proto.RepeatedField(proto.STRING, number=4,)
+    score = proto.Field(
+        proto.FLOAT,
+        number=1,
+    )
+    total_votes = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    label_votes = proto.Field(
+        proto.INT32,
+        number=3,
+    )
+    comments = proto.RepeatedField(
+        proto.STRING,
+        number=4,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

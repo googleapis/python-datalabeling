@@ -223,7 +223,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.CreateDatasetRequest`):
-                The request object. Request message for CreateDataset.
+                The request object.
+                Request message for CreateDataset.
             parent (:class:`str`):
                 Required. Dataset resource parent, format:
                 projects/{project_id}
@@ -302,7 +303,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.GetDatasetRequest`):
-                The request object. Request message for GetDataSet.
+                The request object.
+                Request message for GetDataSet.
             name (:class:`str`):
                 Required. Dataset resource name, format:
                 projects/{project_id}/datasets/{dataset_id}
@@ -385,7 +387,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.ListDatasetsRequest`):
-                The request object. Request message for ListDataset.
+                The request object.
+                Request message for ListDataset.
             parent (:class:`str`):
                 Required. Dataset resource parent, format:
                 projects/{project_id}
@@ -482,7 +485,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.DeleteDatasetRequest`):
-                The request object. Request message for DeleteDataset.
+                The request object.
+                Request message for DeleteDataset.
             name (:class:`str`):
                 Required. Dataset resource name, format:
                 projects/{project_id}/datasets/{dataset_id}
@@ -560,7 +564,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.ImportDataRequest`):
-                The request object. Request message for ImportData API.
+                The request object.
+                Request message for ImportData API.
             name (:class:`str`):
                 Required. Dataset resource name, format:
                 projects/{project_id}/datasets/{dataset_id}
@@ -653,7 +658,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.ExportDataRequest`):
-                The request object. Request message for ExportData API.
+                The request object.
+                Request message for ExportData API.
             name (:class:`str`):
                 Required. Dataset resource name, format:
                 projects/{project_id}/datasets/{dataset_id}
@@ -774,7 +780,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.GetDataItemRequest`):
-                The request object. Request message for GetDataItem.
+                The request object.
+                Request message for GetDataItem.
             name (:class:`str`):
                 Required. The name of the data item to get, format:
                 projects/{project_id}/datasets/{dataset_id}/dataItems/{data_item_id}
@@ -856,7 +863,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.ListDataItemsRequest`):
-                The request object. Request message for ListDataItems.
+                The request object.
+                Request message for ListDataItems.
             parent (:class:`str`):
                 Required. Name of the dataset to list data items,
                 format: projects/{project_id}/datasets/{dataset_id}
@@ -953,7 +961,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.GetAnnotatedDatasetRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GetAnnotatedDataset.
             name (:class:`str`):
                 Required. Name of the annotated dataset to get, format:
@@ -1039,7 +1048,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.ListAnnotatedDatasetsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ListAnnotatedDatasets.
             parent (:class:`str`):
                 Required. Name of the dataset to list annotated
@@ -1137,7 +1147,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.DeleteAnnotatedDatasetRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 DeleteAnnotatedDataset.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1183,7 +1194,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.LabelImageRequest`):
-                The request object. Request message for starting an
+                The request object.
+                Request message for starting an
                 image labeling task.
             parent (:class:`str`):
                 Required. Name of the dataset to request labeling task,
@@ -1286,7 +1298,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.LabelVideoRequest`):
-                The request object. Request message for LabelVideo.
+                The request object.
+                Request message for LabelVideo.
             parent (:class:`str`):
                 Required. Name of the dataset to request labeling task,
                 format: projects/{project_id}/datasets/{dataset_id}
@@ -1388,7 +1401,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.LabelTextRequest`):
-                The request object. Request message for LabelText.
+                The request object.
+                Request message for LabelText.
             parent (:class:`str`):
                 Required. Name of the data set to request labeling task,
                 format: projects/{project_id}/datasets/{dataset_id}
@@ -1489,7 +1503,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.GetExampleRequest`):
-                The request object. Request message for GetExample
+                The request object.
+                Request message for GetExample
             name (:class:`str`):
                 Required. Name of example, format:
                 projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/
@@ -1582,7 +1597,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.ListExamplesRequest`):
-                The request object. Request message for ListExamples.
+                The request object.
+                Request message for ListExamples.
             parent (:class:`str`):
                 Required. Example resource parent.
                 This corresponds to the ``parent`` field
@@ -1681,7 +1697,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.CreateAnnotationSpecSetRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateAnnotationSpecSet.
             parent (:class:`str`):
                 Required. AnnotationSpecSet resource parent, format:
@@ -1766,7 +1783,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.GetAnnotationSpecSetRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GetAnnotationSpecSet.
             name (:class:`str`):
                 Required. AnnotationSpecSet resource name, format:
@@ -1852,7 +1870,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.ListAnnotationSpecSetsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ListAnnotationSpecSets.
             parent (:class:`str`):
                 Required. Parent of AnnotationSpecSet resource, format:
@@ -1950,7 +1969,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.DeleteAnnotationSpecSetRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 DeleteAnnotationSpecSet.
             name (:class:`str`):
                 Required. AnnotationSpec resource name, format:
@@ -2025,7 +2045,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.CreateInstructionRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateInstruction.
             parent (:class:`str`):
                 Required. Instruction resource parent, format:
@@ -2115,7 +2136,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.GetInstructionRequest`):
-                The request object. Request message for GetInstruction.
+                The request object.
+                Request message for GetInstruction.
             name (:class:`str`):
                 Required. Instruction resource name, format:
                 projects/{project_id}/instructions/{instruction_id}
@@ -2198,7 +2220,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.ListInstructionsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ListInstructions.
             parent (:class:`str`):
                 Required. Instruction resource parent, format:
@@ -2296,7 +2319,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.DeleteInstructionRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 DeleteInstruction.
             name (:class:`str`):
                 Required. Instruction resource name, format:
@@ -2370,7 +2394,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.GetEvaluationRequest`):
-                The request object. Request message for GetEvaluation.
+                The request object.
+                Request message for GetEvaluation.
             name (:class:`str`):
                 Required. Name of the evaluation. Format:
 
@@ -2455,7 +2480,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.SearchEvaluationsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 SearchEvaluation.
             parent (:class:`str`):
                 Required. Evaluation search parent (project ID). Format:
@@ -2586,7 +2612,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.SearchExampleComparisonsRequest`):
-                The request object. Request message of
+                The request object.
+                Request message of
                 SearchExampleComparisons.
             parent (:class:`str`):
                 Required. Name of the
@@ -2670,7 +2697,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.CreateEvaluationJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateEvaluationJob.
             parent (:class:`str`):
                 Required. Evaluation job resource parent. Format:
@@ -2762,7 +2790,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.UpdateEvaluationJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 UpdateEvaluationJob.
             evaluation_job (:class:`google.cloud.datalabeling_v1beta1.types.EvaluationJob`):
                 Required. Evaluation job that is
@@ -2855,7 +2884,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.GetEvaluationJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GetEvaluationJob.
             name (:class:`str`):
                 Required. Name of the evaluation job. Format:
@@ -2941,7 +2971,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.PauseEvaluationJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 PauseEvaluationJob.
             name (:class:`str`):
                 Required. Name of the evaluation job that is going to be
@@ -3009,7 +3040,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.ResumeEvaluationJobRequest`):
-                The request object. Request message ResumeEvaluationJob.
+                The request object.
+                Request message ResumeEvaluationJob.
             name (:class:`str`):
                 Required. Name of the evaluation job that is going to be
                 resumed. Format:
@@ -3074,7 +3106,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.DeleteEvaluationJobRequest`):
-                The request object. Request message DeleteEvaluationJob.
+                The request object.
+                Request message DeleteEvaluationJob.
             name (:class:`str`):
                 Required. Name of the evaluation job that is going to be
                 deleted. Format:
@@ -3150,7 +3183,8 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.ListEvaluationJobsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ListEvaluationJobs.
             parent (:class:`str`):
                 Required. Evaluation job resource parent. Format:

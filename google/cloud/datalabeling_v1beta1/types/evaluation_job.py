@@ -268,7 +268,7 @@ class EvaluationJobConfig(proto.Message):
         number=3,
         message=gcd_human_annotation_config.HumanAnnotationConfig,
     )
-    bigquery_import_keys = proto.MapField(proto.STRING, proto.STRING, number=9,)
+    bigquery_import_keys = proto.MapField(proto.STRING, proto.STRING, number=9)
     example_count = proto.Field(proto.INT32, number=10,)
     example_sample_percentage = proto.Field(proto.DOUBLE, number=11,)
     evaluation_job_alert_config = proto.Field(
