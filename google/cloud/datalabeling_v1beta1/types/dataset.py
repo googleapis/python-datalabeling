@@ -360,7 +360,7 @@ class LabelStats(proto.Message):
             annotations.
     """
 
-    example_count = proto.MapField(proto.STRING, proto.INT64, number=1)
+    example_count = proto.MapField(proto.STRING, proto.INT64, number=1,)
 
 
 class AnnotatedDatasetMetadata(proto.Message):

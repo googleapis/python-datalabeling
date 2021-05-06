@@ -9888,7 +9888,7 @@ def test_data_labeling_service_transport_create_channel(transport_class, grpc_he
         transport_class(quota_project_id="octopus", scopes=["1", "2"])
 
         create_channel.assert_called_with(
-            "datalabeling.googleapis.com",
+            "datalabeling.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",

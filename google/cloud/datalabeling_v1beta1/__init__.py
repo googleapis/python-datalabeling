@@ -18,9 +18,6 @@ from .services.data_labeling_service import DataLabelingServiceClient
 
 from .types.annotation import Annotation
 from .types.annotation import AnnotationMetadata
-from .types.annotation import AnnotationSentiment
-from .types.annotation import AnnotationSource
-from .types.annotation import AnnotationType
 from .types.annotation import AnnotationValue
 from .types.annotation import BoundingPoly
 from .types.annotation import ImageBoundingPolyAnnotation
@@ -41,6 +38,9 @@ from .types.annotation import Vertex
 from .types.annotation import VideoClassificationAnnotation
 from .types.annotation import VideoEventAnnotation
 from .types.annotation import VideoObjectTrackingAnnotation
+from .types.annotation import AnnotationSentiment
+from .types.annotation import AnnotationSource
+from .types.annotation import AnnotationType
 from .types.annotation_spec_set import AnnotationSpec
 from .types.annotation_spec_set import AnnotationSpecSet
 from .types.data_labeling_service import CreateAnnotationSpecSetRequest
@@ -95,7 +95,6 @@ from .types.dataset import AnnotatedDatasetMetadata
 from .types.dataset import BigQuerySource
 from .types.dataset import ClassificationMetadata
 from .types.dataset import DataItem
-from .types.dataset import DataType
 from .types.dataset import Dataset
 from .types.dataset import Example
 from .types.dataset import GcsDestination
@@ -105,6 +104,7 @@ from .types.dataset import InputConfig
 from .types.dataset import LabelStats
 from .types.dataset import OutputConfig
 from .types.dataset import TextMetadata
+from .types.dataset import DataType
 from .types.evaluation import BoundingBoxEvaluationOptions
 from .types.evaluation import ClassificationMetrics
 from .types.evaluation import ConfusionMatrix
@@ -126,10 +126,10 @@ from .types.human_annotation_config import ObjectTrackingConfig
 from .types.human_annotation_config import PolylineConfig
 from .types.human_annotation_config import SegmentationConfig
 from .types.human_annotation_config import SentimentConfig
-from .types.human_annotation_config import StringAggregationType
 from .types.human_annotation_config import TextClassificationConfig
 from .types.human_annotation_config import TextEntityExtractionConfig
 from .types.human_annotation_config import VideoClassificationConfig
+from .types.human_annotation_config import StringAggregationType
 from .types.instruction import CsvInstruction
 from .types.instruction import Instruction
 from .types.instruction import PdfInstruction
@@ -153,52 +153,44 @@ from .types.operations import LabelVideoObjectDetectionOperationMetadata
 from .types.operations import LabelVideoObjectTrackingOperationMetadata
 
 __all__ = (
-    "AnnotatedDataset",
-    "AnnotatedDatasetMetadata",
+    "DataLabelingServiceClient",
     "Annotation",
     "AnnotationMetadata",
+    "AnnotationValue",
+    "BoundingPoly",
+    "ImageBoundingPolyAnnotation",
+    "ImageClassificationAnnotation",
+    "ImagePolylineAnnotation",
+    "ImageSegmentationAnnotation",
+    "NormalizedBoundingPoly",
+    "NormalizedPolyline",
+    "NormalizedVertex",
+    "ObjectTrackingFrame",
+    "OperatorMetadata",
+    "Polyline",
+    "SequentialSegment",
+    "TextClassificationAnnotation",
+    "TextEntityExtractionAnnotation",
+    "TimeSegment",
+    "Vertex",
+    "VideoClassificationAnnotation",
+    "VideoEventAnnotation",
+    "VideoObjectTrackingAnnotation",
     "AnnotationSentiment",
     "AnnotationSource",
+    "AnnotationType",
     "AnnotationSpec",
     "AnnotationSpecSet",
-    "AnnotationType",
-    "AnnotationValue",
-    "Attempt",
-    "BigQuerySource",
-    "BoundingBoxEvaluationOptions",
-    "BoundingPoly",
-    "BoundingPolyConfig",
-    "ClassificationMetadata",
-    "ClassificationMetrics",
-    "ConfusionMatrix",
     "CreateAnnotationSpecSetRequest",
     "CreateDatasetRequest",
     "CreateEvaluationJobRequest",
-    "CreateInstructionMetadata",
     "CreateInstructionRequest",
-    "CsvInstruction",
-    "DataItem",
-    "DataType",
-    "Dataset",
     "DeleteAnnotatedDatasetRequest",
     "DeleteAnnotationSpecSetRequest",
     "DeleteDatasetRequest",
     "DeleteEvaluationJobRequest",
     "DeleteInstructionRequest",
-    "Evaluation",
-    "EvaluationConfig",
-    "EvaluationJob",
-    "EvaluationJobAlertConfig",
-    "EvaluationJobConfig",
-    "EvaluationMetrics",
-    "EventConfig",
-    "Example",
-    "ExportDataOperationMetadata",
-    "ExportDataOperationResponse",
     "ExportDataRequest",
-    "GcsDestination",
-    "GcsFolderDestination",
-    "GcsSource",
     "GetAnnotatedDatasetRequest",
     "GetAnnotationSpecSetRequest",
     "GetDataItemRequest",
@@ -207,34 +199,9 @@ __all__ = (
     "GetEvaluationRequest",
     "GetExampleRequest",
     "GetInstructionRequest",
-    "HumanAnnotationConfig",
-    "ImageBoundingPolyAnnotation",
-    "ImageClassificationAnnotation",
-    "ImageClassificationConfig",
-    "ImagePayload",
-    "ImagePolylineAnnotation",
-    "ImageSegmentationAnnotation",
-    "ImportDataOperationMetadata",
-    "ImportDataOperationResponse",
     "ImportDataRequest",
-    "InputConfig",
-    "Instruction",
-    "LabelImageBoundingBoxOperationMetadata",
-    "LabelImageBoundingPolyOperationMetadata",
-    "LabelImageClassificationOperationMetadata",
-    "LabelImageOrientedBoundingBoxOperationMetadata",
-    "LabelImagePolylineOperationMetadata",
     "LabelImageRequest",
-    "LabelImageSegmentationOperationMetadata",
-    "LabelOperationMetadata",
-    "LabelStats",
-    "LabelTextClassificationOperationMetadata",
-    "LabelTextEntityExtractionOperationMetadata",
     "LabelTextRequest",
-    "LabelVideoClassificationOperationMetadata",
-    "LabelVideoEventOperationMetadata",
-    "LabelVideoObjectDetectionOperationMetadata",
-    "LabelVideoObjectTrackingOperationMetadata",
     "LabelVideoRequest",
     "ListAnnotatedDatasetsRequest",
     "ListAnnotatedDatasetsResponse",
@@ -250,43 +217,76 @@ __all__ = (
     "ListExamplesResponse",
     "ListInstructionsRequest",
     "ListInstructionsResponse",
-    "NormalizedBoundingPoly",
-    "NormalizedPolyline",
-    "NormalizedVertex",
-    "ObjectDetectionConfig",
-    "ObjectDetectionMetrics",
-    "ObjectTrackingConfig",
-    "ObjectTrackingFrame",
-    "OperatorMetadata",
-    "OutputConfig",
     "PauseEvaluationJobRequest",
-    "PdfInstruction",
-    "Polyline",
-    "PolylineConfig",
-    "PrCurve",
     "ResumeEvaluationJobRequest",
     "SearchEvaluationsRequest",
     "SearchEvaluationsResponse",
     "SearchExampleComparisonsRequest",
     "SearchExampleComparisonsResponse",
-    "SegmentationConfig",
-    "SentimentConfig",
-    "SequentialSegment",
-    "StringAggregationType",
-    "TextClassificationAnnotation",
-    "TextClassificationConfig",
-    "TextEntityExtractionAnnotation",
-    "TextEntityExtractionConfig",
-    "TextMetadata",
-    "TextPayload",
-    "TimeSegment",
     "UpdateEvaluationJobRequest",
-    "Vertex",
-    "VideoClassificationAnnotation",
-    "VideoClassificationConfig",
-    "VideoEventAnnotation",
-    "VideoObjectTrackingAnnotation",
+    "ImagePayload",
+    "TextPayload",
     "VideoPayload",
     "VideoThumbnail",
-    "DataLabelingServiceClient",
+    "AnnotatedDataset",
+    "AnnotatedDatasetMetadata",
+    "BigQuerySource",
+    "ClassificationMetadata",
+    "DataItem",
+    "Dataset",
+    "Example",
+    "GcsDestination",
+    "GcsFolderDestination",
+    "GcsSource",
+    "InputConfig",
+    "LabelStats",
+    "OutputConfig",
+    "TextMetadata",
+    "DataType",
+    "BoundingBoxEvaluationOptions",
+    "ClassificationMetrics",
+    "ConfusionMatrix",
+    "Evaluation",
+    "EvaluationConfig",
+    "EvaluationMetrics",
+    "ObjectDetectionMetrics",
+    "PrCurve",
+    "Attempt",
+    "EvaluationJob",
+    "EvaluationJobAlertConfig",
+    "EvaluationJobConfig",
+    "BoundingPolyConfig",
+    "EventConfig",
+    "HumanAnnotationConfig",
+    "ImageClassificationConfig",
+    "ObjectDetectionConfig",
+    "ObjectTrackingConfig",
+    "PolylineConfig",
+    "SegmentationConfig",
+    "SentimentConfig",
+    "TextClassificationConfig",
+    "TextEntityExtractionConfig",
+    "VideoClassificationConfig",
+    "StringAggregationType",
+    "CsvInstruction",
+    "Instruction",
+    "PdfInstruction",
+    "CreateInstructionMetadata",
+    "ExportDataOperationMetadata",
+    "ExportDataOperationResponse",
+    "ImportDataOperationMetadata",
+    "ImportDataOperationResponse",
+    "LabelImageBoundingBoxOperationMetadata",
+    "LabelImageBoundingPolyOperationMetadata",
+    "LabelImageClassificationOperationMetadata",
+    "LabelImageOrientedBoundingBoxOperationMetadata",
+    "LabelImagePolylineOperationMetadata",
+    "LabelImageSegmentationOperationMetadata",
+    "LabelOperationMetadata",
+    "LabelTextClassificationOperationMetadata",
+    "LabelTextEntityExtractionOperationMetadata",
+    "LabelVideoClassificationOperationMetadata",
+    "LabelVideoEventOperationMetadata",
+    "LabelVideoObjectDetectionOperationMetadata",
+    "LabelVideoObjectTrackingOperationMetadata",
 )
