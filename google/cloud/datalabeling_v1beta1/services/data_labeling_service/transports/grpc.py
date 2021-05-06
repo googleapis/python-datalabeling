@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers  # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -38,6 +40,7 @@ from google.cloud.datalabeling_v1beta1.types import evaluation_job as gcd_evalua
 from google.cloud.datalabeling_v1beta1.types import instruction
 from google.longrunning import operations_pb2 as operations  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import DataLabelingServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -74,8 +77,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -217,15 +219,13 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs,
         )
 
@@ -253,9 +253,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
     def create_dataset(
         self,
     ) -> Callable[[data_labeling_service.CreateDatasetRequest], gcd_dataset.Dataset]:
-        r"""Return a callable for the
-        create dataset
-          method over gRPC.
+        r"""Return a callable for the create dataset method over gRPC.
 
         Creates dataset. If success return a Dataset
         resource.
@@ -282,9 +280,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
     def get_dataset(
         self,
     ) -> Callable[[data_labeling_service.GetDatasetRequest], dataset.Dataset]:
-        r"""Return a callable for the
-        get dataset
-          method over gRPC.
+        r"""Return a callable for the get dataset method over gRPC.
 
         Gets dataset by resource name.
 
@@ -313,9 +309,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
         [data_labeling_service.ListDatasetsRequest],
         data_labeling_service.ListDatasetsResponse,
     ]:
-        r"""Return a callable for the
-        list datasets
-          method over gRPC.
+        r"""Return a callable for the list datasets method over gRPC.
 
         Lists datasets under a project. Pagination is
         supported.
@@ -342,9 +336,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
     def delete_dataset(
         self,
     ) -> Callable[[data_labeling_service.DeleteDatasetRequest], empty.Empty]:
-        r"""Return a callable for the
-        delete dataset
-          method over gRPC.
+        r"""Return a callable for the delete dataset method over gRPC.
 
         Deletes a dataset by resource name.
 
@@ -370,9 +362,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
     def import_data(
         self,
     ) -> Callable[[data_labeling_service.ImportDataRequest], operations.Operation]:
-        r"""Return a callable for the
-        import data
-          method over gRPC.
+        r"""Return a callable for the import data method over gRPC.
 
         Imports data into dataset based on source locations
         defined in request. It can be called multiple times for
@@ -403,9 +393,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
     def export_data(
         self,
     ) -> Callable[[data_labeling_service.ExportDataRequest], operations.Operation]:
-        r"""Return a callable for the
-        export data
-          method over gRPC.
+        r"""Return a callable for the export data method over gRPC.
 
         Exports data and annotations from dataset.
 
@@ -431,9 +419,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
     def get_data_item(
         self,
     ) -> Callable[[data_labeling_service.GetDataItemRequest], dataset.DataItem]:
-        r"""Return a callable for the
-        get data item
-          method over gRPC.
+        r"""Return a callable for the get data item method over gRPC.
 
         Gets a data item in a dataset by resource name. This
         API can be called after data are imported into dataset.
@@ -463,9 +449,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
         [data_labeling_service.ListDataItemsRequest],
         data_labeling_service.ListDataItemsResponse,
     ]:
-        r"""Return a callable for the
-        list data items
-          method over gRPC.
+        r"""Return a callable for the list data items method over gRPC.
 
         Lists data items in a dataset. This API can be called
         after data are imported into dataset. Pagination is
@@ -495,9 +479,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
     ) -> Callable[
         [data_labeling_service.GetAnnotatedDatasetRequest], dataset.AnnotatedDataset
     ]:
-        r"""Return a callable for the
-        get annotated dataset
-          method over gRPC.
+        r"""Return a callable for the get annotated dataset method over gRPC.
 
         Gets an annotated dataset by resource name.
 
@@ -526,9 +508,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
         [data_labeling_service.ListAnnotatedDatasetsRequest],
         data_labeling_service.ListAnnotatedDatasetsResponse,
     ]:
-        r"""Return a callable for the
-        list annotated datasets
-          method over gRPC.
+        r"""Return a callable for the list annotated datasets method over gRPC.
 
         Lists annotated datasets for a dataset. Pagination is
         supported.
@@ -555,9 +535,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
     def delete_annotated_dataset(
         self,
     ) -> Callable[[data_labeling_service.DeleteAnnotatedDatasetRequest], empty.Empty]:
-        r"""Return a callable for the
-        delete annotated dataset
-          method over gRPC.
+        r"""Return a callable for the delete annotated dataset method over gRPC.
 
         Deletes an annotated dataset by resource name.
 
@@ -583,9 +561,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
     def label_image(
         self,
     ) -> Callable[[data_labeling_service.LabelImageRequest], operations.Operation]:
-        r"""Return a callable for the
-        label image
-          method over gRPC.
+        r"""Return a callable for the label image method over gRPC.
 
         Starts a labeling task for image. The type of image
         labeling task is configured by feature in the request.
@@ -612,9 +588,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
     def label_video(
         self,
     ) -> Callable[[data_labeling_service.LabelVideoRequest], operations.Operation]:
-        r"""Return a callable for the
-        label video
-          method over gRPC.
+        r"""Return a callable for the label video method over gRPC.
 
         Starts a labeling task for video. The type of video
         labeling task is configured by feature in the request.
@@ -641,9 +615,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
     def label_text(
         self,
     ) -> Callable[[data_labeling_service.LabelTextRequest], operations.Operation]:
-        r"""Return a callable for the
-        label text
-          method over gRPC.
+        r"""Return a callable for the label text method over gRPC.
 
         Starts a labeling task for text. The type of text
         labeling task is configured by feature in the request.
@@ -670,9 +642,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
     def get_example(
         self,
     ) -> Callable[[data_labeling_service.GetExampleRequest], dataset.Example]:
-        r"""Return a callable for the
-        get example
-          method over gRPC.
+        r"""Return a callable for the get example method over gRPC.
 
         Gets an example by resource name, including both data
         and annotation.
@@ -702,9 +672,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
         [data_labeling_service.ListExamplesRequest],
         data_labeling_service.ListExamplesResponse,
     ]:
-        r"""Return a callable for the
-        list examples
-          method over gRPC.
+        r"""Return a callable for the list examples method over gRPC.
 
         Lists examples in an annotated dataset. Pagination is
         supported.
@@ -734,9 +702,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
         [data_labeling_service.CreateAnnotationSpecSetRequest],
         gcd_annotation_spec_set.AnnotationSpecSet,
     ]:
-        r"""Return a callable for the
-        create annotation spec set
-          method over gRPC.
+        r"""Return a callable for the create annotation spec set method over gRPC.
 
         Creates an annotation spec set by providing a set of
         labels.
@@ -766,9 +732,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
         [data_labeling_service.GetAnnotationSpecSetRequest],
         annotation_spec_set.AnnotationSpecSet,
     ]:
-        r"""Return a callable for the
-        get annotation spec set
-          method over gRPC.
+        r"""Return a callable for the get annotation spec set method over gRPC.
 
         Gets an annotation spec set by resource name.
 
@@ -797,9 +761,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
         [data_labeling_service.ListAnnotationSpecSetsRequest],
         data_labeling_service.ListAnnotationSpecSetsResponse,
     ]:
-        r"""Return a callable for the
-        list annotation spec sets
-          method over gRPC.
+        r"""Return a callable for the list annotation spec sets method over gRPC.
 
         Lists annotation spec sets for a project. Pagination
         is supported.
@@ -826,9 +788,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
     def delete_annotation_spec_set(
         self,
     ) -> Callable[[data_labeling_service.DeleteAnnotationSpecSetRequest], empty.Empty]:
-        r"""Return a callable for the
-        delete annotation spec set
-          method over gRPC.
+        r"""Return a callable for the delete annotation spec set method over gRPC.
 
         Deletes an annotation spec set by resource name.
 
@@ -856,9 +816,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
     ) -> Callable[
         [data_labeling_service.CreateInstructionRequest], operations.Operation
     ]:
-        r"""Return a callable for the
-        create instruction
-          method over gRPC.
+        r"""Return a callable for the create instruction method over gRPC.
 
         Creates an instruction for how data should be
         labeled.
@@ -887,9 +845,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
     ) -> Callable[
         [data_labeling_service.GetInstructionRequest], instruction.Instruction
     ]:
-        r"""Return a callable for the
-        get instruction
-          method over gRPC.
+        r"""Return a callable for the get instruction method over gRPC.
 
         Gets an instruction by resource name.
 
@@ -918,9 +874,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
         [data_labeling_service.ListInstructionsRequest],
         data_labeling_service.ListInstructionsResponse,
     ]:
-        r"""Return a callable for the
-        list instructions
-          method over gRPC.
+        r"""Return a callable for the list instructions method over gRPC.
 
         Lists instructions for a project. Pagination is
         supported.
@@ -947,9 +901,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
     def delete_instruction(
         self,
     ) -> Callable[[data_labeling_service.DeleteInstructionRequest], empty.Empty]:
-        r"""Return a callable for the
-        delete instruction
-          method over gRPC.
+        r"""Return a callable for the delete instruction method over gRPC.
 
         Deletes an instruction object by resource name.
 
@@ -975,9 +927,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
     def get_evaluation(
         self,
     ) -> Callable[[data_labeling_service.GetEvaluationRequest], evaluation.Evaluation]:
-        r"""Return a callable for the
-        get evaluation
-          method over gRPC.
+        r"""Return a callable for the get evaluation method over gRPC.
 
         Gets an evaluation by resource name (to search, use
         [projects.evaluations.search][google.cloud.datalabeling.v1beta1.DataLabelingService.SearchEvaluations]).
@@ -1007,9 +957,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
         [data_labeling_service.SearchEvaluationsRequest],
         data_labeling_service.SearchEvaluationsResponse,
     ]:
-        r"""Return a callable for the
-        search evaluations
-          method over gRPC.
+        r"""Return a callable for the search evaluations method over gRPC.
 
         Searches
         [evaluations][google.cloud.datalabeling.v1beta1.Evaluation]
@@ -1040,9 +988,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
         [data_labeling_service.SearchExampleComparisonsRequest],
         data_labeling_service.SearchExampleComparisonsResponse,
     ]:
-        r"""Return a callable for the
-        search example comparisons
-          method over gRPC.
+        r"""Return a callable for the search example comparisons method over gRPC.
 
         Searches example comparisons from an evaluation. The
         return format is a list of example comparisons that show
@@ -1073,9 +1019,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
     ) -> Callable[
         [data_labeling_service.CreateEvaluationJobRequest], evaluation_job.EvaluationJob
     ]:
-        r"""Return a callable for the
-        create evaluation job
-          method over gRPC.
+        r"""Return a callable for the create evaluation job method over gRPC.
 
         Creates an evaluation job.
 
@@ -1104,9 +1048,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
         [data_labeling_service.UpdateEvaluationJobRequest],
         gcd_evaluation_job.EvaluationJob,
     ]:
-        r"""Return a callable for the
-        update evaluation job
-          method over gRPC.
+        r"""Return a callable for the update evaluation job method over gRPC.
 
         Updates an evaluation job. You can only update certain fields of
         the job's
@@ -1141,9 +1083,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
     ) -> Callable[
         [data_labeling_service.GetEvaluationJobRequest], evaluation_job.EvaluationJob
     ]:
-        r"""Return a callable for the
-        get evaluation job
-          method over gRPC.
+        r"""Return a callable for the get evaluation job method over gRPC.
 
         Gets an evaluation job by resource name.
 
@@ -1169,9 +1109,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
     def pause_evaluation_job(
         self,
     ) -> Callable[[data_labeling_service.PauseEvaluationJobRequest], empty.Empty]:
-        r"""Return a callable for the
-        pause evaluation job
-          method over gRPC.
+        r"""Return a callable for the pause evaluation job method over gRPC.
 
         Pauses an evaluation job. Pausing an evaluation job that is
         already in a ``PAUSED`` state is a no-op.
@@ -1198,9 +1136,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
     def resume_evaluation_job(
         self,
     ) -> Callable[[data_labeling_service.ResumeEvaluationJobRequest], empty.Empty]:
-        r"""Return a callable for the
-        resume evaluation job
-          method over gRPC.
+        r"""Return a callable for the resume evaluation job method over gRPC.
 
         Resumes a paused evaluation job. A deleted evaluation
         job can't be resumed. Resuming a running or scheduled
@@ -1228,9 +1164,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
     def delete_evaluation_job(
         self,
     ) -> Callable[[data_labeling_service.DeleteEvaluationJobRequest], empty.Empty]:
-        r"""Return a callable for the
-        delete evaluation job
-          method over gRPC.
+        r"""Return a callable for the delete evaluation job method over gRPC.
 
         Stops and deletes an evaluation job.
 
@@ -1259,9 +1193,7 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
         [data_labeling_service.ListEvaluationJobsRequest],
         data_labeling_service.ListEvaluationJobsResponse,
     ]:
-        r"""Return a callable for the
-        list evaluation jobs
-          method over gRPC.
+        r"""Return a callable for the list evaluation jobs method over gRPC.
 
         Lists all evaluation jobs within a project with
         possible filters. Pagination is supported.

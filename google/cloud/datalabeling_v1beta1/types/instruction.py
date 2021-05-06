@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.datalabeling_v1beta1.types import dataset
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
@@ -65,15 +68,23 @@ class Instruction(proto.Message):
             instruction.
     """
 
-    name = proto.Field(proto.STRING, number=1,)
-    display_name = proto.Field(proto.STRING, number=2,)
-    description = proto.Field(proto.STRING, number=3,)
+    name = proto.Field(proto.STRING, number=1)
+
+    display_name = proto.Field(proto.STRING, number=2)
+
+    description = proto.Field(proto.STRING, number=3)
+
     create_time = proto.Field(proto.MESSAGE, number=4, message=timestamp.Timestamp,)
+
     update_time = proto.Field(proto.MESSAGE, number=5, message=timestamp.Timestamp,)
+
     data_type = proto.Field(proto.ENUM, number=6, enum=dataset.DataType,)
+
     csv_instruction = proto.Field(proto.MESSAGE, number=7, message="CsvInstruction",)
+
     pdf_instruction = proto.Field(proto.MESSAGE, number=9, message="PdfInstruction",)
-    blocking_resources = proto.RepeatedField(proto.STRING, number=10,)
+
+    blocking_resources = proto.RepeatedField(proto.STRING, number=10)
 
 
 class CsvInstruction(proto.Message):
@@ -86,18 +97,19 @@ class CsvInstruction(proto.Message):
             is allowed.
     """
 
-    gcs_file_uri = proto.Field(proto.STRING, number=1,)
+    gcs_file_uri = proto.Field(proto.STRING, number=1)
 
 
 class PdfInstruction(proto.Message):
     r"""Instruction from a PDF file.
+
     Attributes:
         gcs_file_uri (str):
             PDF file for the instruction. Only gcs path
             is allowed.
     """
 
-    gcs_file_uri = proto.Field(proto.STRING, number=1,)
+    gcs_file_uri = proto.Field(proto.STRING, number=1)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

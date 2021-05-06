@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import duration_pb2 as duration  # type: ignore
 
@@ -48,6 +51,7 @@ class StringAggregationType(proto.Enum):
 
 class HumanAnnotationConfig(proto.Message):
     r"""Configuration for how human labeling task should be done.
+
     Attributes:
         instruction (str):
             Required. Instruction resource name.
@@ -93,19 +97,28 @@ class HumanAnnotationConfig(proto.Message):
             no notification will be sent.
     """
 
-    instruction = proto.Field(proto.STRING, number=1,)
-    annotated_dataset_display_name = proto.Field(proto.STRING, number=2,)
-    annotated_dataset_description = proto.Field(proto.STRING, number=3,)
-    label_group = proto.Field(proto.STRING, number=4,)
-    language_code = proto.Field(proto.STRING, number=5,)
-    replica_count = proto.Field(proto.INT32, number=6,)
+    instruction = proto.Field(proto.STRING, number=1)
+
+    annotated_dataset_display_name = proto.Field(proto.STRING, number=2)
+
+    annotated_dataset_description = proto.Field(proto.STRING, number=3)
+
+    label_group = proto.Field(proto.STRING, number=4)
+
+    language_code = proto.Field(proto.STRING, number=5)
+
+    replica_count = proto.Field(proto.INT32, number=6)
+
     question_duration = proto.Field(proto.MESSAGE, number=7, message=duration.Duration,)
-    contributor_emails = proto.RepeatedField(proto.STRING, number=9,)
-    user_email_address = proto.Field(proto.STRING, number=10,)
+
+    contributor_emails = proto.RepeatedField(proto.STRING, number=9)
+
+    user_email_address = proto.Field(proto.STRING, number=10)
 
 
 class ImageClassificationConfig(proto.Message):
     r"""Config for image classification human labeling task.
+
     Attributes:
         annotation_spec_set (str):
             Required. Annotation spec set resource name.
@@ -117,8 +130,10 @@ class ImageClassificationConfig(proto.Message):
             answers.
     """
 
-    annotation_spec_set = proto.Field(proto.STRING, number=1,)
-    allow_multi_label = proto.Field(proto.BOOL, number=2,)
+    annotation_spec_set = proto.Field(proto.STRING, number=1)
+
+    allow_multi_label = proto.Field(proto.BOOL, number=2)
+
     answer_aggregation_type = proto.Field(
         proto.ENUM, number=3, enum="StringAggregationType",
     )
@@ -136,12 +151,14 @@ class BoundingPolyConfig(proto.Message):
             contributors UI.
     """
 
-    annotation_spec_set = proto.Field(proto.STRING, number=1,)
-    instruction_message = proto.Field(proto.STRING, number=2,)
+    annotation_spec_set = proto.Field(proto.STRING, number=1)
+
+    instruction_message = proto.Field(proto.STRING, number=2)
 
 
 class PolylineConfig(proto.Message):
     r"""Config for image polyline human labeling task.
+
     Attributes:
         annotation_spec_set (str):
             Required. Annotation spec set resource name.
@@ -150,12 +167,14 @@ class PolylineConfig(proto.Message):
             contributors UI.
     """
 
-    annotation_spec_set = proto.Field(proto.STRING, number=1,)
-    instruction_message = proto.Field(proto.STRING, number=2,)
+    annotation_spec_set = proto.Field(proto.STRING, number=1)
+
+    instruction_message = proto.Field(proto.STRING, number=2)
 
 
 class SegmentationConfig(proto.Message):
     r"""Config for image segmentation
+
     Attributes:
         annotation_spec_set (str):
             Required. Annotation spec set resource name. format:
@@ -164,8 +183,9 @@ class SegmentationConfig(proto.Message):
             Instruction message showed on labelers UI.
     """
 
-    annotation_spec_set = proto.Field(proto.STRING, number=1,)
-    instruction_message = proto.Field(proto.STRING, number=2,)
+    annotation_spec_set = proto.Field(proto.STRING, number=1)
+
+    instruction_message = proto.Field(proto.STRING, number=2)
 
 
 class VideoClassificationConfig(proto.Message):
@@ -202,13 +222,15 @@ class VideoClassificationConfig(proto.Message):
                 able to choose multiple labels from one annotation spec set.
         """
 
-        annotation_spec_set = proto.Field(proto.STRING, number=1,)
-        allow_multi_label = proto.Field(proto.BOOL, number=2,)
+        annotation_spec_set = proto.Field(proto.STRING, number=1)
+
+        allow_multi_label = proto.Field(proto.BOOL, number=2)
 
     annotation_spec_set_configs = proto.RepeatedField(
         proto.MESSAGE, number=1, message=AnnotationSpecSetConfig,
     )
-    apply_shot_detection = proto.Field(proto.BOOL, number=2,)
+
+    apply_shot_detection = proto.Field(proto.BOOL, number=2)
 
 
 class ObjectDetectionConfig(proto.Message):
@@ -226,22 +248,25 @@ class ObjectDetectionConfig(proto.Message):
             extracted from the video.
     """
 
-    annotation_spec_set = proto.Field(proto.STRING, number=1,)
-    extraction_frame_rate = proto.Field(proto.DOUBLE, number=3,)
+    annotation_spec_set = proto.Field(proto.STRING, number=1)
+
+    extraction_frame_rate = proto.Field(proto.DOUBLE, number=3)
 
 
 class ObjectTrackingConfig(proto.Message):
     r"""Config for video object tracking human labeling task.
+
     Attributes:
         annotation_spec_set (str):
             Required. Annotation spec set resource name.
     """
 
-    annotation_spec_set = proto.Field(proto.STRING, number=1,)
+    annotation_spec_set = proto.Field(proto.STRING, number=1)
 
 
 class EventConfig(proto.Message):
     r"""Config for video event human labeling task.
+
     Attributes:
         annotation_spec_sets (Sequence[str]):
             Required. The list of annotation spec set
@@ -250,11 +275,12 @@ class EventConfig(proto.Message):
             AnnotationSpecSet at the same time.
     """
 
-    annotation_spec_sets = proto.RepeatedField(proto.STRING, number=1,)
+    annotation_spec_sets = proto.RepeatedField(proto.STRING, number=1)
 
 
 class TextClassificationConfig(proto.Message):
     r"""Config for text classification human labeling task.
+
     Attributes:
         allow_multi_label (bool):
             Optional. If allow_multi_label is true, contributors are
@@ -265,13 +291,16 @@ class TextClassificationConfig(proto.Message):
             Optional. Configs for sentiment selection.
     """
 
-    allow_multi_label = proto.Field(proto.BOOL, number=1,)
-    annotation_spec_set = proto.Field(proto.STRING, number=2,)
+    allow_multi_label = proto.Field(proto.BOOL, number=1)
+
+    annotation_spec_set = proto.Field(proto.STRING, number=2)
+
     sentiment_config = proto.Field(proto.MESSAGE, number=3, message="SentimentConfig",)
 
 
 class SentimentConfig(proto.Message):
     r"""Config for setting up sentiments.
+
     Attributes:
         enable_label_sentiment_selection (bool):
             If set to true, contributors will have the
@@ -280,17 +309,18 @@ class SentimentConfig(proto.Message):
             label. Default is false.
     """
 
-    enable_label_sentiment_selection = proto.Field(proto.BOOL, number=1,)
+    enable_label_sentiment_selection = proto.Field(proto.BOOL, number=1)
 
 
 class TextEntityExtractionConfig(proto.Message):
     r"""Config for text entity extraction human labeling task.
+
     Attributes:
         annotation_spec_set (str):
             Required. Annotation spec set resource name.
     """
 
-    annotation_spec_set = proto.Field(proto.STRING, number=1,)
+    annotation_spec_set = proto.Field(proto.STRING, number=1)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))
