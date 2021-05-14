@@ -13,10 +13,3 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from .client import DataLabelingServiceClient
-from .async_client import DataLabelingServiceAsyncClient
-
-__all__ = (
-    'DataLabelingServiceClient',
-    'DataLabelingServiceAsyncClient',
-)
