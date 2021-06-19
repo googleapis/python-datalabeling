@@ -4,6 +4,13 @@
 
 [1]: https://pypi.org/project/google-cloud-datalabeling/#history
 
+### [1.1.1](https://www.github.com/googleapis/python-datalabeling/compare/v1.1.0...v1.1.1) (2021-06-19)
+
+
+### Documentation
+
+* omit mention of Python 2.7 in 'CONTRIBUTING.rst' ([#1127](https://www.github.com/googleapis/python-datalabeling/issues/1127)) ([#108](https://www.github.com/googleapis/python-datalabeling/issues/108)) ([2d38075](https://www.github.com/googleapis/python-datalabeling/commit/2d38075bd68c083ed164a7202fd65056ff1edbc8)), closes [#1126](https://www.github.com/googleapis/python-datalabeling/issues/1126)
+
 ## [1.1.0](https://www.github.com/googleapis/python-datalabeling/compare/v1.0.0...v1.1.0) (2021-05-28)
 
 
