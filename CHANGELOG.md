@@ -7,14 +7,14 @@
 ### [1.2.2](https://www.github.com/googleapis/python-datalabeling/compare/v1.2.1...v1.2.2) (2021-07-27)
 
 
-### Features
-
-* add Samples section to CONTRIBUTING.rst ([#124](https://www.github.com/googleapis/python-datalabeling/issues/124)) ([025a4fa](https://www.github.com/googleapis/python-datalabeling/commit/025a4fa4d31612a02eaf3b8250225d6d467f4248))
-
-
 ### Bug Fixes
 
 * enable self signed jwt for grpc ([#129](https://www.github.com/googleapis/python-datalabeling/issues/129)) ([4fdf2f6](https://www.github.com/googleapis/python-datalabeling/commit/4fdf2f66b84bfad9504551124b7ed13126d329ea))
+
+
+### Documentation
+
+* add Samples section to CONTRIBUTING.rst ([#124](https://www.github.com/googleapis/python-datalabeling/issues/124)) ([025a4fa](https://www.github.com/googleapis/python-datalabeling/commit/025a4fa4d31612a02eaf3b8250225d6d467f4248))
 
 
 ### Miscellaneous Chores
