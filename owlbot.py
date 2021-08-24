@@ -85,7 +85,7 @@ s.replace(
 )
 
 s.replace(
-  "samples/*",
+  "samples/**/*",
   "master",
   "main"
 )
