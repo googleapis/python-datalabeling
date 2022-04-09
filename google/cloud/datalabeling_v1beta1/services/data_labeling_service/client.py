@@ -16,7 +16,7 @@
 from collections import OrderedDict
 import os
 import re
-from typing import Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Mapping, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib
@@ -604,7 +604,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_create_dataset():
                 # Create a client
@@ -707,7 +707,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_get_dataset():
                 # Create a client
@@ -806,7 +806,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_list_datasets():
                 # Create a client
@@ -922,7 +922,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_delete_dataset():
                 # Create a client
@@ -1011,7 +1011,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_import_data():
                 # Create a client
@@ -1132,7 +1132,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_export_data():
                 # Create a client
@@ -1274,7 +1274,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_get_data_item():
                 # Create a client
@@ -1372,7 +1372,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_list_data_items():
                 # Create a client
@@ -1488,7 +1488,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_get_annotated_dataset():
                 # Create a client
@@ -1590,7 +1590,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_list_annotated_datasets():
                 # Create a client
@@ -1709,7 +1709,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_delete_annotated_dataset():
                 # Create a client
@@ -1776,7 +1776,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_label_image():
                 # Create a client
@@ -1918,7 +1918,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_label_video():
                 # Create a client
@@ -2059,7 +2059,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_label_text():
                 # Create a client
@@ -2199,7 +2199,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_get_example():
                 # Create a client
@@ -2308,7 +2308,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_list_examples():
                 # Create a client
@@ -2429,7 +2429,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_create_annotation_spec_set():
                 # Create a client
@@ -2542,7 +2542,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_get_annotation_spec_set():
                 # Create a client
@@ -2646,7 +2646,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_list_annotation_spec_sets():
                 # Create a client
@@ -2767,7 +2767,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_delete_annotation_spec_set():
                 # Create a client
@@ -2857,7 +2857,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_create_instruction():
                 # Create a client
@@ -2975,7 +2975,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_get_instruction():
                 # Create a client
@@ -3074,7 +3074,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_list_instructions():
                 # Create a client
@@ -3191,7 +3191,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_delete_instruction():
                 # Create a client
@@ -3276,7 +3276,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_get_evaluation():
                 # Create a client
@@ -3377,7 +3377,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_search_evaluations():
                 # Create a client
@@ -3530,7 +3530,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_search_example_comparisons():
                 # Create a client
@@ -3646,7 +3646,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_create_evaluation_job():
                 # Create a client
@@ -3763,7 +3763,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_update_evaluation_job():
                 # Create a client
@@ -3879,7 +3879,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_get_evaluation_job():
                 # Create a client
@@ -3981,7 +3981,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_pause_evaluation_job():
                 # Create a client
@@ -4069,7 +4069,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_resume_evaluation_job():
                 # Create a client
@@ -4153,7 +4153,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_delete_evaluation_job():
                 # Create a client
@@ -4240,7 +4240,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import datalabeling_v1beta1
+                    from google.cloud import datalabeling_v1beta1
 
             def sample_list_evaluation_jobs():
                 # Create a client
