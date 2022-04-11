@@ -16,7 +16,7 @@
 from collections import OrderedDict
 import functools
 import re
-from typing import Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Mapping, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core.client_options import ClientOptions
@@ -263,7 +263,6 @@ class DataLabelingServiceAsyncClient:
         r"""Creates dataset. If success return a Dataset
         resource.
 
-
         .. code-block:: python
 
             from google.cloud import datalabeling_v1beta1
@@ -436,8 +435,7 @@ class DataLabelingServiceAsyncClient:
                 maximum=30.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=30.0,
             ),
@@ -474,7 +472,6 @@ class DataLabelingServiceAsyncClient:
     ) -> pagers.ListDatasetsAsyncPager:
         r"""Lists datasets under a project. Pagination is
         supported.
-
 
         .. code-block:: python
 
@@ -556,8 +553,7 @@ class DataLabelingServiceAsyncClient:
                 maximum=30.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=30.0,
             ),
@@ -660,8 +656,7 @@ class DataLabelingServiceAsyncClient:
                 maximum=30.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=30.0,
             ),
@@ -699,7 +694,6 @@ class DataLabelingServiceAsyncClient:
         running operation running on it. For example, no
         labeling task (also long running operation) can be
         started while importing is still ongoing. Vice versa.
-
 
         .. code-block:: python
 
@@ -927,8 +921,7 @@ class DataLabelingServiceAsyncClient:
                 maximum=30.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=30.0,
             ),
@@ -972,7 +965,6 @@ class DataLabelingServiceAsyncClient:
     ) -> dataset.DataItem:
         r"""Gets a data item in a dataset by resource name. This
         API can be called after data are imported into dataset.
-
 
         .. code-block:: python
 
@@ -1041,8 +1033,7 @@ class DataLabelingServiceAsyncClient:
                 maximum=30.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=30.0,
             ),
@@ -1080,7 +1071,6 @@ class DataLabelingServiceAsyncClient:
         r"""Lists data items in a dataset. This API can be called
         after data are imported into dataset. Pagination is
         supported.
-
 
         .. code-block:: python
 
@@ -1162,8 +1152,7 @@ class DataLabelingServiceAsyncClient:
                 maximum=30.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=30.0,
             ),
@@ -1280,8 +1269,7 @@ class DataLabelingServiceAsyncClient:
                 maximum=30.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=30.0,
             ),
@@ -1318,7 +1306,6 @@ class DataLabelingServiceAsyncClient:
     ) -> pagers.ListAnnotatedDatasetsAsyncPager:
         r"""Lists annotated datasets for a dataset. Pagination is
         supported.
-
 
         .. code-block:: python
 
@@ -1402,8 +1389,7 @@ class DataLabelingServiceAsyncClient:
                 maximum=30.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=30.0,
             ),
@@ -1513,7 +1499,6 @@ class DataLabelingServiceAsyncClient:
     ) -> operation_async.AsyncOperation:
         r"""Starts a labeling task for image. The type of image
         labeling task is configured by feature in the request.
-
 
         .. code-block:: python
 
@@ -1656,7 +1641,6 @@ class DataLabelingServiceAsyncClient:
         r"""Starts a labeling task for video. The type of video
         labeling task is configured by feature in the request.
 
-
         .. code-block:: python
 
             from google.cloud import datalabeling_v1beta1
@@ -1797,7 +1781,6 @@ class DataLabelingServiceAsyncClient:
         r"""Starts a labeling task for text. The type of text
         labeling task is configured by feature in the request.
 
-
         .. code-block:: python
 
             from google.cloud import datalabeling_v1beta1
@@ -1937,7 +1920,6 @@ class DataLabelingServiceAsyncClient:
         r"""Gets an example by resource name, including both data
         and annotation.
 
-
         .. code-block:: python
 
             from google.cloud import datalabeling_v1beta1
@@ -2017,8 +1999,7 @@ class DataLabelingServiceAsyncClient:
                 maximum=30.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=30.0,
             ),
@@ -2055,7 +2036,6 @@ class DataLabelingServiceAsyncClient:
     ) -> pagers.ListExamplesAsyncPager:
         r"""Lists examples in an annotated dataset. Pagination is
         supported.
-
 
         .. code-block:: python
 
@@ -2137,8 +2117,7 @@ class DataLabelingServiceAsyncClient:
                 maximum=30.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=30.0,
             ),
@@ -2186,7 +2165,6 @@ class DataLabelingServiceAsyncClient:
     ) -> gcd_annotation_spec_set.AnnotationSpecSet:
         r"""Creates an annotation spec set by providing a set of
         labels.
-
 
         .. code-block:: python
 
@@ -2369,8 +2347,7 @@ class DataLabelingServiceAsyncClient:
                 maximum=30.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=30.0,
             ),
@@ -2409,7 +2386,6 @@ class DataLabelingServiceAsyncClient:
     ) -> pagers.ListAnnotationSpecSetsAsyncPager:
         r"""Lists annotation spec sets for a project. Pagination
         is supported.
-
 
         .. code-block:: python
 
@@ -2492,8 +2468,7 @@ class DataLabelingServiceAsyncClient:
                 maximum=30.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=30.0,
             ),
@@ -2599,8 +2574,7 @@ class DataLabelingServiceAsyncClient:
                 maximum=30.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=30.0,
             ),
@@ -2634,7 +2608,6 @@ class DataLabelingServiceAsyncClient:
     ) -> operation_async.AsyncOperation:
         r"""Creates an instruction for how data should be
         labeled.
-
 
         .. code-block:: python
 
@@ -2823,8 +2796,7 @@ class DataLabelingServiceAsyncClient:
                 maximum=30.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=30.0,
             ),
@@ -2861,7 +2833,6 @@ class DataLabelingServiceAsyncClient:
     ) -> pagers.ListInstructionsAsyncPager:
         r"""Lists instructions for a project. Pagination is
         supported.
-
 
         .. code-block:: python
 
@@ -2944,8 +2915,7 @@ class DataLabelingServiceAsyncClient:
                 maximum=30.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=30.0,
             ),
@@ -3049,8 +3019,7 @@ class DataLabelingServiceAsyncClient:
                 maximum=30.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=30.0,
             ),
@@ -3083,7 +3052,6 @@ class DataLabelingServiceAsyncClient:
     ) -> evaluation.Evaluation:
         r"""Gets an evaluation by resource name (to search, use
         [projects.evaluations.search][google.cloud.datalabeling.v1beta1.DataLabelingService.SearchEvaluations]).
-
 
         .. code-block:: python
 
@@ -3155,8 +3123,7 @@ class DataLabelingServiceAsyncClient:
                 maximum=30.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=30.0,
             ),
@@ -3194,7 +3161,6 @@ class DataLabelingServiceAsyncClient:
         r"""Searches
         [evaluations][google.cloud.datalabeling.v1beta1.Evaluation]
         within a project.
-
 
         .. code-block:: python
 
@@ -3307,8 +3273,7 @@ class DataLabelingServiceAsyncClient:
                 maximum=30.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=30.0,
             ),
@@ -3357,7 +3322,6 @@ class DataLabelingServiceAsyncClient:
         return format is a list of example comparisons that show
         ground truth and prediction(s) for a single input.
         Search by providing an evaluation ID.
-
 
         .. code-block:: python
 
@@ -3587,7 +3551,6 @@ class DataLabelingServiceAsyncClient:
         If you want to change any other aspect of the evaluation job,
         you must delete the job and create a new one.
 
-
         .. code-block:: python
 
             from google.cloud import datalabeling_v1beta1
@@ -3777,8 +3740,7 @@ class DataLabelingServiceAsyncClient:
                 maximum=30.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=30.0,
             ),
@@ -3814,7 +3776,6 @@ class DataLabelingServiceAsyncClient:
     ) -> None:
         r"""Pauses an evaluation job. Pausing an evaluation job that is
         already in a ``PAUSED`` state is a no-op.
-
 
         .. code-block:: python
 
@@ -3902,7 +3863,6 @@ class DataLabelingServiceAsyncClient:
         r"""Resumes a paused evaluation job. A deleted evaluation
         job can't be resumed. Resuming a running or scheduled
         evaluation job is a no-op.
-
 
         .. code-block:: python
 
@@ -4048,8 +4008,7 @@ class DataLabelingServiceAsyncClient:
                 maximum=30.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=30.0,
             ),
@@ -4083,7 +4042,6 @@ class DataLabelingServiceAsyncClient:
     ) -> pagers.ListEvaluationJobsAsyncPager:
         r"""Lists all evaluation jobs within a project with
         possible filters. Pagination is supported.
-
 
         .. code-block:: python
 
@@ -4173,8 +4131,7 @@ class DataLabelingServiceAsyncClient:
                 maximum=30.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=30.0,
             ),
