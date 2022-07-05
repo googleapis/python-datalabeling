@@ -11218,7 +11218,6 @@ def test_data_labeling_service_transport_auth_adc(transport_class):
     [
         transports.DataLabelingServiceGrpcTransport,
         transports.DataLabelingServiceGrpcAsyncIOTransport,
-        transports.DataLabelingServiceRestTransport,
     ],
 )
 def test_data_labeling_service_transport_auth_gdch_credentials(transport_class):
