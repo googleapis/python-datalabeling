@@ -50,15 +50,10 @@ class DataType(proto.Enum):
 
     Values:
         DATA_TYPE_UNSPECIFIED (0):
-
         IMAGE (1):
-            Allowed for continuous evaluation.
         VIDEO (2):
-
         TEXT (4):
-            Allowed for continuous evaluation.
         GENERAL_DATA (6):
-            Allowed for continuous evaluation.
     """
     DATA_TYPE_UNSPECIFIED = 0
     IMAGE = 1
